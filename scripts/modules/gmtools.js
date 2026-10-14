@@ -6,9 +6,10 @@
 
 import { applyDamage } from "./damage.js";
 import { CONDITION_GROUPS } from "./conditionGroups.js";
+import { RnRDialogV2 } from "./dialogs.js";
 
 function waitGmDialog(config) {
-  const DialogV2 = globalThis.foundry?.applications?.api?.DialogV2;
+  const DialogV2 = RnRDialogV2;
   if (!DialogV2) {
     ui.notifications.error("RnR GM tools require the Foundry DialogV2 API (Foundry v13 or later).");
     return Promise.resolve(null);

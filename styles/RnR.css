@@ -4277,3 +4277,200 @@
 @media (max-width: 560px) {
   .rnr-extra-skill-shop .rnr-shop-filter { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   Wearable Equipment — paper doll (v0.4.1)
+   ============================================================
+   Three columns: the character's right side, the body centre (head, neck,
+   torso, back) over a faint silhouette, and the left side. Scoped under
+   .rnr-paperdoll so the older .rnr-wearable-grid / .rnr-fullbody-equipment
+   rules no longer apply. */
+.rnr-wearable-section { container-type: inline-size; }
+.rnr-wearable-section > h3 small { font-variant-numeric: tabular-nums; }
+
+.rnr-paperdoll {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--rnr-border, #3b4351);
+  border-radius: 8px;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(199, 163, 107, .08), transparent 60%),
+    var(--rnr-panel, #161a21);
+}
+.rnr-paperdoll-column { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.rnr-paperdoll-center {
+  position: relative;
+  padding: 0 4px;
+  background: no-repeat center 46% / auto 92%
+    url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 220%22%3E%3Cg fill=%22%23c7a36b%22 fill-opacity=%22.07%22%3E%3Ccircle cx=%2250%22 cy=%2222%22 r=%2216%22/%3E%3Crect x=%2230%22 y=%2242%22 width=%2240%22 height=%2270%22 rx=%2214%22/%3E%3Crect x=%2210%22 y=%2246%22 width=%2216%22 height=%2262%22 rx=%228%22/%3E%3Crect x=%2274%22 y=%2246%22 width=%2216%22 height=%2262%22 rx=%228%22/%3E%3Crect x=%2232%22 y=%22110%22 width=%2215%22 height=%2292%22 rx=%227%22/%3E%3Crect x=%2253%22 y=%22110%22 width=%2215%22 height=%2292%22 rx=%227%22/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.rnr-paperdoll .rnr-body-slot.rnr-wear-slot {
+  position: relative;
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  align-items: center;
+  justify-content: stretch;
+  gap: 8px;
+  min-height: 56px;
+  margin: 0;
+  padding: 7px 8px;
+  border: 1px dashed var(--rnr-border, #3b4351);
+  border-radius: 6px;
+  background: rgba(20, 24, 31, .82);
+  text-align: left;
+  transform: none;
+  transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
+}
+.rnr-paperdoll .rnr-body-slot.rnr-wear-slot::after { content: none; display: none; }
+.rnr-paperdoll .rnr-body-slot.rnr-wear-slot:hover { border-color: var(--rnr-accent, #c7a36b); background: rgba(41, 49, 60, .9); }
+.rnr-paperdoll .rnr-body-slot.rnr-wear-slot.filled {
+  border-style: solid;
+  border-color: rgba(199, 163, 107, .55);
+  background: linear-gradient(135deg, rgba(104, 76, 43, .28), rgba(20, 24, 31, .92));
+  box-shadow: inset 0 0 0 1px rgba(199, 163, 107, .08);
+}
+.rnr-paperdoll .rnr-body-slot.rnr-wear-slot.is-drag-over {
+  border-style: solid;
+  border-color: #f0c070;
+  background: rgba(154, 118, 71, .35);
+  box-shadow: 0 0 0 2px rgba(240, 192, 112, .3);
+  transform: none;
+}
+.rnr-paperdoll .rnr-body-slot.rnr-wear-slot.is-unusable {
+  border-color: rgba(169, 103, 112, .5);
+  background: repeating-linear-gradient(135deg, rgba(48, 36, 43, .9) 0 6px, rgba(36, 28, 33, .9) 6px 12px);
+  opacity: .75;
+}
+.rnr-paperdoll .rnr-body-slot.rnr-wear-slot[draggable="true"] { cursor: grab; }
+.rnr-paperdoll .rnr-body-slot.rnr-wear-slot.is-dragging { opacity: .45; }
+
+.rnr-wear-slot-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  border: 1px solid var(--rnr-border, #3b4351);
+  border-radius: 6px;
+  background: rgba(8, 10, 14, .6);
+  color: var(--rnr-accent, #c7a36b);
+  font-size: 1rem;
+}
+.rnr-wear-slot.filled .rnr-wear-slot-icon { border-color: rgba(199, 163, 107, .6); }
+.rnr-wear-slot-icon img { width: 100%; height: 100%; object-fit: cover; border: 0; cursor: pointer; }
+.rnr-wear-slot-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.rnr-wear-slot-label {
+  color: var(--rnr-muted, #9da5b3);
+  font-size: .56rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.rnr-wear-slot-name {
+  overflow: hidden;
+  color: var(--rnr-text, #e8eaf0);
+  font-size: .72rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.rnr-wear-slot-name:hover { color: var(--rnr-accent-hover, #d8b77e); }
+.rnr-wear-slot-stats { display: flex; flex-wrap: wrap; gap: 4px; }
+.rnr-wear-slot-stats:empty { display: none; }
+.rnr-wear-slot-stats span {
+  padding: 0 5px;
+  border-radius: 8px;
+  background: rgba(199, 163, 107, .15);
+  color: #e3c891;
+  font-size: .55rem;
+  line-height: 1.5;
+}
+.rnr-wear-slot-empty { color: var(--rnr-muted, #9da5b3); font-size: .6rem; font-style: italic; }
+.rnr-wear-slot.is-unusable .rnr-wear-slot-empty { color: #d79aa3; font-style: normal; }
+.rnr-wear-slot-actions { display: flex; align-items: center; gap: 4px; }
+.rnr-paperdoll .rnr-wear-slot-actions button {
+  height: 22px;
+  min-height: 0;
+  padding: 0 6px;
+  border: 1px solid var(--rnr-border, #3b4351);
+  border-radius: 4px;
+  background: rgba(8, 10, 14, .6);
+  color: var(--rnr-text, #e8eaf0);
+  font-size: .6rem;
+  line-height: 1;
+}
+.rnr-paperdoll .rnr-wear-slot-actions .rnr-wear-slot-remove { width: 22px; padding: 0; font-size: .85rem; }
+.rnr-paperdoll .rnr-wear-slot-actions .rnr-wear-slot-remove:hover { border-color: #a96770; background: #5a2f37; color: #fff; }
+
+@container (max-width: 620px) {
+  .rnr-paperdoll { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .rnr-paperdoll-center {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column: 1 / -1;
+    grid-row: 1;
+    background: none;
+  }
+}
+@container (max-width: 400px) {
+  .rnr-paperdoll, .rnr-paperdoll-center { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ============================================================
+   Disabled organs — grouped picker (v0.4.1)
+   ============================================================ */
+.rnr-organ-picker { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.rnr-organ-group {
+  margin: 0;
+  padding: 6px 8px 8px;
+  border: 1px solid var(--rnr-border, #3b4351);
+  border-radius: 6px;
+}
+.rnr-organ-group legend {
+  padding: 0 4px;
+  color: var(--rnr-accent, #c7a36b);
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.rnr-organ-group-count {
+  display: inline-block;
+  min-width: 16px;
+  margin-left: 4px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: #914b59;
+  color: #fff;
+  font-size: .55rem;
+  text-align: center;
+}
+.rnr-organ-group-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 6px; }
+.rnr-organ-picker .rnr-organ-choice {
+  display: flex !important;
+  align-items: center;
+  gap: 7px !important;
+  min-height: 38px;
+  padding: 5px 8px;
+}
+.rnr-organ-choice-text { display: flex; flex-direction: column; min-width: 0; }
+.rnr-organ-choice-text strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-organ-choice.is-disabled small { color: #d79aa3; }
+.rnr-organ-choice.is-prosthetic small { color: #8fc1d9; }
+
+/* ============================================================
+   Instant close fallback (v0.4.1)
+   ============================================================
+   RnR sheets and dialogs close without animation from JavaScript. Any other
+   window that carries the RnR dialog theme must still be able to finish
+   Foundry's close transition: the theme pins max-height with !important,
+   which would otherwise stall closing for the full 1 second timeout. */
+.application.rnr-dialog.minimizing,
+.application.rnr.sheet.minimizing {
+  max-height: 0 !important;
+  transition: max-height 1ms linear, max-width 1ms linear !important;
+}

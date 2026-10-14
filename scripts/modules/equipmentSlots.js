@@ -14,10 +14,22 @@ export const BODY_EQUIPMENT_SLOTS = [
 ];
 
 export const BODY_SLOT_ORGANS = {
+  leftArm: ["leftArm"],
+  rightArm: ["rightArm"],
   leftHand: ["leftHand"],
   rightHand: ["rightHand"],
+  leftLeg: ["leftLeg"],
+  rightLeg: ["rightLeg"],
   leftFoot: ["leftFoot"],
   rightFoot: ["rightFoot"],
+};
+
+// Paper-doll layout for the Wearable Equipment panel. The character faces the
+// viewer, so their right side is drawn on the left. Every slot appears once.
+export const BODY_SLOT_COLUMNS = {
+  right:  ["rightArm", "rightHand", "rightLeg", "rightFoot"],
+  center: ["head", "neck", "torso", "back"],
+  left:   ["leftArm", "leftHand", "leftLeg", "leftFoot"],
 };
 
 // Keep legacy generic body slots readable. Their contents are assigned to the

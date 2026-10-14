@@ -1,4 +1,5 @@
 import { FLAG_NAMESPACE as MODULE_NAME, getRnRFlag } from "./flags.js";
+import { RnRDialogV2 } from "./dialogs.js";
 
 const pendingOwnerPopupMessages = new Set();
 
@@ -27,7 +28,7 @@ function availableMecha() {
 }
 
 function renderMechaDialog({ title, content, buttons, defaultAction }) {
-  const DialogV2 = globalThis.foundry?.applications?.api?.DialogV2;
+  const DialogV2 = RnRDialogV2;
   if (!DialogV2) {
     ui.notifications.error("Mecha popup requires the Foundry DialogV2 API (Foundry v13 or later).");
     return null;

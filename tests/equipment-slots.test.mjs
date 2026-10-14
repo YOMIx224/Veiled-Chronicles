@@ -3,6 +3,8 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
   BODY_EQUIPMENT_SLOTS,
+  BODY_SLOT_COLUMNS,
+  BODY_SLOT_ORGANS,
   allowedBodySlots,
   bodyEquipmentAssignments,
   bodySlotCandidates,
@@ -16,15 +18,20 @@ test("wearable layout defines the requested twelve physical slots", () => {
   ]);
 });
 
-test("wearable CSS maps every slot into the requested 3-column body layout", () => {
-  const css = readFileSync(new URL("../styles/RnR.css", import.meta.url), "utf8");
-  for (const [slot] of BODY_EQUIPMENT_SLOTS) {
-    assert.match(css, new RegExp(`\\.rnr-wearable-grid > \\.slot-${slot}\\s*\\{\\s*grid-area:`));
+test("paper-doll columns place every wearable slot exactly once", () => {
+  const placed = Object.values(BODY_SLOT_COLUMNS).flat();
+  assert.deepEqual([...placed].sort(), BODY_EQUIPMENT_SLOTS.map(([key]) => key).sort());
+  assert.equal(new Set(placed).size, placed.length);
+  assert.deepEqual(BODY_SLOT_COLUMNS.center, ["head", "neck", "torso", "back"]);
+  const template = readFileSync(new URL("../templates/actor-sheet.html", import.meta.url), "utf8");
+  assert.match(template, /class="rnr-paperdoll"/);
+  assert.match(template, /data-drop-zone="body" data-body-slot="{{key}}"/);
+});
+
+test("arm and leg slots depend on their organs", () => {
+  for (const slot of ["leftArm", "rightArm", "leftLeg", "rightLeg", "leftHand", "rightHand", "leftFoot", "rightFoot"]) {
+    assert.deepEqual(BODY_SLOT_ORGANS[slot], [slot]);
   }
-  assert.match(css, /"right-arm torso left-arm"/);
-  assert.match(css, /"right-hand back left-hand"/);
-  assert.match(css, /"right-leg \. left-leg"/);
-  assert.match(css, /"right-foot \. left-foot"/);
 });
 
 test("new and legacy slot values resolve to compatible physical positions", () => {

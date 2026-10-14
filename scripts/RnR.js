@@ -1,5 +1,5 @@
 // =============================================================
-//  Role & Roll  —  RnR.js  (v0.4.0)
+//  Role & Roll  —  RnR.js  (v0.4.1)
 // =============================================================
 
 // ── Module imports ────────────────────────────────────────────
@@ -32,8 +32,9 @@ import { CONDITION_GROUPS }                                         from "./modu
 import { resolveDefenseRoll }                                      from "./modules/defenseRules.js";
 import { buildSession0Pages, GUIDE_REVISION }                from "./modules/session0Guide.js";
 import { handleMechaSummonMessage, openMechaBraceletDialog, registerMechaMacroApi } from "./modules/mecha.js";
+import { RnRDialogV2 }                                  from "./modules/dialogs.js";
 import { runSmokeTest }                                  from "./modules/smokeTest.js";
-import { BODY_EQUIPMENT_SLOTS, BODY_SLOT_ORGANS, LEGACY_BODY_SLOT_OPTIONS, allowedBodySlots, bodyEquipmentAssignments, bodySlotCandidates, isWearableItem } from "./modules/equipmentSlots.js";
+import { BODY_EQUIPMENT_SLOTS, BODY_SLOT_COLUMNS, BODY_SLOT_ORGANS, LEGACY_BODY_SLOT_OPTIONS, allowedBodySlots, bodyEquipmentAssignments, bodySlotCandidates, isWearableItem } from "./modules/equipmentSlots.js";
 
 // DocumentSheetV2 is rendering-engine agnostic. The RnR sheets use Handlebars
 // templates, so explicitly compose the Handlebars renderer into each base.
@@ -123,10 +124,39 @@ const EXTRA_SKILL_CATEGORIES = [
 ];
 
 const BASE_SPEED = 30;
+// [key, label, group, effect]. Each disabled organ grants 2 State Points.
+// The first four entries must keep their order: characters from before
+// v0.2 stored only a count, which is mapped onto the start of this list.
 const DISABLED_ORGANS = [
-  ["leftHand", "Left Hand"], ["rightHand", "Right Hand"],
-  ["leftFoot", "Left Foot"], ["rightFoot", "Right Foot"],
+  ["leftHand",  "Left Hand",  "Limbs",    "Cannot hold or wear items in this hand."],
+  ["rightHand", "Right Hand", "Limbs",    "Cannot hold or wear items in this hand."],
+  ["leftFoot",  "Left Foot",  "Limbs",    "−15 ft Speed. Cannot wear items on this foot."],
+  ["rightFoot", "Right Foot", "Limbs",    "−15 ft Speed. Cannot wear items on this foot."],
+  ["leftArm",   "Left Arm",   "Limbs",    "Also disables the left hand. Cannot wear items on this arm."],
+  ["rightArm",  "Right Arm",  "Limbs",    "Also disables the right hand. Cannot wear items on this arm."],
+  ["leftLeg",   "Left Leg",   "Limbs",    "Also disables the left foot (−15 ft Speed). Cannot wear items on this leg."],
+  ["rightLeg",  "Right Leg",  "Limbs",    "Also disables the right foot (−15 ft Speed). Cannot wear items on this leg."],
+  ["leftEye",   "Left Eye",   "Senses",   "Narrative. The GM may impose penalties on sight-based checks."],
+  ["rightEye",  "Right Eye",  "Senses",   "Narrative. The GM may impose penalties on sight-based checks."],
+  ["leftEar",   "Left Ear",   "Senses",   "Narrative. The GM may impose penalties on hearing-based checks."],
+  ["rightEar",  "Right Ear",  "Senses",   "Narrative. The GM may impose penalties on hearing-based checks."],
+  ["voice",     "Voice",      "Senses",   "Narrative. Cannot speak; communicates by other means."],
+  ["smell",     "Smell",      "Senses",   "Narrative. Cannot rely on smell or taste."],
+  ["heart",     "Heart",      "Internal", "Narrative. Needs a support device, medication or regular treatment."],
+  ["lungs",     "Lungs",      "Internal", "Narrative. Strenuous activity and breath-holding are limited."],
+  ["liver",     "Liver",      "Internal", "Narrative. Toxins and alcohol affect the character more."],
+  ["kidneys",   "Kidneys",    "Internal", "Narrative. Needs regular treatment."],
+  ["stomach",   "Stomach",    "Internal", "Narrative. Restricted diet; long rests without proper food are harder."],
+  ["spine",     "Spine",      "Internal", "Narrative. The GM decides which movements are limited."],
 ];
+
+// A disabled arm or leg also takes the hand or foot at its end out of use.
+const ORGAN_DEPENDENCIES = {
+  leftHand:  ["leftArm"],
+  rightHand: ["rightArm"],
+  leftFoot:  ["leftLeg"],
+  rightFoot: ["rightLeg"],
+};
 
 const FLAW_OPTIONS = [
   ["", "No flaw"],
@@ -465,21 +495,33 @@ function disabledOrgans(actor) {
  * name a single organ ("leftHand"), a pair ("hands", "feet"), or "fullBody"
  * for a whole-body replacement.
  */
-const PROSTHETIC_GROUPS = {
-  leftHand:  ["leftHand"],
-  rightHand: ["rightHand"],
-  hands:     ["leftHand", "rightHand"],
-  leftFoot:  ["leftFoot"],
-  rightFoot: ["rightFoot"],
-  feet:      ["leftFoot", "rightFoot"],
-  fullBody:  ["leftHand", "rightHand", "leftFoot", "rightFoot"],
+// `organs` are restored by the prosthetic; `slots` are where it must be
+// wearable for the Item sheet to offer it (eyes on the head, organs in the torso).
+const PROSTHETIC_TARGETS = {
+  leftHand:  { label: "Left Hand",  organs: ["leftHand"],  slots: ["leftHand"] },
+  rightHand: { label: "Right Hand", organs: ["rightHand"], slots: ["rightHand"] },
+  hands:     { label: "Both Hands", organs: ["leftHand", "rightHand"], slots: ["leftHand", "rightHand"] },
+  leftFoot:  { label: "Left Foot",  organs: ["leftFoot"],  slots: ["leftFoot"] },
+  rightFoot: { label: "Right Foot", organs: ["rightFoot"], slots: ["rightFoot"] },
+  feet:      { label: "Both Feet",  organs: ["leftFoot", "rightFoot"], slots: ["leftFoot", "rightFoot"] },
+  leftArm:   { label: "Left Arm (with hand)",  organs: ["leftArm", "leftHand"],   slots: ["leftArm"] },
+  rightArm:  { label: "Right Arm (with hand)", organs: ["rightArm", "rightHand"], slots: ["rightArm"] },
+  arms:      { label: "Both Arms",  organs: ["leftArm", "leftHand", "rightArm", "rightHand"], slots: ["leftArm", "rightArm"] },
+  leftLeg:   { label: "Left Leg (with foot)",  organs: ["leftLeg", "leftFoot"],   slots: ["leftLeg"] },
+  rightLeg:  { label: "Right Leg (with foot)", organs: ["rightLeg", "rightFoot"], slots: ["rightLeg"] },
+  legs:      { label: "Both Legs",  organs: ["leftLeg", "leftFoot", "rightLeg", "rightFoot"], slots: ["leftLeg", "rightLeg"] },
+  leftEye:   { label: "Left Eye",   organs: ["leftEye"],  slots: ["head"] },
+  rightEye:  { label: "Right Eye",  organs: ["rightEye"], slots: ["head"] },
+  eyes:      { label: "Both Eyes",  organs: ["leftEye", "rightEye"], slots: ["head"] },
+  ears:      { label: "Both Ears",  organs: ["leftEar", "rightEar"], slots: ["head"] },
+  voice:     { label: "Voice",      organs: ["voice"],   slots: ["neck"] },
+  heart:     { label: "Heart",      organs: ["heart"],   slots: ["torso"] },
+  lungs:     { label: "Lungs",      organs: ["lungs"],   slots: ["torso"] },
+  spine:     { label: "Spine",      organs: ["spine"],   slots: ["back"] },
+  fullBody:  { label: "Full Body / Cyborg", organs: DISABLED_ORGANS.map(([key]) => key), slots: [] },
 };
-
-const PROSTHETIC_LABELS = {
-  leftHand: "Left Hand", rightHand: "Right Hand", hands: "Both Hands",
-  leftFoot: "Left Foot", rightFoot: "Right Foot", feet: "Both Feet",
-  fullBody: "Full Body / Cyborg",
-};
+const PROSTHETIC_GROUPS = Object.fromEntries(Object.entries(PROSTHETIC_TARGETS).map(([key, target]) => [key, target.organs]));
+const PROSTHETIC_LABELS = Object.fromEntries(Object.entries(PROSTHETIC_TARGETS).map(([key, target]) => [key, target.label]));
 
 function hasProsthetic(actor, organ) {
   return (actor.items?.contents ?? []).some(item => {
@@ -491,7 +533,9 @@ function hasProsthetic(actor, organ) {
 }
 
 function organUsable(actor, organ) {
-  return !disabledOrgans(actor).includes(organ) || hasProsthetic(actor, organ);
+  const working = !disabledOrgans(actor).includes(organ) || hasProsthetic(actor, organ);
+  if (!working) return false;
+  return (ORGAN_DEPENDENCIES[organ] ?? []).every(parent => organUsable(actor, parent));
 }
 
 /**
@@ -521,7 +565,7 @@ function conditionRollPenalty(actor) {
 }
 
 function waitRnRDialog(config) {
-  const DialogV2 = globalThis.foundry?.applications?.api?.DialogV2;
+  const DialogV2 = RnRDialogV2;
   if (!DialogV2) {
     ui.notifications.error("RnR dialogs require the Foundry DialogV2 API (Foundry v13 or later).");
     return Promise.resolve(null);
@@ -531,7 +575,7 @@ function waitRnRDialog(config) {
 }
 
 function renderRnRDialog(config) {
-  const DialogV2 = globalThis.foundry?.applications?.api?.DialogV2;
+  const DialogV2 = RnRDialogV2;
   if (!DialogV2) {
     ui.notifications.error("RnR dialogs require the Foundry DialogV2 API (Foundry v13 or later).");
     return null;
@@ -2078,7 +2122,7 @@ function statePointDialog(actor) {
           const floor = 8 + originAttributeBonus(actor, key);
           if (newVal < floor)                { ui.notifications.warn(`Cannot reduce below ${floor} (base 8${floor > 8 ? " + Origin bonus" : ""}).`); return; }
 
-          const ok = await globalThis.foundry.applications.api.DialogV2.confirm({
+          const ok = await RnRDialogV2.confirm({
             window: { title: "Confirm" },
             content: `<p>${action === "remove" ? "Remove" : "Add"} ${pts} pt ${action === "remove" ? "from" : "to"} ${key}?</p>`,
             rejectClose: false,
@@ -2640,7 +2684,17 @@ function buildData(data) {
   data.statePointSpent  = statePointsSpent(actor);
   const disabled = disabledOrgans(actor);
   data.statePointMax    = 30 + (disabled.length * 2) + growthPts;
-  data.disabledOrgans  = DISABLED_ORGANS.map(([key, label]) => ({ key, label, selected: disabled.includes(key), usable: organUsable(actor, key) }));
+  data.disabledOrgans  = DISABLED_ORGANS.map(([key, label, group, effect]) => {
+    const selected = disabled.includes(key);
+    const usable = organUsable(actor, key);
+    const status = !usable ? "Disabled" : selected ? "Prosthetic" : "Functional";
+    return { key, label, group, effect, selected, usable, status, statusClass: status.toLowerCase() };
+  });
+  data.disabledOrganGroups = [...new Set(DISABLED_ORGANS.map(([, , group]) => group))].map(group => {
+    const organs = data.disabledOrgans.filter(organ => organ.group === group);
+    return { label: group, organs, selectedCount: organs.filter(organ => organ.selected).length };
+  });
+  data.disabledOrganCount = disabled.length;
   data.leftHandUsable  = organUsable(actor, "leftHand");
   data.rightHandUsable = organUsable(actor, "rightHand");
 
@@ -2834,6 +2888,11 @@ class RnRItemSheet extends RnRHandlebarsItemSheet {
     return fitSheetToViewport(super._initializeApplicationOptions(options));
   }
 
+  /** Close at once instead of waiting for Foundry's shrink animation. */
+  close(options = {}) {
+    return super.close({ animate: false, ...options });
+  }
+
   async _prepareContext(options) {
     const base = await super._prepareContext(options);
     const data = { ...base, item: this.item, system: this.item.system ?? {}, cssClass: "" };
@@ -2877,8 +2936,8 @@ class RnRItemSheet extends RnRHandlebarsItemSheet {
     // worn, so a head-mounted device cannot be set to replace a foot.
     const wearableSlots = new Set(allowedBodySlots(data.item));
     const currentProsthetic = data.item.system.prostheticFor || "";
-    data.prostheticOptions = Object.entries(PROSTHETIC_GROUPS)
-      .filter(([value, organs]) => value === "fullBody" || organs.every(organ => wearableSlots.has(organ)))
+    data.prostheticOptions = Object.entries(PROSTHETIC_TARGETS)
+      .filter(([value, target]) => value === "fullBody" || target.slots.every(slot => wearableSlots.has(slot)))
       .map(([value]) => ({ value, label: PROSTHETIC_LABELS[value] ?? value, selected: currentProsthetic === value }));
     data.isLeftHand   = data.item.system.handSlot === "left";
     data.isRightHand  = data.item.system.handSlot === "right";
@@ -3312,7 +3371,7 @@ function bindCommonListeners(sheet, html) {
     const id = ev.currentTarget.dataset.itemId || ev.currentTarget.closest("[data-item-id]")?.dataset.itemId;
     const item = actor.items.get(id);
     if (!item) return;
-    const ok = await globalThis.foundry.applications.api.DialogV2.confirm({
+    const ok = await RnRDialogV2.confirm({
       window: { title: "Delete Item" },
       content: `<p>Delete <strong>${item.name}</strong>?</p>`,
       rejectClose: false,
@@ -3651,6 +3710,11 @@ class RnRActorSheet extends RnRHandlebarsActorSheet {
     return fitSheetToViewport(super._initializeApplicationOptions(options));
   }
 
+  /** Close at once instead of waiting for Foundry's shrink animation. */
+  close(options = {}) {
+    return super.close({ animate: false, ...options });
+  }
+
   async _prepareContext(options) {
     const base = await super._prepareContext(options);
     const actor = this.actor;
@@ -3731,7 +3795,17 @@ class RnRActorSheet extends RnRHandlebarsActorSheet {
     // while the sheet silently refused to accept anything for it.
     data.leftHand  = data.items.find(i => i.handSlot === "left" || (i.handSlot === "right" && handsNeeded(i) === 2)) || null;
     data.rightHand = data.items.find(i => i.handSlot === "right" || (i.handSlot === "left"  && handsNeeded(i) === 2)) || null;
-    data.bodyEquipment = bodySlots.map(([key, label, icon]) => ({ key, label, icon, cssClass: `slot-${key}`, item: data.items.find(i => i.equipmentSlot === key) || null }));
+    data.bodyEquipment = bodySlots.map(([key, label, icon]) => ({
+      key, label, icon, cssClass: `slot-${key}`,
+      usable: bodySlotUsable(actor, key),
+      item: data.items.find(i => i.equipmentSlot === key) || null,
+    }));
+    const slotByKey = new Map(data.bodyEquipment.map(slot => [slot.key, slot]));
+    data.wearColumns = Object.entries(BODY_SLOT_COLUMNS).map(([column, keys]) => ({
+      column, slots: keys.map(key => slotByKey.get(key)).filter(Boolean),
+    }));
+    data.wornCount = data.bodyEquipment.filter(slot => slot.item).length;
+    data.wearSlotCount = data.bodyEquipment.length;
     data.backpackItems = data.items.filter(i => !i.handSlot && !i.equipmentSlot);
     const makeGroups = keys => Object.entries(backpackCategoryLabels)
       .filter(([key]) => keys.includes(key))
@@ -3819,7 +3893,7 @@ class RnRActorSheet extends RnRHandlebarsActorSheet {
     });
     if (game.user.isGM) {
       html.find("[data-action='death-decease']").on("click", async () => {
-        const yes = await globalThis.foundry.applications.api.DialogV2.confirm({
+        const yes = await RnRDialogV2.confirm({
           window: { title: "Declare Deceased" },
           content: `<p>Mark <strong>${actor.name}</strong> as deceased?</p>
             <p class="notes">This is a GM decision, never automatic. Recovery will be blocked until a
@@ -3887,6 +3961,11 @@ class RnRNpcSheet extends RnRHandlebarsActorSheet {
 
   _initializeApplicationOptions(options) {
     return fitSheetToViewport(super._initializeApplicationOptions(options));
+  }
+
+  /** Close at once instead of waiting for Foundry's shrink animation. */
+  close(options = {}) {
+    return super.close({ animate: false, ...options });
   }
 
   async _prepareContext(options) {

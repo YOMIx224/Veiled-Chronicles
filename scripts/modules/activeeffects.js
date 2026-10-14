@@ -1,3 +1,4 @@
+import { RnRDialogV2 } from "./dialogs.js";
 // =============================================================
 //  RnR — activeeffects.js
 //  Active Effects UI — create, edit, toggle, duration tracking
@@ -69,7 +70,7 @@ export async function createEffectDialog(actor) {
   const modeOpts = Object.entries(MODES)
     .map(([name, val]) => `<option value="${val}">${name}</option>`).join("");
 
-  const DialogV2 = globalThis.foundry.applications.api.DialogV2;
+  const DialogV2 = RnRDialogV2;
   const classes = [...new Set([...(DialogV2.DEFAULT_OPTIONS?.classes ?? []), "rnr-dialog"] )];
   await DialogV2.wait({
     classes,

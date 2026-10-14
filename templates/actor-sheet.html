@@ -271,14 +271,20 @@
               <textarea name="system.identity.sourceOfWillpower" rows="4" placeholder="A person, object, or story that restores focus…">{{biographyFields.sourceOfWillpower}}</textarea>
             </label>
             <label class="rnr-organ-toggle"><input type="checkbox" name="system.identity.disabledOrgansEnabled" {{#if disabledOrgansEnabled}}checked{{/if}}> Enable disabled-organ rules</label>
-            <p class="rnr-help-text">Choose any number of affected areas. Each selected organ adds 2 State Points. Prosthetic equipment can restore normal use.</p>
+            <p class="rnr-help-text">Choose any number of affected organs. Each one adds 2 State Points ({{disabledOrganCount}} selected). A worn prosthetic restores normal use.</p>
             <div class="rnr-organ-picker {{#unless disabledOrgansEnabled}}is-disabled{{/unless}}" aria-label="Disabled organs">
-              {{#each disabledOrgans}}
-              <label class="rnr-organ-choice {{#if selected}}selected{{/if}}">
-                <input type="checkbox" name="system.identity.disabledOrgans" value="{{key}}" {{#if selected}}checked{{/if}} {{#unless ../disabledOrgansEnabled}}disabled{{/unless}}>
-                <span class="rnr-organ-choice-mark">{{#if selected}}✓{{else}}＋{{/if}}</span>
-                <span><strong>{{label}}</strong><small>{{#if usable}}Functional{{else}}Disabled{{/if}}</small></span>
-              </label>
+              {{#each disabledOrganGroups}}
+              <fieldset class="rnr-organ-group">
+                <legend>{{label}}{{#if selectedCount}} <span class="rnr-organ-group-count">{{selectedCount}}</span>{{/if}}</legend>
+                <div class="rnr-organ-group-list">
+                  {{#each organs}}
+                  <label class="rnr-organ-choice {{#if selected}}selected{{/if}} is-{{statusClass}}" title="{{effect}}">
+                    <input type="checkbox" name="system.identity.disabledOrgans" value="{{key}}" {{#if selected}}checked{{/if}} {{#unless @root.disabledOrgansEnabled}}disabled{{/unless}}>
+                    <span class="rnr-organ-choice-text"><strong>{{label}}</strong><small>{{status}}</small></span>
+                  </label>
+                  {{/each}}
+                </div>
+              </fieldset>
               {{/each}}
             </div>
             <div class="rnr-state-point-summary">State Points <strong>{{statePointSpent}} / {{statePointMax}}</strong></div>
@@ -450,15 +456,34 @@
       </div>
 
         {{!-- WEARABLE EQUIPMENT --}}
+        {{#*inline "rnrWearSlot"}}
+        <div class="rnr-body-slot rnr-wear-slot {{cssClass}} {{#if item}}filled{{/if}} {{#unless usable}}is-unusable{{/unless}}" data-drop-zone="body" data-body-slot="{{key}}" data-item-id="{{item.id}}" draggable="{{#if item}}true{{else}}false{{/if}}" title="{{label}}{{#unless usable}} — disabled organ{{/unless}}">
+          <div class="rnr-wear-slot-icon">
+            {{#if item}}<img src="{{item.img}}" alt="" data-action="item-roll" data-item-id="{{item.id}}" title="Show in chat">{{else}}<span aria-hidden="true">{{icon}}</span>{{/if}}
+          </div>
+          <div class="rnr-wear-slot-body">
+            <span class="rnr-wear-slot-label">{{label}}</span>
+            {{#if item}}
+            <span class="rnr-wear-slot-name" data-action="item-roll" data-item-id="{{item.id}}" title="Show in chat (Shift+Click to quick-roll)">{{item.name}}</span>
+            <span class="rnr-wear-slot-stats">{{#if item.armorValue}}<span>DR +{{item.armorValue}}</span>{{/if}}{{#if item.speedBonus}}<span>Speed {{item.speedBonus}}</span>{{/if}}</span>
+            {{else}}
+            <span class="rnr-wear-slot-empty">{{#if usable}}Empty — drop an item{{else}}Unavailable{{/if}}</span>
+            {{/if}}
+          </div>
+          {{#if item}}
+          <div class="rnr-wear-slot-actions">
+            {{#if item.isMechaBracelet}}<button type="button" class="rnr-mecha-bracelet-btn" data-action="mecha-bracelet" data-item-id="{{item.id}}" title="Summon a Mecha or return to Pilot mode">Activate</button>{{/if}}
+            <button type="button" class="rnr-wear-slot-remove" data-action="clear-body" data-item-id="{{item.id}}" title="Unequip" aria-label="Unequip {{item.name}}">×</button>
+          </div>
+          {{/if}}
+        </div>
+        {{/inline}}
         <div class="rnr-backpack-section rnr-wearable-section">
-          <h3>WEARABLE EQUIPMENT <small>Drag items here or choose a slot below</small></h3>
-          <div class="rnr-wearable-grid">
-            {{#each bodyEquipment}}
-            <div class="rnr-body-slot {{cssClass}} {{#if item}}filled{{/if}}" data-drop-zone="body" data-body-slot="{{key}}" data-item-id="{{item.id}}" draggable="{{#if item}}true{{else}}false{{/if}}" title="{{label}}">
-              <div class="rnr-body-slot-head"><span class="rnr-body-slot-icon">{{icon}}</span><strong>{{label}}</strong></div>
-              {{#if item}}
-              <div class="rnr-body-slot-item"><img src="{{item.img}}" alt="" data-action="item-roll" data-item-id="{{item.id}}" style="cursor:pointer" title="Show in chat"><span data-action="item-roll" data-item-id="{{item.id}}" style="cursor:pointer" title="Show in chat (Shift+Click to quick-roll)">{{item.name}}</span>{{#if item.isMechaBracelet}}<button type="button" class="rnr-mecha-bracelet-btn" data-action="mecha-bracelet" data-item-id="{{item.id}}" title="Summon a Mecha or return to Pilot mode">Activate</button>{{/if}}<button type="button" data-action="clear-body" data-item-id="{{item.id}}" title="Unequip">×</button></div>
-              {{else}}<div class="rnr-body-slot-empty">Drop wearable item</div>{{/if}}
+          <h3>WEARABLE EQUIPMENT <small>{{wornCount}} / {{wearSlotCount}} worn · Armor DR {{armorDamageReduction}}</small></h3>
+          <div class="rnr-paperdoll">
+            {{#each wearColumns}}
+            <div class="rnr-paperdoll-column rnr-paperdoll-{{column}}">
+              {{#each slots}}{{> rnrWearSlot}}{{/each}}
             </div>
             {{/each}}
           </div>
