@@ -24,7 +24,8 @@ test("paper-doll columns place every wearable slot exactly once", () => {
   assert.equal(new Set(placed).size, placed.length);
   assert.deepEqual(BODY_SLOT_COLUMNS.center, ["head", "neck", "torso", "back"]);
   const template = readFileSync(new URL("../templates/actor-sheet.html", import.meta.url), "utf8");
-  assert.match(template, /class="rnr-paperdoll"/);
+  assert.match(template, /class="rnr-loadout"/);
+  assert.match(template, /{{{equipFigure}}}/);
   assert.match(template, /data-drop-zone="body" data-body-slot="{{key}}"/);
 });
 

@@ -7,17 +7,10 @@
     <div class="rnr-title-block">
       <h1>PLAYER CHARACTER</h1>
       <input name="name" type="text" value="{{actor.name}}" aria-label="Character name" />
-      <small>{{system.identity.race}} · {{settingProfileLabel}}</small>
+      {{#if system.identity.race}}<small>{{system.identity.race}}</small>{{/if}}
     </div>
 
     <div class="rnr-top-actions">
-      {{!-- Theme follows the campaign setting (Tool Settings → Campaign Setting
-           Profile). A per-sheet picker used to sit here; a world can read as one
-           genre everywhere, so the label is shown read-only. --}}
-      <label class="rnr-setting-picker" title="{{settingProfileHint}}">
-        <span aria-hidden="true">🎨</span>
-        <strong>{{settingProfileLabel}}</strong>
-      </label>
       <button type="button" class="rnr-icon-button" data-action="close" title="Close">×</button>
     </div>
 
@@ -270,24 +263,39 @@
             <label class="rnr-bio-text-field">Source of willpower
               <textarea name="system.identity.sourceOfWillpower" rows="4" placeholder="A person, object, or story that restores focus…">{{biographyFields.sourceOfWillpower}}</textarea>
             </label>
-            <label class="rnr-organ-toggle"><input type="checkbox" name="system.identity.disabledOrgansEnabled" {{#if disabledOrgansEnabled}}checked{{/if}}> Enable disabled-organ rules</label>
-            <p class="rnr-help-text">Choose any number of affected organs. Each one adds 2 State Points ({{disabledOrganCount}} selected). A worn prosthetic restores normal use.</p>
-            <div class="rnr-organ-picker {{#unless disabledOrgansEnabled}}is-disabled{{/unless}}" aria-label="Disabled organs">
-              {{#each disabledOrganGroups}}
-              <fieldset class="rnr-organ-group">
-                <legend>{{label}}{{#if selectedCount}} <span class="rnr-organ-group-count">{{selectedCount}}</span>{{/if}}</legend>
-                <div class="rnr-organ-group-list">
-                  {{#each organs}}
-                  <label class="rnr-organ-choice {{#if selected}}selected{{/if}} is-{{statusClass}}" title="{{effect}}">
-                    <input type="checkbox" name="system.identity.disabledOrgans" value="{{key}}" {{#if selected}}checked{{/if}} {{#unless @root.disabledOrgansEnabled}}disabled{{/unless}}>
-                    <span class="rnr-organ-choice-text"><strong>{{label}}</strong><small>{{status}}</small></span>
-                  </label>
-                  {{/each}}
-                </div>
-              </fieldset>
-              {{/each}}
-            </div>
             <div class="rnr-state-point-summary">State Points <strong>{{statePointSpent}} / {{statePointMax}}</strong></div>
+          </section>
+          <section class="rnr-bio-card rnr-bio-wide-card rnr-body-condition">
+            <header class="rnr-body-condition-head">
+              <h3>Body Condition</h3>
+              <label class="rnr-organ-toggle"><input type="checkbox" name="system.identity.disabledOrgansEnabled" {{#if disabledOrgansEnabled}}checked{{/if}}> Enable disabled-organ rules</label>
+            </header>
+            <div class="rnr-body-condition-layout {{#unless disabledOrgansEnabled}}is-off{{/unless}}">
+              <div class="rnr-body-figure" data-figure="organs">
+                {{{organFigure}}}
+                <ul class="rnr-figure-legend">
+                  <li class="is-disabled">Disabled</li>
+                  <li class="is-prosthetic">Prosthetic</li>
+                </ul>
+              </div>
+              <div class="rnr-organ-picker" aria-label="Disabled organs">
+                <p class="rnr-help-text">Click a body part or choose below. Each disabled organ adds <strong>2 State Points</strong> — {{disabledOrganCount}} selected, +{{organStatePoints}} points. A worn prosthetic restores normal use.</p>
+                {{#each disabledOrganGroups}}
+                <div class="rnr-organ-group">
+                  <h4>{{label}}{{#if selectedCount}} <span class="rnr-organ-group-count">{{selectedCount}}</span>{{/if}}</h4>
+                  <div class="rnr-organ-chips">
+                    {{#each organs}}
+                    <label class="rnr-organ-choice {{#if selected}}selected{{/if}} is-{{statusClass}}" title="{{label}}: {{effect}}" data-organ="{{key}}">
+                      <input type="checkbox" name="system.identity.disabledOrgans" value="{{key}}" {{#if selected}}checked{{/if}} {{#unless @root.disabledOrgansEnabled}}disabled{{/unless}}>
+                      <span>{{label}}</span>
+                      {{#unless usable}}<i class="rnr-organ-flag" aria-label="Disabled">✕</i>{{else}}{{#if selected}}<i class="rnr-organ-flag" aria-label="Prosthetic">⚙</i>{{/if}}{{/unless}}
+                    </label>
+                    {{/each}}
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+            </div>
           </section>
           <section class="rnr-bio-card rnr-bio-wide-card">
             <h3>Personality &amp; Story</h3>
@@ -480,12 +488,13 @@
         {{/inline}}
         <div class="rnr-backpack-section rnr-wearable-section">
           <h3>WEARABLE EQUIPMENT <small>{{wornCount}} / {{wearSlotCount}} worn · Armor DR {{armorDamageReduction}}</small></h3>
-          <div class="rnr-paperdoll">
-            {{#each wearColumns}}
-            <div class="rnr-paperdoll-column rnr-paperdoll-{{column}}">
-              {{#each slots}}{{> rnrWearSlot}}{{/each}}
+          <div class="rnr-loadout">
+            <div class="rnr-loadout-core">{{#each wearCore}}{{> rnrWearSlot}}{{/each}}</div>
+            <div class="rnr-loadout-body">
+              <div class="rnr-loadout-side rnr-loadout-right">{{#each wearRight}}{{> rnrWearSlot}}{{/each}}</div>
+              <div class="rnr-body-figure" data-figure="equipment">{{{equipFigure}}}</div>
+              <div class="rnr-loadout-side rnr-loadout-left">{{#each wearLeft}}{{> rnrWearSlot}}{{/each}}</div>
             </div>
-            {{/each}}
           </div>
         </div>
 

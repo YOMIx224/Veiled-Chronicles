@@ -1518,9 +1518,6 @@
 .rnr-npc-btn-sm:hover { background: #2a4a2a; }
 
 /* Tabs */
-.rnr-npc-sheet .rnr-tabs { background: #1a1c20; padding: 8px 14px 0; }
-.rnr-npc-sheet .rnr-tabs .item { border-color: #3a5a3a; background: #202820; color: #8ab88a; }
-.rnr-npc-sheet .rnr-tabs .item.active { background: #2a5a2a; color: #c9e8a0; }
 
 /* Body */
 .rnr-npc-body {
@@ -4279,94 +4276,114 @@
 }
 
 /* ============================================================
-   Wearable Equipment — paper doll (v0.4.1)
-   ============================================================
-   Three columns: the character's right side, the body centre (head, neck,
-   torso, back) over a faint silhouette, and the left side. Scoped under
-   .rnr-paperdoll so the older .rnr-wearable-grid / .rnr-fullbody-equipment
-   rules no longer apply. */
+   Body figure (v0.4.2) — shared by Wearable Equipment and Body Condition
+   ============================================================ */
+.rnr-body-figure { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; }
+.rnr-body-figure .rnr-fig { display: block; width: 100%; max-width: 170px; height: auto; overflow: visible; }
+.rnr-fig-region {
+  fill: rgba(157, 165, 179, .13);
+  stroke: rgba(157, 165, 179, .38);
+  stroke-width: .8;
+  transition: fill .12s ease, stroke .12s ease;
+}
+.rnr-fig-region[data-region="back"] { fill: rgba(157, 165, 179, .06); stroke-dasharray: 2 2; }
+.rnr-fig-organs .rnr-fig-region { fill: rgba(232, 234, 240, .07); stroke: rgba(232, 234, 240, .28); }
+.rnr-fig-region.is-equipped { fill: rgba(199, 163, 107, .5); stroke: #e3c891; }
+.rnr-fig-region.is-unusable,
+.rnr-fig-region.is-disabled { fill: rgba(190, 82, 96, .62); stroke: #e7a2ac; }
+.rnr-fig-region.is-prosthetic { fill: rgba(86, 156, 204, .58); stroke: #9fd0ea; }
+.rnr-fig-region.is-hover { stroke: #fff1cf; stroke-width: 1.8; }
+.rnr-fig-region[data-organ] { cursor: pointer; }
+.rnr-fig-region[data-organ]:hover { stroke: #fff1cf; stroke-width: 1.6; }
+
+/* ============================================================
+   Wearable Equipment — loadout (v0.4.2)
+   Core slots across the top; limbs flank the body figure, each row lined
+   up with the part of the body it covers.
+   ============================================================ */
 .rnr-wearable-section { container-type: inline-size; }
 .rnr-wearable-section > h3 small { font-variant-numeric: tabular-nums; }
-
-.rnr-paperdoll {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1fr);
+.rnr-loadout {
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   padding: 12px;
   border: 1px solid var(--rnr-border, #3b4351);
   border-radius: 8px;
   background:
-    radial-gradient(ellipse at 50% 35%, rgba(199, 163, 107, .08), transparent 60%),
+    radial-gradient(ellipse at 50% 60%, rgba(199, 163, 107, .07), transparent 62%),
     var(--rnr-panel, #161a21);
 }
-.rnr-paperdoll-column { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-.rnr-paperdoll-center {
-  position: relative;
-  padding: 0 4px;
-  background: no-repeat center 46% / auto 92%
-    url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 220%22%3E%3Cg fill=%22%23c7a36b%22 fill-opacity=%22.07%22%3E%3Ccircle cx=%2250%22 cy=%2222%22 r=%2216%22/%3E%3Crect x=%2230%22 y=%2242%22 width=%2240%22 height=%2270%22 rx=%2214%22/%3E%3Crect x=%2210%22 y=%2246%22 width=%2216%22 height=%2262%22 rx=%228%22/%3E%3Crect x=%2274%22 y=%2246%22 width=%2216%22 height=%2262%22 rx=%228%22/%3E%3Crect x=%2232%22 y=%22110%22 width=%2215%22 height=%2292%22 rx=%227%22/%3E%3Crect x=%2253%22 y=%22110%22 width=%2215%22 height=%2292%22 rx=%227%22/%3E%3C/g%3E%3C/svg%3E");
+.rnr-loadout-core { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.rnr-loadout-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(120px, 160px) minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
 }
+.rnr-loadout-side { display: grid; grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 8px; min-width: 0; }
 
-.rnr-paperdoll .rnr-body-slot.rnr-wear-slot {
+.rnr-loadout .rnr-body-slot.rnr-wear-slot {
   position: relative;
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr) auto;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
   align-items: center;
   justify-content: stretch;
   gap: 8px;
-  min-height: 56px;
+  min-height: 52px;
   margin: 0;
-  padding: 7px 8px;
+  padding: 6px 8px;
   border: 1px dashed var(--rnr-border, #3b4351);
   border-radius: 6px;
-  background: rgba(20, 24, 31, .82);
+  background: rgba(20, 24, 31, .85);
   text-align: left;
   transform: none;
   transition: border-color .12s ease, background .12s ease, box-shadow .12s ease;
 }
-.rnr-paperdoll .rnr-body-slot.rnr-wear-slot::after { content: none; display: none; }
-.rnr-paperdoll .rnr-body-slot.rnr-wear-slot:hover { border-color: var(--rnr-accent, #c7a36b); background: rgba(41, 49, 60, .9); }
-.rnr-paperdoll .rnr-body-slot.rnr-wear-slot.filled {
+/* Older layouts pinned slots to fixed grid cells (.slot-head { grid-column: 1 } …). */
+.rnr-loadout .rnr-body-slot.rnr-wear-slot { grid-column: auto; grid-row: auto; }
+.rnr-loadout .rnr-body-slot.rnr-wear-slot::after { content: none; display: none; }
+.rnr-loadout .rnr-body-slot.rnr-wear-slot:hover { border-color: var(--rnr-accent, #c7a36b); background: rgba(41, 49, 60, .92); }
+.rnr-loadout .rnr-body-slot.rnr-wear-slot.filled {
   border-style: solid;
-  border-color: rgba(199, 163, 107, .55);
-  background: linear-gradient(135deg, rgba(104, 76, 43, .28), rgba(20, 24, 31, .92));
-  box-shadow: inset 0 0 0 1px rgba(199, 163, 107, .08);
+  border-color: rgba(199, 163, 107, .6);
+  background: linear-gradient(135deg, rgba(104, 76, 43, .3), rgba(20, 24, 31, .94));
 }
-.rnr-paperdoll .rnr-body-slot.rnr-wear-slot.is-drag-over {
+.rnr-loadout .rnr-body-slot.rnr-wear-slot.is-drag-over {
   border-style: solid;
   border-color: #f0c070;
   background: rgba(154, 118, 71, .35);
   box-shadow: 0 0 0 2px rgba(240, 192, 112, .3);
   transform: none;
 }
-.rnr-paperdoll .rnr-body-slot.rnr-wear-slot.is-unusable {
-  border-color: rgba(169, 103, 112, .5);
-  background: repeating-linear-gradient(135deg, rgba(48, 36, 43, .9) 0 6px, rgba(36, 28, 33, .9) 6px 12px);
-  opacity: .75;
+.rnr-loadout .rnr-body-slot.rnr-wear-slot.is-unusable {
+  border-color: rgba(190, 82, 96, .5);
+  background: repeating-linear-gradient(135deg, rgba(48, 34, 40, .92) 0 6px, rgba(36, 27, 32, .92) 6px 12px);
 }
-.rnr-paperdoll .rnr-body-slot.rnr-wear-slot[draggable="true"] { cursor: grab; }
-.rnr-paperdoll .rnr-body-slot.rnr-wear-slot.is-dragging { opacity: .45; }
+.rnr-loadout .rnr-body-slot.rnr-wear-slot[draggable="true"] { cursor: grab; }
+.rnr-loadout .rnr-body-slot.rnr-wear-slot.is-dragging { opacity: .45; }
+.rnr-loadout-right .rnr-wear-slot { text-align: right; }
 
 .rnr-wear-slot-icon {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   overflow: hidden;
   border: 1px solid var(--rnr-border, #3b4351);
   border-radius: 6px;
   background: rgba(8, 10, 14, .6);
   color: var(--rnr-accent, #c7a36b);
-  font-size: 1rem;
+  font-size: .95rem;
 }
-.rnr-wear-slot.filled .rnr-wear-slot-icon { border-color: rgba(199, 163, 107, .6); }
+.rnr-wear-slot.filled .rnr-wear-slot-icon { border-color: rgba(199, 163, 107, .65); }
 .rnr-wear-slot-icon img { width: 100%; height: 100%; object-fit: cover; border: 0; cursor: pointer; }
-.rnr-wear-slot-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.rnr-wear-slot-body { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
 .rnr-wear-slot-label {
   color: var(--rnr-muted, #9da5b3);
-  font-size: .56rem;
-  font-weight: 700;
-  letter-spacing: .08em;
+  font-size: .54rem;
+  font-weight: 800;
+  letter-spacing: .09em;
   text-transform: uppercase;
 }
 .rnr-wear-slot-name {
@@ -4386,13 +4403,14 @@
   border-radius: 8px;
   background: rgba(199, 163, 107, .15);
   color: #e3c891;
-  font-size: .55rem;
+  font-size: .54rem;
   line-height: 1.5;
 }
 .rnr-wear-slot-empty { color: var(--rnr-muted, #9da5b3); font-size: .6rem; font-style: italic; }
-.rnr-wear-slot.is-unusable .rnr-wear-slot-empty { color: #d79aa3; font-style: normal; }
-.rnr-wear-slot-actions { display: flex; align-items: center; gap: 4px; }
-.rnr-paperdoll .rnr-wear-slot-actions button {
+.rnr-wear-slot.is-unusable .rnr-wear-slot-empty { color: #e7a2ac; font-style: normal; font-weight: 700; }
+.rnr-wear-slot-actions { display: flex; align-items: center; gap: 4px; opacity: .55; transition: opacity .12s ease; }
+.rnr-wear-slot:hover .rnr-wear-slot-actions { opacity: 1; }
+.rnr-loadout .rnr-wear-slot-actions button {
   height: 22px;
   min-height: 0;
   padding: 0 6px;
@@ -4403,64 +4421,289 @@
   font-size: .6rem;
   line-height: 1;
 }
-.rnr-paperdoll .rnr-wear-slot-actions .rnr-wear-slot-remove { width: 22px; padding: 0; font-size: .85rem; }
-.rnr-paperdoll .rnr-wear-slot-actions .rnr-wear-slot-remove:hover { border-color: #a96770; background: #5a2f37; color: #fff; }
+.rnr-loadout .rnr-wear-slot-actions .rnr-wear-slot-remove { width: 22px; padding: 0; font-size: .85rem; }
+.rnr-loadout .rnr-wear-slot-actions .rnr-wear-slot-remove:hover { border-color: #be5260; background: #5a2f37; color: #fff; }
 
-@container (max-width: 620px) {
-  .rnr-paperdoll { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-  .rnr-paperdoll-center {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-column: 1 / -1;
-    grid-row: 1;
-    background: none;
-  }
+@container (max-width: 640px) {
+  .rnr-loadout-core { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rnr-loadout-body { grid-template-columns: minmax(0, 1fr) 96px minmax(0, 1fr); gap: 8px; }
+  .rnr-loadout .rnr-body-slot.rnr-wear-slot { grid-template-columns: 28px minmax(0, 1fr) auto; }
+  .rnr-wear-slot-icon { width: 28px; height: 28px; }
 }
-@container (max-width: 400px) {
-  .rnr-paperdoll, .rnr-paperdoll-center { grid-template-columns: minmax(0, 1fr); }
+@container (max-width: 440px) {
+  .rnr-loadout-body { grid-template-columns: minmax(0, 1fr); }
+  .rnr-loadout-body .rnr-body-figure { display: none; }
+  .rnr-loadout-core { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ============================================================
-   Disabled organs — grouped picker (v0.4.1)
+   Body Condition — disabled organs (v0.4.2)
    ============================================================ */
-.rnr-organ-picker { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-.rnr-organ-group {
-  margin: 0;
-  padding: 6px 8px 8px;
-  border: 1px solid var(--rnr-border, #3b4351);
-  border-radius: 6px;
+.rnr-body-condition { container-type: inline-size; }
+/* The Biography grid has 12 columns and "wide" cards span 6; this one spans all. */
+.rnr-sheet .rnr-bio-layout > .rnr-bio-card.rnr-body-condition { grid-column: 1 / -1 !important; }
+.rnr-body-condition-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 14px; }
+.rnr-body-condition-head h3 { margin: 0; }
+.rnr-body-condition-head .rnr-organ-toggle { margin: 0 !important; }
+.rnr-body-condition-layout {
+  display: grid;
+  grid-template-columns: minmax(130px, 170px) minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  margin-top: 10px;
 }
-.rnr-organ-group legend {
-  padding: 0 4px;
+.rnr-body-condition-layout.is-off { opacity: .45; }
+.rnr-body-condition-layout.is-off .rnr-fig-region[data-organ] { cursor: default; pointer-events: none; }
+.rnr-figure-legend { display: flex; justify-content: center; gap: 12px; margin: 8px 0 0; padding: 0; list-style: none; color: var(--rnr-muted, #9da5b3); font-size: .58rem; }
+.rnr-figure-legend li { display: flex; align-items: center; gap: 4px; }
+.rnr-figure-legend li::before { content: ""; width: 9px; height: 9px; border-radius: 50%; }
+.rnr-figure-legend .is-disabled::before { background: #be5260; }
+.rnr-figure-legend .is-prosthetic::before { background: #569ccc; }
+
+.rnr-body-condition .rnr-organ-picker { display: flex; flex-direction: column; gap: 10px; margin: 0; opacity: 1; }
+.rnr-body-condition .rnr-organ-picker .rnr-help-text { margin: 0; }
+.rnr-organ-group h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 6px;
   color: var(--rnr-accent, #c7a36b);
-  font-size: .62rem;
+  font-size: .6rem;
   font-weight: 800;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   text-transform: uppercase;
 }
 .rnr-organ-group-count {
-  display: inline-block;
   min-width: 16px;
-  margin-left: 4px;
-  padding: 0 4px;
+  padding: 0 5px;
   border-radius: 8px;
   background: #914b59;
   color: #fff;
   font-size: .55rem;
+  letter-spacing: 0;
   text-align: center;
 }
-.rnr-organ-group-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 6px; }
-.rnr-organ-picker .rnr-organ-choice {
-  display: flex !important;
+.rnr-organ-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.rnr-organ-chips .rnr-organ-choice {
+  position: relative;
+  display: inline-flex !important;
+  flex-direction: row !important;
+  white-space: nowrap;
   align-items: center;
-  gap: 7px !important;
-  min-height: 38px;
-  padding: 5px 8px;
+  gap: 6px !important;
+  min-height: 0;
+  margin: 0;
+  padding: 4px 11px;
+  border: 1px solid var(--rnr-border, #3b4351);
+  border-radius: 999px;
+  background: #1b2029;
+  color: var(--rnr-text, #e8eaf0);
+  font-size: .68rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color .12s ease, background .12s ease;
 }
-.rnr-organ-choice-text { display: flex; flex-direction: column; min-width: 0; }
-.rnr-organ-choice-text strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.rnr-organ-choice.is-disabled small { color: #d79aa3; }
-.rnr-organ-choice.is-prosthetic small { color: #8fc1d9; }
+.rnr-organ-chips .rnr-organ-choice:hover { border-color: var(--rnr-accent, #c7a36b); background: #242b37; }
+.rnr-organ-chips .rnr-organ-choice input {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+}
+.rnr-organ-chips .rnr-organ-choice:has(input:focus-visible) { outline: 2px solid var(--rnr-accent, #c7a36b); outline-offset: 1px; }
+.rnr-organ-chips .rnr-organ-choice.is-disabled { border-color: #be5260; background: rgba(190, 82, 96, .25); color: #ffd9de; }
+.rnr-organ-chips .rnr-organ-choice.is-prosthetic { border-color: #569ccc; background: rgba(86, 156, 204, .2); color: #d8eefa; }
+.rnr-organ-chips .rnr-organ-choice > span { display: inline; }
+.rnr-organ-flag { font-size: .62rem; font-style: normal; line-height: 1; }
+.rnr-body-condition-layout.is-off .rnr-organ-choice { cursor: default; }
+
+@container (max-width: 520px) {
+  .rnr-body-condition-layout { grid-template-columns: minmax(0, 1fr); }
+  .rnr-body-condition .rnr-body-figure .rnr-fig { max-width: 140px; }
+}
+
+/* ============================================================
+   NPC sheet (v0.4.2) — same structure as the character sheet, with a green
+   NPC accent so the two are never confused at the table.
+   ============================================================ */
+.rnr-npc-sheet { container-type: inline-size; background: #101216; color: #e7e9ec; }
+.rnr-npc-topbar {
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  min-height: 118px;
+  padding: 14px 18px 18px;
+  background: linear-gradient(145deg, #173a2c, #13201b 58%, #111214);
+  border-bottom: 1px solid #5f9a6e;
+}
+.rnr-npc-topbar::after { background: repeating-linear-gradient(125deg, transparent 0 18px, #79c08a 19px 20px, transparent 21px 34px); }
+.rnr-npc-topbar .rnr-npc-portrait {
+  position: relative;
+  z-index: 1;
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border: 2px solid #5f9a6e;
+  border-radius: 6px;
+  background: #0d0f12;
+  cursor: pointer;
+}
+.rnr-npc-topbar .rnr-title-block h1 .rnr-npc-kind { color: #9fd3ac; }
+.rnr-npc-topbar .rnr-title-block input[name="name"] { border-bottom-color: #79c08a; }
+.rnr-npc-topbar .rnr-npc-meta { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 8px; }
+.rnr-npc-topbar .rnr-npc-meta label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #a9c2b0;
+  font-size: .58rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.rnr-npc-topbar .rnr-npc-meta input,
+.rnr-npc-topbar .rnr-npc-meta select {
+  width: 120px;
+  height: 24px;
+  min-height: 0;
+  padding: 0 6px;
+  border: 1px solid #3d5a47;
+  border-radius: 3px;
+  background: rgba(8, 10, 14, .6);
+  color: #f1f4ef;
+  font-size: .72rem;
+}
+.rnr-npc-topbar .rnr-npc-meta input[name="system.details.cr"] { width: 56px; }
+.rnr-npc-top-actions { flex-wrap: wrap; justify-content: flex-end; gap: 6px; font-size: inherit; }
+.rnr-npc-top-actions .rnr-npc-btn {
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid #5f9a6e;
+  border-radius: 3px;
+  background: #171719;
+  color: #dfeee3;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  cursor: pointer;
+}
+.rnr-npc-top-actions .rnr-npc-btn { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; line-height: 1; }
+.rnr-npc-top-actions .rnr-npc-btn:hover { background: #2a4a35; }
+.rnr-npc-top-actions .rnr-icon-button { border-color: #5f9a6e; }
+
+.rnr-npc-vitals {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(4, minmax(0, 1fr));
+  gap: 6px;
+  padding: 10px 16px 0;
+}
+.rnr-npc-vital {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 7px 6px;
+  border: 1px solid #454b55;
+  border-radius: 4px;
+  background: #1b1f26;
+}
+.rnr-npc-vital > span { color: #9fd3ac; font-size: .54rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.rnr-npc-vital input,
+.rnr-npc-vital > strong {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 72px;
+  height: 30px;
+  min-height: 0;
+  padding: 0 4px;
+  border: 1px solid #3b4351;
+  border-radius: 3px;
+  background: #0f1216;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 28px;
+  text-align: center;
+}
+.rnr-npc-vital-hp { border-color: #7a3a43; background: linear-gradient(160deg, rgba(122, 58, 67, .25), #1b1f26); }
+.rnr-npc-vital-hp > span { color: #f0a7b0; }
+.rnr-npc-vital-pair { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; }
+.rnr-npc-vital-pair em { color: #9da5b3; font-style: normal; }
+
+.rnr-npc-sheet .rnr-npc-abilities { padding: 10px 16px; }
+.rnr-npc-sheet .rnr-npc-attr-card { grid-template-rows: auto auto auto auto; align-content: start; }
+.rnr-npc-attr-stepper { display: grid; grid-template-columns: 20px minmax(0, 1fr) 20px; align-items: center; gap: 2px; }
+.rnr-npc-attr-stepper .rnr-npc-attr-btn {
+  height: 22px;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid #4a505a;
+  border-radius: 3px;
+  background: #171a20;
+  color: #d8dce3;
+  font-size: .8rem;
+  line-height: 1;
+}
+.rnr-npc-attr-stepper .rnr-npc-attr-btn:hover { border-color: #c7a36b; color: #fff; }
+.rnr-npc-attr-stepper .rnr-npc-attr-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 22px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: #9a7647;
+  color: #171719;
+  font-weight: 900;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+.rnr-npc-attr-stepper .rnr-npc-attr-input::-webkit-inner-spin-button,
+.rnr-npc-attr-stepper .rnr-npc-attr-input::-webkit-outer-spin-button { margin: 0; -webkit-appearance: none; }
+
+.rnr-npc-sheet .rnr-npc-body { padding: 10px 16px 18px; background: transparent; }
+.rnr-npc-sheet .rnr-npc-stats-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+.rnr-npc-sheet .rnr-npc-skills { grid-row: span 3; }
+.rnr-npc-sheet .rnr-npc-panel {
+  padding: 10px 12px;
+  border: 1px solid #3b4351;
+  border-radius: 6px;
+  background: #161a21;
+  box-shadow: none;
+}
+.rnr-npc-sheet .rnr-npc-panel h2 {
+  justify-content: space-between;
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #3b4351;
+  color: #c7a36b;
+  font: 800 .7rem "Trebuchet MS", sans-serif;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.rnr-npc-sheet .rnr-npc-panel label { color: #9da5b3; }
+.rnr-npc-sheet .rnr-npc-panel input,
+.rnr-npc-sheet .rnr-npc-panel select,
+.rnr-npc-sheet .rnr-npc-panel textarea { border-color: #3b4351; background: #0f1216; color: #e8eaf0; }
+.rnr-npc-sheet .rnr-npc-modifier { color: #e3c891; }
+
+@container (max-width: 640px) {
+  .rnr-npc-vitals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rnr-npc-vital-hp { grid-column: 1 / -1; }
+}
+@container (max-width: 720px) {
+  .rnr-npc-sheet .rnr-npc-stats-grid { grid-template-columns: minmax(0, 1fr); }
+  .rnr-npc-sheet .rnr-npc-skills { grid-row: auto; }
+  .rnr-npc-topbar { grid-template-columns: 60px minmax(0, 1fr); }
+  .rnr-npc-top-actions { grid-column: 1 / -1; justify-content: flex-start; }
+}
 
 /* ============================================================
    Instant close fallback (v0.4.1)

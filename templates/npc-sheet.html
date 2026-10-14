@@ -1,14 +1,15 @@
 <div class="rnr-sheet rnr-npc-sheet {{cssClass}}" data-rnr-theme="{{sheetTheme}}" autocomplete="off">
 
   {{!-- ══ NPC HEADER ══ --}}
-  <header class="rnr-npc-header">
+  <header class="rnr-topbar rnr-npc-topbar">
     <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" class="rnr-npc-portrait" />
 
-    <div class="rnr-npc-title">
-      <input name="name" type="text" value="{{actor.name}}" placeholder="NPC Name" />
+    <div class="rnr-title-block">
+      <h1><span class="rnr-npc-kind">{{#if isVehicle}}{{#if isMecha}}Mecha{{else}}Vehicle{{/if}}{{else}}Non-Player Character{{/if}}</span></h1>
+      <input name="name" type="text" value="{{actor.name}}" placeholder="NPC Name" aria-label="NPC name" />
       <div class="rnr-npc-meta">
-        <label>Type   <input name="system.details.type"    value="{{system.details.type}}"    placeholder="humanoid" /></label>
-        <label>Size   <select name="system.traits.size">
+        <label>Type <input name="system.details.type" value="{{system.details.type}}" placeholder="humanoid" /></label>
+        <label>Size <select name="system.traits.size">
           <option value="tiny" {{#if (eq system.traits.size "tiny")}}selected{{/if}}>Tiny</option>
           <option value="sm"   {{#if (eq system.traits.size "sm")}}selected{{/if}}>Small</option>
           <option value="med"  {{#if (eq system.traits.size "med")}}selected{{/if}}>Medium</option>
@@ -16,51 +17,66 @@
           <option value="huge" {{#if (eq system.traits.size "huge")}}selected{{/if}}>Huge</option>
           <option value="grg"  {{#if (eq system.traits.size "grg")}}selected{{/if}}>Gargantuan</option>
         </select></label>
-        <label>CR      <input name="system.details.cr"    type="number" min="0" value="{{system.details.cr}}" /></label>
+        <label>CR <input name="system.details.cr" type="number" min="0" value="{{system.details.cr}}" /></label>
       </div>
     </div>
 
-    <div class="rnr-npc-topright">
-      <label class="rnr-setting-picker" title="{{settingProfileHint}}">
-        <span aria-hidden="true">🎨</span>
-        <strong>{{settingProfileLabel}}</strong>
-      </label>
-      <div class="rnr-npc-vital-row">
-        <div class="rnr-npc-vital-box">
-          <span>HP</span>
-          <div>
-            <input name="system.vitals.health.value" type="number" min="0" value="{{healthValue}}" />
-            <em>/</em>
-            <input name="system.vitals.health.max"   type="number" min="1" value="{{healthMax}}" />
-          </div>
-        </div>
-        <div class="rnr-npc-vital-box">
-          <span>REFLEX</span>
-          <input name="system.defenses.reflexDefense" type="number" min="0" value="{{reflexDefense}}" />
-        </div>
-        <div class="rnr-npc-vital-box">
-          <span>ARMOR DR</span>
-          <input name="system.defenses.armorDamageReduction" type="number" min="0" value="{{armorDamageReduction}}" />
-        </div>
-        <div class="rnr-npc-vital-box">
-          <span>INIT</span>
-          <strong>{{initiativeLabel}}</strong>
-        </div>
-        <div class="rnr-npc-vital-box">
-          <span>SPD</span>
-          <input name="system.defenses.speed" type="number" min="0" value="{{system.defenses.speed}}" />
-        </div>
-      </div>
-      <div class="rnr-npc-action-row">
-        <button type="button" data-action="npc-roll-initiative" class="rnr-npc-btn">⚡ Initiative</button>
-        <button type="button" data-action="npc-rest"            class="rnr-npc-btn">☽ Rest</button>
-        <button type="button" data-action="show-id-card"         class="rnr-npc-btn">ID Card</button>
-      </div>
+    <div class="rnr-top-actions rnr-npc-top-actions">
+      <button type="button" data-action="npc-roll-initiative" class="rnr-npc-btn" title="Roll initiative">⚡ Initiative</button>
+      <button type="button" data-action="npc-rest" class="rnr-npc-btn" title="Rest">☽ Rest</button>
+      <button type="button" data-action="show-id-card" class="rnr-npc-btn" title="Show ID card">ID Card</button>
+      <button type="button" class="rnr-icon-button" data-action="close" title="Close">×</button>
     </div>
   </header>
 
+  {{!-- ══ VITALS ══ --}}
+  <section class="rnr-npc-vitals" aria-label="Vitals">
+    <div class="rnr-npc-vital rnr-npc-vital-hp">
+      <span>Health</span>
+      <div class="rnr-npc-vital-pair">
+        <input name="system.vitals.health.value" type="number" min="0" value="{{healthValue}}" aria-label="Current health" />
+        <em>/</em>
+        <input name="system.vitals.health.max" type="number" min="1" value="{{healthMax}}" aria-label="Maximum health" />
+      </div>
+    </div>
+    <div class="rnr-npc-vital">
+      <span>Reflex</span>
+      <input name="system.defenses.reflexDefense" type="number" min="0" value="{{reflexDefense}}" />
+    </div>
+    <div class="rnr-npc-vital">
+      <span>Armor DR</span>
+      <input name="system.defenses.armorDamageReduction" type="number" min="0" value="{{armorDamageReduction}}" />
+    </div>
+    <div class="rnr-npc-vital">
+      <span>Initiative</span>
+      <strong>{{initiativeLabel}}</strong>
+    </div>
+    <div class="rnr-npc-vital">
+      <span>Speed</span>
+      <input name="system.defenses.speed" type="number" min="0" value="{{system.defenses.speed}}" />
+    </div>
+  </section>
+
+  {{!-- ══ ATTRIBUTE ROW ══ --}}
+  {{#unless isVehicle}}
+  <section class="rnr-abilities rnr-npc-abilities" aria-label="Attributes">
+    {{#each attributeList}}
+    <div class="rnr-ability-card rnr-npc-attr-card">
+      <button type="button" class="rnr-ability-name" data-roll="attribute" data-key="{{key}}" title="Roll {{label}}">{{label}}</button>
+      <strong title="Attribute modifier">{{modLabel}}</strong>
+      <div class="rnr-npc-attr-stepper">
+        <button type="button" class="rnr-npc-attr-btn down" data-action="npc-attr-down" data-attr="{{key}}" title="Decrease {{label}}">−</button>
+        <input name="system.attributes.{{key}}.value" type="number" value="{{baseValue}}" class="rnr-npc-attr-input" min="1" max="99" title="Base {{label}}" />
+        <button type="button" class="rnr-npc-attr-btn up" data-action="npc-attr-up" data-attr="{{key}}" title="Increase {{label}}">+</button>
+      </div>
+      <small class="rnr-passive">{{#if hasModifiers}}Total {{value}} · {{modifierBonus}} perm.{{else}}Total {{value}}{{/if}}</small>
+    </div>
+    {{/each}}
+  </section>
+  {{/unless}}
+
   {{!-- ══ TABS ══ --}}
-  <nav class="rnr-tabs">
+  <nav class="rnr-tabs" role="tablist" aria-label="NPC sections">
     <button type="button" class="item active" role="tab" aria-selected="true" data-tab="stats">Stats</button>
     <button type="button" class="item" role="tab" aria-selected="false" data-tab="actions">Actions</button>
     <button type="button" class="item" role="tab" aria-selected="false" data-tab="biography">Biography</button>
@@ -73,26 +89,6 @@
       <div class="rnr-npc-stats-grid">
 
         {{#unless isVehicle}}
-        {{!-- Attributes --}}
-        <section class="rnr-npc-panel rnr-npc-attributes">
-          <h2>⬡ ATTRIBUTES</h2>
-          <div class="rnr-npc-attr-grid">
-            {{#each attributeList}}
-            <div class="rnr-npc-attr-card">
-              <button type="button" class="rnr-npc-attr-name" data-roll="attribute" data-key="{{key}}" title="Roll {{label}}">{{label}}</button>
-              <strong class="rnr-npc-modifier" title="Attribute modifier">MOD {{modLabel}}</strong>
-              {{#if hasModifiers}}<small class="rnr-modifier-note">{{modifierBonus}} permanent</small>{{/if}}
-              <small class="rnr-npc-total">Total {{value}}</small>
-              <div class="rnr-npc-attr-stepper">
-                <button type="button" class="rnr-npc-attr-btn down" data-action="npc-attr-down" data-attr="{{key}}" title="Decrease {{label}}">-</button>
-                <input name="system.attributes.{{key}}.value" type="number" value="{{baseValue}}" class="rnr-npc-attr-input" min="1" max="99" title="Type base attribute value" />
-                <button type="button" class="rnr-npc-attr-btn up" data-action="npc-attr-up" data-attr="{{key}}" title="Increase {{label}}">+</button>
-              </div>
-            </div>
-            {{/each}}
-          </div>
-        </section>
-
         {{!-- Skills --}}
         <section class="rnr-npc-panel rnr-npc-skills">
           <h2>◉ SKILLS</h2>
@@ -169,31 +165,6 @@
           </div>
         </section>
         {{/unless}}
-
-        {{!-- Custom attributes: indexed paths the generic field-save handler writes. --}}
-        <section class="rnr-npc-panel rnr-custom-attributes-panel">
-          <h2>▤ CUSTOM ATTRIBUTES
-            <button type="button" class="rnr-bio-add-btn" data-action="custom-attr-add" title="Add a custom attribute">＋ Add</button>
-          </h2>
-          <div class="rnr-custom-attributes">
-            {{#each customAttributes}}
-            <div class="rnr-custom-attribute" data-index="{{index}}">
-              <label>Name
-                <input name="system.customAttributes.{{index}}.name" value="{{name}}" placeholder="Attribute name" />
-              </label>
-              <label>Value
-                <input name="system.customAttributes.{{index}}.value" value="{{value}}" placeholder="Value" />
-              </label>
-              <label>Description
-                <input name="system.customAttributes.{{index}}.description" value="{{description}}" placeholder="Optional notes" />
-              </label>
-              <button type="button" class="rnr-custom-attr-remove" data-action="custom-attr-remove" data-index="{{index}}" title="Remove this attribute">×</button>
-            </div>
-            {{else}}
-            <p class="rnr-help-text">No custom attributes yet. Use “＋ Add” to track anything the sheet has no field for.</p>
-            {{/each}}
-          </div>
-        </section>
 
       </div>
     </div>{{!-- /stats tab --}}

@@ -15,7 +15,7 @@
  *                     (default: %LOCALAPPDATA%/FoundryVTT)
  */
 import { spawn } from "node:child_process";
-import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -46,13 +46,18 @@ cpSync(root, systemDir, {
   filter: src => !/[\\/](\.git|\.claude|node_modules|dist)([\\/]|$)/.test(src.slice(root.length)) && !/[\\/]LOCK$/.test(src),
 });
 cpSync(join(userData, "Config", "license.json"), join(dataPath, "Config", "license.json"));
+// Foundry rejects a World manifest without coreVersion, so take it from the install.
+const release = JSON.parse(readFileSync(join(appDir, "resources", "app", "package.json"), "utf8")).release ?? {};
+const coreVersion = `${release.generation ?? 14}.${release.build ?? 0}`;
 const worldDir = join(dataPath, "Data", "worlds", "rnr-sandbox");
-if (!existsSync(join(worldDir, "world.json"))) {
-  mkdirSync(worldDir, { recursive: true });
-  writeFileSync(join(worldDir, "world.json"), JSON.stringify({
-    id: "rnr-sandbox", title: "RnR Sandbox", system: "rnr", compatibility: { minimum: "13", verified: "14" },
-  }, null, 2));
-}
+mkdirSync(worldDir, { recursive: true });
+const worldFile = join(worldDir, "world.json");
+const world = existsSync(worldFile) ? JSON.parse(readFileSync(worldFile, "utf8")) : {};
+writeFileSync(worldFile, JSON.stringify({
+  ...world,
+  id: "rnr-sandbox", title: "RnR Sandbox", system: "rnr", coreVersion,
+  compatibility: { minimum: String(release.generation ?? 13), verified: String(release.generation ?? 14) },
+}, null, 2));
 writeFileSync(join(dataPath, "Config", "options.json"), JSON.stringify({
   dataPath, port, upnp: false, hotReload: true, world: "rnr-sandbox", telemetry: false,
 }, null, 2));

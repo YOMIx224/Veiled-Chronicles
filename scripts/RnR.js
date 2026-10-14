@@ -1,5 +1,5 @@
 // =============================================================
-//  Role & Roll  —  RnR.js  (v0.4.1)
+//  Role & Roll  —  RnR.js  (v0.4.2)
 // =============================================================
 
 // ── Module imports ────────────────────────────────────────────
@@ -33,6 +33,7 @@ import { resolveDefenseRoll }                                      from "./modul
 import { buildSession0Pages, GUIDE_REVISION }                from "./modules/session0Guide.js";
 import { handleMechaSummonMessage, openMechaBraceletDialog, registerMechaMacroApi } from "./modules/mecha.js";
 import { RnRDialogV2 }                                  from "./modules/dialogs.js";
+import { bodyFigureSvg }                                from "./modules/bodyFigure.js";
 import { runSmokeTest }                                  from "./modules/smokeTest.js";
 import { BODY_EQUIPMENT_SLOTS, BODY_SLOT_COLUMNS, BODY_SLOT_ORGANS, LEGACY_BODY_SLOT_OPTIONS, allowedBodySlots, bodyEquipmentAssignments, bodySlotCandidates, isWearableItem } from "./modules/equipmentSlots.js";
 
@@ -1453,8 +1454,20 @@ async function createAttackChallenge({ actor, item, targetActor, totalAttack, ke
   await ChatMessage.create({ speaker: actor ? ChatMessage.getSpeaker({ actor }) : { alias: item.name }, content, rolls });
 }
 
+/**
+ * Find an Actor by id: World Actors first, then unlinked token Actors on the
+ * canvas. Shared by the chat-card render hook and the defense resolver; the hook
+ * used to call this while it only existed inside handleDefenseChoice, which threw
+ * and left every button on a defense card without a click handler.
+ */
+function resolveActor(id) {
+  if (!id) return null;
+  return game.actors?.get(id)
+    ?? (canvas?.tokens?.placeables ?? []).find(token => token.actor?.id === id)?.actor
+    ?? null;
+}
+
 async function handleDefenseChoice(message, choice, button) {
-  const resolveActor = id => game.actors.get(id) ?? (canvas.tokens?.placeables ?? []).find(token => token.actor?.id === id)?.actor ?? null;
   const targetActor = resolveActor(button.dataset.targetActorId);
   const attacker = resolveActor(button.dataset.attackerActorId);
   const item = attacker?.items?.get(button.dataset.itemId);
@@ -2695,6 +2708,7 @@ function buildData(data) {
     return { label: group, organs, selectedCount: organs.filter(organ => organ.selected).length };
   });
   data.disabledOrganCount = disabled.length;
+  data.organStatePoints = disabled.length * 2;
   data.leftHandUsable  = organUsable(actor, "leftHand");
   data.rightHandUsable = organUsable(actor, "rightHand");
 
@@ -3682,6 +3696,20 @@ function bindCommonListeners(sheet, html) {
     const organs = html.find(".rnr-organ-choice input:checked").map((_, el) => el.value).get();
     await actor.update({ "system.identity.disabledOrgans": organs });
   });
+  // Clicking a body part on the Body Condition figure toggles that organ.
+  html.find(".rnr-body-figure[data-figure='organs'] [data-organ]").on("click", ev => {
+    const input = html.find(`.rnr-organ-choice input[value="${ev.currentTarget.dataset.organ}"]`)[0];
+    if (!input || input.disabled) return;
+    input.checked = !input.checked;
+    globalThis.jQuery(input).trigger("change");
+  });
+  // Hovering a wear slot or an organ chip highlights the matching body part.
+  const highlightRegion = (selector, key, on) =>
+    html.find(`${selector} [data-region="${key}"]`).toggleClass("is-hover", on);
+  html.find(".rnr-wear-slot").on("mouseenter mouseleave", ev =>
+    highlightRegion(".rnr-body-figure[data-figure='equipment']", ev.currentTarget.dataset.bodySlot, ev.type === "mouseenter"));
+  html.find(".rnr-organ-choice[data-organ]").on("mouseenter mouseleave", ev =>
+    highlightRegion(".rnr-body-figure[data-figure='organs']", ev.currentTarget.dataset.organ, ev.type === "mouseenter"));
   html.find("select[name]").on("change", async ev => {
     const f = ev.currentTarget;
     if (f.multiple) await actor.update({ [f.name]: [...f.selectedOptions].map(o=>o.value) });
@@ -3801,11 +3829,16 @@ class RnRActorSheet extends RnRHandlebarsActorSheet {
       item: data.items.find(i => i.equipmentSlot === key) || null,
     }));
     const slotByKey = new Map(data.bodyEquipment.map(slot => [slot.key, slot]));
-    data.wearColumns = Object.entries(BODY_SLOT_COLUMNS).map(([column, keys]) => ({
-      column, slots: keys.map(key => slotByKey.get(key)).filter(Boolean),
-    }));
+    const slotsFor = keys => keys.map(key => slotByKey.get(key)).filter(Boolean);
+    data.wearCore  = slotsFor(BODY_SLOT_COLUMNS.center);
+    data.wearRight = slotsFor(BODY_SLOT_COLUMNS.right);
+    data.wearLeft  = slotsFor(BODY_SLOT_COLUMNS.left);
     data.wornCount = data.bodyEquipment.filter(slot => slot.item).length;
     data.wearSlotCount = data.bodyEquipment.length;
+    data.equipFigure = bodyFigureSvg("equipment", Object.fromEntries(data.bodyEquipment
+      .map(slot => [slot.key, slot.item ? "equipped" : slot.usable ? "" : "unusable"])));
+    data.organFigure = bodyFigureSvg("organs", Object.fromEntries((data.disabledOrgans ?? [])
+      .map(organ => [organ.key, !organ.usable ? "disabled" : organ.selected ? "prosthetic" : ""])));
     data.backpackItems = data.items.filter(i => !i.handSlot && !i.equipmentSlot);
     const makeGroups = keys => Object.entries(backpackCategoryLabels)
       .filter(([key]) => keys.includes(key))
@@ -4070,6 +4103,8 @@ class RnRNpcSheet extends RnRHandlebarsActorSheet {
     });
     // Restore last active tab
     setNpcTab(this._activeTab || "stats");
+
+    html.find("[data-action='close']").on("click", () => this.close());
 
     // Initiative
     html.find("[data-action='npc-roll-initiative']").on("click", async () => {
