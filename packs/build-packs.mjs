@@ -36,6 +36,16 @@ if (manifestProblems.length) {
 }
 const packFolders = sourcePackFolders.filter(name => !requestedPacks?.length || requestedPacks.includes(name));
 
+// Source files predate the lowercase system id and still say "RnR" / an old
+// system version. Stamp every document with the real manifest values so Foundry
+// does not treat freshly built content as foreign or outdated.
+function stampStats(doc) {
+  return {
+    ...doc,
+    _stats: { ...(doc._stats ?? {}), systemId: systemManifest.id, systemVersion: systemManifest.version },
+  };
+}
+
 console.log(`\nBuilding ${packFolders.length} pack(s) from ${srcDir}\n`);
 
 for (const pack of packFolders) {
@@ -49,7 +59,11 @@ for (const pack of packFolders) {
 
   // Foundry LevelDB packs store each document as a UTF-8 JSON value.
   const db = new ClassicLevel(outDir, { keyEncoding: "utf8", valueEncoding: "utf8" });
-  await db.open();
+  try {
+    await db.open();
+  } catch (error) {
+    throw new Error(`${pack}: cannot open the pack database. Close Foundry (it locks open compendiums) and build again.\n  ${error.message}`);
+  }
 
   // Wipe every existing key explicitly. db.clear() silently does nothing on this
   // Windows-mounted path, which left a corrupt "!items!null" record in every Item
@@ -90,7 +104,7 @@ for (const pack of packFolders) {
         // The parent JournalEntry references page IDs; writing the full page
         // objects inline makes the Journal open with an empty page sidebar.
         const pages = Array.isArray(doc.pages) ? doc.pages : [];
-        const journal = { ...doc, pages: pages.map(page => page._id) };
+        const journal = stampStats({ ...doc, pages: pages.map(page => page._id) });
         batch.put(key, JSON.stringify(journal));
         const seenPageIds = new Set();
         for (const page of pages) {
@@ -99,12 +113,12 @@ for (const pack of packFolders) {
           if (seenPageIds.has(page._id)) { problems.push(`${file}: duplicate Journal page _id ${page._id}`); continue; }
           seenPageIds.add(page._id);
           const pageKey = `!journal.pages!${doc._id}.${page._id}`;
-          const pageDoc = { ...page };
+          const pageDoc = stampStats(page);
           delete pageDoc._key;
           batch.put(pageKey, JSON.stringify(pageDoc));
         }
       } else {
-        const document = { ...doc };
+        const document = stampStats(doc);
         delete document._key;
         batch.put(key, JSON.stringify(document));
       }
@@ -115,7 +129,15 @@ for (const pack of packFolders) {
   }
 
   await batch.write();
+
+  // Read the pack back: every source document must be present as a top-level
+  // record, otherwise Foundry would show an incomplete compendium.
+  let written = 0;
+  for await (const key of db.keys()) if (/^![a-z]+![A-Za-z0-9]{16}$/.test(key)) written++;
   await db.close();
+  if (!problems.length && written !== count) {
+    problems.push(`read-back found ${written} document(s), expected ${count}`);
+  }
 
   if (problems.length) {
     for (const p of problems) console.error(`  ✗ ${p}`);

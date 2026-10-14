@@ -2,7 +2,7 @@
   "_id": "rnrability000004",
   "name": "Sneak Attack",
   "type": "ability",
-  "img": "icons/skills/melee/strike-dagger-skull-orange.webp",
+  "img": "icons/skills/melee/strike-dagger-skull-white.webp",
   "system": {
     "description": {
       "value": "Once per turn, you can deal extra damage when you have advantage on the attack roll, or when an ally is adjacent to the target. Extra damage: 2d6.",

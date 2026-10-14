@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000006",
+  "name": "Courtier",
+  "type": "background",
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>You grew up around power: a noble court, a boardroom, a ruling council or a political machine.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Persuade and Consider. You know the etiquette of the powerful and can usually secure a meeting with a local official or patron.",
+    "skills": [
+      "persuade",
+      "consider"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

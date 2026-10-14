@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000012",
+  "name": "Medic",
+  "type": "background",
+  "img": "icons/tools/medical/medkit-white-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>You trained to keep people alive, whether as a field medic, nurse, herbalist or ship's doctor.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Medicine and First Aid. Clinics and healers will share supplies or a bed with you, and you can tell at a glance how badly someone is hurt.",
+    "skills": [
+      "medicine",
+      "firstAid"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

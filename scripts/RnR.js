@@ -1,5 +1,5 @@
 // =============================================================
-//  Role & Roll  —  RnR.js  (v0.3.19)
+//  Role & Roll  —  RnR.js  (v0.4.0)
 // =============================================================
 
 // ── Module imports ────────────────────────────────────────────
@@ -32,6 +32,7 @@ import { CONDITION_GROUPS }                                         from "./modu
 import { resolveDefenseRoll }                                      from "./modules/defenseRules.js";
 import { buildSession0Pages, GUIDE_REVISION }                from "./modules/session0Guide.js";
 import { handleMechaSummonMessage, openMechaBraceletDialog, registerMechaMacroApi } from "./modules/mecha.js";
+import { runSmokeTest }                                  from "./modules/smokeTest.js";
 import { BODY_EQUIPMENT_SLOTS, BODY_SLOT_ORGANS, LEGACY_BODY_SLOT_OPTIONS, allowedBodySlots, bodyEquipmentAssignments, bodySlotCandidates, isWearableItem } from "./modules/equipmentSlots.js";
 
 // DocumentSheetV2 is rendering-engine agnostic. The RnR sheets use Handlebars
@@ -42,6 +43,19 @@ const RnRHandlebarsActorSheet = foundry.applications.api.HandlebarsApplicationMi
 const RnRHandlebarsItemSheet = foundry.applications.api.HandlebarsApplicationMixin(
   foundry.applications.sheets.ItemSheetV2
 );
+
+// Sheets open at a fixed design size (up to 1000x820). On a smaller window
+// that pushed the footer and right-hand controls off screen, so the opening
+// size is clamped to the viewport. Users can still resize afterwards.
+function fitSheetToViewport(options) {
+  const position = options.position ?? {};
+  const maxWidth = Math.max(420, (globalThis.innerWidth || 1280) - 40);
+  const maxHeight = Math.max(420, (globalThis.innerHeight || 800) - 40);
+  if (Number(position.width) > maxWidth) position.width = maxWidth;
+  if (Number(position.height) > maxHeight) position.height = maxHeight;
+  options.position = position;
+  return options;
+}
 
 // ─────────────────────────────────────────────────────────────
 //  CONSTANTS
@@ -177,7 +191,7 @@ const SETTING_PROFILES = {
     theme: "superhero",
   },
   martial: {
-    label: "จอมยุทธ์ / Martial Arts",
+    label: "Martial Arts",
     hint: "Focus on styles, techniques, duels, clans, and internal power.",
     theme: "martial",
   },
@@ -320,6 +334,18 @@ function signed(n) {
 function gp(actor, path, fallback = 0) {
   const v = foundry.utils.getProperty(actor, path);
   return v ?? fallback;
+}
+
+// Origin (race) attribute increases are part of the character's starting
+// package, not purchases, so they never count against the State Point pool.
+function originAttributeBonus(actor, key) {
+  const bonus = Number(gp(actor, `system.appliedBonuses.race.attrBonus.${key}`)) || 0;
+  return bonus > 0 ? bonus : 0;
+}
+
+function statePointsSpent(actor) {
+  return ATTR_LIST.reduce((total, [key]) =>
+    total + Math.max(0, (Number(gp(actor, `system.attributes.${key}.value`)) || 8) - 8 - originAttributeBonus(actor, key)), 0);
 }
 
 function canHoldItem(item) {
@@ -1999,8 +2025,7 @@ async function restDialog(actor) {
 // ─────────────────────────────────────────────────────────────
 
 function statePointDialog(actor) {
-  const spent = ATTR_LIST.reduce((t, [k]) =>
-    t + Math.max(0, (Number(gp(actor, `system.attributes.${k}.value`)) || 8) - 8), 0);
+  const spent = statePointsSpent(actor);
   const dis       = disabledOrgans(actor).length;
   const growthPts = Math.max(0, Number(gp(actor, "system.identity.growthPoints")) || 0);
   const pool      = 30 + dis * 2 + growthPts;
@@ -2042,7 +2067,7 @@ function statePointDialog(actor) {
           const newVal  = curVal + signed_;
 
           // Re-check budget live
-          const curSpent = ATTR_LIST.reduce((t,[k])=>t+Math.max(0,(Number(gp(actor,`system.attributes.${k}.value`))||8)-8),0);
+          const curSpent = statePointsSpent(actor);
           const curDis   = disabledOrgans(actor).length;
           const curGP    = Math.max(0, Number(gp(actor, "system.identity.growthPoints")) || 0);
           const curPool  = 30 + curDis*2 + curGP;
@@ -2050,7 +2075,8 @@ function statePointDialog(actor) {
           if (curSpent + signed_ > curPool)  { ui.notifications.warn(`Only ${curPool - curSpent} point(s) left.`); return; }
           if (curSpent + signed_ < 0)        { ui.notifications.warn("Cannot go below 0 spent points."); return; }
           if (newVal > 20)                   { ui.notifications.warn("Maximum attribute value is 20."); return; }
-          if (newVal < 8)                    { ui.notifications.warn("Cannot reduce below base value 8."); return; }
+          const floor = 8 + originAttributeBonus(actor, key);
+          if (newVal < floor)                { ui.notifications.warn(`Cannot reduce below ${floor} (base 8${floor > 8 ? " + Origin bonus" : ""}).`); return; }
 
           const ok = await globalThis.foundry.applications.api.DialogV2.confirm({
             window: { title: "Confirm" },
@@ -2380,20 +2406,32 @@ async function extraSkillShop(actor) {
     (grouped[item.category] ??= []).push(item);
   }
 
-  const buildBrowse = (selectedCategory = "all", query = "") => {
+  // Rendering all ~600 entries at once made the dialog slow, so the browse list
+  // shows one page and a "Show more" button.
+  const SHOP_PAGE = 60;
+  const buildBrowse = (selectedCategory = "all", query = "", { attribute = "", affordable = false, limit = SHOP_PAGE } = {}) => {
     if (!compItems.length)
       return `<p class="rnr-shop-empty">No extra skills found in packs.<br><small>Add items of type "extraskills" to an RnR pack and rebuild.</small></p>`;
     const needle = String(query || "").trim().toLocaleLowerCase();
+    // An unknown category would be counted but never rendered; file it under Other.
+    const knownCategory = key => EXTRA_SKILL_CATEGORIES.some(([k]) => k === key) ? key : "other";
     const matches = compItems.filter(item => {
+      if (selectedCategory !== "all" && knownCategory(item.category) !== selectedCategory) return false;
+      if (attribute && item.attribute !== attribute) return false;
+      if (affordable && item.cost > points) return false;
       const categoryLabel = EXTRA_SKILL_CATEGORIES.find(([key]) => key === item.category)?.[1] || item.category;
       const haystack = [item.name, item.category, categoryLabel, item.effect, item.actionType, item.abilityType, item.attribute]
         .join(" ").toLocaleLowerCase();
       return !needle || haystack.includes(needle);
     });
+    const shown = matches.slice(0, limit);
+    const moreButton = matches.length > shown.length
+      ? `<button type="button" class="rnr-shop-more" data-limit="${limit + SHOP_PAGE}">Show more (${matches.length - shown.length} remaining)</button>`
+      : "";
+    const summary = `<p class="rnr-shop-count">Showing ${shown.length} of ${matches.length} extra skills</p>`;
     const browseGroups = {};
-    for (const item of matches) (browseGroups[item.category] ??= []).push(item);
-    return EXTRA_SKILL_CATEGORIES
-      .filter(([k]) => selectedCategory === "all" || selectedCategory === k)
+    for (const item of shown) (browseGroups[knownCategory(item.category)] ??= []).push(item);
+    const groupsHtml = EXTRA_SKILL_CATEGORIES
       .filter(([k]) => browseGroups[k]?.length)
       .map(([k, catLabel]) => {
         const renderRows = items => items.map(item => {
@@ -2416,7 +2454,9 @@ async function extraSkillShop(actor) {
         }).join("");
         const untimed = browseGroups[k].filter(item => !normalizeActionType(item.actionType || item.abilityType));
         return `<div class="rnr-shop-cat-group"><h4>${esc(catLabel)}</h4>${timingGroups}${untimed.length ? `<section class="rnr-shop-action-group"><h5>Unspecified <small>(${untimed.length})</small></h5>${renderRows(untimed)}</section>` : ""}</div>`;
-      }).join("") || `<p class="rnr-shop-empty">${needle ? "No extra skills match this search." : "No extra skills in this category."}</p>`;
+      }).join("");
+    if (!groupsHtml) return `<p class="rnr-shop-empty">${needle || attribute || affordable ? "No extra skills match these filters." : "No extra skills in this category."}</p>`;
+    return summary + groupsHtml + moreButton;
   };
 
   const buildOwned = () => owned.length
@@ -2429,11 +2469,13 @@ async function extraSkillShop(actor) {
     dialogApp = app;
     const root = element.querySelector(".rnr-extra-skill-shop");
     if (!root) return;
-    const refreshBrowse = () => {
+    const refreshBrowse = (limit = undefined) => {
       const category = root.querySelector("#rnr-extra-skill-category")?.value || "all";
       const query = root.querySelector("#rnr-extra-skill-search")?.value || "";
+      const attribute = root.querySelector("#rnr-extra-skill-attribute")?.value || "";
+      const affordable = root.querySelector("#rnr-extra-skill-affordable")?.checked === true;
       const panel = root.querySelector(".rnr-shop-panel[data-panel='browse']");
-      if (panel) panel.innerHTML = buildBrowse(category, query);
+      if (panel) panel.innerHTML = buildBrowse(category, query, { attribute, affordable, ...(limit ? { limit } : {}) });
     };
     root.addEventListener("click", async (ev) => {
       const target = ev.target instanceof Element ? ev.target : null;
@@ -2445,6 +2487,12 @@ async function extraSkillShop(actor) {
         root.querySelectorAll(".rnr-shop-panel").forEach(panel => { panel.style.display = panel.dataset.panel === selected ? "" : "none"; });
         const filter = root.querySelector(".rnr-shop-filter");
         if (filter) filter.style.display = selected === "browse" ? "" : "none";
+        return;
+      }
+      const moreButton = target?.closest(".rnr-shop-more");
+      if (moreButton) {
+        ev.preventDefault();
+        refreshBrowse(Number(moreButton.dataset.limit) || undefined);
         return;
       }
       const buyButton = target?.closest(".rnr-shop-buy-btn");
@@ -2490,8 +2538,10 @@ async function extraSkillShop(actor) {
         await dialogApp?.close();
       }
     });
-    root.querySelector("#rnr-extra-skill-category")?.addEventListener("change", refreshBrowse);
-    root.querySelector("#rnr-extra-skill-search")?.addEventListener("input", refreshBrowse);
+    root.querySelector("#rnr-extra-skill-category")?.addEventListener("change", () => refreshBrowse());
+    root.querySelector("#rnr-extra-skill-attribute")?.addEventListener("change", () => refreshBrowse());
+    root.querySelector("#rnr-extra-skill-affordable")?.addEventListener("change", () => refreshBrowse());
+    root.querySelector("#rnr-extra-skill-search")?.addEventListener("input", () => refreshBrowse());
   });
   try {
     await waitRnRDialog({
@@ -2508,6 +2558,10 @@ async function extraSkillShop(actor) {
     <label>Category
       <select id="rnr-extra-skill-category"><option value="all">All categories</option>${EXTRA_SKILL_CATEGORIES.map(([key, label]) => `<option value="${key}">${label}</option>`).join("")}</select>
     </label>
+    <label>Attribute
+      <select id="rnr-extra-skill-attribute"><option value="">Any attribute</option>${ATTR_LIST.map(([key,, label]) => `<option value="${key}">${label}</option>`).join("")}</select>
+    </label>
+    <label class="rnr-shop-affordable"><input id="rnr-extra-skill-affordable" type="checkbox" /> Affordable only (≤ ${points} pt)</label>
   </div>
   <div class="rnr-shop-tabs">
     <button type="button" class="rnr-shop-tab active" data-tab="browse">Browse</button>
@@ -2583,7 +2637,7 @@ function buildData(data) {
   data.defenseAvailable = defense.defensesUsed < data.defenseMax;
   data.counterattackAvailable = !defense.counterUsed;
   data.flawOptions      = FLAW_OPTIONS.map(([key, label]) => ({ key, label, selected: String(gp(actor, "system.identity.flaw") || "") === key }));
-  data.statePointSpent  = ATTR_LIST.reduce((total, [key]) => total + Math.max(0, (Number(gp(actor, `system.attributes.${key}.value`)) || 8) - 8), 0);
+  data.statePointSpent  = statePointsSpent(actor);
   const disabled = disabledOrgans(actor);
   data.statePointMax    = 30 + (disabled.length * 2) + growthPts;
   data.disabledOrgans  = DISABLED_ORGANS.map(([key, label]) => ({ key, label, selected: disabled.includes(key), usable: organUsable(actor, key) }));
@@ -2776,6 +2830,10 @@ class RnRItemSheet extends RnRHandlebarsItemSheet {
     main: { template: "systems/rnr/templates/item-sheet.html" },
   };
 
+  _initializeApplicationOptions(options) {
+    return fitSheetToViewport(super._initializeApplicationOptions(options));
+  }
+
   async _prepareContext(options) {
     const base = await super._prepareContext(options);
     const data = { ...base, item: this.item, system: this.item.system ?? {}, cssClass: "" };
@@ -2838,6 +2896,15 @@ class RnRItemSheet extends RnRHandlebarsItemSheet {
     data.isMelee      = data.item.system.weaponType === "melee";
     data.isRanged     = data.item.system.weaponType === "ranged";
     data.attributeOptions = ATTR_LIST.map(([k,,l]) => ({ key:k, label:l, selected: data.item.system.attribute === k }));
+    // Rich-text description: Compendium content is HTML, which a textarea showed
+    // as raw tags. Locked (Compendium) items show the enriched text read-only.
+    data.editable = this.isEditable;
+    const TextEditorImpl = foundry.applications.ux?.TextEditor?.implementation ?? globalThis.TextEditor;
+    const rawDescription = String(data.item.system.description?.value ?? "");
+    data.descriptionValue = rawDescription;
+    data.enrichedDescription = TextEditorImpl?.enrichHTML
+      ? await TextEditorImpl.enrichHTML(rawDescription, { relativeTo: this.item, secrets: this.item.isOwner })
+      : rawDescription;
     return data;
   }
 
@@ -2853,7 +2920,7 @@ class RnRItemSheet extends RnRHandlebarsItemSheet {
       ev.preventDefault();
       await itemRollFlow(this.item.actor, this.item, { openDialog: ev.shiftKey });
     });
-    html.find("input[name],textarea[name],select[name]").on("change", async ev => {
+    html.find("input[name],textarea[name],select[name],prose-mirror[name]").on("change", async ev => {
       const f = ev.currentTarget;
       try {
         const value = f.type==="number" ? Number(f.value)||0 : f.type==="checkbox" ? f.checked : f.value;
@@ -3580,6 +3647,10 @@ class RnRActorSheet extends RnRHandlebarsActorSheet {
     main: { template: "systems/rnr/templates/actor-sheet.html" },
   };
 
+  _initializeApplicationOptions(options) {
+    return fitSheetToViewport(super._initializeApplicationOptions(options));
+  }
+
   async _prepareContext(options) {
     const base = await super._prepareContext(options);
     const actor = this.actor;
@@ -3814,6 +3885,10 @@ class RnRNpcSheet extends RnRHandlebarsActorSheet {
     main: { template: "systems/rnr/templates/npc-sheet.html" },
   };
 
+  _initializeApplicationOptions(options) {
+    return fitSheetToViewport(super._initializeApplicationOptions(options));
+  }
+
   async _prepareContext(options) {
     const base = await super._prepareContext(options);
     const actor = this.actor;
@@ -3998,16 +4073,16 @@ async function ensureSession0WorldGuide() {
 
   const data = {
     name: guideName,
-    img: "icons/magic/symbols/runes-star-yellow.webp",
+    img: "icons/magic/symbols/runes-carved-stone-yellow.webp",
     pages: importedPages,
     flags: { RnR: { session0WorldGuide: true, createdBy: "RnR", guideRevision: GUIDE_REVISION } },
   };
   if (existingGuide) {
     await existingGuide.update(data);
-    ui.notifications.info("RnR | อัปเดตคู่มือ Session 0 ฉบับละเอียดแล้ว");
+    ui.notifications.info("RnR | Session 0 Guide updated in the Journal Directory.");
   } else {
     await JournalEntry.create(data);
-    ui.notifications.info("RnR | สร้างคู่มือ Session 0 ฉบับละเอียดใน Journal Directory แล้ว");
+    ui.notifications.info("RnR | Session 0 Guide created in the Journal Directory.");
   }
 }
 
@@ -4123,6 +4198,8 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", async () => {
   registerMechaMacroApi();
+  // GM health check: `await game.RnR.smokeTest()` in the console (F12).
+  game.RnR.smokeTest = runSmokeTest;
   for (const actor of game.actors?.contents ?? []) initActor(actor);
 
   // ── Run migrations ──────────────────────────────────────────
@@ -4206,6 +4283,43 @@ Hooks.on("renderChatMessageHTML", (message, html) => {
     onReload:  (actor, item)         => reloadWeapon(actor, item),
     onDefenseChoice: (message, choice, button) => handleDefenseChoice(message, choice, button),
   });
+});
+
+// Origin, Class and Background bonuses. Dropping one of these Items on a
+// character applies its bonuses (replacing the previous one of the same kind);
+// deleting the Item that supplied them takes them back off. Only the user who
+// made the change runs this, so bonuses are applied exactly once.
+const ORIGIN_BONUS_HANDLERS = {
+  race:       { key: "race",       apply: applyRaceBonus,       remove: removeRaceBonus },
+  class:      { key: "class",      apply: applyClassBonus,      remove: removeClassBonus },
+  background: { key: "background", apply: applyBackgroundBonus, remove: removeBackgroundBonus },
+};
+
+Hooks.on("createItem", async (item, _options, userId) => {
+  if (userId !== game.user?.id) return;
+  const handler = ORIGIN_BONUS_HANDLERS[item.type];
+  const actor = item.parent;
+  if (!handler || !(actor instanceof Actor) || actor.type !== "character") return;
+  try {
+    await handler.apply(actor, item);
+    ui.notifications.info(`${item.name}: bonuses applied to ${actor.name}.`);
+  } catch (error) {
+    console.error(`RnR | Could not apply ${item.type} bonuses`, error);
+  }
+});
+
+Hooks.on("deleteItem", async (item, _options, userId) => {
+  if (userId !== game.user?.id) return;
+  const handler = ORIGIN_BONUS_HANDLERS[item.type];
+  const actor = item.parent;
+  if (!handler || !(actor instanceof Actor) || actor.type !== "character") return;
+  const applied = foundry.utils.getProperty(actor, `system.appliedBonuses.${handler.key}`);
+  if (applied?.itemId !== item.id) return;
+  try {
+    await handler.remove(actor);
+  } catch (error) {
+    console.error(`RnR | Could not remove ${item.type} bonuses`, error);
+  }
 });
 
 // Sync token conditions on actor update

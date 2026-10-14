@@ -2,7 +2,7 @@
   "_id": "rnrconsumab00002",
   "name": "Greater Healing Potion",
   "type": "consumable",
-  "img": "icons/consumables/potions/potion-round-corked-magenta.webp",
+  "img": "icons/consumables/potions/bottle-round-corked-pink.webp",
   "system": {
     "description": {
       "value": "A powerful potion that restores significant HP.",

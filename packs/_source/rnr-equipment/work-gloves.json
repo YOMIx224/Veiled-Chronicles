@@ -2,7 +2,7 @@
   "_id": "rnrequip00000014",
   "name": "Work Gloves",
   "type": "equipment",
-  "img": "icons/equipment/clothing/gloves-leather-brown.webp",
+  "img": "icons/equipment/hand/gloves-leather-tan.webp",
   "system": {
     "description": {
       "value": "Stiff leather gloves. Protect the hands from burns and abrasion. +1 to Craft, and remove the penalty for handling hot or sharp objects.",

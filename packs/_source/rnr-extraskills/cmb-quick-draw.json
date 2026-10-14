@@ -2,7 +2,7 @@
   "_id": "rnrextra00000007",
   "name": "Quick Draw",
   "type": "extraskills",
-  "img": "icons/weapons/guns/gun-pistol-flintlock-black.webp",
+  "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
       "value": "You can draw or stow a weapon as a free action (not a bonus action) once per turn. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE.",

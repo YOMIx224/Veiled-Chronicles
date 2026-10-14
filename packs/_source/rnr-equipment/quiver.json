@@ -2,7 +2,7 @@
   "_id": "rnrequip00000011",
   "name": "Quiver",
   "type": "equipment",
-  "img": "icons/weapons/ammunition/quiver-arrow.webp",
+  "img": "icons/weapons/ammunition/arrows-barbed-white.webp",
   "system": {
     "description": {
       "value": "A shoulder quiver for projectiles. While worn, the first attack with an ammunition weapon each round ignores the Reload requirement.",

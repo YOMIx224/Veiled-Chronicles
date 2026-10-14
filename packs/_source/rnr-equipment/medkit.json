@@ -2,7 +2,7 @@
   "_id": "rnrequip00000004",
   "name": "Medical Kit",
   "type": "equipment",
-  "img": "icons/tools/medical/syringe-satchel-brown.webp",
+  "img": "icons/tools/medical/medkit-white-red.webp",
   "system": {
     "description": {
       "value": "A comprehensive medical kit for field use. Contains bandages, antiseptic, sutures, and basic instruments. +2 to First Aid and Medicine checks. 10 uses.",

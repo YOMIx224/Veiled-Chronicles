@@ -457,7 +457,7 @@
             <div class="rnr-body-slot {{cssClass}} {{#if item}}filled{{/if}}" data-drop-zone="body" data-body-slot="{{key}}" data-item-id="{{item.id}}" draggable="{{#if item}}true{{else}}false{{/if}}" title="{{label}}">
               <div class="rnr-body-slot-head"><span class="rnr-body-slot-icon">{{icon}}</span><strong>{{label}}</strong></div>
               {{#if item}}
-              <div class="rnr-body-slot-item"><img src="{{item.img}}" alt="" data-action="item-roll" data-item-id="{{item.id}}" style="cursor:pointer" title="Show in chat"><span data-action="item-roll" data-item-id="{{item.id}}" style="cursor:pointer" title="Show in chat (Shift+Click to quick-roll)">{{item.name}}</span>{{#if item.isMechaBracelet}}<button type="button" class="rnr-mecha-bracelet-btn" data-action="mecha-bracelet" data-item-id="{{item.id}}" title="เรียกหุ่นหรือกลับสู่โหมด Pilot">Activate</button>{{/if}}<button type="button" data-action="clear-body" data-item-id="{{item.id}}" title="Unequip">×</button></div>
+              <div class="rnr-body-slot-item"><img src="{{item.img}}" alt="" data-action="item-roll" data-item-id="{{item.id}}" style="cursor:pointer" title="Show in chat"><span data-action="item-roll" data-item-id="{{item.id}}" style="cursor:pointer" title="Show in chat (Shift+Click to quick-roll)">{{item.name}}</span>{{#if item.isMechaBracelet}}<button type="button" class="rnr-mecha-bracelet-btn" data-action="mecha-bracelet" data-item-id="{{item.id}}" title="Summon a Mecha or return to Pilot mode">Activate</button>{{/if}}<button type="button" data-action="clear-body" data-item-id="{{item.id}}" title="Unequip">×</button></div>
               {{else}}<div class="rnr-body-slot-empty">Drop wearable item</div>{{/if}}
             </div>
             {{/each}}
@@ -478,7 +478,7 @@
                 <span class="rnr-equip-name">
                   <button type="button" class="rnr-roll-inline" data-action="item-roll" data-item-id="{{id}}" title="Show in chat (Shift+Click to quick-roll)">🎲</button>
                   {{#if isConsumable}}<button type="button" class="rnr-roll-inline" data-action="item-use" data-item-id="{{id}}" title="Use">✓</button>{{/if}}
-                  {{#if isMechaBracelet}}<button type="button" class="rnr-mecha-bracelet-btn" data-action="mecha-bracelet" data-item-id="{{id}}" title="เรียกหุ่นหรือกลับสู่โหมด Pilot">Activate</button>{{/if}}
+                  {{#if isMechaBracelet}}<button type="button" class="rnr-mecha-bracelet-btn" data-action="mecha-bracelet" data-item-id="{{id}}" title="Summon a Mecha or return to Pilot mode">Activate</button>{{/if}}
                   {{#if isExtraSkill}}<span class="rnr-extra-badge" title="Extra Skill — always active">✦</span>{{/if}}
                   <img alt="" data-action="item-roll" data-item-id="{{id}}" style="cursor:pointer" title="Show in chat" />
                   <strong data-action="item-roll" data-item-id="{{id}}" style="cursor:pointer" title="Show in chat (Shift+Click to quick-roll)">{{name}}</strong>

@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000017",
+  "name": "Technician",
+  "type": "background",
+  "img": "icons/commodities/tech/blueprint.webp",
+  "system": {
+    "description": {
+      "value": "<p>You maintained machines, from steam engines and generators to computers and starship systems.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Electronic and Mechanical. You can diagnose a broken device quickly and know where to scavenge or order replacement parts.",
+    "skills": [
+      "electronic",
+      "mechanical"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

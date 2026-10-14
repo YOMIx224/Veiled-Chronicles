@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000013",
+  "name": "Hunter",
+  "type": "background",
+  "img": "icons/weapons/bows/bow-simple-small.webp",
+  "system": {
+    "description": {
+      "value": "<p>You tracked and brought down game, beasts or bounties for a living.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Survival and Shooting Weapons. You can track creatures across open ground and know where dangerous animals in a region make their lairs.",
+    "skills": [
+      "survival",
+      "shootingWeapons"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

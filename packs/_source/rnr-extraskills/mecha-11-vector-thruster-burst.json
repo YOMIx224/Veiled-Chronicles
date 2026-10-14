@@ -2,7 +2,7 @@
   "_id": "613dc91d845732a3",
   "name": "Mecha — Vector Thruster Burst",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Fire lateral thrusters when an attack targets you. Use the normal Reflex defense; on a successful defense, the GM may also allow movement up to 10 ft if the space is clear.",

@@ -2,7 +2,7 @@
   "_id": "rnrmechasummon01",
   "name": "RnR — Deploy & Enter Mecha",
   "type": "script",
-  "img": "icons/svg/robot.svg",
+  "img": "icons/creatures/magical/construct-golem-robot-blue.webp",
   "command": "const pilot = canvas.tokens.controlled.find(token => token.actor?.type !== \"vehicle\")?.actor ?? game.user.character ?? null;\nif (!game.RnR?.mecha?.summon) ui.notifications.warn(\"RnR Mecha API is unavailable. Make sure the RnR system has finished loading.\");\nelse await game.RnR.mecha.summon(pilot);",
   "scope": "global",
   "ownership": {

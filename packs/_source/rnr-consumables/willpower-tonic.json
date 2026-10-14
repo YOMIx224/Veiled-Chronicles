@@ -2,7 +2,7 @@
   "_id": "rnrconsumab00004",
   "name": "Willpower Tonic",
   "type": "consumable",
-  "img": "icons/consumables/potions/potion-round-corked-blue.webp",
+  "img": "icons/consumables/potions/bottle-round-corked-blue.webp",
   "system": {
     "description": {
       "value": "A calming tonic that restores mental clarity. Restores 1d4+1 WillPower.",

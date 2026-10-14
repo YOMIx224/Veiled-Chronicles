@@ -2,7 +2,7 @@
   "_id": "b8d92fbbd06d3c89",
   "name": "Mecha — Reactor Overdrive",
   "type": "ability",
-  "img": "icons/sundries/scrolls/scroll-bound-blue.webp",
+  "img": "icons/sundries/scrolls/scroll-bound-blue-brown.webp",
   "system": {
     "description": {
       "value": "Bonus Action: increase the frame’s speed by 10 ft until the start of your next turn. Under the optional Heat rule, add 1 Heat; track both manually.",

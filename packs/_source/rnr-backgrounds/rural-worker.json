@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000009",
+  "name": "Rural Worker",
+  "type": "background",
+  "img": "icons/skills/trades/farming-watering-can-green.webp",
+  "system": {
+    "description": {
+      "value": "<p>You worked the land: fields, herds, orchards, plantations or hydroponic farms.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Herb and Athlete. Rural communities trust you, and you can read weather, soil and animals at a glance.",
+    "skills": [
+      "herb",
+      "athlete"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

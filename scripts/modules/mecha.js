@@ -49,7 +49,7 @@ function pilotActorOrNotify(actor = null) {
   if (actor && actor.type !== "vehicle") return actor;
   const controlled = canvas?.tokens?.controlled?.find(token => token.actor && token.actor.type !== "vehicle")?.actor;
   const pilot = controlled ?? game.user?.character ?? null;
-  if (!pilot) ui.notifications.warn("เลือก Token ของ Pilot ก่อน หรือกำหนด Character ให้ผู้ใช้ปัจจุบัน");
+  if (!pilot) ui.notifications.warn("Select the Pilot's Token first, or assign a Character to the current user.");
   return pilot;
 }
 
@@ -93,7 +93,7 @@ async function requestOwnerSummon(pilot, mechaId = null) {
       },
     },
   });
-  ui.notifications.info(`ส่งคำขอเรียกหุ่นไปยัง ${owner.name} แล้ว`);
+  ui.notifications.info(`Mecha summon request sent to ${owner.name}.`);
   return true;
 }
 
@@ -101,22 +101,22 @@ async function deployMecha(pilot, mecha) {
   const scene = canvas?.scene;
   const pilotToken = pilotTokenFor(pilot);
   if (!scene || !pilotToken) {
-    ui.notifications.warn("วาง Token ของ Pilot ไว้บน Scene ปัจจุบันก่อนเรียกหุ่น");
+    ui.notifications.warn("Place the Pilot's Token on the current Scene before summoning a Mecha.");
     return null;
   }
   if (!mecha || mecha.type !== "vehicle") {
-    ui.notifications.warn("เลือก Actor ประเภท Vehicle/Mecha ที่นำเข้าไว้ใน World แล้ว");
+    ui.notifications.warn("Choose a Vehicle/Mecha Actor that has been imported into this World.");
     return null;
   }
   if (!game.user?.isGM && !mecha.isOwner) {
-    ui.notifications.warn("คุณไม่มีสิทธิ์ควบคุม Actor หุ่นนี้ ให้ GM เปิด Ownership ให้ Pilot ก่อน");
+    ui.notifications.warn("You do not control this Mecha Actor. Ask the GM to grant the Pilot Ownership.");
     return null;
   }
 
   const alreadyDeployed = deploymentTokenForPilot(pilot);
   if (alreadyDeployed) {
     alreadyDeployed.control({ releaseOthers: true });
-    ui.notifications.info(`${mecha.name} ถูกเรียกอยู่แล้ว — เปลี่ยนการควบคุมไปยังหุ่น`);
+    ui.notifications.info(`${mecha.name} is already deployed — switching control to the Mecha.`);
     return alreadyDeployed;
   }
 
@@ -140,12 +140,12 @@ async function deployMecha(pilot, mecha) {
     const [created] = await scene.createEmbeddedDocuments("Token", [tokenData]);
     const placed = canvas.tokens.get(created.id);
     placed?.control({ releaseOthers: true });
-    await postMechaMessage(pilot, mecha, "เปิดใช้งานกำไล — เรียกหุ่นและเข้าสู่โหมด Mecha");
-    ui.notifications.info(`เรียก ${mecha.name} สำเร็จ`);
+    await postMechaMessage(pilot, mecha, "Bracelet activated — Mecha summoned, entering Mecha mode.");
+    ui.notifications.info(`${mecha.name} summoned.`);
     return placed ?? created;
   } catch (error) {
     console.error("RnR | Mecha deployment failed", error);
-    ui.notifications.error("สร้าง Token หุ่นไม่สำเร็จ ตรวจสิทธิ์การสร้าง Token บน Scene และสิทธิ์ Owner ของ Actor กับ GM");
+    ui.notifications.error("Could not create the Mecha Token. Ask the GM to check Token creation permission on this Scene and Ownership of the Actor.");
     return null;
   }
 }
@@ -155,14 +155,14 @@ export async function summonMecha(actor = null, mechaId = null) {
   if (!pilot) return null;
 
   if (!game.user?.isGM && !userOwnsPilot(pilot)) {
-    ui.notifications.warn("เรียกหุ่นได้เฉพาะ GM หรือ Player ที่เป็น Owner ของ Pilot");
+    ui.notifications.warn("Only the GM or a Player who owns the Pilot can summon a Mecha.");
     return null;
   }
 
   const alreadyDeployed = deploymentTokenForPilot(pilot);
   if (alreadyDeployed) {
     alreadyDeployed.control({ releaseOthers: true });
-    ui.notifications.info("หุ่นถูกเรียกอยู่แล้ว — เปลี่ยนการควบคุมไปยังหุ่นตัวเดิม");
+    ui.notifications.info("A Mecha is already deployed — switching control to it.");
     return alreadyDeployed;
   }
 
@@ -173,7 +173,7 @@ export async function summonMecha(actor = null, mechaId = null) {
       await requestOwnerSummon(pilot, mechaId);
     } catch (error) {
       console.error("RnR | Could not send Mecha summon request", error);
-      ui.notifications.error("ส่ง popup คำขอเรียกหุ่นไปยัง Player ไม่สำเร็จ");
+      ui.notifications.error("Could not send the Mecha summon request to the Player.");
     }
     return null;
   }
@@ -183,26 +183,26 @@ export async function summonMecha(actor = null, mechaId = null) {
 
   const candidates = availableMecha();
   if (!candidates.length) {
-    ui.notifications.warn("ยังไม่มี Actor ประเภท Vehicle/Mecha ที่คุณควบคุมได้ใน World — ให้ GM นำเข้า ‘RnR Mecha Frames’ จาก Compendium และเปิด Ownership");
+    ui.notifications.warn("You do not control any Vehicle/Mecha Actor in this World. Ask the GM to import one from the 'RnR — Mecha Frames' Compendium and grant Ownership.");
     return null;
   }
   if (candidates.length === 1) return deployMecha(pilot, candidates[0]);
 
   const options = candidates.map(item => `<option value="${escapeHtml(item.id)}">${escapeHtml(item.name)}</option>`).join("");
   renderMechaDialog({
-    title: "กำไลเรียกหุ่น Mecha",
-    content: `<form><p>เลือกหุ่นที่จะเรียกมาข้าง Token ของ Pilot:</p><select name="mechaId">${options}</select></form>`,
+    title: "Mecha Summon Bracelet",
+    content: `<form><p>Choose the Mecha to summon next to the Pilot's Token:</p><select name="mechaId">${options}</select></form>`,
     buttons: [
       {
         action: "summon",
-        label: "เรียกหุ่น",
+        label: "Summon",
         callback: async (_event, button) => {
           const id = button?.form?.elements?.mechaId?.value;
           const chosen = game.actors.get(id);
           if (chosen) await deployMecha(pilot, chosen);
         },
       },
-      { action: "cancel", label: "ยกเลิก" },
+      { action: "cancel", label: "Cancel" },
     ],
     defaultAction: "summon",
   });
@@ -228,7 +228,7 @@ export function handleMechaSummonMessage(message) {
 
   const candidates = availableMecha();
   if (!candidates.length) {
-    ui.notifications.warn("GM ส่งคำขอเรียกหุ่นมา แต่คุณยังไม่มีสิทธิ์ Owner ของ Actor Vehicle/Mecha");
+    ui.notifications.warn("The GM requested a Mecha summon, but you do not own a Vehicle/Mecha Actor yet.");
     return;
   }
 
@@ -238,23 +238,23 @@ export function handleMechaSummonMessage(message) {
     `<option value="${escapeHtml(item.id)}"${item.id === selectedId ? " selected" : ""}>${escapeHtml(item.name)}</option>`
   ).join("");
   renderMechaDialog({
-    title: "คำขอเรียกหุ่น Mecha",
-    content: `<form><p>GM ขอให้เรียกหุ่นสำหรับ <strong>${escapeHtml(pilot.name)}</strong>:</p><label>เลือกหุ่น <select name="mechaId">${options}</select></label></form>`,
+    title: "Mecha Summon Request",
+    content: `<form><p>The GM asks you to summon a Mecha for <strong>${escapeHtml(pilot.name)}</strong>:</p><label>Mecha <select name="mechaId">${options}</select></label></form>`,
     buttons: [
       {
         action: "summon",
-        label: "เรียกหุ่น",
+        label: "Summon",
         callback: async (_event, button) => {
           const id = button?.form?.elements?.mechaId?.value;
           const chosen = game.actors?.get(id);
           if (!chosen || !userOwnsPilot(pilot)) {
-            ui.notifications.warn("ไม่พบหุ่นที่เลือก หรือสิทธิ์ Owner ของ Pilot เปลี่ยนไปแล้ว");
+            ui.notifications.warn("The selected Mecha was not found, or the Pilot's Ownership has changed.");
             return;
           }
           await deployMecha(pilot, chosen);
         },
       },
-      { action: "dismiss", label: "ไม่ใช่ตอนนี้" },
+      { action: "dismiss", label: "Not now" },
     ],
     defaultAction: "summon",
   });
@@ -268,7 +268,7 @@ export async function returnToPilot(actor = null) {
       ? canvas?.tokens?.placeables?.find(token => token.actor?.id === actor.id && getRnRFlag(token.document, "mechaDeployment.pilotActorId"))
       : deploymentTokenForPilot(actor);
   if (!mechToken) {
-    ui.notifications.warn("ไม่พบ Token หุ่นที่เรียกด้วยกำไล ให้เลือก Token หุ่น หรือเลือก Token Pilot ก่อน");
+    ui.notifications.warn("No bracelet-summoned Mecha Token found. Select the Mecha Token or the Pilot Token first.");
     return null;
   }
 
@@ -276,7 +276,7 @@ export async function returnToPilot(actor = null) {
   const pilot = game.actors?.get(pilotId);
   const pilotToken = pilotTokenFor(pilot);
   if (!pilotToken) {
-    ui.notifications.warn("ไม่พบ Token Pilot ใน Scene นี้ จึงสลับกลับไม่ได้ — วาง Token Pilot ลงบน Scene ก่อน");
+    ui.notifications.warn("The Pilot Token is not on this Scene, so control cannot switch back. Place the Pilot Token on the Scene first.");
     return null;
   }
 
@@ -285,28 +285,28 @@ export async function returnToPilot(actor = null) {
     await mechToken.document.delete();
   } catch (error) {
     console.error("RnR | Could not remove summoned Mecha Token", error);
-    ui.notifications.error("ลบ Token หุ่นไม่สำเร็จ ตรวจสิทธิ์การลบ Token กับ GM");
+    ui.notifications.error("Could not remove the Mecha Token. Ask the GM to check Token deletion permission.");
     return null;
   }
 
   pilotToken.control({ releaseOthers: true });
-  await postMechaMessage(pilot, mecha, "กลับสู่โหมด Pilot — นำ Token หุ่นออกจาก Scene แล้ว");
-  ui.notifications.info("กลับมาควบคุม Token Pilot แล้ว — ลบ Token หุ่นออกจาก Scene แล้ว (Actor หุ่นยังอยู่ใน World)");
+  await postMechaMessage(pilot, mecha, "Returned to Pilot mode — the Mecha Token was removed from the Scene.");
+  ui.notifications.info("Back in control of the Pilot Token. The Mecha Token was removed from the Scene; the Mecha Actor remains in the World.");
   return pilotToken;
 }
 
 export function openMechaBraceletDialog(actor) {
   if (!actor || actor.type === "vehicle") {
-    ui.notifications.warn("ใช้กำไลจาก Actor ของ Pilot ไม่ใช่จาก Actor หุ่น");
+    ui.notifications.warn("Use the bracelet from the Pilot's Actor, not from the Mecha Actor.");
     return;
   }
   renderMechaDialog({
-    title: "กำไลบัญชาการ Mecha",
-    content: `<p>เลือกการทำงานของกำไล:</p><ul><li><strong>เรียกหุ่น / แปลงเข้าสู่โหมด Mecha</strong> — สร้าง Token ข้าง Pilot และสลับการควบคุมไปยังหุ่น</li><li><strong>กลับสู่โหมด Pilot</strong> — ลบ Token หุ่นที่เรียกออกจาก Scene แล้วสลับกลับ (Actor หุ่นยังอยู่ใน World)</li></ul><p class="notes">ต้องมี Token Pilot บน Scene และ Actor Vehicle ที่ผู้เล่นควบคุมได้</p>`,
+    title: "Mecha Command Bracelet",
+    content: `<p>Choose a bracelet function:</p><ul><li><strong>Summon / Mecha mode</strong> — create the Mecha Token next to the Pilot and switch control to it.</li><li><strong>Return to Pilot</strong> — remove the summoned Mecha Token from the Scene and switch back (the Mecha Actor stays in the World).</li></ul><p class="notes">Requires the Pilot Token on the Scene and a Vehicle Actor the player controls.</p>`,
     buttons: [
-      { action: "summon", label: "เรียกหุ่น / แปลงร่าง", callback: () => summonMecha(actor) },
-      { action: "return", label: "กลับเป็น Pilot และเก็บหุ่น", callback: () => returnToPilot(actor) },
-      { action: "cancel", label: "ยกเลิก" },
+      { action: "summon", label: "Summon / Mecha Mode", callback: () => summonMecha(actor) },
+      { action: "return", label: "Return to Pilot", callback: () => returnToPilot(actor) },
+      { action: "cancel", label: "Cancel" },
     ],
     defaultAction: "summon",
   });

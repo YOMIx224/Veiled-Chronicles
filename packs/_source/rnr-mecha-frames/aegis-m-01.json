@@ -2,7 +2,7 @@
   "_id": "rnrmechframe0001",
   "name": "RnR — Aegis M-01 Field Mecha",
   "type": "vehicle",
-  "img": "icons/svg/robot.svg",
+  "img": "icons/creatures/magical/construct-golem-robot-blue.webp",
   "system": {
     "setting": "mecha",
     "vehicleType": "land",
@@ -106,7 +106,7 @@
     },
     "disposition": 1,
     "texture": {
-      "src": "icons/svg/robot.svg"
+      "src": "icons/creatures/magical/construct-golem-robot-blue.webp"
     },
     "flags": {},
     "sight": {

@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000007",
+  "name": "Performer",
+  "type": "background",
+  "img": "icons/skills/trades/music-notes-sound-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p>You earned your living on a stage, a street corner, a broadcast or a stream.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Art and Persuade. You can always find a paying audience in a settlement, and people who have seen your work may recognise you.",
+    "skills": [
+      "art",
+      "persuade"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

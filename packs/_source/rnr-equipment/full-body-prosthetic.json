@@ -2,7 +2,7 @@
   "_id": "rnrequip00000020",
   "name": "Full Body Prosthetic",
   "type": "equipment",
-  "img": "icons/magic/creatures/leg-limbr-gold.webp",
+  "img": "icons/svg/leg.svg",
   "system": {
     "description": {
       "value": "A full-body frame replacing the wearer's limbs and torso. While worn, all disabled organs are treated as usable, and the wearer adds +2 Armor DR.",

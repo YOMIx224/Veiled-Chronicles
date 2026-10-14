@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000016",
+  "name": "Investigator",
+  "type": "background",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-small-teal.webp",
+  "system": {
+    "description": {
+      "value": "<p>You uncovered secrets for a living as a detective, journalist, auditor or inquisitor.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Search and Sense of Lie. You know how to work records, archives and informants, and can usually find who last saw a missing person.",
+    "skills": [
+      "search",
+      "senseOfLie"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

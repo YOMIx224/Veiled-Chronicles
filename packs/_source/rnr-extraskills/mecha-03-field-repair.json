@@ -2,7 +2,7 @@
   "_id": "5f5790aa620c5887",
   "name": "Mecha — Field Repair",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "You know where a damaged frame can be braced, bypassed, or safely patched. Gain +1 to Mechanical and Craft checks made to service a mecha.",

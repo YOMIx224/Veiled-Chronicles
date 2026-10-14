@@ -2,7 +2,7 @@
   "_id": "rnrextra00000006",
   "name": "Field Medic",
   "type": "extraskills",
-  "img": "icons/tools/medical/syringe-needle-blue.webp",
+  "img": "icons/tools/laboratory/injector-needle-syringe-plunger.webp",
   "system": {
     "description": {
       "value": "+2 to First Aid and Medicine. When you use a bandage, roll twice and take the higher result. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE.",

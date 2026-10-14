@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000010",
+  "name": "Gambler",
+  "type": "background",
+  "img": "icons/magic/nature/leaf-glow-triple-green.webp",
+  "system": {
+    "description": {
+      "value": "<p>You lived by odds, bluffs and other people's tells in card rooms, casinos or back-alley games.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Bet and Sense of Lie. You can find a game in any settlement and usually know who holds a debt over whom.",
+    "skills": [
+      "bet",
+      "senseOfLie"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

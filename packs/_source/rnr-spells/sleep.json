@@ -2,7 +2,7 @@
   "_id": "rnrspell00000004",
   "name": "Sleep",
   "type": "spell",
-  "img": "icons/magic/control/sleep-bubbles-purple.webp",
+  "img": "icons/magic/control/sleep-bubble-purple.webp",
   "system": {
     "description": {
       "value": "This spell sends creatures into a magical slumber. Roll 5d8; the total is how many HP of creatures this spell can affect.",

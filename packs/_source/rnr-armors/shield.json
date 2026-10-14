@@ -2,7 +2,7 @@
   "_id": "rnrarmor00000005",
   "name": "Shield",
   "type": "armor",
-  "img": "icons/equipment/shield/round-wooden-boss-engraved.webp",
+  "img": "icons/equipment/shield/round-wooden-boss-gold-brown.webp",
   "system": {
     "description": {
       "value": "A wooden or metal shield held in one hand. +2 AC.",

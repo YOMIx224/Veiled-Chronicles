@@ -258,13 +258,13 @@ function setApplyButtonsDisabled(root, disabled, title = "") {
 async function executeApplyAction({ message, root, button, action, resolveAmount, damageType = "", options = {}, onSuccess }) {
   if (button.disabled || button.dataset.rnrApplying === "true") return;
   button.dataset.rnrApplying = "true";
-  setApplyButtonsDisabled(root, true, "กำลังใช้ผลจาก Chat Card…");
+  setApplyButtonsDisabled(root, true, "Applying the Chat Card result…");
 
   let allowRetry = false;
   try {
     const legacyState = legacyApplyActionState(message);
     if (["processing", "applied", "review"].includes(legacyState?.status)) {
-      ui.notifications.warn("การ์ด Damage/Healing รุ่นเก่านี้ถูกใช้แล้วหรือรอ GM ตรวจสอบ");
+      ui.notifications.warn("This older Damage/Healing card was already applied or is waiting for GM review.");
       return;
     }
 

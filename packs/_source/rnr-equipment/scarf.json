@@ -2,7 +2,7 @@
   "_id": "rnrequip00000008",
   "name": "Scarf",
   "type": "equipment",
-  "img": "icons/equipment/clothing/clothing-leather-cloak.webp",
+  "img": "icons/equipment/shoulder/cloak-plain-leather-brown.webp",
   "system": {
     "description": {
       "value": "A long woven scarf. Keeps the neck warm, can be pulled over the face for concealment, and adds +1 Mental.",

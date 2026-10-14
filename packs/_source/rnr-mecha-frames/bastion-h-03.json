@@ -1,0 +1,133 @@
+{
+  "_id": "rnrmechframe0003",
+  "name": "RnR — Bastion H-03 Heavy Mecha",
+  "type": "vehicle",
+  "img": "icons/creatures/magical/construct-golem-robot-blue.webp",
+  "system": {
+    "setting": "mecha",
+    "vehicleType": "land",
+    "handling": 1,
+    "crew": {
+      "value": [],
+      "max": 1
+    },
+    "passengers": 0,
+    "cargo": 4,
+    "weaponSystems": [],
+    "attributes": {
+      "strength": {
+        "value": 14
+      },
+      "dexterity": {
+        "value": 8
+      },
+      "toughness": {
+        "value": 14
+      },
+      "intellect": {
+        "value": 8
+      },
+      "aptitude": {
+        "value": 8
+      },
+      "sanity": {
+        "value": 8
+      },
+      "charm": {
+        "value": 8
+      },
+      "rhetoric": {
+        "value": 8
+      },
+      "ego": {
+        "value": 8
+      }
+    },
+    "vitals": {
+      "health": {
+        "value": 90,
+        "max": 90
+      },
+      "willPower": {
+        "value": 0,
+        "max": 0
+      },
+      "mental": {
+        "value": 9,
+        "max": 18
+      }
+    },
+    "defenses": {
+      "armorDamageReduction": 9,
+      "reflexDefense": 10,
+      "speed": 25,
+      "cover": 2,
+      "initiative": 0,
+      "resistance": "",
+      "immunity": "",
+      "vulnerability": ""
+    },
+    "identity": {
+      "profession": "Bastion-series Heavy Mecha",
+      "notes": "Siege and defence frame. Slow but very hard to bring down; ideal for holding a line or escorting allies."
+    },
+    "details": {
+      "type": "mecha",
+      "size": "lg",
+      "cr": 0,
+      "biography": {
+        "value": "<p>A heavy frame wrapped in layered composite plating. Its reactor feeds shield emitters and heavy weapon hardpoints instead of mobility.</p><p><strong>Role:</strong> defender, breacher, heavy weapons platform.</p>"
+      }
+    },
+    "conditions": {
+      "injuries": {
+        "active": []
+      },
+      "psychiatricDisorders": {
+        "active": []
+      },
+      "physicalStates": {
+        "active": []
+      }
+    }
+  },
+  "prototypeToken": {
+    "name": "Bastion H-03",
+    "actorLink": true,
+    "width": 3,
+    "height": 3,
+    "displayName": 20,
+    "displayBars": 40,
+    "bar1": {
+      "attribute": "vitals.health"
+    },
+    "bar2": {
+      "attribute": "vitals.willPower"
+    },
+    "disposition": 1,
+    "texture": {
+      "src": "icons/creatures/magical/construct-golem-robot-blue.webp"
+    },
+    "flags": {},
+    "sight": {
+      "enabled": true,
+      "range": 30,
+      "angle": 360
+    },
+    "detectionModes": []
+  },
+  "items": [],
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "RnR": {
+      "mechaFrame": true
+    }
+  },
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.17",
+    "coreVersion": "14"
+  }
+}

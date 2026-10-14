@@ -4225,3 +4225,55 @@
   flex: none;
   margin: 0;
 }
+
+/* Item description: Foundry rich-text editor (prose-mirror) */
+.rnr.sheet.item .rnr-item-description-label {
+  color: #c9a876;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.rnr.sheet.item .rnr-item-description prose-mirror,
+.rnr.sheet.item .rnr-item-description-view {
+  display: block;
+  min-height: 120px;
+  padding: 6px 8px;
+  border: 1px solid #555d68;
+  border-radius: 4px;
+  background: #15171b;
+  color: #eee7da;
+  line-height: 1.5;
+}
+.rnr.sheet.item .rnr-item-description prose-mirror.active { min-height: 220px; }
+.rnr.sheet.item .rnr-item-description-view p:first-child { margin-top: 0; }
+
+/* Extra Skill Shop: attribute / affordable filters and paging */
+.rnr-extra-skill-shop .rnr-shop-filter {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  align-items: end;
+}
+.rnr-extra-skill-shop .rnr-shop-filter label:first-child { grid-column: 1 / -1; }
+.rnr-extra-skill-shop .rnr-shop-affordable {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+}
+.rnr-extra-skill-shop .rnr-shop-count { margin: 0 0 6px; color: #9f8d78; font-size: .68rem; }
+.rnr-extra-skill-shop .rnr-shop-more {
+  width: 100%;
+  margin: 8px 0 2px;
+  min-height: 30px;
+  border: 1px dashed #806443;
+  border-radius: 4px;
+  background: #1b1e24;
+  color: #e3c891;
+  font-weight: 800;
+}
+.rnr-extra-skill-shop .rnr-shop-more:hover { background: #24272c; }
+@media (max-width: 560px) {
+  .rnr-extra-skill-shop .rnr-shop-filter { grid-template-columns: 1fr; }
+}

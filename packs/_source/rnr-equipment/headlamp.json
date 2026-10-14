@@ -2,7 +2,7 @@
   "_id": "rnrequip00000007",
   "name": "Headlamp",
   "type": "equipment",
-  "img": "icons/undrawn/torch-lit-wide-original.webp",
+  "img": "icons/sundries/lights/torch-brown-lit.webp",
   "system": {
     "description": {
       "value": "A strapped lamp that lights the wearer's forward view without freeing a hand. Also usable as a hand light when unequipped.",

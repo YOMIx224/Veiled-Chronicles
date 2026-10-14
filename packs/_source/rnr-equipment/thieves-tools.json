@@ -2,7 +2,7 @@
   "_id": "rnrequip00000003",
   "name": "Thieves' Tools",
   "type": "equipment",
-  "img": "icons/tools/hand/lockpick-steel-tan.webp",
+  "img": "icons/skills/trades/security-locksmith-key-gray.webp",
   "system": {
     "description": {
       "value": "A set of lock picks, a small mirror, scissors, and pliers. Required to pick locks or disarm traps. Gives +2 to Larceny checks.",

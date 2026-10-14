@@ -2,7 +2,7 @@
   "_id": "rnrweapon0000004",
   "name": "Longsword",
   "type": "weapon",
-  "img": "icons/weapons/swords/sword-broad-engraved.webp",
+  "img": "icons/weapons/swords/shortsword-broad-engraved.webp",
   "system": {
     "description": {
       "value": "A versatile straight blade used one or two-handed.",

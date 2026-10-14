@@ -2,7 +2,7 @@
   "_id": "3395c2639b824362",
   "name": "Mecha — Pilot Rescue Procedure",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Use squad comms and rescue rigging to help an allied pilot who is exposed or ejecting nearby. The GM adjudicates distance, timing, and danger.",

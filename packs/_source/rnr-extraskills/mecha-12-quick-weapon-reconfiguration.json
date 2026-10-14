@@ -2,7 +2,7 @@
   "_id": "aed8be2bb207783b",
   "name": "Mecha — Quick Weapon Reconfiguration",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Re-route a weapon’s feed or select a preconfigured firing mode as part of a Bonus Action. The GM defines compatible modes; track any changed statistics manually.",

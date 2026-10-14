@@ -510,10 +510,14 @@
     {{/if}}
 
     {{!-- ── Description (all types) ── --}}
-    <label class="rnr-item-description">
-      Description
-      <textarea name="system.description.value" placeholder="Item description…" rows="4">{{system.description.value}}</textarea>
-    </label>
+    <div class="rnr-item-description">
+      <span class="rnr-item-description-label">Description</span>
+      {{#if editable}}
+      <prose-mirror name="system.description.value" value="{{descriptionValue}}" toggled data-document-uuid="{{item.uuid}}">{{{enrichedDescription}}}</prose-mirror>
+      {{else}}
+      <div class="rnr-item-description-view">{{{enrichedDescription}}}</div>
+      {{/if}}
+    </div>
 
   </section>
 </div>

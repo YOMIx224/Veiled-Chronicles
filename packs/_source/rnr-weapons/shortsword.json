@@ -2,7 +2,7 @@
   "_id": "rnrweapon0000003",
   "name": "Shortsword",
   "type": "weapon",
-  "img": "icons/weapons/swords/sword-guard-brass.webp",
+  "img": "icons/weapons/swords/sword-guard-brass-worn.webp",
   "system": {
     "description": {
       "value": "A short one-handed blade balanced for speed.",

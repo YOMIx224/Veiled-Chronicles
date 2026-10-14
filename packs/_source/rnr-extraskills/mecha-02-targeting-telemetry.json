@@ -2,7 +2,7 @@
   "_id": "c034cc3e49e04740",
   "name": "Mecha — Targeting Telemetry",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Telemetry overlays stabilize aim. Gain +1 to Shooting Weapons checks made with mecha-mounted weapons.",

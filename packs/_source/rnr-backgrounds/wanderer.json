@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000008",
+  "name": "Wanderer",
+  "type": "background",
+  "img": "icons/tools/navigation/compass-brass-blue-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>You have spent years on the road, in the wilds or between worlds, rarely staying anywhere long.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Survival and Climb. You rarely get lost, can find food and water for yourself and a few companions, and know the travellers' routes of a region.",
+    "skills": [
+      "survival",
+      "climb"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

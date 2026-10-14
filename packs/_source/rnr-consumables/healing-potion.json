@@ -2,7 +2,7 @@
   "_id": "rnrconsumab00001",
   "name": "Healing Potion",
   "type": "consumable",
-  "img": "icons/consumables/potions/potion-round-corked-red.webp",
+  "img": "icons/consumables/potions/bottle-round-corked-orante-red.webp",
   "system": {
     "description": {
       "value": "Drinking this potion restores HP. Tastes like cherries.",

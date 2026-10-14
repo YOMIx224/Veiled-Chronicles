@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000015",
+  "name": "Merchant",
+  "type": "background",
+  "img": "icons/containers/bags/coinpouch-leather-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p>You bought, sold and haggled, running a stall, a shop, a caravan or a trading company.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Persuade and Consider. You can usually buy or sell goods at fair prices, and you know which traders deal in rare or restricted items.",
+    "skills": [
+      "persuade",
+      "consider"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

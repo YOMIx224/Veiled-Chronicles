@@ -2,7 +2,7 @@
   "_id": "rnrextra00000005",
   "name": "Expert Tracker",
   "type": "extraskills",
-  "img": "icons/skills/nature/leaf-bamboo-stack-green.webp",
+  "img": "icons/svg/pawprint.svg",
   "system": {
     "description": {
       "value": "+2 bonus to all Survival and Search checks. You can track creatures over difficult terrain without penalty. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: REACTION. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: REACTION.",

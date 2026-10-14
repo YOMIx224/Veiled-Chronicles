@@ -2,7 +2,7 @@
   "_id": "bc6c59f4c6c45b66",
   "name": "Mecha — Lock-On Protocol",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Spend a Bonus Action to designate one visible target. The next mecha attack against it before the end of your next turn gains +1 to its attack roll. This bonus is applied manually by the GM/player.",

@@ -2,7 +2,7 @@
   "_id": "rnrability000002",
   "name": "Dodge",
   "type": "ability",
-  "img": "icons/skills/movement/arrows-direction-blue.webp",
+  "img": "icons/skills/movement/figure-running-gray.webp",
   "system": {
     "description": {
       "value": "Until the start of your next turn, any attack roll against you has disadvantage if you can see the attacker, and you make Dexterity saves with advantage.",

@@ -2,7 +2,7 @@
   "_id": "uniweap000000039",
   "name": "Practice Bow",
   "type": "weapon",
-  "img": "icons/weapons/guns/gun-pistol-worn.webp",
+  "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
       "value": "Practice Bow suitable for any campaign that uses its profile.",

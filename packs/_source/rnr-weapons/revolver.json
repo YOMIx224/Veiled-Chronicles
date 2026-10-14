@@ -2,7 +2,7 @@
   "_id": "rnrweapon0000007",
   "name": "Revolver",
   "type": "weapon",
-  "img": "icons/weapons/guns/gun-pistol-flintlock-grey.webp",
+  "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
       "value": "A six-shot revolver. Reload after 6 shots.",

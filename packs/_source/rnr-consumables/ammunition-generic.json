@@ -2,7 +2,7 @@
   "_id": "rnrconsumammo001",
   "name": "Ammunition (Generic)",
   "type": "consumable",
-  "img": "icons/weapons/ammunition/arrow-head.webp",
+  "img": "icons/weapons/ammunition/arrow-head-war-flight.webp",
   "system": {
     "description": {
       "value": "Generic ammunition usable by any weapon when no caliber is specified.",

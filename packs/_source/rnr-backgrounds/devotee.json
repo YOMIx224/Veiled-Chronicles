@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000005",
+  "name": "Devotee",
+  "type": "background",
+  "img": "icons/sundries/books/book-red-exclamation.webp",
+  "system": {
+    "description": {
+      "value": "<p>You served a temple, order, movement or tradition and still carry its teachings with you.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Occult and Empathy. Members of your faith or tradition will offer you shelter and a hearing, and you recognise its rites, symbols and secrets.",
+    "skills": [
+      "occult",
+      "empathy"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

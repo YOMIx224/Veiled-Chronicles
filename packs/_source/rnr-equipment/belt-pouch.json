@@ -2,7 +2,7 @@
   "_id": "rnrequip00000015",
   "name": "Belt Pouch",
   "type": "equipment",
-  "img": "icons/containers/bag-leather.webp",
+  "img": "icons/containers/bags/pack-canvas-white-brown.webp",
   "system": {
     "description": {
       "value": "A reinforced pouch on a heavy belt. +1 carry capacity and one item may be drawn without a search.",

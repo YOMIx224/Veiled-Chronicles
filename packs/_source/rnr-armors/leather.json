@@ -2,7 +2,7 @@
   "_id": "rnrarmor00000002",
   "name": "Leather Armor",
   "type": "armor",
-  "img": "icons/equipment/chest/breastplate-leather-brown.webp",
+  "img": "icons/equipment/chest/breastplate-banded-leather-brown.webp",
   "system": {
     "description": {
       "value": "Hardened leather protecting the torso and limbs.",

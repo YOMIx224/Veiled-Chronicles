@@ -12,3 +12,6 @@ Thumbs.db
 *.swp
 .idea/
 .vscode/
+
+# Release output (tools/release.mjs)
+dist/

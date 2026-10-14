@@ -2,7 +2,7 @@
   "_id": "rnrequip00000019",
   "name": "Prosthetic Hand",
   "type": "equipment",
-  "img": "icons/magic/creatures/claw-creature-etched.webp",
+  "img": "icons/equipment/hand/gauntlet-armored-steel-grey.webp",
   "system": {
     "description": {
       "value": "A mechanical replacement for a hand. While worn, the wearer may use that hand normally even if the limb is disabled or lost.",

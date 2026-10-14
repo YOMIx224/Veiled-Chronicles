@@ -2,7 +2,7 @@
   "_id": "5ae8b5ff0f9e3d62",
   "name": "Mecha — System Purge",
   "type": "ability",
-  "img": "icons/sundries/scrolls/scroll-bound-blue.webp",
+  "img": "icons/sundries/scrolls/scroll-bound-blue-brown.webp",
   "system": {
     "description": {
       "value": "Action: attempt a Mechanical check to clear one temporary jam, sensor interference, or similar system fault. The GM sets the difficulty; does not automatically remove actor conditions.",

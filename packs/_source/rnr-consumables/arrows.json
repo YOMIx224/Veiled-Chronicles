@@ -2,7 +2,7 @@
   "_id": "rnrconsumammo002",
   "name": "Arrows / Bolts",
   "type": "consumable",
-  "img": "icons/weapons/ammunition/arrows-bundle.webp",
+  "img": "icons/weapons/ammunition/arrows-barbed-white.webp",
   "system": {
     "description": {
       "value": "A bundle of arrows or crossbow bolts.",

@@ -2,7 +2,7 @@
   "_id": "rnrconsumab00003",
   "name": "Antidote",
   "type": "consumable",
-  "img": "icons/consumables/potions/potion-round-corked-green.webp",
+  "img": "icons/consumables/potions/potion-round-corked-glowing-green.webp",
   "system": {
     "description": {
       "value": "Cures poison. Must be taken within 1 hour of poisoning.",

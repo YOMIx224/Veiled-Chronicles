@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000018",
+  "name": "Mystic",
+  "type": "background",
+  "img": "icons/magic/symbols/runes-carved-stone-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p>You studied forbidden lore, old legends, strange phenomena or the hidden side of the world.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Occult and History. You recognise supernatural signs and know who in a region collects, guards or fears such knowledge.",
+    "skills": [
+      "occult",
+      "history"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

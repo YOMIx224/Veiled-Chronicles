@@ -2,7 +2,7 @@
   "_id": "rnrequip00000012",
   "name": "Traveler's Coat",
   "type": "equipment",
-  "img": "icons/equipment/clothing/clothing-leather-jacket-brown.webp",
+  "img": "icons/equipment/chest/jacket-motorcycle-leather-brown.webp",
   "system": {
     "description": {
       "value": "A long belted coat. Pockets keep small items to hand, and the heavy weave adds +1 Armor DR against slashing and bludgeoning damage.",

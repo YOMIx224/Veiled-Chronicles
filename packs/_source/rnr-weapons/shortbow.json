@@ -2,7 +2,7 @@
   "_id": "rnrweapon0000006",
   "name": "Shortbow",
   "type": "weapon",
-  "img": "icons/weapons/bows/bow-short.webp",
+  "img": "icons/weapons/bows/bow-simple-small.webp",
   "system": {
     "description": {
       "value": "A light ranged bow. Requires arrows.",

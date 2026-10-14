@@ -2,7 +2,7 @@
   "_id": "88dc823a9ac1657b",
   "name": "Mecha — Field Patch Procedure",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Use a prepared patch, sealant, or bypass while taking another Action. Make a Mechanical check to stabilize one damaged system. It does not restore HP unless the GM grants it.",

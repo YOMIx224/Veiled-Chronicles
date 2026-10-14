@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000019",
+  "name": "Bodyguard",
+  "type": "background",
+  "img": "icons/skills/melee/shield-block-bash-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p>You protected someone important, standing between them and every threat.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Brawl and Reflex. You read crowds for danger, and former clients or employers may still owe you a favour.",
+    "skills": [
+      "brawl",
+      "reflex"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

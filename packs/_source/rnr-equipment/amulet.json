@@ -2,7 +2,7 @@
   "_id": "rnrequip00000009",
   "name": "Amulet",
   "type": "equipment",
-  "img": "icons/magic/unusual-scircles/sigil-ice-ward-blue.webp",
+  "img": "icons/magic/symbols/rune-sigil-horned-blue.webp",
   "system": {
     "description": {
       "value": "A talisman worn at the throat. Focus for channeling — +1 to any Spell or Ability check made while worn.",

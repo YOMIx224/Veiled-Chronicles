@@ -2,7 +2,7 @@
   "_id": "8f0cb10dc46effdd",
   "name": "Mecha — Zero-G Maneuvering",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Thruster-assisted movement and tether discipline help in low gravity. Gain +1 to Athlete and Reflex checks involving low gravity or EVA.",

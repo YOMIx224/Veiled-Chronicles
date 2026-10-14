@@ -2,7 +2,7 @@
   "_id": "rnrequipmecha001",
   "name": "Mecha Command Bracelet — กำไลบัญชาการ",
   "type": "equipment",
-  "img": "icons/equipment/wrist/bracer-simple-leather-brown.webp",
+  "img": "icons/equipment/wrist/bracer-belted-leather-brown.webp",
   "system": {
     "description": {
       "value": "<p>กำไลสื่อสารและกุญแจประสานระบบประสาท ใช้เรียกหุ่นประจำตัวจากพื้นที่เตรียมพร้อม เมื่อสวมใส่ ปุ่ม <strong>Activate</strong> บน Actor Sheet จะเปิดเมนูเรียกหุ่นหรือกลับสู่โหมด Pilot</p><p><strong>เรียกหุ่น:</strong> ต้องมี Token Pilot บน Scene, มี Actor ประเภท Vehicle/Mecha ใน World และผู้เล่นต้องมีสิทธิ์ Owner ของ Actor นั้น ระบบสร้าง Token หุ่นข้าง Pilot แล้วสลับการควบคุมไปยังหุ่น</p><p><strong>กลับสู่ Pilot:</strong> สลับการควบคุมกลับไปยัง Token Pilot โดยไม่ลบ Token หุ่นหรือข้อมูล Actor</p><p>เปิด Compendium <em>RnR — Mecha Frames</em> แล้วให้ GM นำเข้า <strong>RnR — Aegis M-01 Field Mecha</strong> ไปยัง World จากนั้นตั้ง Ownership ให้ผู้เล่นและอนุญาตการสร้าง Token บน Scene หากระบบสิทธิ์ World บล็อกไว้</p><p>มาโครเสริมอยู่ใน <em>RnR — Mecha Macros</em>: <strong>Deploy &amp; Enter Mecha</strong> และ <strong>Return to Pilot</strong> นำเข้า Macro เพื่อวางบน Hotbar ได้ ปุ่ม Activate ทำงานได้โดยไม่ต้อง import Macro แยก</p><p>ระบบไม่บังคับใช้ action economy หรือจำกัดจำนวนครั้ง ผู้เล่น/GM ตกลง action, ระยะเรียก, สัญญาณรบกวน และข้อจำกัดตามฉากเอง</p>",

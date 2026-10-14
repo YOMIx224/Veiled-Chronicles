@@ -2,7 +2,7 @@
   "_id": "c7f5e1e2e4efde0f",
   "name": "Mecha — Neural Link Calibration",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Neural-interface calibration reduces control lag. Gain +1 to Reflex checks while piloting a mecha.",

@@ -2,7 +2,7 @@
   "_id": "d2e6697bef24261c",
   "name": "Mecha — Aegis Barrier",
   "type": "ability",
-  "img": "icons/sundries/scrolls/scroll-bound-blue.webp",
+  "img": "icons/sundries/scrolls/scroll-bound-blue-brown.webp",
   "system": {
     "description": {
       "value": "Reaction: when an attack hits, reduce its damage by 1d6 after Armor DR, to a minimum of 0. Roll and apply the reduction manually.",

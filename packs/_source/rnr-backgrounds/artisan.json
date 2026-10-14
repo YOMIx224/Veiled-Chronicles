@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000004",
+  "name": "Artisan",
+  "type": "background",
+  "img": "icons/tools/hand/hammer-and-nail.webp",
+  "system": {
+    "description": {
+      "value": "<p>You learned a trade in a workshop, forge, studio or garage, and you judge things by how well they are made.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Craft and Mechanical. You can repair, appraise or improvise everyday gear given time and basic tools, and fellow tradespeople treat you as one of their own.",
+    "skills": [
+      "craft",
+      "mechanical"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

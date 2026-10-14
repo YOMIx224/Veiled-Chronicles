@@ -2,7 +2,7 @@
   "_id": "rnrbackgd0000001",
   "name": "Street Kid",
   "type": "background",
-  "img": "icons/environment/settlement/city-street-market.webp",
+  "img": "icons/environment/settlement/city-entrance.webp",
   "system": {
     "description": {
       "value": "You grew up on the streets, surviving by your wits. You know every alley, fence, and black-market dealer in any city.",

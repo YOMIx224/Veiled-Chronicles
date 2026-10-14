@@ -8,7 +8,7 @@
       "name": "YOMIx224"
     }
   ],
-  "version": "0.3.19",
+  "version": "0.4.0",
   "license": "UNLICENSED",
   "url": "",
   "manifest": "",
@@ -136,7 +136,7 @@
     },
     {
       "name": "rnr-user-guide",
-      "label": "RnR — คู่มือการใช้งานฉบับละเอียด",
+      "label": "RnR — User Guide",
       "path": "packs/rnr-user-guide",
       "type": "JournalEntry",
       "system": "rnr"

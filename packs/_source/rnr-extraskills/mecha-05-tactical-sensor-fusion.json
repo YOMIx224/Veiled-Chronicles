@@ -2,7 +2,7 @@
   "_id": "2d4d318a361eeee9",
   "name": "Mecha — Tactical Sensor Fusion",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "You combine radar, lidar, heat, and visual feeds. Gain +1 to Perception and Search checks using mecha sensors.",

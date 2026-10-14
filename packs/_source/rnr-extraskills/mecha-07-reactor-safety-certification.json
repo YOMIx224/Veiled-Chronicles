@@ -2,7 +2,7 @@
   "_id": "bd8da5ebbc2357c3",
   "name": "Mecha — Reactor Safety Certification",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "You are trained to read reactor telemetry and isolate dangerous faults. Gain +1 to Mechanical checks involving reactor, coolant, or power systems.",

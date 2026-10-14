@@ -2,7 +2,7 @@
   "_id": "b6fb544726d4b0cf",
   "name": "Mecha — Targeting Assist",
   "type": "ability",
-  "img": "icons/sundries/scrolls/scroll-bound-blue.webp",
+  "img": "icons/sundries/scrolls/scroll-bound-blue-brown.webp",
   "system": {
     "description": {
       "value": "Free Action: designate one visible target. Your next mecha weapon attack against it before the end of this turn gains +1 to the attack roll; apply manually.",

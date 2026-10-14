@@ -2,7 +2,7 @@
   "_id": "rnrequip00000005",
   "name": "Binoculars",
   "type": "equipment",
-  "img": "icons/tools/navigation/compass-brass-red-blue.webp",
+  "img": "icons/tools/navigation/compass-brass-blue-red.webp",
   "system": {
     "description": {
       "value": "High-quality binoculars. Can see clearly up to 1 mile. +2 to Perception checks at long range.",

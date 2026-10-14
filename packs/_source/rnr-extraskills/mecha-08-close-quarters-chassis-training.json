@@ -2,7 +2,7 @@
   "_id": "50f5acb01adfd59f",
   "name": "Mecha — Close-Quarters Chassis Training",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "You understand leverage, reach, and the momentum of a large frame. Gain +1 to Brawl and Weapons checks while piloting a mecha in close quarters.",

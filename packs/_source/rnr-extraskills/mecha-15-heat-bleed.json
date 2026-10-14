@@ -2,7 +2,7 @@
   "_id": "6e8847f550695846",
   "name": "Mecha — Heat Bleed",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Vent coolant or reroute power. Under the optional Heat rule in the Journal, reduce Heat by 1; track this manually.",

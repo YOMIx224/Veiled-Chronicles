@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000011",
+  "name": "Watch Officer",
+  "type": "background",
+  "img": "icons/equipment/shield/round-wooden-boss-gold-brown.webp",
+  "system": {
+    "description": {
+      "value": "<p>You kept the peace as a city guard, constable, police officer or station security.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Law and Perception. Law enforcement treats you as a colleague, and you know how local authorities handle crime and evidence.",
+    "skills": [
+      "law",
+      "perception"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}

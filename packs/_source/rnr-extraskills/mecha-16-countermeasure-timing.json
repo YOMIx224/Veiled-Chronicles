@@ -2,7 +2,7 @@
   "_id": "4c399d60ac965afc",
   "name": "Mecha — Countermeasure Timing",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Deploy chaff, smoke, or a decoy as part of a Reaction defense. The GM decides whether the incoming threat can be fooled.",

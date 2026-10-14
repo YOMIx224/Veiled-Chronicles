@@ -2,7 +2,7 @@
   "_id": "033807295bb47e8c",
   "name": "Mecha — Sensor Sweep",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Sweep a zone with the frame’s sensors. The GM sets any Perception/Search check and decides which heat signatures, movement, or electronic emissions are detectable.",

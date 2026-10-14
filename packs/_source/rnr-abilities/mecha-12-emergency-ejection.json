@@ -2,7 +2,7 @@
   "_id": "df0b326b08bd00bb",
   "name": "Mecha — Emergency Ejection",
   "type": "ability",
-  "img": "icons/sundries/scrolls/scroll-bound-blue.webp",
+  "img": "icons/sundries/scrolls/scroll-bound-blue-brown.webp",
   "system": {
     "description": {
       "value": "Reaction: eject when the frame is about to be destroyed or disabled. The GM resolves landing, exposure, and any damage to the pilot.",

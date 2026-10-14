@@ -2,7 +2,7 @@
   "_id": "998f9a45c5fd34af",
   "name": "Mecha — Squad Data Link",
   "type": "extraskills",
-  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
       "value": "Shared tactical feeds help you read allies and direct a formation. Gain +1 to Persuade and Empathy checks when coordinating through a squad network.",

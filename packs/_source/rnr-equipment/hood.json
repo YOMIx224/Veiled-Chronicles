@@ -2,7 +2,7 @@
   "_id": "rnrequip00000006",
   "name": "Hood",
   "type": "equipment",
-  "img": "icons/equipment/clothing/clothing-leather-hood-brown.webp",
+  "img": "icons/equipment/head/hood-leather-brown.webp",
   "system": {
     "description": {
       "value": "A close-fitting hood. Keeps the head warm and offers light concealment. +1 to Hide & Sneak while worn.",

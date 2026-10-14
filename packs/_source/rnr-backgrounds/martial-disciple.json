@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000020",
+  "name": "Martial Disciple",
+  "type": "background",
+  "img": "icons/skills/melee/weapons-crossed-swords-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p>You trained under a master, school, dojo or sect and still follow its discipline.</p>",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Sword Play and Reflex. Practitioners of your style recognise and respect you, and your school's rivals know your name.",
+    "skills": [
+      "swordPlay",
+      "reflex"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.0",
+    "coreVersion": "14"
+  }
+}
