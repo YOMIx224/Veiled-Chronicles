@@ -2617,12 +2617,15 @@
   font: 800 .82rem Georgia, serif;
 }
 .rnr-dialog .window-content { padding: 12px; background: #1b1e24; color: #eee7da; }
-.rnr-dialog .dialog-buttons { gap: 6px; padding: 8px 10px; border-top: 1px solid #4d4034; background: #17191d; }
-.rnr-dialog .dialog-buttons button {
+.rnr-dialog .dialog-buttons,
+.rnr-dialog .form-footer { gap: 6px; padding: 8px 10px; border-top: 1px solid #4d4034; background: #17191d; }
+.rnr-dialog .dialog-buttons button,
+.rnr-dialog .form-footer button {
   min-height: 30px; border: 1px solid #b99869; border-radius: 3px;
   background: #9a7647; color: #171719; font-weight: 800; cursor: pointer;
 }
-.rnr-dialog .dialog-buttons button:hover { background: #c09a61; }
+.rnr-dialog .dialog-buttons button:hover,
+.rnr-dialog .form-footer button:hover { background: #c09a61; }
 .rnr-dialog input, .rnr-dialog select, .rnr-dialog textarea {
   border: 1px solid #6a5b4b; border-radius: 4px; background: #101318; color: #f6f1e8;
 }
@@ -3099,14 +3102,29 @@
   overflow: visible !important;
   min-height: 0 !important;
 }
-.rnr-dialog .dialog-buttons {
+/* Foundry v13+ DialogV2 renders its buttons in footer.form-footer. One row,
+   equal widths, so 1, 2 or 3 buttons always line up. */
+.rnr-dialog .dialog-buttons,
+.rnr-dialog .form-footer {
   display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  align-items: stretch;
   gap: 8px;
-  margin-top: 8px;
+  margin: 8px 0 0;
   padding: 0 10px 10px;
 }
-.rnr-dialog .dialog-button {
+.rnr-dialog .dialog-button,
+.rnr-dialog .form-footer button {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 !important;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   min-height: 30px !important;
   padding: 5px 8px !important;
   border: 1px solid #b99869 !important;
@@ -4182,3 +4200,28 @@
 .rnr-shop-action-group > h5 { margin: 6px 0 4px; color: var(--rnr-accent-hover, #d8b77e); font-size: .64rem; letter-spacing: .04em; text-transform: uppercase; }
 .rnr-shop-action-group > h5 small, .rnr-shop-action-type { color: var(--rnr-muted, #9da5b3); font-size: .58rem; font-weight: 500; }
 .rnr-shop-action-type { display: inline-block; margin-left: 6px; padding: 1px 4px; border: 1px solid var(--rnr-border, #51483b); border-radius: 3px; }
+
+/* ============================================================
+   Foundry v13+/v14 button reset
+   ============================================================
+   Core CSS gives every <button> a fixed `height: var(--button-size)` (2em),
+   `min-height: 2em`, flex layout and 14px text. RnR controls were sized for
+   the older auto-height buttons, so labels were clipped or pushed off-centre.
+   Reset the core sizing inside RnR content only; the window header controls
+   keep Foundry's icon-button sizing. */
+.rnr.sheet .window-content button,
+.rnr-dialog .window-content button,
+.rnr-chat-card button {
+  --button-size: auto;
+  height: auto;
+  box-sizing: border-box;
+  line-height: 1.2;
+  text-align: center;
+  vertical-align: middle;
+}
+.rnr.sheet .window-content button > i,
+.rnr-dialog .window-content button > i,
+.rnr-chat-card button > i {
+  flex: none;
+  margin: 0;
+}

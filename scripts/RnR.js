@@ -1,5 +1,5 @@
 // =============================================================
-//  Role & Roll  —  RnR.js  (v0.3.18)
+//  Role & Roll  —  RnR.js  (v0.3.19)
 // =============================================================
 
 // ── Module imports ────────────────────────────────────────────
@@ -2341,9 +2341,16 @@ async function extraSkillShop(actor) {
   let compItems = [];
   try {
     for (const pack of game.packs) {
-      if (pack.metadata.system !== game.system.id) continue;
-      if (pack.metadata.type !== "Item") continue;
-      const index = await pack.getIndex({ fields: ["name","type","system.category","system.cost","system.attribute","system.effect","system.actionType","system.abilityType"] });
+      // Any Item Compendium may hold extra skills, including GM-made world
+      // Compendiums. Only the document type matters here.
+      if ((pack.documentName ?? pack.metadata.type) !== "Item") continue;
+      let index;
+      try {
+        index = await pack.getIndex({ fields: ["name","type","system.category","system.cost","system.attribute","system.effect","system.actionType","system.abilityType"] });
+      } catch (err) {
+        console.warn(`RnR | Could not read Compendium ${pack.collection} for the Extra Skill Shop`, err);
+        continue;
+      }
       for (const e of index) {
         if (e.type === "extraskills") {
           compItems.push({
@@ -4153,6 +4160,9 @@ Hooks.on("createActor", async (actor, _options, userId) => {
 Hooks.on("renderApplicationV2", (app, element) => {
   const DialogV2 = globalThis.foundry?.applications?.api?.DialogV2;
   if (!DialogV2 || !(app instanceof DialogV2)) return;
+  // Only theme dialogs that carry RnR content. Core Foundry dialogs (create,
+  // delete, import from Compendium) must keep their own layout.
+  if (!app.element?.classList?.contains("rnr-dialog") && !element?.querySelector?.("[class*='rnr-']")) return;
   app.element?.classList?.add("rnr-dialog");
   element?.classList?.add("rnr-dialog-content");
 });

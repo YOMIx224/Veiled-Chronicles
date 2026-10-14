@@ -44,8 +44,21 @@ test("rendering an ordinary chat message does not throw on Foundry's flag scope 
   assert.doesNotThrow(() => handleMechaSummonMessage(strictFlagDocument()));
 });
 
-test("the Extra Skill Shop reads compendiums declared for the active system id", () => {
+test("the Extra Skill Shop reads every Item Compendium regardless of its system label", () => {
   const source = readFileSync(new URL("../scripts/RnR.js", import.meta.url), "utf8");
-  assert.doesNotMatch(source, /metadata\.system\s*!==\s*"RnR"/);
-  assert.ok(manifest.packs.every(pack => pack.system === manifest.id));
+  const shop = source.slice(source.indexOf("async function extraSkillShop"), source.indexOf("const grouped = {}"));
+  assert.doesNotMatch(shop, /metadata\.system/);
+  assert.match(shop, /!== "Item"\) continue/);
+});
+
+test("RnR dialog theming is not applied to core Foundry dialogs", () => {
+  const source = readFileSync(new URL("../scripts/RnR.js", import.meta.url), "utf8");
+  const hook = source.slice(source.indexOf('Hooks.on("renderApplicationV2"'), source.indexOf('Hooks.on("renderChatMessageHTML"'));
+  assert.match(hook, /querySelector\?\.\("\[class\*='rnr-'\]"\)\) return;/);
+});
+
+test("RnR buttons reset Foundry v13+ fixed button height", () => {
+  const css = readFileSync(new URL("../styles/RnR.css", import.meta.url), "utf8");
+  assert.match(css, /\.rnr\.sheet \.window-content button,[\s\S]*?\{[^}]*--button-size: auto;[^}]*height: auto;/);
+  assert.match(css, /\.rnr-dialog \.form-footer \{/);
 });
