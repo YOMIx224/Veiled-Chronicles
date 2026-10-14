@@ -1,0 +1,43 @@
+{
+  "_id": "uniextr000000021",
+  "name": "Legal Awareness",
+  "type": "extraskills",
+  "img": "icons/skills/trades/trade-swordrock-purple.webp",
+  "system": {
+    "description": {
+      "value": "+1 to law and generalEducation checks. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "category": "academic",
+    "attribute": "intellect",
+    "cost": 1,
+    "bonus": 1,
+    "skills": [
+      "law",
+      "generalEducation"
+    ],
+    "effect": "+1 to law and generalEducation checks.",
+    "properties": [],
+    "abilityType": "active",
+    "actionType": "action",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

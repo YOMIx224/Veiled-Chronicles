@@ -1,0 +1,43 @@
+{
+  "_id": "uniextr000000035",
+  "name": "Streetwise",
+  "type": "extraskills",
+  "img": "icons/skills/trades/trade-swordrock-purple.webp",
+  "system": {
+    "description": {
+      "value": "+1 to larceny and senseOfLie checks. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: REACTION. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: REACTION.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "category": "investigation",
+    "attribute": "aptitude",
+    "cost": 1,
+    "bonus": 1,
+    "skills": [
+      "larceny",
+      "senseOfLie"
+    ],
+    "effect": "+1 to larceny and senseOfLie checks.",
+    "properties": [],
+    "abilityType": "reaction",
+    "actionType": "reaction",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

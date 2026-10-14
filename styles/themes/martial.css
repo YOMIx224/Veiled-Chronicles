@@ -1,0 +1,26 @@
+/* RnR setting theme: จอมยุทธ์ / Martial Arts
+   Distinctly its own look: warm lacquered red-and-charcoal, the palette of
+   a dojo banner rather than a fighter jet. Deliberately NOT a variant of the
+   Future or Superhero themes - reads as hand-to-hand, grounded, traditional.
+*/
+[data-rnr-theme="martial"] {
+  --rnr-bg:            #1c1110;
+  --rnr-surface:       #261716;
+  --rnr-surface-2:     #2f1c1b;
+  --rnr-surface-3:     #3a2321;
+  --rnr-border:        #5a2f28;
+  --rnr-border-soft:   #452420;
+  --rnr-text:          #f5e6d8;
+  --rnr-muted:         #c0907c;
+  --rnr-accent:        #e2482f;
+  --rnr-accent-soft:   #3d1510;
+  --rnr-accent-hover:  #ff6a4d;
+  --rnr-accent-text:   #fdf3e7;
+  --rnr-heading:       #ffc857;
+  --rnr-shadow:        rgba(0, 0, 0, .5);
+  --rnr-pos:           #a8c66a;
+  --rnr-neg:           #f0736a;
+  --rnr-hp:            #c33a2c;
+  --rnr-wp:            #c98a3a;
+  --rnr-focus:         #ffc857;
+}

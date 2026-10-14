@@ -1,0 +1,17 @@
+{
+  "_id": "rnrmechareturn01",
+  "name": "RnR — Return to Pilot",
+  "type": "script",
+  "img": "icons/svg/door-exit.svg",
+  "command": "const actor = canvas.tokens.controlled[0]?.actor ?? game.user.character ?? null;\nif (!game.RnR?.mecha?.returnToPilot) ui.notifications.warn(\"RnR Mecha API is unavailable. Make sure the RnR system has finished loading.\");\nelse await game.RnR.mecha.returnToPilot(actor);",
+  "scope": "global",
+  "ownership": {
+    "default": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.17",
+    "coreVersion": "14"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "_id": "uniweap000000020",
+  "name": "Throwing Knife",
+  "type": "weapon",
+  "img": "icons/weapons/swords/sword-guard-bronze.webp",
+  "system": {
+    "description": {
+      "value": "Throwing Knife suitable for any campaign that uses its profile.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "weaponType": "melee",
+    "attribute": "strength",
+    "damageFormula": "1d6",
+    "damageType": "piercing",
+    "damageBonus": 0,
+    "attackBonus": 0,
+    "range": "",
+    "reach": 5,
+    "caliber": "",
+    "ammunition": 0,
+    "ammunitionMax": 0,
+    "reload": "",
+    "handsRequired": 1,
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

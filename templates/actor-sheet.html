@@ -1,0 +1,518 @@
+<div class="rnr-sheet {{cssClass}}" data-rnr-theme="{{sheetTheme}}" autocomplete="off">
+
+  {{!-- ══ TOP BAR ══ --}}
+  <header class="rnr-topbar">
+    <button type="button" class="rnr-state-point-button" data-action="state-point" title="State Point">STATE PT</button>
+
+    <div class="rnr-title-block">
+      <h1>PLAYER CHARACTER</h1>
+      <input name="name" type="text" value="{{actor.name}}" aria-label="Character name" />
+      <small>{{system.identity.race}} · {{settingProfileLabel}}</small>
+    </div>
+
+    <div class="rnr-top-actions">
+      {{!-- Theme follows the campaign setting (Tool Settings → Campaign Setting
+           Profile). A per-sheet picker used to sit here; a world can read as one
+           genre everywhere, so the label is shown read-only. --}}
+      <label class="rnr-setting-picker" title="{{settingProfileHint}}">
+        <span aria-hidden="true">🎨</span>
+        <strong>{{settingProfileLabel}}</strong>
+      </label>
+      <button type="button" class="rnr-icon-button" data-action="close" title="Close">×</button>
+    </div>
+
+  </header>
+
+  {{!-- ══ ATTRIBUTE ROW ══ --}}
+  <section class="rnr-abilities" aria-label="Attributes">
+    {{#each attributeList}}
+    <div class="rnr-ability-card">
+      <button type="button" class="rnr-ability-name" data-roll="attribute" data-key="{{key}}" title="Roll {{label}}">{{label}}</button>
+      <strong>{{modLabel}}</strong>
+      <span class="rnr-ability-value">{{value}}</span>
+      <small class="rnr-passive">Passive {{passive}}</small>
+    </div>
+    {{/each}}
+  </section>
+
+  {{!-- ══ TABS ══ --}}
+  <nav class="rnr-tabs" role="tablist" aria-label="Character sections">
+    <button type="button" class="item active" role="tab" aria-selected="true" data-tab="main">Main</button>
+    <button type="button" class="item" role="tab" aria-selected="false" data-tab="backpack">Backpack</button>
+    <button type="button" class="item" role="tab" aria-selected="false" data-tab="features">Features</button>
+    <button type="button" class="item" role="tab" aria-selected="false" data-tab="biography">Biography</button>
+  </nav>
+
+  {{!-- ══ BODY ══ --}}
+  <div class="rnr-body" data-active-tab="main">
+
+    {{!-- ── SIDEBAR ── --}}
+    <aside class="rnr-sidebar">
+
+      {{!-- Portrait + mental hearts --}}
+      <section class="rnr-portrait-card">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        <div class="rnr-markers">
+          {{#each mentalHearts}}<i class="{{#if filled}}filled{{/if}}" title="Mental {{index}}"></i>{{/each}}
+        </div>
+      </section>
+
+      {{!-- Vital triad --}}
+      <div class="rnr-vital-triad">
+        <div><span>INIT</span><strong>{{initiativeLabel}}</strong></div>
+        <div>
+          <span>MENTAL</span>
+          <input class="rnr-triad-input" name="system.vitals.mental.value" type="number" min="0" max="18" value="{{mentalValue}}" />
+        </div>
+        <div>
+          <span>SPEED</span>
+          <strong>{{speed}} ft</strong>{{#if speedBonus}}<small class="rnr-speed-bonus">(+{{speedBonus}})</small>{{/if}}
+        </div>
+      </div>
+
+      {{!-- HP --}}
+      <section class="rnr-vital-card">
+        <label>HEALTH</label>
+        <div>
+          <input name="system.vitals.health.value" type="number" min="0" value="{{healthValue}}" />
+          <em>/</em>
+          <input name="system.vitals.health.max" type="number" min="1" value="{{healthMax}}" />
+        </div>
+      </section>
+
+      {{!-- WP --}}
+      <section class="rnr-vital-card">
+        <label>WILLPOWER</label>
+        <div>
+          <input name="system.vitals.willPower.value" type="number" min="0" value="{{willPowerValue}}" />
+          <em>/</em>
+          <input name="system.vitals.willPower.max" type="number" min="1" value="{{willPowerMax}}" />
+        </div>
+      </section>
+
+      <section class="rnr-defense-summary" title="Damage reduction subtracts from incoming damage">
+        <span>DAMAGE REDUCTION</span><strong>DR {{armorDamageReduction}}</strong>
+      </section>
+      <section class="rnr-reaction-summary">
+        <span>DEFENSE</span><strong>{{defenseUses}} / {{defenseMax}} {{#if defenseAvailable}}Available{{else}}Used{{/if}}</strong><span>COUNTERATTACK</span><strong>{{#if counterattackAvailable}}Available{{else}}Used{{/if}}</strong>
+      </section>
+
+      {{!-- Utility buttons --}}
+      <div class="rnr-utility-buttons">
+        <button type="button" class="rnr-utility-btn" data-action="roll-initiative">⚡ Init</button>
+        <button type="button" class="rnr-utility-btn" data-action="rest">☽ Rest</button>
+      </div>
+
+      {{!-- Level & Experience --}}
+      <section class="rnr-panel rnr-progression-panel">
+        <h2>▲ PROGRESSION</h2>
+        <div class="rnr-xp">
+          <span>LEVEL</span>
+          <input type="number" name="system.progression.level" min="1" step="1" value="{{level}}" title="Current level" />
+          <input type="number" name="system.progression.experience" min="0" step="1" value="{{experience}}" title="Experience banked towards the next level" />
+          {{#if canGrantExperience}}
+            <button type="button" class="rnr-xp-award" data-action="grant-experience" title="Award experience (GM)">＋</button>
+          {{/if}}
+          <small class="rnr-xp-next">Next level at <strong>{{experienceNext}}</strong> XP</small>
+          <div class="rnr-xp-bar" title="{{experience}} / {{experienceNext}} XP ({{experienceProgress}}%)"><i data-progress="{{experienceProgress}}"></i></div>
+        </div>
+      </section>
+
+      {{!-- Down & Recovery — only show while the character is out --}}
+      {{#if downIsActive}}
+      <section class="rnr-panel rnr-death-panel">
+        <h2>🩸 DOWN <small>Rounds: {{downRounds}}</small></h2>
+        <div class="rnr-death-row">
+          <div class="rnr-death-block">
+            <span>Recovery</span>
+            <div class="rnr-death-pips">
+              {{#each downRecoveryPips}}<span class="rnr-death-pip {{#if filled}}success{{/if}}"></span>{{/each}}
+            </div>
+          </div>
+          <div class="rnr-death-block">
+            <span>DC {{downDC}}</span>
+            <small>Need {{downNeeded}} step(s) to get up. GM steps in at {{downEscalation}} rounds.</small>
+          </div>
+        </div>
+        <div class="rnr-death-buttons">
+          <button type="button" class="rnr-death-roll-btn"  data-action="death-save">🎲 Recover</button>
+          <button type="button" class="rnr-death-reset-btn" data-action="death-reset">↺ Reset</button>
+          {{#if ../isGM}}<button type="button" class="rnr-death-decease-btn" data-action="death-decease">☠ Deceased</button>{{/if}}
+        </div>
+      </section>
+      {{/if}}
+
+    </aside>{{!-- /sidebar --}}
+
+    {{!-- ── MAIN COLUMN (Skills) ── --}}
+    <main class="rnr-main-column">
+      <section class="rnr-panel rnr-skills-panel">
+        <h2>◉ SKILLS</h2>
+        {{#each skillGroups}}
+        <div class="rnr-skill-group">
+          {{#each skills}}
+          <div class="rnr-skill-line">
+            <button type="button" class="rnr-skill-roll" data-roll="skill" data-key="{{key}}" title="Roll {{label}}">
+              {{label}} <small>{{attributeLabel}}</small>
+            </button>
+            <strong>{{modLabel}}</strong>
+            <small class="rnr-passive">Passive {{passive}}</small>
+          </div>
+          {{/each}}
+        </div>
+        {{/each}}
+      </section>
+    </main>
+
+    {{!-- ── RIGHT COLUMN ── --}}
+    <aside class="rnr-right-column">
+
+      {{!-- Saving Throws (attribute checks, no prof) --}}
+      <section class="rnr-panel rnr-saving-panel">
+        <h2>⬟ SAVING THROWS</h2>
+        {{#each attributeList}}
+        <div class="rnr-save-line">
+          <button type="button" class="rnr-save-roll" data-roll="saving" data-key="{{key}}">{{label}}</button>
+          <strong>{{modLabel}}</strong>
+        </div>
+        {{/each}}
+      </section>
+
+      {{!-- Extra Skills --}}
+      <section class="rnr-panel rnr-extra-skill-panel">
+        <h2>✦ EXTRA SKILLS
+          <button type="button" class="rnr-extra-shop-button" data-action="extra-skill-shop">Shop</button>
+        </h2>
+        <div class="rnr-extra-balance">Points: <strong>{{extraSkillPoints}}</strong> / 6</div>
+        {{#each extraSkills}}
+        <div class="rnr-extra-owned">
+          <span>{{name}}<small>{{categoryLabel}}</small></span>
+        </div>
+        {{else}}
+        <p class="rnr-shop-empty">No extra skills purchased.</p>
+        {{/each}}
+      </section>
+
+      {{!-- Conditions --}}
+      {{#each conditionGroups}}
+      <section class="rnr-panel rnr-condition-panel">
+        {{#if showHeading}}
+        <h2>⚠ {{label}} <small>{{thaiLabel}}</small>
+          {{#if hasActive}}
+            {{#if totalPenalty}}<span class="rnr-condition-penalty-badge">{{totalPenalty}} to checks</span>{{/if}}
+          {{/if}}
+          {{#if ../isGM}}<button type="button" class="rnr-manage-conditions" data-action="manage-conditions">Manage</button>{{/if}}
+        </h2>
+        {{else}}
+        {{!-- Title dropped, but the badge and the GM's Manage button are the only
+             way to see or clear a penalty, so they get a compact row instead. --}}
+        <div class="rnr-condition-panelbar">
+          <span class="rnr-condition-panelbar-label">{{thaiLabel}}</span>
+          {{#if totalPenalty}}<span class="rnr-condition-penalty-badge">{{totalPenalty}} to checks</span>{{/if}}
+          {{#if ../isGM}}<button type="button" class="rnr-manage-conditions" data-action="manage-conditions">Manage</button>{{/if}}
+        </div>
+        {{/if}}
+        <div class="rnr-active-conditions">
+          {{#if hasActive}}
+            {{#each entries}}{{#if active}}
+            <div class="rnr-active-condition">
+              <strong>{{label}}</strong><small>{{thaiLabel}}</small>
+              {{#if rollPenalty}}<span class="rnr-condition-penalty">{{rollPenalty}}</span>{{/if}}
+              {{#if description}}<p>{{description}}</p>{{/if}}
+            </div>
+            {{/if}}{{/each}}
+          {{else}}
+          <div class="rnr-empty-status">No active conditions</div>
+          {{/if}}
+        </div>
+      </section>
+      {{/each}}
+
+      {{!-- ══ BIOGRAPHY TAB PANEL ══ --}}
+      <section class="rnr-panel rnr-identity-panel rnr-biography-panel">
+        <h2>▣ BIOGRAPHY <small>CHARACTER DETAILS</small></h2>
+        <div class="rnr-bio-layout">
+          <section class="rnr-bio-card rnr-bio-basics">
+            <h3>Identity
+              <button type="button" class="rnr-bio-add-btn" data-action="show-id-card" title="Show this character’s ID card">ID Card</button>
+            </h3>
+            {{!-- A read-only face strip. The name is owned by the header input
+                 and level belongs to progression, so both are mirrored here
+                 rather than edited twice. --}}
+            <div class="rnr-bio-summ">
+              <strong class="rnr-bio-summ-name">{{actor.name}}</strong>
+              <span class="rnr-bio-summ-meta">Lv.{{level}} · {{#if system.identity.gender}}{{system.identity.gender}}{{else}}—{{/if}} · {{#if system.identity.age}}{{system.identity.age}}{{else}}—{{/if}}</span>
+            </div>
+            <div class="rnr-bio-field-grid">
+              <label>Gender<input name="system.identity.gender" value="{{system.identity.gender}}" /></label>
+              <label>Age<input name="system.identity.age" type="number" value="{{system.identity.age}}" /></label>
+              <label>Date of Birth<input name="system.identity.dateOfBirth" value="{{biographyFields.dateOfBirth}}" placeholder="YYYY-MM-DD" pattern="\\d{4}-\\d{2}-\\d{2}" /></label>
+              <label>Identification No.<input name="system.identity.identificationNumber" inputmode="numeric" maxlength="13" value="{{biographyFields.identificationNumber}}" /></label>
+              <label>Race / Origin<input name="system.identity.race" value="{{system.identity.race}}" /></label>
+              <label>Address<input name="system.identity.address" value="{{biographyFields.address}}" placeholder="Current address" /></label>
+              <label>Birthplace<input name="system.identity.birthplace" value="{{biographyFields.birthplace}}" placeholder="Place of birth" /></label>
+            </div>
+          </section>
+          <section class="rnr-bio-card">
+            <h3>Background</h3>
+            <label class="rnr-bio-text-field">Character background
+              <textarea name="system.identity.background" rows="5" placeholder="Where did this character come from?">{{biographyFields.background}}</textarea>
+            </label>
+          </section>
+          {{!-- Card order is chosen so the 12-column grid fills exactly: the
+               three short "facts" cards take row one at 4 columns each, and the
+               two long-prose cards take row two at 6 each. Any other order leaves
+               a ragged gap, which is what made this tab look unfinished. The
+               visual order and the tab order are the same, so keyboard focus
+               still runs the way the cards read. --}}
+          <section class="rnr-bio-card">
+            <h3>Willpower &amp; State</h3>
+            <label class="rnr-bio-text-field">Source of willpower
+              <textarea name="system.identity.sourceOfWillpower" rows="4" placeholder="A person, object, or story that restores focus…">{{biographyFields.sourceOfWillpower}}</textarea>
+            </label>
+            <label class="rnr-organ-toggle"><input type="checkbox" name="system.identity.disabledOrgansEnabled" {{#if disabledOrgansEnabled}}checked{{/if}}> Enable disabled-organ rules</label>
+            <p class="rnr-help-text">Choose any number of affected areas. Each selected organ adds 2 State Points. Prosthetic equipment can restore normal use.</p>
+            <div class="rnr-organ-picker {{#unless disabledOrgansEnabled}}is-disabled{{/unless}}" aria-label="Disabled organs">
+              {{#each disabledOrgans}}
+              <label class="rnr-organ-choice {{#if selected}}selected{{/if}}">
+                <input type="checkbox" name="system.identity.disabledOrgans" value="{{key}}" {{#if selected}}checked{{/if}} {{#unless ../disabledOrgansEnabled}}disabled{{/unless}}>
+                <span class="rnr-organ-choice-mark">{{#if selected}}✓{{else}}＋{{/if}}</span>
+                <span><strong>{{label}}</strong><small>{{#if usable}}Functional{{else}}Disabled{{/if}}</small></span>
+              </label>
+              {{/each}}
+            </div>
+            <div class="rnr-state-point-summary">State Points <strong>{{statePointSpent}} / {{statePointMax}}</strong></div>
+          </section>
+          <section class="rnr-bio-card rnr-bio-wide-card">
+            <h3>Personality &amp; Story</h3>
+            <label class="rnr-bio-text-field">Biography / personality
+              <textarea name="system.identity.bio" rows="5" placeholder="Describe personality, ideals, bonds, and important relationships…">{{biographyFields.bio}}</textarea>
+            </label>
+            <label class="rnr-bio-text-field">Character development
+              <textarea name="system.identity.flow" rows="4" placeholder="Turning points, goals, and how the character changes…">{{biographyFields.flow}}</textarea>
+            </label>
+          </section>
+          <section class="rnr-bio-card rnr-bio-wide-card">
+            <h3>Notes</h3>
+            <label class="rnr-bio-text-field">Campaign notes
+              <textarea name="system.identity.notes" rows="5" placeholder="Secrets, reminders, allies, and other notes…">{{biographyFields.notes}}</textarea>
+            </label>
+          </section>
+        </div>
+      </section>
+
+      {{!-- ══ FEATURES TAB PANEL ══
+           This tab is about what a character can DO: the spells and abilities
+           they have, and the ones they have made ready. Attributes used to be
+           duplicated here as an editable grid, but the sheet already shows every
+           attribute in the row at the top of the Main tab, and carrying a second
+           editable copy of them made this tab three times taller than the
+           content it held. Nothing is lost by dropping it: the stored values are
+           untouched, and permanent bonuses still apply to the Main tab totals. --}}
+      <section class="rnr-panel rnr-feature-panel">
+        <h2>✦ FEATURES <small>SPELLS &amp; ABILITIES</small></h2>
+
+        {{!-- ── ACTIVE ABILITIES ── --}}
+        <div class="rnr-backpack-section rnr-active-section">
+          <h3>ACTIVE ABILITIES <small>Drag an active spell, ability, or Extra Skill here to make it ready</small></h3>
+          <div class="rnr-active-bar" data-drop-zone="features-active">
+            {{#each activeFeatures}}
+            <div class="rnr-active-slot filled" data-item-id="{{id}}" draggable="true" title="{{name}} — drag out to put away">
+              <img src="{{img}}" alt="" />
+              <span class="rnr-active-slot-name">{{name}}</span>
+              <span class="rnr-active-slot-type">{{featureModeLabel}}</span>
+              <span class="rnr-active-slot-btns">
+                <button type="button" data-action="item-use-flow" data-item-id="{{id}}" title="Use it now">✓</button>
+                <button type="button" data-action="item-roll" data-item-id="{{id}}" title="Show in chat">🎲</button>
+                <button type="button" data-action="feature-deactivate" data-item-id="{{id}}" title="Put away">×</button>
+              </span>
+            </div>
+            {{else}}
+            <p class="rnr-active-empty">Nothing ready. Drag an active Spell, Ability, or Extra Skill up from the list below, or use its ✓ button.</p>
+            {{/each}}
+          </div>
+        </div>
+
+        {{!-- ── FEATURE LIST ── --}}
+        <div class="rnr-backpack-section rnr-feature-list-section" data-drop-zone="features">
+          <h3>SPELLS &amp; ABILITIES</h3>
+          <div class="rnr-inventory-toolbar">
+            <label class="rnr-inventory-search">⌕<input type="search" data-action="feature-search" placeholder="Search features…" autocomplete="off" /></label>
+            <span class="rnr-inventory-hint">Click a feature to show it in chat. Shift+Click to quick-roll.</span>
+          </div>
+          <div class="rnr-equipment-list">
+            {{#each featureGroups}}
+            <section class="rnr-inventory-group" data-category="{{key}}">
+              <header><h3>{{label}}</h3><span>{{count}} item(s)</span></header>
+              <div class="rnr-equip-header"><span>Name</span><span>Detail</span><span>Qty</span><span>Actions</span></div>
+              {{#each items}}
+              <div class="rnr-equip-row {{#if isActive}}is-active{{/if}} {{#unless canActivate}}rnr-feature-static{{/unless}}" data-item-id="{{id}}" draggable="{{canDragFeature}}" title="{{activationHint}}">
+                <span class="rnr-equip-name">
+                  {{#if isActive}}<span class="rnr-active-badge" title="Ready to use">✓ READY</span>{{/if}}
+                  <button type="button" class="rnr-roll-inline" data-action="item-roll" data-item-id="{{id}}" title="Show in chat (Shift+Click to quick-roll)">🎲</button>
+                  <img alt="" data-action="item-roll" data-item-id="{{id}}" style="cursor:pointer" title="Show in chat" />
+                  <strong data-action="item-roll" data-item-id="{{id}}" style="cursor:pointer" title="Show in chat (Shift+Click to quick-roll)">{{name}}</strong>
+                  <span class="rnr-feature-type rnr-feature-mode rnr-feature-mode-{{featureMode}}">{{featureModeLabel}}</span>
+                </span>
+                <span class="rnr-equip-detail">
+                  {{#if damage}}{{damage}}{{#if damageType}} · {{damageType}}{{/if}}{{/if}}
+                  {{#if armorValue}}DR +{{armorValue}} ({{armorType}}){{/if}}
+                  {{#if bonus}}<em>+{{bonus}} bonus</em>{{/if}}
+                  {{#if effect}}{{effect}}{{/if}}
+                  {{#if description}}{{description}}{{/if}}
+                </span>
+                <span class="rnr-equip-qty">{{quantity}}</span>
+                <span class="rnr-equip-btns">
+                  {{#if canActivate}}
+                    {{#if isActive}}
+                    <button type="button" data-action="item-use-flow" data-item-id="{{id}}" title="Use it now">✓ Use</button>
+                    <button type="button" data-action="feature-deactivate" data-item-id="{{id}}" title="Put away">✕ Put away</button>
+                    {{else}}
+                    <button type="button" data-action="feature-activate" data-item-id="{{id}}" title="{{activationHint}}">✓ Make ready</button>
+                    {{/if}}
+                  {{else}}
+                    <em class="rnr-feature-static-note" title="{{activationHint}}">Not activatable</em>
+                  {{/if}}
+                  <button type="button" data-action="item-edit"   data-item-id="{{id}}" title="Edit">✏</button>
+                  <button type="button" data-action="item-delete" data-item-id="{{id}}" title="Delete">×</button>
+                </span>
+              </div>
+              {{/each}}
+            </section>
+            {{else}}
+            <div class="rnr-equip-empty">No spells or abilities yet. Add them from a Compendium or the Foundry Item Directory.</div>
+            {{/each}}
+          </div>
+          <p class="rnr-no-search-results" data-action="feature-search-empty" hidden>No features match that search.</p>
+        </div>
+      </section>
+
+      {{!-- ══ BACKPACK TAB PANEL ══ --}}
+      <section class="rnr-panel rnr-items-panel">
+        <h2>⚔ BACKPACK <small>ITEMS &amp; EQUIPMENT</small></h2>
+        <div class="rnr-inventory-toolbar">
+          <label class="rnr-inventory-search">⌕<input type="search" data-action="inventory-search" placeholder="Search inventory…" autocomplete="off" /></label>
+          <span class="rnr-inventory-hint">Edit items, choose a hand, or select a wearable slot from the list.</span>
+        </div>
+
+        {{!-- IN HANDS --}}
+        <div class="rnr-backpack-section rnr-hands-section">
+          <h3>IN HANDS</h3>
+        <div class="rnr-backpack-grid rnr-hands-grid">
+
+            {{!-- Left hand --}}
+            <div class="rnr-backpack-slot {{#unless leftHandUsable}}organ-disabled{{/unless}}" data-hand="leftHand" data-item-id="{{leftHand.id}}">
+              <header>
+                <span>LEFT HAND{{#if leftHand}}: {{leftHand.name}}{{/if}}{{#unless leftHandUsable}} · DISABLED{{/unless}}</span>
+                <span class="rnr-slot-btns">
+                  {{#if leftHand}}
+                    {{#if leftHandUsable}}{{#if leftHand.canRoll}}
+                    <button type="button" class="rnr-attack-btn" data-action="item-attack" data-item-id="{{leftHand.id}}" title="Roll attack">⚔</button>
+                    {{/if}}{{/if}}
+                    <button type="button" data-action="item-edit"  data-item-id="{{leftHand.id}}" title="Edit">✏</button>
+                    <button type="button" data-action="clear-hand" data-item-id="{{leftHand.id}}" title="Remove from hand">×</button>
+                  {{/if}}
+                </span>
+              </header>
+              <div class="rnr-slot-body">
+                {{#if leftHand}}
+                  {{#if leftHand.damage}}<em class="rnr-dmg-tag">{{leftHand.damage}}{{#if leftHand.damageType}} · {{leftHand.damageType}}{{/if}}</em>{{/if}}
+                  {{#if leftHand.armorValue}}<em class="rnr-armor-tag">DR +{{leftHand.armorValue}} ({{leftHand.armorType}})</em>{{/if}}
+                  {{#if leftHand.description}}<p>{{leftHand.description}}</p>{{/if}}
+                {{else}}Empty{{/if}}
+              </div>
+            </div>
+
+            {{!-- Right hand --}}
+            <div class="rnr-backpack-slot {{#unless rightHandUsable}}organ-disabled{{/unless}}" data-hand="rightHand" data-item-id="{{rightHand.id}}">
+              <header>
+                <span>RIGHT HAND{{#if rightHand}}: {{rightHand.name}}{{/if}}{{#unless rightHandUsable}} · DISABLED{{/unless}}</span>
+                <span class="rnr-slot-btns">
+                  {{#if rightHand}}
+                    {{#if rightHandUsable}}{{#if rightHand.canRoll}}
+                    <button type="button" class="rnr-attack-btn" data-action="item-attack" data-item-id="{{rightHand.id}}" title="Roll attack">⚔</button>
+                    {{/if}}{{/if}}
+                    <button type="button" data-action="item-edit"  data-item-id="{{rightHand.id}}" title="Edit">✏</button>
+                    <button type="button" data-action="clear-hand" data-item-id="{{rightHand.id}}" title="Remove from hand">×</button>
+                  {{/if}}
+                </span>
+              </header>
+              <div class="rnr-slot-body">
+                {{#if rightHand}}
+                  {{#if rightHand.damage}}<em class="rnr-dmg-tag">{{rightHand.damage}}{{#if rightHand.damageType}} · {{rightHand.damageType}}{{/if}}</em>{{/if}}
+                  {{#if rightHand.armorValue}}<em class="rnr-armor-tag">DR +{{rightHand.armorValue}} ({{rightHand.armorType}})</em>{{/if}}
+                  {{#if rightHand.description}}<p>{{rightHand.description}}</p>{{/if}}
+                {{else}}Empty{{/if}}
+              </div>
+          </div>
+
+        </div>
+      </div>
+
+        {{!-- WEARABLE EQUIPMENT --}}
+        <div class="rnr-backpack-section rnr-wearable-section">
+          <h3>WEARABLE EQUIPMENT <small>Drag items here or choose a slot below</small></h3>
+          <div class="rnr-wearable-grid">
+            {{#each bodyEquipment}}
+            <div class="rnr-body-slot {{cssClass}} {{#if item}}filled{{/if}}" data-drop-zone="body" data-body-slot="{{key}}" data-item-id="{{item.id}}" draggable="{{#if item}}true{{else}}false{{/if}}" title="{{label}}">
+              <div class="rnr-body-slot-head"><span class="rnr-body-slot-icon">{{icon}}</span><strong>{{label}}</strong></div>
+              {{#if item}}
+              <div class="rnr-body-slot-item"><img src="{{item.img}}" alt="" data-action="item-roll" data-item-id="{{item.id}}" style="cursor:pointer" title="Show in chat"><span data-action="item-roll" data-item-id="{{item.id}}" style="cursor:pointer" title="Show in chat (Shift+Click to quick-roll)">{{item.name}}</span>{{#if item.isMechaBracelet}}<button type="button" class="rnr-mecha-bracelet-btn" data-action="mecha-bracelet" data-item-id="{{item.id}}" title="เรียกหุ่นหรือกลับสู่โหมด Pilot">Activate</button>{{/if}}<button type="button" data-action="clear-body" data-item-id="{{item.id}}" title="Unequip">×</button></div>
+              {{else}}<div class="rnr-body-slot-empty">Drop wearable item</div>{{/if}}
+            </div>
+            {{/each}}
+          </div>
+        </div>
+
+        {{!-- BACKPACK CONTENTS --}}
+        <div class="rnr-backpack-section rnr-contents-section" data-drop-zone="backpack">
+          <h3>BACKPACK CONTENTS</h3>
+          <div class="rnr-equipment-list">
+
+            {{#each backpackGroups}}
+            <section class="rnr-inventory-group" data-category="{{key}}">
+              <header><h3>{{label}}</h3><span>{{count}} item(s)</span></header>
+              <div class="rnr-equip-header"><span>Name</span><span>Detail</span><span>Qty</span><span>Actions</span></div>
+              {{#each items}}
+              <div class="rnr-equip-row {{#if isExtraSkill}}rnr-feature-row{{/if}}" data-item-id="{{id}}" draggable="{{canWear}}" title="{{#if canWear}}Drag to equip on body{{/if}}">
+                <span class="rnr-equip-name">
+                  <button type="button" class="rnr-roll-inline" data-action="item-roll" data-item-id="{{id}}" title="Show in chat (Shift+Click to quick-roll)">🎲</button>
+                  {{#if isConsumable}}<button type="button" class="rnr-roll-inline" data-action="item-use" data-item-id="{{id}}" title="Use">✓</button>{{/if}}
+                  {{#if isMechaBracelet}}<button type="button" class="rnr-mecha-bracelet-btn" data-action="mecha-bracelet" data-item-id="{{id}}" title="เรียกหุ่นหรือกลับสู่โหมด Pilot">Activate</button>{{/if}}
+                  {{#if isExtraSkill}}<span class="rnr-extra-badge" title="Extra Skill — always active">✦</span>{{/if}}
+                  <img alt="" data-action="item-roll" data-item-id="{{id}}" style="cursor:pointer" title="Show in chat" />
+                  <strong data-action="item-roll" data-item-id="{{id}}" style="cursor:pointer" title="Show in chat (Shift+Click to quick-roll)">{{name}}</strong>
+                </span>
+                <span class="rnr-equip-detail">
+                  {{#if damage}}{{damage}}{{#if damageType}} · {{damageType}}{{/if}}{{/if}}
+                  {{#if armorValue}}DR +{{armorValue}} ({{armorType}}){{/if}}
+                  {{#if bonus}}<em>+{{bonus}} bonus</em>{{/if}}
+                  {{#if speedBonus}}<em>+{{speedBonus}} ft spd</em>{{/if}}
+                  {{#if effect}}{{effect}}{{/if}}
+                </span>
+                <span class="rnr-equip-qty">{{quantity}}</span>
+                <span class="rnr-equip-btns">
+                  {{#if canEquipHand}}
+                  {{#if ../../leftHandUsable}}<button type="button" data-action="equip-hand" data-hand="left"  data-item-id="{{id}}" title="Left hand">L</button>{{/if}}
+                  {{#if ../../rightHandUsable}}<button type="button" data-action="equip-hand" data-hand="right" data-item-id="{{id}}" title="Right hand">R</button>{{/if}}
+                  {{/if}}
+                  {{#if canWear}}<select data-action="equip-body-select" data-item-id="{{id}}" title="Wear on body"><option value="">Wear…</option>{{#each wearSlots}}<option value="{{key}}">{{label}}</option>{{/each}}</select>{{/if}}
+                  <button type="button" data-action="item-edit"   data-item-id="{{id}}" title="Edit">✏</button>
+                  <button type="button" data-action="item-delete" data-item-id="{{id}}" title="Delete">×</button>
+                </span>
+              </div>
+              {{/each}}
+            </section>
+            {{else}}
+            <div class="rnr-equip-empty">Backpack is empty. Add an item from a Compendium or the Foundry Item Directory.</div>
+            {{/each}}
+
+          </div>
+        </div>{{!-- /equipment list --}}
+
+      </section>{{!-- /backpack panel --}}
+
+    </aside>{{!-- /right column --}}
+
+  </div>{{!-- /.rnr-body --}}
+</div>

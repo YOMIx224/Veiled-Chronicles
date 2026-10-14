@@ -1,0 +1,38 @@
+{
+  "_id": "rnrequip00000013",
+  "name": "Bandolier",
+  "type": "equipment",
+  "img": "icons/equire/weapons/slingshot-1.webp",
+  "system": {
+    "description": {
+      "value": "A cross-body strap of pockets. Holds ammunition and small tools at the ready — Reloading a ranged weapon costs no time while worn.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 1.5,
+    "price": {
+      "value": 20,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "worn",
+    "slot": "torso",
+    "allowedSlot": "torso",
+    "properties": [
+      "ammunition",
+      "worn"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

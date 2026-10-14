@@ -1,0 +1,39 @@
+{
+  "_id": "rnrequip00000015",
+  "name": "Belt Pouch",
+  "type": "equipment",
+  "img": "icons/containers/bag-leather.webp",
+  "system": {
+    "description": {
+      "value": "A reinforced pouch on a heavy belt. +1 carry capacity and one item may be drawn without a search.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0.5,
+    "price": {
+      "value": 10,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "worn",
+    "slot": "waist",
+    "allowedSlot": "waist",
+    "carryBonus": 10,
+    "properties": [
+      "container",
+      "worn"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

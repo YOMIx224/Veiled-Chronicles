@@ -1,0 +1,45 @@
+{
+  "_id": "rnrweapon0000001",
+  "name": "Unarmed Strike",
+  "type": "weapon",
+  "img": "icons/skills/melee/unarmed-punch-fist.webp",
+  "system": {
+    "description": {
+      "value": "A basic punch, kick, or headbutt.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "weaponType": "melee",
+    "attribute": "strength",
+    "damageFormula": "1d4",
+    "damageType": "bludgeoning",
+    "damageBonus": 0,
+    "attackBonus": 0,
+    "range": "",
+    "reach": 5,
+    "caliber": "",
+    "ammunition": 0,
+    "reload": "",
+    "properties": [
+      "light"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

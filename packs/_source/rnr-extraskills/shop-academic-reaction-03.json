@@ -1,0 +1,43 @@
+{
+  "_id": "dc5c6027ec07ccd7",
+  "name": "Critical Review (Reaction)",
+  "type": "extraskills",
+  "img": "icons/skills/trades/academics-study-reading-book.webp",
+  "system": {
+    "description": {
+      "value": "Use as a reaction when this academic study technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Extra Skill Expansion",
+      "page": ""
+    },
+    "category": "academic",
+    "attribute": "intellect",
+    "cost": 1,
+    "bonus": 0,
+    "skills": [
+      "generalEducation",
+      "history"
+    ],
+    "effect": "Use as a reaction when this academic study technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "properties": [],
+    "abilityType": "reaction",
+    "actionType": "reaction",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

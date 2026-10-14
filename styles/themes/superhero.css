@@ -1,0 +1,25 @@
+/* RnR setting theme: Superhero
+   Saturated comic primaries, but kept dark enough to stay readable in a
+   long play session - this is a sheet, not a splash page.
+*/
+[data-rnr-theme="superhero"] {
+  --rnr-bg:            #140b1c;
+  --rnr-surface:       #1d1028;
+  --rnr-surface-2:     #251637;
+  --rnr-surface-3:     #2f1d47;
+  --rnr-border:        #4a2a6b;
+  --rnr-border-soft:   #382053;
+  --rnr-text:          #f2e9fb;
+  --rnr-muted:         #ab93c4;
+  --rnr-accent:        #ffd93d;
+  --rnr-accent-soft:   #352b0d;
+  --rnr-accent-hover:  #ffe873;
+  --rnr-accent-text:   #140b1c;
+  --rnr-heading:       #ff5fa2;
+  --rnr-shadow:        rgba(0, 0, 0, .55);
+  --rnr-pos:           #45e08a;
+  --rnr-neg:           #ff5f7a;
+  --rnr-hp:            #ff3d6e;
+  --rnr-wp:            #3d9bff;
+  --rnr-focus:         #ffe873;
+}

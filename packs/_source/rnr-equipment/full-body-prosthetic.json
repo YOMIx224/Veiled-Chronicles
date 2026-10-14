@@ -1,0 +1,42 @@
+{
+  "_id": "rnrequip00000020",
+  "name": "Full Body Prosthetic",
+  "type": "equipment",
+  "img": "icons/magic/creatures/leg-limbr-gold.webp",
+  "system": {
+    "description": {
+      "value": "A full-body frame replacing the wearer's limbs and torso. While worn, all disabled organs are treated as usable, and the wearer adds +2 Armor DR.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 40,
+    "price": {
+      "value": 5000,
+      "denomination": "gp"
+    },
+    "rarity": "rare",
+    "handSlot": "",
+    "equipType": "worn",
+    "slot": "torso",
+    "allowedSlot": "torso",
+    "prostheticFor": "fullBody",
+    "armorValue": 2,
+    "attributeBonus": 1,
+    "attribute": "toughness",
+    "properties": [
+      "prosthetic",
+      "worn"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

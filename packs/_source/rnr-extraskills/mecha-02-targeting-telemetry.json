@@ -1,0 +1,43 @@
+{
+  "_id": "c034cc3e49e04740",
+  "name": "Mecha — Targeting Telemetry",
+  "type": "extraskills",
+  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "system": {
+    "description": {
+      "value": "Telemetry overlays stabilize aim. Gain +1 to Shooting Weapons checks made with mecha-mounted weapons.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Extra Skills"
+    },
+    "category": "combat",
+    "attribute": "dexterity",
+    "cost": 2,
+    "bonus": 1,
+    "skills": [
+      "shootingWeapons"
+    ],
+    "effect": "Passive: +1 to Shooting Weapons checks when operating a mecha weapon.",
+    "properties": [],
+    "abilityType": "passive",
+    "actionType": "passive",
+    "attackRoll": false,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

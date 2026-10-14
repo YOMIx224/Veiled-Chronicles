@@ -1,0 +1,39 @@
+{
+  "_id": "uniarmo000000037",
+  "name": "Light Exosuit",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-layered-steel.webp",
+  "system": {
+    "description": {
+      "value": "Light Exosuit provides reliable, setting-neutral protection.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "armorType": "heavy",
+    "armorValue": 4,
+    "maxDex": 1,
+    "strengthReq": 12,
+    "speedBonus": 0,
+    "stealthDisadv": true,
+    "equipmentSlot": "torso",
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

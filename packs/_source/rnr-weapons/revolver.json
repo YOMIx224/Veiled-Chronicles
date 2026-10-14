@@ -1,0 +1,46 @@
+{
+  "_id": "rnrweapon0000007",
+  "name": "Revolver",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-flintlock-grey.webp",
+  "system": {
+    "description": {
+      "value": "A six-shot revolver. Reload after 6 shots.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 1,
+    "price": {
+      "value": 200,
+      "denomination": "gp"
+    },
+    "rarity": "uncommon",
+    "handSlot": "",
+    "weaponType": "ranged",
+    "attribute": "dexterity",
+    "damageFormula": "2d6",
+    "damageType": "piercing",
+    "damageBonus": 0,
+    "attackBonus": 0,
+    "range": "40/120",
+    "reach": 0,
+    "caliber": ".38",
+    "ammunition": 6,
+    "reload": "1 action",
+    "properties": [
+      "ranged",
+      "loading"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

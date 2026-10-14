@@ -1,0 +1,47 @@
+{
+  "_id": "df0b326b08bd00bb",
+  "name": "Mecha — Emergency Ejection",
+  "type": "ability",
+  "img": "icons/sundries/scrolls/scroll-bound-blue.webp",
+  "system": {
+    "description": {
+      "value": "Reaction: eject when the frame is about to be destroyed or disabled. The GM resolves landing, exposure, and any damage to the pilot.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Abilities"
+    },
+    "abilityType": "reaction",
+    "attribute": "aptitude",
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "actionType": "reaction",
+    "attackRoll": false,
+    "range": "Self",
+    "target": "Pilot",
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "effect": "Reaction: eject when the frame is about to be destroyed or disabled. The GM resolves landing, exposure, and any damage to the pilot.",
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

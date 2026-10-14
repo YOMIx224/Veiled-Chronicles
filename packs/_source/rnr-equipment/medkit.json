@@ -1,0 +1,37 @@
+{
+  "_id": "rnrequip00000004",
+  "name": "Medical Kit",
+  "type": "equipment",
+  "img": "icons/tools/medical/syringe-satchel-brown.webp",
+  "system": {
+    "description": {
+      "value": "A comprehensive medical kit for field use. Contains bandages, antiseptic, sutures, and basic instruments. +2 to First Aid and Medicine checks. 10 uses.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 3,
+    "price": {
+      "value": 50,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "tool",
+    "slot": "",
+    "properties": [
+      "tool"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "armorValue": 0,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

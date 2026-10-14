@@ -1,0 +1,25 @@
+/* RnR setting theme: Mecha / Robot Combat
+   Hard-edged gunmetal with hazard orange, telemetry green, and a colder
+   surface ramp than the Modern theme so machine sheets feel separate.
+*/
+[data-rnr-theme="mecha"] {
+  --rnr-bg:            #101315;
+  --rnr-surface:       #191d21;
+  --rnr-surface-2:     #21262b;
+  --rnr-surface-3:     #2a3036;
+  --rnr-border:        #3e464e;
+  --rnr-border-soft:   #2f363c;
+  --rnr-text:          #dfe4e8;
+  --rnr-muted:         #929ba4;
+  --rnr-accent:        #ff8a1f;
+  --rnr-accent-soft:   #33200b;
+  --rnr-accent-hover:  #ffa64d;
+  --rnr-accent-text:   #101315;
+  --rnr-heading:       #ffa64d;
+  --rnr-shadow:        rgba(0, 0, 0, .55);
+  --rnr-pos:           #7de08a;
+  --rnr-neg:           #ff6a52;
+  --rnr-hp:            #e0552f;
+  --rnr-wp:            #5a9ec9;
+  --rnr-focus:         #ffa64d;
+}

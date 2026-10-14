@@ -1,0 +1,42 @@
+{
+  "_id": "rnrextra00000010",
+  "name": "Alertness",
+  "type": "extraskills",
+  "img": "icons/magic/perception/eye-ringed-glow-angry-small-teal.webp",
+  "system": {
+    "description": {
+      "value": "+1 to Perception and Sense of Lie checks. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "category": "investigation",
+    "attribute": "aptitude",
+    "cost": 1,
+    "bonus": 1,
+    "skills": [
+      "perception",
+      "senseOfLie"
+    ],
+    "effect": "+1 Perception & Sense of Lie.",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "abilityType": "passive",
+    "actionType": "passive",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

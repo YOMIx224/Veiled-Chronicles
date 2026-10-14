@@ -1,0 +1,44 @@
+{
+  "_id": "50f5acb01adfd59f",
+  "name": "Mecha — Close-Quarters Chassis Training",
+  "type": "extraskills",
+  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "system": {
+    "description": {
+      "value": "You understand leverage, reach, and the momentum of a large frame. Gain +1 to Brawl and Weapons checks while piloting a mecha in close quarters.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Extra Skills"
+    },
+    "category": "combat",
+    "attribute": "strength",
+    "cost": 2,
+    "bonus": 1,
+    "skills": [
+      "brawl",
+      "weapons"
+    ],
+    "effect": "Passive: +1 to Brawl and Weapons checks while piloting a mecha in close quarters.",
+    "properties": [],
+    "abilityType": "passive",
+    "actionType": "passive",
+    "attackRoll": false,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

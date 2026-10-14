@@ -1,0 +1,43 @@
+{
+  "_id": "rnrspell00000002",
+  "name": "Cure Wounds",
+  "type": "spell",
+  "img": "icons/magic/life/cross-area-circle-green-white.webp",
+  "system": {
+    "description": {
+      "value": "A creature you touch regains a number of hit points equal to 1d8 + your Intellect modifier.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "spellLevel": 1,
+    "school": "evocation",
+    "attribute": "intellect",
+    "castingTime": "1 action",
+    "range": "Touch",
+    "duration": "instantaneous",
+    "damageFormula": "1d8",
+    "damageType": "healing",
+    "saveAttribute": "",
+    "saveDC": "",
+    "effect": "Touch target regains 1d8 + Intellect mod HP.",
+    "properties": [],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

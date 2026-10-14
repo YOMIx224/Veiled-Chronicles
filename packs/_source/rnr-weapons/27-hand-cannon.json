@@ -1,0 +1,45 @@
+{
+  "_id": "uniweap000000027",
+  "name": "Hand Cannon",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-pistol-worn.webp",
+  "system": {
+    "description": {
+      "value": "Hand Cannon suitable for any campaign that uses its profile.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "weaponType": "ranged",
+    "attribute": "dexterity",
+    "damageFormula": "1d8",
+    "damageType": "piercing",
+    "damageBonus": 0,
+    "attackBonus": 0,
+    "range": "60/180 ft",
+    "reach": 5,
+    "caliber": "universal",
+    "ammunition": 6,
+    "ammunitionMax": 6,
+    "reload": "1 action",
+    "handsRequired": 1,
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

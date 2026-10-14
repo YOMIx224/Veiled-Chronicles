@@ -1,0 +1,44 @@
+{
+  "_id": "5f5790aa620c5887",
+  "name": "Mecha — Field Repair",
+  "type": "extraskills",
+  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "system": {
+    "description": {
+      "value": "You know where a damaged frame can be braced, bypassed, or safely patched. Gain +1 to Mechanical and Craft checks made to service a mecha.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Extra Skills"
+    },
+    "category": "science",
+    "attribute": "intellect",
+    "cost": 2,
+    "bonus": 1,
+    "skills": [
+      "mechanical",
+      "craft"
+    ],
+    "effect": "Passive: +1 to Mechanical and Craft checks made to service a mecha.",
+    "properties": [],
+    "abilityType": "passive",
+    "actionType": "passive",
+    "attackRoll": false,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

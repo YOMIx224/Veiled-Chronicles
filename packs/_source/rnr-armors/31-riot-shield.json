@@ -1,0 +1,39 @@
+{
+  "_id": "uniarmo000000031",
+  "name": "Riot Shield",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-layered-steel.webp",
+  "system": {
+    "description": {
+      "value": "Riot Shield provides reliable, setting-neutral protection.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "armorType": "shield",
+    "armorValue": 2,
+    "maxDex": 2,
+    "strengthReq": 0,
+    "speedBonus": 0,
+    "stealthDisadv": false,
+    "equipmentSlot": "hands",
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

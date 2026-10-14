@@ -1,0 +1,38 @@
+{
+  "_id": "rnrextra00000009",
+  "name": "Lucky",
+  "type": "extraskills",
+  "img": "icons/magic/symbols/clovers-triple-green.webp",
+  "system": {
+    "description": {
+      "value": "Once per session, you may reroll any one die result and keep the new result. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "category": "other",
+    "attribute": "ego",
+    "cost": 1,
+    "bonus": 0,
+    "effect": "Reroll any die once per session.",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "abilityType": "passive",
+    "actionType": "passive",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

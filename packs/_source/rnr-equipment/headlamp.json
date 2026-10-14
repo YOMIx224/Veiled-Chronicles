@@ -1,0 +1,37 @@
+{
+  "_id": "rnrequip00000007",
+  "name": "Headlamp",
+  "type": "equipment",
+  "img": "icons/undrawn/torch-lit-wide-original.webp",
+  "system": {
+    "description": {
+      "value": "A strapped lamp that lights the wearer's forward view without freeing a hand. Also usable as a hand light when unequipped.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 1,
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "worn",
+    "slot": "head",
+    "allowedSlot": "head",
+    "properties": [
+      "light-source"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

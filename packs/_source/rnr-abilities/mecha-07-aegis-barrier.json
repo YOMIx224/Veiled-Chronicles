@@ -1,0 +1,47 @@
+{
+  "_id": "d2e6697bef24261c",
+  "name": "Mecha — Aegis Barrier",
+  "type": "ability",
+  "img": "icons/sundries/scrolls/scroll-bound-blue.webp",
+  "system": {
+    "description": {
+      "value": "Reaction: when an attack hits, reduce its damage by 1d6 after Armor DR, to a minimum of 0. Roll and apply the reduction manually.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Abilities"
+    },
+    "abilityType": "reaction",
+    "attribute": "aptitude",
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "actionType": "reaction",
+    "attackRoll": false,
+    "range": "Self",
+    "target": "Self",
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "effect": "Reaction: when an attack hits, reduce its damage by 1d6 after Armor DR, to a minimum of 0. Roll and apply the reduction manually.",
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

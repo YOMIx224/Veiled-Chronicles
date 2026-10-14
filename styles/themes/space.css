@@ -1,0 +1,24 @@
+/* RnR setting theme: Space Opera
+   Deep indigo void, starlight silver text, and a hull-warning amber.
+*/
+[data-rnr-theme="space"] {
+  --rnr-bg:            #080a16;
+  --rnr-surface:       #0f1324;
+  --rnr-surface-2:     #161b31;
+  --rnr-surface-3:     #1e2440;
+  --rnr-border:        #2a3252;
+  --rnr-border-soft:   #1d2340;
+  --rnr-text:          #dde3f5;
+  --rnr-muted:         #8590b2;
+  --rnr-accent:        #f0b429;
+  --rnr-accent-soft:   #33280a;
+  --rnr-accent-hover:  #ffd45c;
+  --rnr-accent-text:   #080a16;
+  --rnr-heading:       #ffd45c;
+  --rnr-shadow:        rgba(0, 0, 0, .62);
+  --rnr-pos:           #5fe3b0;
+  --rnr-neg:           #ff7b6b;
+  --rnr-hp:            #e2564a;
+  --rnr-wp:            #5a7fd8;
+  --rnr-focus:         #ffd45c;
+}

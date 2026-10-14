@@ -1,0 +1,192 @@
+/* ============================================================
+   RnR — sheet token layer
+   ------------------------------------------------------------
+   Loaded FIRST, right after styles/RnR.css.
+
+   This file owns two things and nothing else:
+
+     1. The neutral default value of every --rnr-* custom property.
+     2. The "application layer" that re-points the sheet's visible
+        surfaces at those variables.
+
+   The per-genre themes in this folder (fantasy.css, martial.css, ...)
+   come AFTER this file and only ever redefine the same variable names.
+   That is the whole contract: a new theme is one small block of
+   variables, with no selectors of its own and no chance of drifting
+   out of sync with the layout.
+
+   Because .rnr-sheet and [data-rnr-theme] have the same specificity
+   (0,1,0) and sit on the same element, load order is what makes a
+   theme win over the defaults here. Keep this file first.
+
+   Adding a setting: copy any file in here, rename the selector, done.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. Default token values (the "universal" neutral sheet)
+   ------------------------------------------------------------ */
+.rnr-sheet,
+.rnr-item-sheet {
+  --rnr-bg:            #171a21;
+  --rnr-surface:       #20242d;
+  --rnr-surface-2:     #252a34;
+  --rnr-surface-3:     #2b3140;
+  --rnr-border:        #3b4351;
+  --rnr-border-soft:   #2e3541;
+  --rnr-text:          #e8eaf0;
+  --rnr-muted:         #9da5b3;
+  --rnr-accent:        #c7a36b;
+  --rnr-accent-soft:   #3b3022;
+  --rnr-accent-hover:  #e0bd7f;
+  --rnr-accent-text:   #171a21;
+  --rnr-heading:       #d4af7a;
+  --rnr-shadow:        rgba(0, 0, 0, .45);
+  --rnr-pos:           #8ab88a;
+  --rnr-neg:           #e07a7a;
+  --rnr-hp:            #a8453f;
+  --rnr-wp:            #4a7fa8;
+  --rnr-focus:         #e0bd7f;
+}
+
+/* ------------------------------------------------------------
+   2. Application layer
+   ------------------------------------------------------------
+   The legacy stylesheet hard-codes most of its colours. These rules
+   exist to pull the visible surfaces onto the variables above, so a
+   theme change actually repaints the sheet instead of only tinting
+   the few elements that were already variable-aware.
+
+   Anything written from now on should use var(--rnr-*) directly and
+   will then be correct in every theme with no extra work.
+   ------------------------------------------------------------ */
+.rnr-sheet, .rnr-item-sheet {
+  background: var(--rnr-bg);
+  color: var(--rnr-text);
+  box-shadow: var(--rnr-shadow);
+}
+
+.rnr-sheet .rnr-topbar,
+.rnr-item-sheet .rnr-item-header {
+  background: var(--rnr-surface);
+  border-color: var(--rnr-border);
+  color: var(--rnr-text);
+}
+.rnr-sheet .rnr-title-block h1,
+.rnr-item-sheet .rnr-item-type-label { color: var(--rnr-accent); }
+.rnr-sheet .rnr-title-block input,
+.rnr-item-sheet .rnr-item-header-info input { color: var(--rnr-text); }
+
+.rnr-sheet .rnr-panel,
+.rnr-sheet .rnr-portrait-card,
+.rnr-sheet .rnr-vital-card,
+.rnr-sheet .rnr-favorites,
+.rnr-sheet .rnr-backpack-slot,
+.rnr-sheet .rnr-inventory-group,
+.rnr-sheet .rnr-bio-card,
+.rnr-item-sheet .rnr-item-fieldset,
+.rnr-npc-panel,
+.rnr-npc-header {
+  background: var(--rnr-surface);
+  border-color: var(--rnr-border);
+  color: var(--rnr-text);
+}
+.rnr-sheet .rnr-panel h2,
+.rnr-sheet .rnr-panel h3,
+.rnr-sheet .rnr-backpack-section > h3,
+.rnr-item-sheet .rnr-item-fieldset legend,
+.rnr-npc-panel h2 {
+  color: var(--rnr-heading);
+  border-color: var(--rnr-border);
+}
+
+.rnr-sheet .rnr-ability-card {
+  background: var(--rnr-surface-2);
+  border-color: var(--rnr-border);
+  color: var(--rnr-text);
+}
+.rnr-sheet .rnr-ability-card .rnr-ability-name { color: var(--rnr-accent); }
+.rnr-sheet .rnr-ability-card strong,
+.rnr-sheet .rnr-ability-card .rnr-ability-value { color: var(--rnr-text); }
+.rnr-sheet .rnr-passive,
+.rnr-sheet .rnr-panel h2 small,
+.rnr-sheet .rnr-panel h3 small,
+.rnr-sheet .rnr-inventory-hint,
+.rnr-sheet .rnr-equip-detail { color: var(--rnr-muted); }
+
+.rnr-sheet input, .rnr-sheet select, .rnr-sheet textarea,
+.rnr-item-sheet input, .rnr-item-sheet select, .rnr-item-sheet textarea,
+.rnr-npc-panel input, .rnr-npc-panel select, .rnr-npc-panel textarea {
+  background: var(--rnr-bg);
+  border-color: var(--rnr-border);
+  color: var(--rnr-text);
+}
+.rnr-sheet input:focus, .rnr-sheet select:focus, .rnr-sheet textarea:focus,
+.rnr-item-sheet input:focus, .rnr-item-sheet select:focus,
+.rnr-npc-panel input:focus, .rnr-npc-panel select:focus {
+  border-color: var(--rnr-accent);
+  outline-color: var(--rnr-focus);
+}
+
+.rnr-sheet button:not(.item),
+.rnr-item-sheet button:not(.item),
+.rnr-item-header-btn {
+  background: var(--rnr-surface-2);
+  border-color: var(--rnr-border);
+  color: var(--rnr-text);
+}
+.rnr-sheet button:not(.item):hover,
+.rnr-item-sheet button:not(.item):hover,
+.rnr-item-header-btn:hover {
+  background: var(--rnr-surface-3);
+  border-color: var(--rnr-accent);
+  color: var(--rnr-accent-hover);
+}
+
+.rnr-sheet .rnr-tabs { background: var(--rnr-bg); border-bottom: 1px solid var(--rnr-border); }
+.rnr-sheet .rnr-tabs .item { background: var(--rnr-surface); color: var(--rnr-muted); border-color: var(--rnr-border); }
+.rnr-sheet .rnr-tabs .item:hover { background: var(--rnr-surface-2); color: var(--rnr-text); }
+.rnr-sheet .rnr-tabs .item.active {
+  background: var(--rnr-accent-soft);
+  color: var(--rnr-accent-hover);
+  border-color: var(--rnr-accent);
+  box-shadow: inset 0 -2px 0 var(--rnr-accent);
+}
+
+/* Health / willpower meters */
+.rnr-sheet .rnr-vital-card.health,
+.rnr-npc-vital-box { border-color: var(--rnr-hp); }
+.rnr-sheet .rnr-vital-card.willpower,
+.rnr-npc-vital-box.wp { border-color: var(--rnr-wp); }
+
+/* ── Setting picker ──
+   The theme now follows the world's Campaign Setting Profile; every sheet shows
+   a read-only label instead of a per-document <select>. */
+.rnr-setting-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 4px;
+  white-space: nowrap;
+}
+.rnr-setting-picker > span { opacity: .7; pointer-events: none; font-size: 14px; }
+.rnr-setting-picker strong {
+  max-width: 150px;
+  overflow: hidden;
+  padding: 2px 6px;
+  border: 1px dashed var(--rnr-border);
+  border-radius: 4px;
+  color: var(--rnr-text);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Respect the OS preference; the sheet stays readable either way. */
+@media (prefers-reduced-motion: reduce) {
+  .rnr-sheet *, .rnr-item-sheet * {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}

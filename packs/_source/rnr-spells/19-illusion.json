@@ -1,0 +1,49 @@
+{
+  "_id": "unispel000000019",
+  "name": "Illusion",
+  "type": "spell",
+  "img": "icons/magic/light/orb-shadow-blue.webp",
+  "system": {
+    "description": {
+      "value": "Illusion is a flexible supernatural, psychic, or technological effect.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "spellLevel": 3,
+    "school": "universal",
+    "attribute": "ego",
+    "castingTime": "1 action",
+    "range": "Self",
+    "duration": "instantaneous",
+    "effect": "Illusion: resolve the described effect with the GM.",
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "saveAttribute": "",
+    "saveDC": 0,
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

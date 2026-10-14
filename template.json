@@ -1,0 +1,665 @@
+{
+  "Actor": {
+    "types": [
+      "character",
+      "npc",
+      "vehicle"
+    ],
+    "templates": {
+      "base": {
+        "migrationVersion": 0,
+        "setting": "universal",
+        "exhaustion": 0,
+        "progression": {
+          "level": 1,
+          "experience": 0
+        },
+        "attributeModifiers": [],
+        "customAttributes": [],
+        "activeFeatures": [],
+        "death": {
+          "state": "healthy",
+          "rounds": 0,
+          "recovery": 0
+        },
+        "identity": {
+          "gender": "",
+          "age": 0,
+          "profession": "",
+          "race": "",
+          "background": "",
+          "alignment": "",
+          "bio": "",
+          "birthplace": "",
+          "dateOfBirth": "",
+          "identificationNumber": "",
+          "address": "",
+          "growthPoints": 0,
+          "hitDice": 3,
+          "hitDiceMax": 3,
+          "sourceOfWillpower": "",
+          "flaw": "",
+          "flow": "",
+          "disabilityCount": 0,
+          "disabledOrgansEnabled": false,
+          "disabledOrgans": [],
+          "psychiatricDisorder": "",
+          "extraSkillPoints": 6,
+          "extraSkills": [],
+          "notes": ""
+        },
+        "details": {
+          "biography": {
+            "value": ""
+          },
+          "type": "humanoid",
+          "size": "med",
+          "cr": 0,
+          "source": {
+            "book": "",
+            "page": ""
+          }
+        },
+        "attributes": {
+          "strength": {
+            "value": 8
+          },
+          "dexterity": {
+            "value": 8
+          },
+          "toughness": {
+            "value": 8
+          },
+          "intellect": {
+            "value": 8
+          },
+          "aptitude": {
+            "value": 8
+          },
+          "sanity": {
+            "value": 8
+          },
+          "charm": {
+            "value": 8
+          },
+          "rhetoric": {
+            "value": 8
+          },
+          "ego": {
+            "value": 8
+          }
+        },
+        "vitals": {
+          "health": {
+            "value": 0,
+            "max": 0
+          },
+          "willPower": {
+            "value": 0,
+            "max": 0
+          },
+          "mental": {
+            "value": 9,
+            "max": 18
+          }
+        },
+        "defenses": {
+          "armorDamageReduction": 0,
+          "reflexDefense": 0,
+          "speed": 30,
+          "cover": 0,
+          "initiative": 0,
+          "resistance": "",
+          "immunity": "",
+          "vulnerability": ""
+        },
+        "mods": {
+          "attack": 0,
+          "damageFlat": 0,
+          "damage": ""
+        },
+        "appliedBonuses": {
+          "race": null,
+          "class": null,
+          "background": null
+        },
+        "senses": {
+          "special": ""
+        },
+        "traits": {
+          "size": "med",
+          "languages": {
+            "custom": ""
+          }
+        },
+        "resources": {
+          "primary": {
+            "value": 0,
+            "max": 0,
+            "label": ""
+          },
+          "secondary": {
+            "value": 0,
+            "max": 0,
+            "label": ""
+          }
+        },
+        "skills": {
+          "generalEducation": {
+            "label": "General education",
+            "attribute": "intellect",
+            "value": 0
+          },
+          "search": {
+            "label": "Search",
+            "attribute": "aptitude",
+            "value": 0
+          },
+          "history": {
+            "label": "History",
+            "attribute": "intellect",
+            "value": 0
+          },
+          "art": {
+            "label": "Art",
+            "attribute": "intellect",
+            "value": 0
+          },
+          "medicine": {
+            "label": "Medicine",
+            "attribute": "intellect",
+            "value": 0
+          },
+          "herb": {
+            "label": "Herb",
+            "attribute": "intellect",
+            "value": 0
+          },
+          "firstAid": {
+            "label": "First aid",
+            "attribute": "aptitude",
+            "value": 0
+          },
+          "law": {
+            "label": "Law",
+            "attribute": "intellect",
+            "value": 0
+          },
+          "electronic": {
+            "label": "Electronic",
+            "attribute": "intellect",
+            "value": 0
+          },
+          "mechanical": {
+            "label": "Mechanical",
+            "attribute": "intellect",
+            "value": 0
+          },
+          "craft": {
+            "label": "Craft",
+            "attribute": "dexterity",
+            "value": 0
+          },
+          "occult": {
+            "label": "Occult",
+            "attribute": "sanity",
+            "value": 0
+          },
+          "perception": {
+            "label": "Perception",
+            "attribute": "dexterity",
+            "value": 0
+          },
+          "hideAndSneak": {
+            "label": "Hide & sneak",
+            "attribute": "dexterity",
+            "value": 0
+          },
+          "persuade": {
+            "label": "Persuade",
+            "attribute": "rhetoric",
+            "value": 0
+          },
+          "consider": {
+            "label": "Consider",
+            "attribute": "ego",
+            "value": 0
+          },
+          "empathy": {
+            "label": "Empathy",
+            "attribute": "aptitude",
+            "value": 0
+          },
+          "bet": {
+            "label": "Bet",
+            "attribute": "rhetoric",
+            "value": 0
+          },
+          "senseOfLie": {
+            "label": "Sense of lie",
+            "attribute": "aptitude",
+            "value": 0
+          },
+          "intimidate": {
+            "label": "Intimidate",
+            "attribute": "charm",
+            "value": 0
+          },
+          "survival": {
+            "label": "Survival",
+            "attribute": "aptitude",
+            "value": 0
+          },
+          "climb": {
+            "label": "Climb",
+            "attribute": "strength",
+            "value": 0
+          },
+          "stealth": {
+            "label": "Stealth",
+            "attribute": "dexterity",
+            "value": 0
+          },
+          "brawl": {
+            "label": "Brawl",
+            "attribute": "strength",
+            "value": 0
+          },
+          "weapons": {
+            "label": "Weapons",
+            "attribute": "strength",
+            "value": 0
+          },
+          "swordPlay": {
+            "label": "Sword play",
+            "attribute": "dexterity",
+            "value": 0
+          },
+          "throwing": {
+            "label": "Throwing",
+            "attribute": "strength",
+            "value": 0
+          },
+          "shootingWeapons": {
+            "label": "Shooting weapons",
+            "attribute": "dexterity",
+            "value": 0
+          },
+          "reflex": {
+            "label": "Reflex",
+            "attribute": "dexterity",
+            "value": 0
+          },
+          "larceny": {
+            "label": "Larceny",
+            "attribute": "dexterity",
+            "value": 0
+          },
+          "athlete": {
+            "label": "Athlete",
+            "attribute": "strength",
+            "value": 0
+          }
+        },
+        "conditions": {
+          "injuries": {
+            "active": [],
+            "bruising": {
+              "description": ""
+            },
+            "internalBruising": {
+              "description": ""
+            },
+            "brokenBone": {
+              "description": ""
+            },
+            "minorWound": {
+              "description": ""
+            },
+            "deepWound": {
+              "description": ""
+            },
+            "punctureWound": {
+              "description": ""
+            },
+            "seriousInjury": {
+              "description": ""
+            },
+            "bleeding": {
+              "description": ""
+            },
+            "heavyBleeding": {
+              "description": ""
+            }
+          },
+          "psychiatricDisorders": {
+            "active": [],
+            "depression": {
+              "description": ""
+            },
+            "panicDisorder": {
+              "description": ""
+            },
+            "schizophrenia": {
+              "description": ""
+            },
+            "ptsd": {
+              "description": ""
+            },
+            "specificPhobia": {
+              "description": ""
+            }
+          },
+          "physicalStates": {
+            "active": [],
+            "blinded": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "deafened": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "frightened": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "charmed": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "grappled": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "restrained": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "incapacitated": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "invisible": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "paralyzed": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "petrified": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "poisoned": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "prone": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "stunned": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "unconscious": {
+              "description": "",
+              "rollPenalty": 0
+            },
+            "dead": {
+              "description": "",
+              "rollPenalty": 0
+            }
+          }
+        }
+      }
+    },
+    "character": {
+      "templates": [
+        "base"
+      ]
+    },
+    "npc": {
+      "templates": [
+        "base"
+      ]
+    },
+    "vehicle": {
+      "templates": [
+        "base"
+      ],
+      "model": "",
+      "manufacturer": "",
+      "serial": "",
+      "vehicleType": "land",
+      "handling": 0,
+      "crew": {
+        "value": [],
+        "max": 0
+      },
+      "passengers": 0,
+      "cargo": 0,
+      "weaponSystems": []
+    }
+  },
+  "Item": {
+    "types": [
+      "weapon",
+      "armor",
+      "consumable",
+      "tool",
+      "loot",
+      "spell",
+      "extraskills",
+      "class",
+      "subclass",
+      "background",
+      "race",
+      "skill",
+      "ability",
+      "equipment"
+    ],
+    "templates": {
+      "itemBase": {
+        "setting": "universal",
+        "source": {
+          "book": "",
+          "page": ""
+        },
+        "description": {
+          "value": "",
+          "chat": ""
+        },
+        "quantity": 1,
+        "weight": 0,
+        "price": {
+          "value": 0,
+          "denomination": "gp"
+        },
+        "rarity": "common",
+        "favorite": false,
+        "actionType": "",
+        "attackRoll": false,
+        "handSlot": "",
+        "handsRequired": 1,
+        "equipmentSlot": "",
+        "equipType": "gear",
+        "slot": "",
+        "allowedSlot": "",
+        "prostheticFor": "",
+        "armorValue": 0,
+        "speedBonus": 0,
+        "attackBonus": 0,
+        "damageBonus": 0,
+        "carryBonus": 0,
+        "bonus": 0,
+        "skill": "",
+        "attribute": "",
+        "attributeBonus": 0,
+        "rangeData": {
+          "value": 0,
+          "long": 0,
+          "reach": 0,
+          "units": "ft"
+        },
+        "uses": {
+          "value": 0,
+          "max": 0,
+          "per": ""
+        }
+      }
+    },
+    "weapon": {
+      "templates": [
+        "itemBase"
+      ],
+      "damageFormula": "",
+      "damageType": "",
+      "caliber": "",
+      "ammunition": 0,
+      "ammunitionMax": 0,
+      "range": "",
+      "reach": 0,
+      "reload": "",
+      "weaponType": "",
+      "strength": "",
+      "properties": []
+    },
+    "armor": {
+      "templates": [
+        "itemBase"
+      ],
+      "armorType": "light",
+      "coverage": "",
+      "maxDex": 99,
+      "strengthReq": 0,
+      "stealthDisadv": false,
+      "properties": []
+    },
+    "consumable": {
+      "templates": [
+        "itemBase"
+      ],
+      "consumableType": "potion",
+      "healingFormula": "",
+      "damageFormula": "",
+      "damageType": "",
+      "effect": "",
+      "caliber": "",
+      "isAmmunition": false
+    },
+    "tool": {
+      "templates": [
+        "itemBase"
+      ],
+      "toolType": "",
+      "ability": "int",
+      "properties": []
+    },
+    "loot": {
+      "templates": [
+        "itemBase"
+      ],
+      "lootType": "",
+      "value": 0,
+      "isContainer": false,
+      "properties": []
+    },
+    "spell": {
+      "templates": [
+        "itemBase"
+      ],
+      "castingTime": "",
+      "range": "",
+      "duration": "",
+      "effect": "",
+      "damageFormula": "",
+      "damageType": "",
+      "spellLevel": 0,
+      "school": "",
+      "saveAttribute": "",
+      "saveDC": 0,
+      "healingFormula": "",
+      "attribute": "intellect",
+      "properties": []
+    },
+    "extraskills": {
+          "templates": [
+            "itemBase"
+          ],
+          "category": "other",
+          "abilityType": "active",
+          "cost": 1,
+      "skills": [],
+      "healthBonus": 0,
+      "effect": "",
+      "properties": []
+    },
+    "class": {
+      "templates": [
+        "itemBase"
+      ],
+      "role": "",
+      "features": "",
+      "hitDie": "1d8",
+      "subclass": ""
+    },
+    "subclass": {
+      "templates": [
+        "itemBase"
+      ],
+      "features": "",
+      "class": ""
+    },
+    "background": {
+      "templates": [
+        "itemBase"
+      ],
+      "benefit": "",
+      "skills": [],
+      "languages": [],
+      "tools": []
+    },
+    "race": {
+      "templates": [
+        "itemBase"
+      ],
+      "raceName": "human",
+      "traits": "",
+      "size": "med",
+      "speed": 30,
+      "abilityScoreIncrease": {},
+      "languages": []
+    },
+    "skill": {
+      "templates": [
+        "itemBase"
+      ],
+      "dice": "1d20",
+      "value": 0,
+      "attribute": "intellect"
+    },
+    "ability": {
+          "templates": [
+            "itemBase"
+          ],
+          "abilityType": "active",
+      "value": 0,
+      "effect": "",
+      "damageFormula": "",
+      "damageType": "",
+      "healingFormula": "",
+      "range": "",
+      "attribute": "intellect",
+      "properties": []
+    },
+    "equipment": {
+      "templates": [
+        "itemBase"
+      ],
+      "properties": []
+    }
+  }
+}

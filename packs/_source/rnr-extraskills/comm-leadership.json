@@ -1,0 +1,38 @@
+{
+  "_id": "rnrextra00000001",
+  "name": "Leadership",
+  "type": "extraskills",
+  "img": "icons/skills/social/diplomacy-handshake.webp",
+  "system": {
+    "description": {
+      "value": "You excel at rallying others. Once per rest, grant an ally advantage on their next roll. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "category": "communication",
+    "attribute": "rhetoric",
+    "cost": 1,
+    "bonus": 0,
+    "effect": "Ally gains advantage on next roll (once per rest).",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "abilityType": "active",
+    "actionType": "action",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

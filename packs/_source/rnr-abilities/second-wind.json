@@ -1,0 +1,44 @@
+{
+  "_id": "rnrability000001",
+  "name": "Second Wind",
+  "type": "ability",
+  "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
+  "system": {
+    "description": {
+      "value": "You can dig deep and regain some of your fighting spirit. As a bonus action, regain 1d10 + level HP. Usable once per short rest.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "abilityType": "active",
+    "attribute": "toughness",
+    "effect": "Regain 1d10 + level HP.",
+    "damageFormula": "1d10",
+    "damageType": "healing",
+    "uses": {
+      "value": 1,
+      "max": 1,
+      "per": "short-rest"
+    },
+    "actionType": "bonus",
+    "range": "Self",
+    "properties": [],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

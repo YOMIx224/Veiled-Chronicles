@@ -1,0 +1,24 @@
+/* RnR setting theme: Modern
+   Desaturated gunmetal and paper - a police report, not a spellbook.
+*/
+[data-rnr-theme="modern"] {
+  --rnr-bg:            #16181a;
+  --rnr-surface:       #1e2124;
+  --rnr-surface-2:     #25292d;
+  --rnr-surface-3:     #2d3237;
+  --rnr-border:        #3d444b;
+  --rnr-border-soft:   #30363c;
+  --rnr-text:          #e6e9ec;
+  --rnr-muted:         #98a1a9;
+  --rnr-accent:        #7fb3c8;
+  --rnr-accent-soft:   #1c2c34;
+  --rnr-accent-hover:  #a4d2e3;
+  --rnr-accent-text:   #16181a;
+  --rnr-heading:       #a4d2e3;
+  --rnr-shadow:        rgba(0, 0, 0, .48);
+  --rnr-pos:           #8fbf9a;
+  --rnr-neg:           #e2857d;
+  --rnr-hp:            #b05048;
+  --rnr-wp:            #5a86a8;
+  --rnr-focus:         #a4d2e3;
+}

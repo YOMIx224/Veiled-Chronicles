@@ -1,0 +1,39 @@
+{
+  "_id": "rnrarmor00000006",
+  "name": "Bulletproof Vest",
+  "type": "armor",
+  "img": "icons/equipment/chest/vest-cloth-reinforced-brown.webp",
+  "system": {
+    "description": {
+      "value": "A modern ballistic vest. Reduces firearm damage significantly.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 5,
+    "price": {
+      "value": 800,
+      "denomination": "gp"
+    },
+    "rarity": "uncommon",
+    "handSlot": "",
+    "armorType": "medium",
+    "armorValue": 4,
+    "maxDex": 99,
+    "strengthReq": 0,
+    "stealthDisadv": false,
+    "properties": [
+      "ballistic"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

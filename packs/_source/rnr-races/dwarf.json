@@ -1,0 +1,42 @@
+{
+  "_id": "rnrrace000000003",
+  "name": "Dwarf",
+  "type": "race",
+  "img": "icons/environment/people/commoner.webp",
+  "system": {
+    "description": {
+      "value": "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone and metal.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "raceName": "Dwarf",
+    "size": "med",
+    "speed": 25,
+    "traits": "Darkvision 60 ft. Dwarven Resilience: Advantage on saves vs poison, resistance to poison damage. Stone Cunning: +1 History and Electronic checks related to stone/metal.",
+    "attributeBonus": {
+      "toughness": 2
+    },
+    "languages": [
+      "Common",
+      "Dwarvish"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

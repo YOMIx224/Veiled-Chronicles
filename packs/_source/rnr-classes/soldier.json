@@ -1,0 +1,35 @@
+{
+  "_id": "rnrclass00000001",
+  "name": "Soldier",
+  "type": "class",
+  "img": "icons/skills/melee/weapons-crossed-swords-yellow.webp",
+  "system": {
+    "description": {
+      "value": "A trained warrior. Masters of weapons and tactics, soldiers excel in direct combat.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "role": "Fighter",
+    "hitDie": "1d10",
+    "subclass": "",
+    "features": "Weapon Mastery, Fighting Style, Second Wind, Extra Attack (advanced tier)",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "rnrspell00000004",
+  "name": "Sleep",
+  "type": "spell",
+  "img": "icons/magic/control/sleep-bubbles-purple.webp",
+  "system": {
+    "description": {
+      "value": "This spell sends creatures into a magical slumber. Roll 5d8; the total is how many HP of creatures this spell can affect.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "spellLevel": 1,
+    "school": "enchantment",
+    "attribute": "sanity",
+    "castingTime": "1 action",
+    "range": "90 ft",
+    "duration": "1 minute",
+    "damageFormula": "5d8",
+    "damageType": "none",
+    "saveAttribute": "",
+    "saveDC": "",
+    "effect": "Affects creatures by total HP pool up to 5d8.",
+    "properties": [],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

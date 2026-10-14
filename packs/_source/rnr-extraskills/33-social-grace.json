@@ -1,0 +1,43 @@
+{
+  "_id": "uniextr000000033",
+  "name": "Social Grace",
+  "type": "extraskills",
+  "img": "icons/skills/trades/trade-swordrock-purple.webp",
+  "system": {
+    "description": {
+      "value": "+1 to empathy and persuade checks. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "category": "communication",
+    "attribute": "charm",
+    "cost": 1,
+    "bonus": 1,
+    "skills": [
+      "empathy",
+      "persuade"
+    ],
+    "effect": "+1 to empathy and persuade checks.",
+    "properties": [],
+    "abilityType": "active",
+    "actionType": "action",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

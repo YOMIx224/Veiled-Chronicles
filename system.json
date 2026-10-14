@@ -1,0 +1,178 @@
+{
+  "id": "rnr",
+  "name": "RnR",
+  "title": "Role&Roll",
+  "description": "A setting-neutral tabletop RPG system for Foundry Virtual Tabletop.",
+  "authors": [
+    {
+      "name": "YOMIx224"
+    }
+  ],
+  "version": "0.3.17",
+  "license": "UNLICENSED",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14",
+    "maximum": "14"
+  },
+  "esmodules": [
+    "scripts/RnR.js"
+  ],
+  "styles": [
+    "styles/RnR.css",
+    "styles/themes/_tokens.css",
+    "styles/themes/universal.css",
+    "styles/themes/fantasy.css",
+    "styles/themes/modern.css",
+    "styles/themes/future.css",
+    "styles/themes/space.css",
+    "styles/themes/superhero.css",
+    "styles/themes/martial.css",
+    "styles/themes/mecha.css"
+  ],
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "npc": {},
+      "vehicle": {}
+    },
+    "Item": {
+      "weapon": {},
+      "armor": {},
+      "consumable": {},
+      "tool": {},
+      "loot": {},
+      "spell": {},
+      "extraskills": {},
+      "class": {},
+      "subclass": {},
+      "background": {},
+      "race": {},
+      "ability": {},
+      "equipment": {},
+      "skill": {}
+    }
+  },
+  "packs": [
+    {
+      "name": "rnr-weapons",
+      "label": "RnR — Weapons",
+      "path": "packs/rnr-weapons",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-armors",
+      "label": "RnR — Armor",
+      "path": "packs/rnr-armors",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-equipment",
+      "label": "RnR — Equipment",
+      "path": "packs/rnr-equipment",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-consumables",
+      "label": "RnR — Consumables",
+      "path": "packs/rnr-consumables",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-abilities",
+      "label": "RnR — Abilities",
+      "path": "packs/rnr-abilities",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-spells",
+      "label": "RnR — Spells",
+      "path": "packs/rnr-spells",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-extraskills",
+      "label": "RnR — Extra Skills",
+      "path": "packs/rnr-extraskills",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-classes",
+      "label": "RnR — Classes",
+      "path": "packs/rnr-classes",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-backgrounds",
+      "label": "RnR — Backgrounds",
+      "path": "packs/rnr-backgrounds",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-races",
+      "label": "RnR — Origins",
+      "path": "packs/rnr-races",
+      "type": "Item",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-mecha-journal",
+      "label": "RnR — Mecha Field Manual",
+      "path": "packs/rnr-mecha-journal",
+      "type": "JournalEntry",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-user-guide",
+      "label": "RnR — คู่มือการใช้งานฉบับละเอียด",
+      "path": "packs/rnr-user-guide",
+      "type": "JournalEntry",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-setting-guides",
+      "label": "RnR — Setting Guides",
+      "path": "packs/rnr-setting-guides",
+      "type": "JournalEntry",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-mecha-macros",
+      "label": "RnR — Mecha Macros",
+      "path": "packs/rnr-mecha-macros",
+      "type": "Macro",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-mecha-frames",
+      "label": "RnR — Mecha Frames",
+      "path": "packs/rnr-mecha-frames",
+      "type": "Actor",
+      "system": "rnr"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "vitals.health",
+  "secondaryTokenAttribute": "vitals.willPower",
+  "initiative": "1d20"
+}

@@ -1,0 +1,44 @@
+{
+  "_id": "unicons000000020",
+  "name": "Adhesive Foam",
+  "type": "consumable",
+  "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
+  "system": {
+    "description": {
+      "value": "Adhesive Foam is a single-use universal resource.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "consumableType": "supply",
+    "effect": "Adhesive Foam provides its described utility.",
+    "healingFormula": "",
+    "damageFormula": "",
+    "damageType": "",
+    "caliber": "",
+    "isAmmunition": false,
+    "uses": {
+      "value": 1,
+      "max": 1,
+      "per": "charges"
+    },
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_id": "unispel000000005",
+  "name": "Cleanse",
+  "type": "spell",
+  "img": "icons/magic/light/orb-shadow-blue.webp",
+  "system": {
+    "description": {
+      "value": "Cleanse is a flexible supernatural, psychic, or technological effect.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "spellLevel": 0,
+    "school": "universal",
+    "attribute": "rhetoric",
+    "castingTime": "1 action",
+    "range": "30 ft",
+    "duration": "1 minute",
+    "effect": "Cleanse: resolve the described effect with the GM.",
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "saveAttribute": "",
+    "saveDC": 0,
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

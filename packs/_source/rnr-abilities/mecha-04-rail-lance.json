@@ -1,0 +1,47 @@
+{
+  "_id": "7b75f95e9573392c",
+  "name": "Mecha — Rail Lance",
+  "type": "ability",
+  "img": "icons/weapons/guns/gun-blunderbuss-steel.webp",
+  "system": {
+    "description": {
+      "value": "Attack: charge and fire a high-velocity lance. The GM adjudicates line of fire and collateral damage.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Abilities"
+    },
+    "abilityType": "active",
+    "attribute": "dexterity",
+    "damageFormula": "2d12",
+    "damageType": "piercing",
+    "healingFormula": "",
+    "actionType": "action",
+    "attackRoll": true,
+    "range": "120 ft",
+    "target": "One target in a straight line",
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "effect": "Attack: charge and fire a high-velocity lance. The GM adjudicates line of fire and collateral damage.",
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

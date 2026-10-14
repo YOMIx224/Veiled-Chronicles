@@ -1,0 +1,37 @@
+{
+  "_id": "rnrbackgd0000002",
+  "name": "Military",
+  "type": "background",
+  "img": "icons/equipment/chest/breastplate-metal-scaled-grey.webp",
+  "system": {
+    "description": {
+      "value": "You served in an armed force and know military protocol, tactics, and discipline.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Weapons and Athlete. You can access military resources and have a rank that grants authority over soldiers.",
+    "skills": [
+      "weapons",
+      "athlete"
+    ],
+    "languages": [],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

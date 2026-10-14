@@ -1,0 +1,43 @@
+{
+  "_id": "rnrrace000000002",
+  "name": "Elf",
+  "type": "race",
+  "img": "icons/environment/people/archer.webp",
+  "system": {
+    "description": {
+      "value": "Elves are a magical people of otherworldly grace. They are famed for their keen senses, mastery of magic and combat, and art.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "raceName": "Elf",
+    "size": "med",
+    "speed": 30,
+    "traits": "Keen Senses: +1 Perception. Fey Ancestry: Advantage on saves vs charmed. Trance: Only need 4 hours of meditation instead of sleep. Darkvision 60 ft.",
+    "attributeBonus": {
+      "dexterity": 2,
+      "intellect": 1
+    },
+    "languages": [
+      "Common",
+      "Elvish"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

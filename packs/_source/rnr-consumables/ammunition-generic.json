@@ -1,0 +1,34 @@
+{
+  "_id": "rnrconsumammo001",
+  "name": "Ammunition (Generic)",
+  "type": "consumable",
+  "img": "icons/weapons/ammunition/arrow-head.webp",
+  "system": {
+    "description": {
+      "value": "Generic ammunition usable by any weapon when no caliber is specified.",
+      "chat": ""
+    },
+    "quantity": 20,
+    "weight": 0.02,
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "consumableType": "ammunition",
+    "caliber": "",
+    "isAmmunition": true,
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

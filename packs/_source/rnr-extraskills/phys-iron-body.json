@@ -1,0 +1,39 @@
+{
+  "_id": "rnrextra00000003",
+  "name": "Iron Body",
+  "type": "extraskills",
+  "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
+  "system": {
+    "description": {
+      "value": "Years of physical training give you an iron constitution. +3 max HP permanently. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "category": "physical",
+    "attribute": "toughness",
+    "cost": 1,
+    "bonus": 0,
+    "healthBonus": 3,
+    "effect": "+3 max HP permanently.",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "abilityType": "active",
+    "actionType": "action",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

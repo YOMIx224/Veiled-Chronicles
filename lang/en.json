@@ -1,0 +1,327 @@
+{
+  "SYSTEM": {
+    "Name": "Role&Roll"
+  },
+  "ACTOR": {
+    "TypeCharacter": "Character",
+    "TypeNpc": "NPC"
+  },
+  "ITEM": {
+    "Type": {
+      "weapon": "Weapon",
+      "armor": "Armor",
+      "consumable": "Consumable",
+      "tool": "Tool",
+      "loot": "Loot",
+      "spell": "Spell",
+      "extraskills": "Extra Skill",
+      "class": "Class",
+      "subclass": "Subclass",
+      "background": "Background",
+      "race": "Race",
+      "vehicle": "Vehicle",
+      "skill": "Skill",
+      "ability": "Ability",
+      "equipment": "Equipment"
+    }
+  },
+  "RNR": {
+    "Sheet": {
+      "Main": "Main",
+      "Backpack": "Backpack",
+      "Biography": "Biography",
+      "Stats": "Stats",
+      "Actions": "Actions"
+    },
+    "Attributes": {
+      "strength": "Strength",
+      "dexterity": "Dexterity",
+      "toughness": "Toughness",
+      "intellect": "Intellect",
+      "aptitude": "Aptitude",
+      "sanity": "Sanity",
+      "charm": "Charm",
+      "rhetoric": "Rhetoric",
+      "ego": "Ego"
+    },
+    "Vitals": {
+      "Health": "Health",
+      "WillPower": "WillPower",
+      "Mental": "Mental",
+      "HP": "HP",
+      "WP": "WP"
+    },
+    "Combat": {
+      "Initiative": "Initiative",
+      "ArmorClass": "Armor Class",
+      "Speed": "Speed",
+      "Attack": "Attack",
+      "DamageOnly": "Damage Only",
+      "AttackRoll": "Attack Roll",
+      "DamageRoll": "Damage Roll",
+      "Critical": "CRITICAL!",
+      "Fumble": "FUMBLE",
+      "Normal": "Normal",
+      "Advantage": "Advantage",
+      "Disadvantage": "Disadvantage",
+      "RollMode": "Roll Mode"
+    },
+    "Down": {
+      "Label": "Down & Recovery",
+      "Roll": "Attempt Recovery",
+      "Reset": "Reset",
+      "Recover": "Recovery",
+      "Rounds": "Rounds down",
+      "BackUp": "BACK UP",
+      "Escalate": "The GM decides what happens next.",
+      "Deceased": "Declare Deceased",
+      "DeceasedTitle": "Declare Deceased",
+      "DeceasedHint": "This is a GM decision, never automatic. Recovery will be blocked until a character is brought back some other way."
+    },
+    "Rest": {
+      "Label": "Rest",
+      "Short": "Short Rest",
+      "Long": "Long Rest",
+      "ShortDesc": "Spend Hit Dice to recover HP.",
+      "LongDesc": "Fully recover HP and WillPower.",
+      "HitDice": "Hit Dice to spend",
+      "WpRecovery": "WillPower recovers ½ max on short rest.",
+      "FullRecover": "Fully recovered — HP and WillPower restored to maximum."
+    },
+    "StatePoint": {
+      "Label": "State Point",
+      "Action": "Action",
+      "Add": "Add points",
+      "Remove": "Remove points",
+      "Attribute": "Attribute",
+      "Points": "Points",
+      "Used": "Used",
+      "Available": "Available",
+      "Confirm": "Confirm State Point",
+      "MaxWarn": "Maximum value is {max}.",
+      "MinWarn": "Cannot reduce below base value 8.",
+      "BudgetWarn": "Only {remaining} point(s) remaining."
+    },
+    "Skills": {
+      "Groups": {
+        "Academic": "Academic",
+        "IntuitionTrained": "Intuition and trained",
+        "Physical": "Physical skills"
+      },
+      "generalEducation": "General education",
+      "search": "Search",
+      "history": "History",
+      "art": "Art",
+      "medicine": "Medicine",
+      "herb": "Herb",
+      "firstAid": "First aid",
+      "law": "Law",
+      "electronic": "Electronic",
+      "mechanical": "Mechanical",
+      "craft": "Craft",
+      "occult": "Occult",
+      "perception": "Perception",
+      "hideAndSneak": "Hide & sneak",
+      "persuade": "Persuade",
+      "consider": "Consider",
+      "empathy": "Empathy",
+      "bet": "Bet",
+      "senseOfLie": "Sense of lie",
+      "intimidate": "Intimidate",
+      "survival": "Survival",
+      "climb": "Climb",
+      "stealth": "Stealth",
+      "brawl": "Brawl",
+      "weapons": "Weapons",
+      "swordPlay": "Sword play",
+      "throwing": "Throwing",
+      "shootingWeapons": "Shooting weapons",
+      "reflex": "Reflex",
+      "larceny": "Larceny",
+      "athlete": "Athlete"
+    },
+    "ExtraSkill": {
+      "Label": "Extra Skill",
+      "Shop": "Shop",
+      "Points": "Points",
+      "Cost": "Cost",
+      "Category": "Category",
+      "SkillName": "Skill name",
+      "Buy": "Buy skill",
+      "Remove": "Remove",
+      "Purchased": "Purchased skills",
+      "Empty": "No extra skills purchased.",
+      "NoPoints": "No Extra Skill points remaining.",
+      "EnterName": "Enter a skill name.",
+      "Categories": {
+        "communication": "Communication, persuasion, observation and psychology",
+        "physical": "Physical training and general abilities",
+        "investigation": "Research, investigation and tracking",
+        "science": "Science, medicine and academics",
+        "combat": "Combat",
+        "arts": "Arts",
+        "other": "Other skills"
+      }
+    },
+    "Conditions": {
+      "Manage": "Manage",
+      "NoActive": "No active conditions",
+      "Groups": {
+        "injuries": "Injuries",
+        "psychiatricDisorders": "Psychiatric disorders"
+      },
+      "Injuries": {
+        "bruising": "Bruising",
+        "internalBruising": "Internal bruising",
+        "brokenBone": "Broken bone",
+        "minorWound": "Minor wound",
+        "deepWound": "Deep wound",
+        "punctureWound": "Puncture wound",
+        "seriousInjury": "Serious injury",
+        "bleeding": "Bleeding",
+        "heavyBleeding": "Heavy bleeding"
+      },
+      "PsychiatricDisorders": {
+        "depression": "Depression",
+        "panicDisorder": "Panic disorder",
+        "schizophrenia": "Schizophrenia",
+        "ptsd": "Post-traumatic stress disorder",
+        "specificPhobia": "Specific phobia"
+      }
+    },
+    "NPC": {
+      "CR": "Challenge Rating",
+      "Type": "Creature Type",
+      "Size": "Size",
+      "XP": "XP",
+      "Resistances": "Resistances",
+      "Immunities": "Immunities",
+      "Vulnerabilities": "Vulnerabilities",
+      "Senses": "Senses",
+      "Languages": "Languages",
+      "Actions": "Actions",
+      "AddWeapon": "+ Weapon",
+      "AddAbility": "+ Ability",
+      "AddSpell": "+ Spell",
+      "NoActions": "No actions yet — add a Weapon, Ability, or Spell above.",
+      "Sizes": {
+        "tiny": "Tiny",
+        "sm": "Small",
+        "med": "Medium",
+        "lg": "Large",
+        "huge": "Huge",
+        "grg": "Gargantuan"
+      }
+    },
+    "Biography": {
+      "Label": "Biography",
+      "Gender": "Gender",
+      "Age": "Age",
+      "Profession": "Profession",
+      "Flaw": "Flaw",
+      "DisabledOrgans": "Disabled organs",
+      "FlawHint": "A flaw grants 1 point. Each disabled organ grants 2 points.",
+      "SourceOfWillpower": "Source of willpower",
+      "WillpowerHint": "A source of willpower is an object, person, or story that helps the character regain focus.",
+      "Notes": "Notes"
+    },
+    "Favorites": {
+      "Label": "Favorites",
+      "DropHint": "Drop favorite item here"
+    },
+    "Weapon": {
+      "Damage": "Damage",
+      "DamageType": "Damage type",
+      "Caliber": "Caliber",
+      "Ammunition": "Ammunition",
+      "Range": "Range",
+      "Attribute": "Attribute",
+      "Reload": "Reload",
+      "AttackBonus": "Attack bonus",
+      "WeaponType": "Weapon type"
+    },
+    "Armor": {
+      "ArmorType": "Armor type",
+      "Protection": "Protection",
+      "Light": "Light",
+      "Medium": "Medium",
+      "Heavy": "Heavy"
+    },
+    "Spell": {
+      "Level": "Level",
+      "School": "School",
+      "CastingTime": "Casting time",
+      "Range": "Range",
+      "Effect": "Effect",
+      "Components": "Components",
+      "Prepared": "Prepared"
+    },
+    "Currency": {
+      "cp": "Copper",
+      "sp": "Silver",
+      "ep": "Electrum",
+      "gp": "Gold",
+      "pp": "Platinum"
+    },
+    "Misc": {
+      "PlayerCharacter": "PLAYER CHARACTER",
+      "SavingThrows": "Saving Throws",
+      "HandSlot": "Hand slot",
+      "LeftHand": "Left hand",
+      "RightHand": "Right hand",
+      "Backpack": "Backpack",
+      "InHands": "In Hands",
+      "Equipment": "Equipment",
+      "Description": "Description",
+      "Quantity": "Quantity",
+      "Weight": "Weight",
+      "Value": "Value",
+      "Rarity": "Rarity",
+      "Source": "Source",
+      "Proficient": "Proficient",
+      "Identified": "Identified",
+      "Empty": "Empty",
+      "Close": "Close",
+      "Cancel": "Cancel",
+      "Confirm": "Confirm",
+      "Save": "Save",
+      "Apply": "Apply"
+    },
+    "setting": {
+      "Label": "Sheet theme by setting",
+      "Hint": "Picks the sheet theme to match the setting. Cosmetic only - it never changes the rules.",
+      "universal": {
+        "label": "Universal / Custom Setting",
+        "hint": "Use any era, genre, or mixed setting."
+      },
+      "fantasy": {
+        "label": "Fantasy",
+        "hint": "Use magic, creatures, relics, classes, and origins as optional fiction."
+      },
+      "modern": {
+        "label": "Modern",
+        "hint": "Use firearms, vehicles, street-level intrigue, medicine, and forensics."
+      },
+      "future": {
+        "label": "Future / Cybernetic",
+        "hint": "Use cybernetics, drones, firearms, implants, and synthetic life."
+      },
+      "space": {
+        "label": "Space Opera",
+        "hint": "Use ships, zero-g scenes, alien cultures, and ranged hazards."
+      },
+      "superhero": {
+        "label": "Superhero",
+        "hint": "Use Abilities and Extra Skills for powers, limits, teams, and consequences."
+      },
+      "martial": {
+        "label": "Martial Arts",
+        "hint": "Focus on styles, techniques, duels, clans, and internal power."
+      },
+      "mecha": {
+        "label": "Mecha / Robot Combat",
+        "hint": "Use Vehicles or NPC Actors for machines, pilots, armor, and systems."
+      }
+    }
+  }
+}

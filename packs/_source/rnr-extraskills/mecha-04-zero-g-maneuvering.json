@@ -1,0 +1,44 @@
+{
+  "_id": "8f0cb10dc46effdd",
+  "name": "Mecha — Zero-G Maneuvering",
+  "type": "extraskills",
+  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "system": {
+    "description": {
+      "value": "Thruster-assisted movement and tether discipline help in low gravity. Gain +1 to Athlete and Reflex checks involving low gravity or EVA.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Extra Skills"
+    },
+    "category": "physical",
+    "attribute": "dexterity",
+    "cost": 2,
+    "bonus": 1,
+    "skills": [
+      "athlete",
+      "reflex"
+    ],
+    "effect": "Passive: +1 to Athlete and Reflex checks involving low gravity or EVA.",
+    "properties": [],
+    "abilityType": "passive",
+    "actionType": "passive",
+    "attackRoll": false,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "_id": "uniextr000000037",
+  "name": "Tool Proficiency",
+  "type": "extraskills",
+  "img": "icons/skills/trades/trade-swordrock-purple.webp",
+  "system": {
+    "description": {
+      "value": "+1 to electronic and mechanical checks. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "category": "science",
+    "attribute": "intellect",
+    "cost": 1,
+    "bonus": 1,
+    "skills": [
+      "electronic",
+      "mechanical"
+    ],
+    "effect": "+1 to electronic and mechanical checks.",
+    "properties": [],
+    "abilityType": "passive",
+    "actionType": "passive",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

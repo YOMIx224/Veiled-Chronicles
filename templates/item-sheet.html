@@ -1,0 +1,519 @@
+<div class="rnr-item-sheet {{cssClass}}" data-rnr-theme="{{sheetTheme}}" autocomplete="off">
+
+  <header class="rnr-item-header">
+    <img src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="rnr-item-header-info">
+      <input name="name" type="text" value="{{item.name}}" placeholder="Item name" />
+      <p class="rnr-item-type-label">{{typeLabel}}</p>
+    </div>
+    <label class="rnr-setting-picker" title="{{settingProfileHint}}">
+      <span aria-hidden="true">🎨</span>
+      <strong>{{settingProfileLabel}}</strong>
+    </label>
+    <button type="button" class="rnr-item-header-btn" data-action="item-chat" title="Send to Chat / Roll (Shift+Click to quick-roll)">🎲 Chat / Roll</button>
+  </header>
+
+  <section class="rnr-item-fields">
+
+    {{!-- ── Common fields ── --}}
+    <div class="rnr-item-common-grid">
+      {{#if canHold}}<label>Hand Slot
+        <select name="system.handSlot">
+          <option value=""      {{#unless isLeftHand}}{{#unless isRightHand}}selected{{/unless}}{{/unless}}>— None —</option>
+          <option value="left"  {{#if isLeftHand}}selected{{/if}}>Left hand</option>
+          <option value="right" {{#if isRightHand}}selected{{/if}}>Right hand</option>
+        </select>
+      </label>
+      <label>Hands Required
+        <select name="system.handsRequired">
+          <option value="1" {{#if isOneHanded}}selected{{/if}}>One hand</option>
+          <option value="2" {{#if isTwoHanded}}selected{{/if}}>Two hands</option>
+        </select>
+      </label>
+      {{#if isTwoHanded}}<p class="rnr-help-text">Two-handed items occupy both hands while held, leaving no room for a second weapon or a shield.</p>{{/if}}
+      {{/if}}
+      <label>Qty
+        <input name="system.quantity" type="number" min="1" value="{{system.quantity}}" />
+      </label>
+      <label>Weight
+        <input name="system.weight" type="number" min="0" step="0.1" value="{{system.weight}}" />
+      </label>
+      <label>Price (gp)
+        <input name="system.price.value" type="number" min="0" value="{{system.price.value}}" />
+      </label>
+      <label>Rarity
+        <select name="system.rarity">
+          <option value="common"    {{#if (eq system.rarity "common")}}selected{{/if}}>Common</option>
+          <option value="uncommon"  {{#if (eq system.rarity "uncommon")}}selected{{/if}}>Uncommon</option>
+          <option value="rare"      {{#if (eq system.rarity "rare")}}selected{{/if}}>Rare</option>
+          <option value="very-rare" {{#if (eq system.rarity "very-rare")}}selected{{/if}}>Very Rare</option>
+          <option value="legendary" {{#if (eq system.rarity "legendary")}}selected{{/if}}>Legendary</option>
+        </select>
+      </label>
+      <label>Source
+        <input name="system.source.book" value="{{system.source.book}}" placeholder="Book name" />
+      </label>
+    </div>
+
+    {{!-- ── WEAPON ── --}}
+    {{#if isWeapon}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>⚔ Weapon</legend>
+      <div class="rnr-item-field-grid">
+        <label>Weapon Type
+          <select name="system.weaponType">
+            <option value="melee"  {{#if isMelee}}selected{{/if}}>Melee</option>
+            <option value="ranged" {{#if isRanged}}selected{{/if}}>Ranged</option>
+          </select>
+        </label>
+        <label>Attribute
+          <select name="system.attribute">
+            {{#each attributeOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+          </select>
+        </label>
+        <label>Damage Formula
+          <input name="system.damageFormula" value="{{system.damageFormula}}" placeholder="1d6" />
+        </label>
+        <label>Damage Type
+          <input name="system.damageType" value="{{system.damageType}}" placeholder="physical" />
+        </label>
+        <label>Damage Bonus
+          <input name="system.damageBonus" type="number" value="{{system.damageBonus}}" />
+        </label>
+        <label>Attack Bonus
+          <input name="system.attackBonus" type="number" value="{{system.attackBonus}}" />
+        </label>
+        <label>Range
+          <input name="system.range" value="{{system.range}}" placeholder="30/90 ft" />
+        </label>
+        <label>Reach (ft)
+          <input name="system.reach" type="number" value="{{system.reach}}" />
+        </label>
+        <label>Caliber
+          <input name="system.caliber" value="{{system.caliber}}" placeholder=".38" />
+        </label>
+        <label>Ammunition
+          <input name="system.ammunition" type="number" min="0" value="{{system.ammunition}}" />
+        </label>
+        <label>Ammunition Max / Capacity
+          <input name="system.ammunitionMax" type="number" min="0" value="{{system.ammunitionMax}}" />
+        </label>
+        <label>Reload
+          <input name="system.reload" value="{{system.reload}}" placeholder="1 action" />
+        </label>
+      </div>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── ARMOR ── --}}
+    {{#if isArmor}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>🛡 Armor</legend>
+      <div class="rnr-item-field-grid">
+        <label>Armor Type
+          <select name="system.armorType">
+            <option value="light"  {{#if isLight}}selected{{/if}}>Light</option>
+            <option value="medium" {{#if isMedium}}selected{{/if}}>Medium</option>
+            <option value="heavy"  {{#if isHeavy}}selected{{/if}}>Heavy</option>
+            <option value="shield" {{#if isShield}}selected{{/if}}>Shield</option>
+          </select>
+        </label>
+        <label>Damage Reduction
+          <input name="system.armorValue" type="number" min="0" value="{{system.armorValue}}" />
+        </label>
+        <label>Max Dex Bonus
+          <input name="system.maxDex" type="number" min="0" value="{{system.maxDex}}" />
+        </label>
+        <label>Strength Req.
+          <input name="system.strengthReq" type="number" min="0" value="{{system.strengthReq}}" />
+        </label>
+        <label>Speed Bonus (ft)
+          <input name="system.speedBonus" type="number" value="{{system.speedBonus}}" placeholder="e.g. 5" />
+        </label>
+        <label class="rnr-item-checkbox">
+          <input type="checkbox" name="system.stealthDisadv" {{#if system.stealthDisadv}}checked{{/if}} />
+          Stealth Disadvantage
+        </label>
+      </div>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── CONSUMABLE ── --}}
+    {{#if isConsumable}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>🧪 Consumable</legend>
+      <div class="rnr-item-field-grid">
+        <label>Type
+          <input name="system.consumableType" value="{{system.consumableType}}" placeholder="potion or ammunition" />
+        </label>
+        <label>Ammunition Caliber (optional)
+          <input name="system.caliber" value="{{system.caliber}}" placeholder="Match weapon caliber, e.g. .38" />
+        </label>
+        <label class="rnr-item-checkbox">
+          <input type="checkbox" name="system.isAmmunition" {{#if system.isAmmunition}}checked{{/if}} />
+          This Item is ammunition
+        </label>
+        <label>Effect
+          <input name="system.effect" value="{{system.effect}}" />
+        </label>
+        <label>Heal Formula
+          <input name="system.healingFormula" value="{{system.healingFormula}}" placeholder="2d4+2" />
+        </label>
+        <label>Uses (current)
+          <input name="system.uses.value" type="number" min="0" value="{{system.uses.value}}" />
+        </label>
+        <label>Uses (max)
+          <input name="system.uses.max" type="number" min="0" value="{{system.uses.max}}" />
+        </label>
+      </div>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── TOOL ── --}}
+    {{#if isTool}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>🔧 Tool</legend>
+      <div class="rnr-item-field-grid">
+        <label>Tool Type
+          <input name="system.toolType" value="{{system.toolType}}" />
+        </label>
+        <label>Attribute
+          <select name="system.attribute">
+            {{#each attributeOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+          </select>
+        </label>
+        <label>Bonus
+          <input name="system.bonus" type="number" value="{{system.bonus}}" />
+        </label>
+      </div>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── LOOT ── --}}
+    {{#if isLoot}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>💰 Loot</legend>
+      <div class="rnr-item-field-grid">
+        <label>Loot Type
+          <input name="system.lootType" value="{{system.lootType}}" />
+        </label>
+        <label>Value (gp)
+          <input name="system.value" type="number" min="0" value="{{system.value}}" />
+        </label>
+        <label class="rnr-item-checkbox">
+          <input type="checkbox" name="system.isContainer" {{#if system.isContainer}}checked{{/if}} />
+          Is Container
+        </label>
+      </div>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── SPELL ── --}}
+    {{#if isSpell}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>✨ Spell</legend>
+      <div class="rnr-item-field-grid">
+        <label>Spell Level
+          <input name="system.spellLevel" type="number" min="0" max="9" value="{{system.spellLevel}}" />
+        </label>
+        <label>School
+          <input name="system.school" value="{{system.school}}" placeholder="evocation" />
+        </label>
+        <label>Attribute
+          <select name="system.attribute">
+            {{#each attributeOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+          </select>
+        </label>
+        <label>Casting Time
+          <input name="system.castingTime" value="{{system.castingTime}}" placeholder="1 action" />
+        </label>
+        <label>Action Type
+          <select name="system.actionType">
+            <option value="action" {{#if (eq system.actionType "action")}}selected{{/if}}>Action</option>
+            <option value="bonus action" {{#if (eq system.actionType "bonus action")}}selected{{/if}}>Bonus Action</option>
+            <option value="bonus" {{#if (eq system.actionType "bonus")}}selected{{/if}}>Bonus Action (legacy)</option>
+            <option value="reaction" {{#if (eq system.actionType "reaction")}}selected{{/if}}>Reaction</option>
+            <option value="free action" {{#if (eq system.actionType "free action")}}selected{{/if}}>Free Action</option>
+            <option value="part of action" {{#if (eq system.actionType "part of action")}}selected{{/if}}>Part of Action</option>
+            <option value="part of bonus action" {{#if (eq system.actionType "part of bonus action")}}selected{{/if}}>Part of Bonus Action</option>
+            <option value="part of reaction" {{#if (eq system.actionType "part of reaction")}}selected{{/if}}>Part of Reaction</option>
+            <option value="passive" {{#if (eq system.actionType "passive")}}selected{{/if}}>Passive</option>
+          </select>
+        </label>
+        <label>WP Cost
+          <input name="system.wpCost" type="number" min="0" value="{{system.wpCost}}" placeholder="0" />
+        </label>
+        <label>Target
+          <input name="system.target" value="{{system.target}}" placeholder="1 target / 20 ft radius" />
+        </label>
+        <label>Range
+          <input name="system.range" value="{{system.range}}" placeholder="30 ft" />
+        </label>
+        <label>Damage Formula
+          <input name="system.damageFormula" value="{{system.damageFormula}}" placeholder="2d6" />
+        </label>
+        <label class="rnr-item-checkbox">
+          <input type="checkbox" name="system.attackRoll" {{#if system.attackRoll}}checked{{/if}} />
+          Requires an attack roll (not a saving throw)
+        </label>
+        <label>Damage / Effect Type
+          <input name="system.damageType" value="{{system.damageType}}" placeholder="fire" />
+        </label>
+        <label>Save Attribute
+          <input name="system.saveAttribute" value="{{system.saveAttribute}}" placeholder="dexterity" />
+        </label>
+        <label>Save DC
+          <input name="system.saveDC" value="{{system.saveDC}}" placeholder="15" />
+        </label>
+        <label>Effect
+          <input name="system.effect" value="{{system.effect}}" />
+        </label>
+      </div>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── EXTRA SKILL ── --}}
+    {{#if isExtraSkill}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>✦ Extra Skill</legend>
+      <div class="rnr-item-field-grid">
+        <label>Category
+          <select name="system.category">
+            <option value="academic"      {{#if (eq system.category "academic")}}selected{{/if}}>Academic</option>
+            <option value="communication" {{#if (eq system.category "communication")}}selected{{/if}}>Communication</option>
+            <option value="physical"      {{#if (eq system.category "physical")}}selected{{/if}}>Physical</option>
+            <option value="investigation" {{#if (eq system.category "investigation")}}selected{{/if}}>Investigation</option>
+            <option value="science"       {{#if (eq system.category "science")}}selected{{/if}}>Science</option>
+            <option value="combat"        {{#if (eq system.category "combat")}}selected{{/if}}>Combat</option>
+            <option value="arts"          {{#if (eq system.category "arts")}}selected{{/if}}>Arts</option>
+            <option value="other"         {{#if (eq system.category "other")}}selected{{/if}}>Other</option>
+          </select>
+        </label>
+        <label>Attribute
+          <select name="system.attribute">
+            {{#each attributeOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+          </select>
+        </label>
+        <label>Cost (points)
+          <input name="system.cost" type="number" min="1" value="{{system.cost}}" />
+        </label>
+        <label>Feature Mode
+          <select name="system.abilityType">
+            <option value="active" {{#if (eq system.abilityType "active")}}selected{{/if}}>Active</option>
+            <option value="passive" {{#if (eq system.abilityType "passive")}}selected{{/if}}>Passive</option>
+            <option value="reaction" {{#if (eq system.abilityType "reaction")}}selected{{/if}}>Reaction</option>
+          </select>
+        </label>
+        <label>Action Type
+          <select name="system.actionType">
+            <option value="action" {{#if (eq system.actionType "action")}}selected{{/if}}>Action</option>
+            <option value="bonus action" {{#if (eq system.actionType "bonus action")}}selected{{/if}}>Bonus Action</option>
+            <option value="reaction" {{#if (eq system.actionType "reaction")}}selected{{/if}}>Reaction</option>
+            <option value="free action" {{#if (eq system.actionType "free action")}}selected{{/if}}>Free Action</option>
+            <option value="part of action" {{#if (eq system.actionType "part of action")}}selected{{/if}}>Part of Action</option>
+            <option value="part of bonus action" {{#if (eq system.actionType "part of bonus action")}}selected{{/if}}>Part of Bonus Action</option>
+            <option value="part of reaction" {{#if (eq system.actionType "part of reaction")}}selected{{/if}}>Part of Reaction</option>
+            <option value="passive" {{#if (eq system.actionType "passive")}}selected{{/if}}>Passive</option>
+          </select>
+        </label>
+        <label class="rnr-item-checkbox">
+          <input type="checkbox" name="system.attackRoll" {{#if system.attackRoll}}checked{{/if}} />
+          Requires an attack roll
+        </label>
+        <label>Bonus
+          <input name="system.bonus" type="number" value="{{system.bonus}}" />
+        </label>
+        <label>Attribute Bonus
+          <input name="system.attributeBonus" type="number" value="{{system.attributeBonus}}" placeholder="e.g. 2" />
+        </label>
+        <label>Speed Bonus (ft)
+          <input name="system.speedBonus" type="number" value="{{system.speedBonus}}" placeholder="e.g. 5" />
+        </label>
+        <label>Effect
+          <input name="system.effect" value="{{system.effect}}" />
+        </label>
+      </div>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── ABILITY ── --}}
+    {{#if isAbility}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>⚡ Ability</legend>
+      <div class="rnr-item-field-grid">
+        <label>Ability Type
+          <select name="system.abilityType">
+            <option value="active"  {{#if (eq system.abilityType "active")}}selected{{/if}}>Active</option>
+            <option value="passive" {{#if (eq system.abilityType "passive")}}selected{{/if}}>Passive</option>
+            <option value="reaction"{{#if (eq system.abilityType "reaction")}}selected{{/if}}>Reaction</option>
+          </select>
+        </label>
+        <label>Attribute
+          <select name="system.attribute">
+            {{#each attributeOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+          </select>
+        </label>
+        <label>Damage Formula
+          <input name="system.damageFormula" value="{{system.damageFormula}}" placeholder="1d10" />
+        </label>
+        <label>Damage Type
+          <input name="system.damageType" value="{{system.damageType}}" />
+        </label>
+        <label>Action Type
+          <select name="system.actionType">
+            <option value="action" {{#if (eq system.actionType "action")}}selected{{/if}}>Action</option>
+            <option value="bonus" {{#if (eq system.actionType "bonus")}}selected{{/if}}>Bonus Action</option>
+            <option value="bonus action" {{#if (eq system.actionType "bonus action")}}selected{{/if}}>Bonus Action</option>
+            <option value="reaction" {{#if (eq system.actionType "reaction")}}selected{{/if}}>Reaction</option>
+            <option value="free action" {{#if (eq system.actionType "free action")}}selected{{/if}}>Free Action</option>
+            <option value="part of action" {{#if (eq system.actionType "part of action")}}selected{{/if}}>Part of Action</option>
+            <option value="part of bonus action" {{#if (eq system.actionType "part of bonus action")}}selected{{/if}}>Part of Bonus Action</option>
+            <option value="part of reaction" {{#if (eq system.actionType "part of reaction")}}selected{{/if}}>Part of Reaction</option>
+            <option value="passive" {{#if (eq system.actionType "passive")}}selected{{/if}}>Passive</option>
+          </select>
+        </label>
+        <label class="rnr-item-checkbox">
+          <input type="checkbox" name="system.attackRoll" {{#if system.attackRoll}}checked{{/if}} />
+          Requires an attack roll
+        </label>
+        <label>WP Cost
+          <input name="system.wpCost" type="number" min="0" value="{{system.wpCost}}" placeholder="0" />
+        </label>
+        <label>Target
+          <input name="system.target" value="{{system.target}}" placeholder="Self / 1 creature" />
+        </label>
+        <label>Range
+          <input name="system.range" value="{{system.range}}" placeholder="Self / 30 ft" />
+        </label>
+        <label>Uses (current)
+          <input name="system.uses.value" type="number" min="0" value="{{system.uses.value}}" />
+        </label>
+        <label>Uses (max)
+          <input name="system.uses.max" type="number" min="0" value="{{system.uses.max}}" />
+        </label>
+        <label>Recovery
+          <input name="system.uses.per" value="{{system.uses.per}}" placeholder="short-rest / long-rest" />
+        </label>
+        <label>Effect
+          <input name="system.effect" value="{{system.effect}}" />
+        </label>
+      </div>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── EQUIPMENT ── --}}
+    {{#if isEquipment}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>🎒 Equipment</legend>
+      <div class="rnr-item-field-grid">
+        <label>Equipment Type
+          <select name="system.equipType">
+            <option value="gear"   {{#if (eq system.equipType "gear")}}selected{{/if}}>Gear</option>
+            <option value="tool"   {{#if (eq system.equipType "tool")}}selected{{/if}}>Tool</option>
+            <option value="worn"   {{#if (eq system.equipType "worn")}}selected{{/if}}>Worn</option>
+            <option value="mount"  {{#if (eq system.equipType "mount")}}selected{{/if}}>Mount</option>
+          </select>
+        </label>
+        <label>Wear Slot
+          <select name="system.equipmentSlot">
+            {{#each equipmentSlotOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+          </select>
+        </label>
+        <label>Allowed Body Slot
+          <select name="system.allowedSlot">
+            <option value="">Any slot</option>
+            {{#each allowedSlotOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+          </select>
+        </label>
+        <label>Prosthetic For
+          <select name="system.prostheticFor">
+            <option value="">None</option>
+            {{#each prostheticOptions}}
+            <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </label>
+        <label>Armor Bonus (DR)
+          <input name="system.armorValue" type="number" value="{{system.armorValue}}" />
+        </label>
+        <label>Speed Bonus
+          <input name="system.speedBonus" type="number" value="{{system.speedBonus}}" placeholder="e.g. 5" />
+        </label>
+        <label>Attack Bonus
+          <input name="system.attackBonus" type="number" value="{{system.attackBonus}}" />
+        </label>
+        <label>Damage Bonus
+          <input name="system.damageBonus" type="number" value="{{system.damageBonus}}" />
+        </label>
+        <label>Carry Bonus (kg)
+          <input name="system.carryBonus" type="number" min="0" value="{{system.carryBonus}}" placeholder="e.g. 15" />
+        </label>
+        <label>Attribute Bonus
+          <input name="system.attributeBonus" type="number" value="{{system.attributeBonus}}" placeholder="e.g. 1" />
+        </label>
+        <label>Skill Bonus
+          <input name="system.bonus" type="number" value="{{system.bonus}}" placeholder="e.g. 2" />
+        </label>
+      </div>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── CLASS ── --}}
+    {{#if isClass}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>🏅 Class</legend>
+      <div class="rnr-item-field-grid">
+        <label>Role<input name="system.role" value="{{system.role}}" /></label>
+        <label>Hit Die<input name="system.hitDie" value="{{system.hitDie}}" placeholder="1d8" /></label>
+        <label>Subclass<input name="system.subclass" value="{{system.subclass}}" /></label>
+      </div>
+      <label>Features<textarea name="system.features" rows="4">{{system.features}}</textarea></label>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── SUBCLASS ── --}}
+    {{#if isSubclass}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>🏅 Subclass</legend>
+      <label>Parent Class<input name="system.class" value="{{system.class}}" /></label>
+      <label>Features<textarea name="system.features" rows="4">{{system.features}}</textarea></label>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── BACKGROUND ── --}}
+    {{#if isBackground}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>📖 Background</legend>
+      <label>Benefit<textarea name="system.benefit" rows="3">{{system.benefit}}</textarea></label>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── RACE ── --}}
+    {{#if isRace}}
+    <fieldset class="rnr-item-fieldset">
+      <legend>🧬 Race</legend>
+      <div class="rnr-item-field-grid">
+        <label>Race Name<input name="system.raceName" value="{{system.raceName}}" /></label>
+        <label>Size
+          <select name="system.size">
+            <option value="tiny" {{#if (eq system.size "tiny")}}selected{{/if}}>Tiny</option>
+            <option value="sm"   {{#if (eq system.size "sm")}}selected{{/if}}>Small</option>
+            <option value="med"  {{#if (eq system.size "med")}}selected{{/if}}>Medium</option>
+            <option value="lg"   {{#if (eq system.size "lg")}}selected{{/if}}>Large</option>
+            <option value="huge" {{#if (eq system.size "huge")}}selected{{/if}}>Huge</option>
+          </select>
+        </label>
+        <label>Speed (ft)<input name="system.speed" type="number" min="0" value="{{system.speed}}" /></label>
+      </div>
+      <label>Racial Traits<textarea name="system.traits" rows="4">{{system.traits}}</textarea></label>
+    </fieldset>
+    {{/if}}
+
+    {{!-- ── Description (all types) ── --}}
+    <label class="rnr-item-description">
+      Description
+      <textarea name="system.description.value" placeholder="Item description…" rows="4">{{system.description.value}}</textarea>
+    </label>
+
+  </section>
+</div>

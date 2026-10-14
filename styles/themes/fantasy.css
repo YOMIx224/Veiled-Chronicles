@@ -1,0 +1,24 @@
+/* RnR setting theme: Fantasy
+   Colours tuned to leather, wood, wrought iron and parchment highlights.
+*/
+[data-rnr-theme="fantasy"] {
+  --rnr-bg:            #1f1910;
+  --rnr-surface:       #272112;
+  --rnr-surface-2:     #2f2717;
+  --rnr-surface-3:     #382f1f;
+  --rnr-border:        #584a2e;
+  --rnr-border-soft:   #443b24;
+  --rnr-text:          #f1e9d1;
+  --rnr-muted:         #b6a97d;
+  --rnr-accent:        #d8b76e;
+  --rnr-accent-soft:   #362a14;
+  --rnr-accent-hover:  #f0d28c;
+  --rnr-accent-text:   #1f1910;
+  --rnr-heading:       #f0d28c;
+  --rnr-shadow:        rgba(0, 0, 0, .5);
+  --rnr-pos:           #9fc98c;
+  --rnr-neg:           #e89a7d;
+  --rnr-hp:            #b84f40;
+  --rnr-wp:            #5f8fcf;
+  --rnr-focus:         #f0d28c;
+}

@@ -1,0 +1,35 @@
+{
+  "_id": "rnrclass00000002",
+  "name": "Rogue",
+  "type": "class",
+  "img": "icons/skills/stealth/shadow-footsteps-black.webp",
+  "system": {
+    "description": {
+      "value": "A cunning operative. Rogues use stealth, deception, and precision to overcome challenges.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "role": "Striker / Scout",
+    "hitDie": "1d8",
+    "subclass": "",
+    "features": "Sneak Attack, Cunning Action, Evasion, Reliable Talent",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

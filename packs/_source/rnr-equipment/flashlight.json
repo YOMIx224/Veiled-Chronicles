@@ -1,0 +1,37 @@
+{
+  "_id": "rnrequip00000001",
+  "name": "Flashlight",
+  "type": "equipment",
+  "img": "icons/sundries/lights/torch-black.webp",
+  "system": {
+    "description": {
+      "value": "A portable electric light source. Illuminates a 60-ft cone. Requires batteries (8 hours per charge).",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0.5,
+    "price": {
+      "value": 15,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "gear",
+    "slot": "",
+    "properties": [
+      "light-source"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "armorValue": 0,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

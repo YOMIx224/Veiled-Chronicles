@@ -1,0 +1,42 @@
+{
+  "_id": "rnrextra00000002",
+  "name": "Master Deceiver",
+  "type": "extraskills",
+  "img": "icons/skills/social/theft-pickpocket-pockets-brown.webp",
+  "system": {
+    "description": {
+      "value": "+2 bonus to all Persuade and Sense of Lie checks. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "category": "communication",
+    "attribute": "rhetoric",
+    "cost": 1,
+    "bonus": 2,
+    "skills": [
+      "persuade",
+      "senseOfLie"
+    ],
+    "effect": "+2 to Persuade and Sense of Lie.",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "abilityType": "passive",
+    "actionType": "passive",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

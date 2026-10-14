@@ -1,0 +1,35 @@
+{
+  "_id": "uniclas000000036",
+  "name": "Troubleshooter",
+  "type": "class",
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "system": {
+    "description": {
+      "value": "Troubleshooter is a setting-neutral character role.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "role": "Troubleshooter",
+    "hitDie": "1d6",
+    "subclass": "",
+    "features": "Core Troubleshooter feature; choose campaign-appropriate specialization.",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

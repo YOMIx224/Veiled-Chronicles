@@ -1,0 +1,47 @@
+{
+  "_id": "f792c406c675156a",
+  "name": "Mecha — Micro-Missile Salvo",
+  "type": "ability",
+  "img": "icons/weapons/guns/gun-blunderbuss-steel.webp",
+  "system": {
+    "description": {
+      "value": "Attack: launch a compact missile salvo. The GM may apply cover or blast-area rulings as appropriate.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Abilities"
+    },
+    "abilityType": "active",
+    "attribute": "dexterity",
+    "damageFormula": "1d10",
+    "damageType": "explosive",
+    "healingFormula": "",
+    "actionType": "bonus action",
+    "attackRoll": true,
+    "range": "100 ft",
+    "target": "One target",
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "effect": "Attack: launch a compact missile salvo. The GM may apply cover or blast-area rulings as appropriate.",
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

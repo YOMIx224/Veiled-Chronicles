@@ -1,0 +1,47 @@
+{
+  "_id": "e9d674e41e3c4ed1",
+  "name": "Mecha — Shoulder Cannon",
+  "type": "ability",
+  "img": "icons/weapons/guns/gun-blunderbuss-steel.webp",
+  "system": {
+    "description": {
+      "value": "Attack: fire the frame’s heavy shoulder cannon. The GM adjudicates blast and collateral effects.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Abilities"
+    },
+    "abilityType": "active",
+    "attribute": "dexterity",
+    "damageFormula": "2d10",
+    "damageType": "explosive",
+    "healingFormula": "",
+    "actionType": "action",
+    "attackRoll": true,
+    "range": "150 ft",
+    "target": "One target",
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "effect": "Attack: fire the frame’s heavy shoulder cannon. The GM adjudicates blast and collateral effects.",
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

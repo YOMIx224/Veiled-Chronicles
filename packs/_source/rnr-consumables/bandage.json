@@ -1,0 +1,39 @@
+{
+  "_id": "rnrconsumab00005",
+  "name": "Bandage",
+  "type": "consumable",
+  "img": "icons/commodities/cloth/cloth-roll-white.webp",
+  "system": {
+    "description": {
+      "value": "First aid bandage. Requires a First Aid check. On success, stop bleeding and restore 1d4 HP.",
+      "chat": ""
+    },
+    "quantity": 5,
+    "weight": 0.1,
+    "price": {
+      "value": 2,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "consumableType": "supply",
+    "effect": "Stop bleeding; First Aid check to restore 1d4 HP",
+    "uses": {
+      "value": 5,
+      "max": 5,
+      "per": "charges"
+    },
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "healingFormula": "1d4",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

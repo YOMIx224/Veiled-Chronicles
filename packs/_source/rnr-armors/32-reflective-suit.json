@@ -1,0 +1,39 @@
+{
+  "_id": "uniarmo000000032",
+  "name": "Reflective Suit",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-layered-steel.webp",
+  "system": {
+    "description": {
+      "value": "Reflective Suit provides reliable, setting-neutral protection.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "armorType": "medium",
+    "armorValue": 3,
+    "maxDex": 2,
+    "strengthReq": 0,
+    "speedBonus": 0,
+    "stealthDisadv": false,
+    "equipmentSlot": "torso",
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

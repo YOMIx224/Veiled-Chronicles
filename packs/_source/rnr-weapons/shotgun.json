@@ -1,0 +1,47 @@
+{
+  "_id": "rnrweapon0000010",
+  "name": "Shotgun",
+  "type": "weapon",
+  "img": "icons/weapons/guns/gun-blunderbuss-worn-brown.webp",
+  "system": {
+    "description": {
+      "value": "A pump-action shotgun. Devastating at close range. Holds 6 shells.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 4,
+    "price": {
+      "value": 350,
+      "denomination": "gp"
+    },
+    "rarity": "uncommon",
+    "handSlot": "",
+    "weaponType": "ranged",
+    "attribute": "strength",
+    "damageFormula": "3d6",
+    "damageType": "piercing",
+    "damageBonus": 0,
+    "attackBonus": 0,
+    "range": "30/90",
+    "reach": 0,
+    "caliber": "12g",
+    "ammunition": 6,
+    "reload": "1 action",
+    "properties": [
+      "ranged",
+      "two-handed",
+      "loading"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "_id": "unispel000000034",
+  "name": "Shatter",
+  "type": "spell",
+  "img": "icons/magic/light/orb-shadow-blue.webp",
+  "system": {
+    "description": {
+      "value": "Shatter is a flexible supernatural, psychic, or technological effect.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "spellLevel": 6,
+    "school": "universal",
+    "attribute": "ego",
+    "castingTime": "1 action",
+    "range": "Self",
+    "duration": "instantaneous",
+    "effect": "Shatter: resolve the described effect with the GM.",
+    "damageFormula": "2d6",
+    "damageType": "energy",
+    "healingFormula": "",
+    "saveAttribute": "",
+    "saveDC": 0,
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "properties": [],
+    "universal": true,
+    "attackRoll": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

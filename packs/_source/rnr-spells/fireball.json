@@ -1,0 +1,45 @@
+{
+  "_id": "rnrspell00000001",
+  "name": "Fireball",
+  "type": "spell",
+  "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
+  "system": {
+    "description": {
+      "value": "A bright streak flashes from your pointing finger to a point you choose within range then blossoms with a low roar into an explosion of flame.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "spellLevel": 3,
+    "school": "evocation",
+    "attribute": "intellect",
+    "castingTime": "1 action",
+    "range": "150 ft",
+    "duration": "instantaneous",
+    "damageFormula": "8d6",
+    "damageType": "fire",
+    "saveAttribute": "dexterity",
+    "saveDC": 15,
+    "effect": "20-ft radius sphere. Dexterity save for half damage.",
+    "properties": [
+      "concentration"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

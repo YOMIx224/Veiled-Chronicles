@@ -1,0 +1,99 @@
+{
+  "_id": "23c0573eaf89c7cc",
+  "name": "RnR — Mecha Field Manual",
+  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "pages": [
+    {
+      "_id": "b6593ea619958013",
+      "name": "เริ่มต้น: Mecha ใน RnR",
+      "type": "text",
+      "sort": 0,
+      "text": {
+        "format": 1,
+        "content": "<h1>RnR Mecha Field Manual</h1><p>ชุดเสริมสำหรับแคมเปญหุ่นรบ/นักบิน ใช้ร่วมกับระบบ Role&amp;Roll โดยไม่เปลี่ยนแกนทอย d20 ของระบบ</p><h2>เปิดใช้</h2><ol><li>ตั้ง Campaign Setting Profile เป็น <strong>Mecha</strong> ใน Game Settings &gt; RnR (ธีมชีตมีอยู่แล้วในระบบ)</li><li>สร้าง Actor <strong>Character</strong> สำหรับนักบิน และสร้าง Actor <strong>Vehicle</strong> หรือ <strong>NPC</strong> สำหรับหุ่น</li><li>เปิด Compendium: <strong>RnR — Extra Skills</strong> แล้วค้นคำว่า <code>Mecha —</code> เพื่อเพิ่มการฝึกนักบิน</li><li>เปิด Compendium: <strong>RnR — Abilities</strong> แล้วค้น <code>Mecha —</code> เพื่อเพิ่มอาวุธ/ระบบประจำหุ่น</li><li>ใช้หน้านี้เป็นคู่มือ GM; ไอเท็มโจมตีที่มี Attack Roll จะเปิดปุ่มโจมตีและทอย Damage ตามระบบ</li></ol><h2>การแบ่งหน้าที่</h2><ul><li><strong>Pilot</strong>: ทอย Reflex, Shooting Weapons, Mechanical, Perception หรือ skill ที่ GM เห็นว่าเหมาะ</li><li><strong>Mecha</strong>: แยก Actor เพื่อเก็บ HP/Armor/Speed และรายการอาวุธของตัวหุ่น</li><li><strong>การย้ายความเสียหาย</strong>: ตกลงล่วงหน้าว่าโจมตีหุ่นจะลด HP ของ Actor หุ่น ไม่ใช่ Pilot; การบาดเจ็บ Pilot เกิดเมื่อถูกโจมตีโดยตรง, eject หรือ GM ระบุ</li></ul><p><strong>ข้อควรรู้:</strong> Action Type บนไอเท็มเป็นตัวช่วยระบุเวลาใช้ ไม่ได้หัก Action อัตโนมัติ เอฟเฟกต์ที่เขียนในข้อความนอกเหนือจากการทอยโจมตีต้องให้ GM ตัดสินและปรับค่าเอง</p>"
+      }
+    },
+    {
+      "_id": "48133926e1a2c239",
+      "name": "Extra Skills: การฝึกนักบิน",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "format": 1,
+        "content": "<h1>Extra Skills — Mecha Pilot Training</h1><p>รายการต่อไปนี้อยู่ใน Compendium <strong>RnR — Extra Skills</strong> ชื่อขึ้นต้นด้วย “Mecha —” สกิล Passive ที่ระบุโบนัสและ skill keys จะเพิ่มโบนัสเช็กที่เกี่ยวข้องอัตโนมัติเมื่อไอเท็มอยู่บน Actor ส่วนทักษะเชิงสถานการณ์ให้ใช้ข้อความ Effect และตัดสินร่วมกับ GM</p><table><thead><tr><th>Extra Skill</th><th>หมวดร้าน</th><th>ชนิดการใช้</th><th>ทักษะที่เกี่ยวข้อง</th><th>ผล</th></tr></thead><tbody><tr><td>Mecha — Neural Link Calibration</td><td>Science</td><td>Passive</td><td>reflex</td><td>Passive: +1 to Reflex checks while piloting a linked frame.</td></tr><tr><td>Mecha — Targeting Telemetry</td><td>Combat</td><td>Passive</td><td>shootingWeapons</td><td>Passive: +1 to Shooting Weapons checks when operating a mecha weapon.</td></tr><tr><td>Mecha — Field Repair</td><td>Science</td><td>Passive</td><td>mechanical, craft</td><td>Passive: +1 to Mechanical and Craft checks made to service a mecha.</td></tr><tr><td>Mecha — Zero-G Maneuvering</td><td>Physical</td><td>Passive</td><td>athlete, reflex</td><td>Passive: +1 to Athlete and Reflex checks involving low gravity or EVA.</td></tr><tr><td>Mecha — Tactical Sensor Fusion</td><td>Science</td><td>Passive</td><td>perception, search</td><td>Passive: +1 to Perception and Search checks using mecha sensors.</td></tr><tr><td>Mecha — Squad Data Link</td><td>Communication</td><td>Passive</td><td>persuade, empathy</td><td>Passive: +1 to Persuade and Empathy checks when coordinating through a squad network.</td></tr><tr><td>Mecha — Reactor Safety Certification</td><td>Science</td><td>Passive</td><td>mechanical</td><td>Passive: +1 to Mechanical checks involving reactor, coolant, or power systems.</td></tr><tr><td>Mecha — Close-Quarters Chassis Training</td><td>Combat</td><td>Passive</td><td>brawl, weapons</td><td>Passive: +1 to Brawl and Weapons checks while piloting a mecha in close quarters.</td></tr><tr><td>Mecha — Lock-On Protocol</td><td>Combat</td><td>Bonus Action</td><td>—</td><td>Bonus Action: designate one visible target. The next mecha attack against it before the end of your next turn gains +1 to its attack roll; track this bonus manually.</td></tr><tr><td>Mecha — Sensor Sweep</td><td>Science</td><td>Action</td><td>—</td><td>Action: scan a zone for heat signatures, movement, or electronic emissions; GM sets the check and what the scan can reveal.</td></tr><tr><td>Mecha — Vector Thruster Burst</td><td>Physical</td><td>Reaction</td><td>—</td><td>Reaction: when targeted by an attack, attempt a Reflex defense; on success, move up to 10 ft if the GM agrees the space is clear. Resolve manually.</td></tr><tr><td>Mecha — Quick Weapon Reconfiguration</td><td>Combat</td><td>Part Of Bonus Action</td><td>—</td><td>Part of a Bonus Action: switch a compatible weapon mode or preset. Any changed statistics are chosen by the GM and tracked manually.</td></tr><tr><td>Mecha — Field Patch Procedure</td><td>Science</td><td>Part Of Action</td><td>—</td><td>Part of an Action: make a Mechanical check to stabilize one damaged system; this does not restore HP unless the GM grants it.</td></tr><tr><td>Mecha — Pilot Rescue Procedure</td><td>Communication</td><td>Reaction</td><td>—</td><td>Reaction: when an allied pilot is exposed or ejects nearby, coordinate a recovery. GM adjudicates distance and danger.</td></tr><tr><td>Mecha — Heat Bleed</td><td>Science</td><td>Free Action</td><td>—</td><td>Free Action: vent heat or mark one cooling step under the optional Heat rule. Track Heat manually.</td></tr><tr><td>Mecha — Countermeasure Timing</td><td>Combat</td><td>Part Of Reaction</td><td>—</td><td>Part of a Reaction: deploy chaff, smoke, or a decoy while making a defense. The GM determines which sensor-guided threats are affected.</td></tr></tbody></table><h2>ติดตั้งให้ตัวละคร</h2><ol><li>ลาก Extra Skill จาก compendium ไปใส่ Actor นักบิน หรือซื้อผ่าน Extra Skill Shop</li><li>ตรวจว่า Passive skill อยู่ในรายการ Items ของ Actor</li><li>การบวกโบนัส Passive แบบระบุตัวเลขทำอัตโนมัติ; ข้อความแบบเลือกเป้าหมาย/เงื่อนไขต้องบันทึกและใช้ตาม Effect</li></ol>"
+      }
+    },
+    {
+      "_id": "58c712d52016e309",
+      "name": "Abilities: อาวุธและระบบของหุ่น",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "format": 1,
+        "content": "<h1>Abilities — Mecha Systems &amp; Weapons</h1><p>เพิ่ม Ability จาก Compendium <strong>RnR — Abilities</strong> ลงบน Actor หุ่นหรือ Pilot ตามที่เหมาะสม ชื่อขึ้นต้นด้วย “Mecha —” อาวุธที่ระบุ Attack จะเปิดการทอยโจมตีใน Chat Card; ระบบป้องกัน/เคลื่อนที่จะแสดงคำอธิบายให้ใช้ตามสถานการณ์</p><table><thead><tr><th>Ability</th><th>Action Type</th><th>การทอย</th><th>ระยะ</th><th>ผล/คำอธิบาย</th></tr></thead><tbody><tr><td>Mecha — Pulse Carbine Burst</td><td>Action</td><td>โจมตี 2d8 energy</td><td>80 ft</td><td>Attack: fire a controlled burst from a standard mecha carbine. Roll the attack and damage using this item.</td></tr><tr><td>Mecha — Beam Saber Cut</td><td>Action</td><td>โจมตี 2d10 energy</td><td>5 ft</td><td>Attack: strike with a powered blade. Roll the attack and damage using this item.</td></tr><tr><td>Mecha — Micro-Missile Salvo</td><td>Bonus Action</td><td>โจมตี 1d10 explosive</td><td>100 ft</td><td>Attack: launch a compact missile salvo. The GM may apply cover or blast-area rulings as appropriate.</td></tr><tr><td>Mecha — Rail Lance</td><td>Action</td><td>โจมตี 2d12 piercing</td><td>120 ft</td><td>Attack: charge and fire a high-velocity lance. The GM adjudicates line of fire and collateral damage.</td></tr><tr><td>Mecha — Harpoon Anchor</td><td>Action</td><td>โจมตี 1d8 kinetic</td><td>60 ft</td><td>Attack: launch an anchor harpoon. On a hit, the GM may let the pilot pull a small target, pull the frame toward a fixed anchor, or prevent a target from moving.</td></tr><tr><td>Mecha — Shoulder Cannon</td><td>Action</td><td>โจมตี 2d10 explosive</td><td>150 ft</td><td>Attack: fire the frame’s heavy shoulder cannon. The GM adjudicates blast and collateral effects.</td></tr><tr><td>Mecha — Aegis Barrier</td><td>Reaction</td><td>ไม่ใช่การโจมตี</td><td>Self</td><td>Reaction: when an attack hits, reduce its damage by 1d6 after Armor DR, to a minimum of 0. Roll and apply the reduction manually.</td></tr><tr><td>Mecha — Vector Thrusters</td><td>Reaction</td><td>ไม่ใช่การโจมตี</td><td>Self</td><td>Reaction: make a Reflex defense against one incoming attack. If successful, the GM may allow a 10 ft reposition.</td></tr><tr><td>Mecha — Reactor Overdrive</td><td>Bonus Action</td><td>ไม่ใช่การโจมตี</td><td>Self</td><td>Bonus Action: increase the frame’s speed by 10 ft until the start of your next turn. Under the optional Heat rule, add 1 Heat; track both manually.</td></tr><tr><td>Mecha — Targeting Assist</td><td>Free Action</td><td>ไม่ใช่การโจมตี</td><td>100 ft</td><td>Free Action: designate one visible target. Your next mecha weapon attack against it before the end of this turn gains +1 to the attack roll; apply manually.</td></tr><tr><td>Mecha — System Purge</td><td>Action</td><td>ไม่ใช่การโจมตี</td><td>Self</td><td>Action: attempt a Mechanical check to clear one temporary jam, sensor interference, or similar system fault. The GM sets the difficulty; does not automatically remove actor conditions.</td></tr><tr><td>Mecha — Emergency Ejection</td><td>Reaction</td><td>ไม่ใช่การโจมตี</td><td>Self</td><td>Reaction: eject when the frame is about to be destroyed or disabled. The GM resolves landing, exposure, and any damage to the pilot.</td></tr></tbody></table><h2>ขั้นตอนใช้</h2><ol><li>กด Show in Chat เพื่ออ่านรายละเอียด หรือ Use เพื่อโพสต์การ์ด</li><li>ถ้าเป็นอาวุธโจมตี กด Attack บนการ์ด แล้วกด Damage Roll เมื่อโจมตีโดน</li><li>ถ้าเป็นระบบป้องกัน/เสริมกำลัง ให้ GM ตัดสินผลและบันทึก modifier/condition เอง</li></ol>"
+      }
+    },
+    {
+      "_id": "a4013ad23cd2e49e",
+      "name": "Frame Templates: แบบหุ่นเริ่มต้น",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "format": 1,
+        "content": "<h1>Frame Templates</h1><p>สร้าง Actor แบบ Vehicle/NPC แล้วกรอกค่าเหล่านี้เป็น baseline แนะนำ สามารถปรับตามระดับพลังของแคมเปญ ค่า HP/DR/Speed และสถานะของตัวหุ่นให้ GM บันทึกแยกจากนักบิน</p><table><thead><tr><th>Frame</th><th>บทบาท</th><th>HP แนะนำ</th><th>Armor DR</th><th>Speed</th><th>อาวุธตัวอย่าง</th></tr></thead><tbody><tr><td>Scout Frame</td><td>ลาดตระเวน/สอดแนม</td><td>28</td><td>2</td><td>60 ft</td><td>Pulse Carbine 2d8; Micro-Missile 1d10</td></tr><tr><td>Vanguard Frame</td><td>แนวหน้า/ประชิด</td><td>42</td><td>4</td><td>35 ft</td><td>Beam Saber 2d10; Shoulder Cannon 2d10</td></tr><tr><td>Siege Frame</td><td>ยิงสนับสนุนระยะไกล</td><td>38</td><td>3</td><td>25 ft</td><td>Rail Lance 2d12; Shoulder Cannon 2d10</td></tr><tr><td>Rescue Frame</td><td>กู้ภัย/ซ่อมภาคสนาม</td><td>34</td><td>3</td><td>40 ft</td><td>Harpoon Anchor 1d8; Field Patch Procedure</td></tr></tbody></table><h2>แนวทางกำหนดความเสียหาย</h2><ul><li>ใช้ Armor DR ของ Actor หุ่นเพื่อลดความเสียหายตามกฎระบบ</li><li>เมื่อ HP ต่ำกว่า 0 หรือถูก Critical ให้ GM เลือกระบบเสียหาย เช่น ขา, Sensor, อาวุธ, Reactor</li><li>Disabled system เป็นผลเชิงเรื่องที่บันทึกใน Notes/Condition ตามที่โต๊ะตกลง ไม่ได้ถูกสร้างอัตโนมัติจากไอเท็ม</li></ul>"
+      }
+    },
+    {
+      "_id": "d4285b16fa29bcd6",
+      "name": "กติกาเสริม: Heat, Damage และ Eject",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "format": 1,
+        "content": "<h1>Optional Module — Heat &amp; System Damage</h1><p>กติกาเสริมนี้เป็น house rule สำหรับเพิ่มแรงกดดัน ไม่ใช่ automation ในระบบ หากไม่ต้องการความซับซ้อนให้ข้าม Heat แล้วใช้ HP/Armor/Condition ปกติ</p><h2>Heat Track (0–6)</h2><ul><li>เริ่มที่ Heat 0; Reactor Overdrive หรืออาวุธที่ GM กำหนดอาจเพิ่ม Heat 1</li><li>Heat 3–4: การทอยที่เกี่ยวกับ Reactor/Mechanical ต้องอธิบายความเสี่ยง หรือ GM เพิ่ม DC 2</li><li>Heat 5: ความเร็วลดลงครึ่งหนึ่งจนกว่าจะระบายความร้อน</li><li>Heat 6: Frame Overheat — ใช้ Action ระบายความร้อน/ทำ System Purge และทอย Mechanical ตาม DC ที่ GM กำหนด</li><li>Heat Bleed ลด Heat 1 เป็น Free Action; จำกัดหนึ่งครั้งต่อรอบ (ให้ GM ติดตาม)</li></ul><h2>System Damage</h2><ul><li>เมื่อ Critical หรือ HP ลดลงครึ่งหนึ่ง ให้ GM เลือก Fault หนึ่งอย่าง: Mobility, Sensor, Weapon, Reactor หรือ Cockpit</li><li>Fault ควรมีผลชัดและจำกัด เช่น เสีย Speed 10 ft, ใช้ Sensor Sweep ไม่ได้, หรืออาวุธติดขัด</li><li>Field Patch Procedure ใช้ Mechanical เพื่อตรึง/แก้ชั่วคราว; Mecha Field Repair ช่วยโบนัสเช็ก แต่ไม่ได้เติม HP อัตโนมัติ</li></ul><h2>Eject</h2><p>เมื่อ frame กำลังจะถูกทำลาย นักบินอาจใช้ Emergency Ejection เป็น Reaction ตามดุลยพินิจ GM กำหนดตำแหน่งตก, ความเสี่ยง, และการบาดเจ็บ Pilot ให้มีน้ำหนักต่อเรื่องโดยไม่ตัดทางเลือกผู้เล่น</p><p><strong>แนะนำ:</strong> ติดตาม Heat และ Fault ใน Notes หรือแอตทริบิวต์ที่โต๊ะเพิ่มเอง แล้วรีเซ็ตเมื่อซ่อม/พักตาม fiction</p>"
+      }
+    },
+    {
+      "_id": "d44d200a56d56152",
+      "name": "Mission Seeds: จุดตั้งต้นเนื้อเรื่อง",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "format": 1,
+        "content": "<h1>Mission Seeds</h1><ol><li><strong>สัญญาณจากหุบเหว:</strong> เซนเซอร์จับสัญญาณขอความช่วยเหลือจากหุบเหวที่ถูกประกาศเป็นเขตห้ามเข้า แต่รหัสเป็นของหน่วยที่ถูกยุบไปแล้ว</li><li><strong>กระสุนที่ไม่ควรมี:</strong> พบ Micro-Missile รุ่นทหารในตลาดมืด ชิ้นส่วนชี้ไปยังคลังของฝ่ายเดียวกับผู้เล่น</li><li><strong>นักบินที่หายไป:</strong> เฟรมกู้ภัยกลับฐานโดยไม่มีนักบินและมีบันทึกระบบถูกลบ ต้องตามรอยผ่าน Sensor Sweep, Search และการเจรจา</li><li><strong>แนวป้องกันร้อนเกิน:</strong> Reactor ของป้อมชายแดนกำลัง Overheat ระหว่างการอพยพ ทีมต้องเลือกระหว่างช่วยช่างกับสกัดการโจมตี</li><li><strong>คำสั่งยิง:</strong> ระบบ IFF ระบุผู้ลี้ภัยเป็นเป้าหมาย ฝ่ายบัญชาการสั่งให้ยิง นักบินต้องหาหลักฐานและตัดสินใจว่าจะเชื่อใคร</li><li><strong>โครงหุ่นที่ยังหายใจ:</strong> ซาก frame ส่ง telemetry คล้ายสัญญาณชีพจากใต้ทะเลทราย ภายในมีนักบิน, AI, หรือบางสิ่งที่ไม่ควรตื่น</li></ol><h2>โครง Mission 3 ฉาก</h2><ol><li>Briefing + เลือก loadout และกำหนดเดิมพัน</li><li>Encounter ที่ใช้ทั้งการทอย Pilot skill และการตัดสินใจเรื่องทรัพยากร/Heat</li><li>ผลลัพธ์ที่เปลี่ยนความสัมพันธ์กับหน่วย, บริษัทผู้ผลิต หรือพลเรือน</li></ol><p>ปรับชื่อฝ่ายและสถานที่ให้เข้ากับโลกของ GM; ไม่ผูกกับ setting เฉพาะ</p>"
+      }
+    },
+    {
+      "_id": "80075413e677bf53",
+      "name": "Campaign Arc: Signal in the Ash Ring",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "format": 1,
+        "content": "<h1>Campaign Arc: สัญญาณในวงแหวนเถ้า</h1><p><strong>โทน:</strong> สงครามเย็นระหว่างอาณานิคม, หน่วยนักบินที่เริ่มไม่เชื่อคำสั่ง, ความทรงจำของผู้สูญหาย และ AI ต้นแบบที่อาจเป็นพยานคนเดียวต่อเหตุการณ์หยุดยิงเมื่อแปดปีก่อน</p><h2>เรื่องย่อ</h2><p>วงแหวนอุตสาหกรรม “Ash Ring” อยู่ระหว่างเขตอิทธิพลของสองฝ่ายและถูกประกาศเป็นพื้นที่ร้าง สัญญาณขอความช่วยเหลือเก่ากลับดังขึ้นพร้อมข้อมูล IFF ของหน่วยที่หายไปทั้งฝูง นักบินของผู้เล่นถูกส่งไปเก็บกู้ก่อนที่คู่แข่งจะไปถึง แต่ในซากสถานีมี AI ต้นแบบชื่อ <strong>Morrow</strong> ซึ่งยืนยันว่าคำสั่งยิงที่ทำให้สงครามเริ่มต้นนั้นถูกปลอม</p><h2>ฝ่ายสำคัญ</h2><ul><li><strong>Northline Compact:</strong> สหพันธ์อาณานิคมชายขอบ ต้องการเปิดโปงความจริงแต่กลัวสงครามรอบใหม่</li><li><strong>Sable Directorate:</strong> กองบัญชาการที่ควบคุมการลาดตระเวนรอบ Ash Ring มีผู้บังคับบัญชาบางคนปกปิดรายงานเก่า</li><li><strong>Morrow Works:</strong> บริษัทผู้สร้าง AI และ frame ต้นแบบ ต้องการชิป/ข้อมูลคืนโดยไม่สนว่าพยานเป็นใคร</li><li><strong>Freewake Salvors:</strong> ช่างและนักเก็บกู้พลเรือนที่อาศัยอยู่ตามซากสถานี พวกเขาไม่ได้เป็นศัตรูแต่ไม่เชื่อฝ่ายทหาร</li></ul><h2>ตัวละครหลัก</h2><ul><li><strong>กัปตัน Mira Sorn:</strong> ผู้บังคับฝูงบินของผู้เล่น เคยลงชื่อรับรองรายงานหยุดยิงที่อาจเป็นเท็จ</li><li><strong>Kade Vey:</strong> นักบินคู่แข่งฝีมือสูง ปกป้องชุมชนของตนและพร้อมรับงานจากทุกฝ่ายเพื่อซื้อเวลา</li><li><strong>Jae Wren:</strong> ช่างภาคสนามจาก Freewake รู้วิธีซ่อม frame แต่มีครอบครัวติดอยู่บนสถานี</li><li><strong>Morrow:</strong> AI ยุทธวิธีที่เก็บบันทึกเหตุการณ์ไว้ แต่กลัวถูกรีเซ็ตและไม่ไว้ใจมนุษย์</li></ul><h2>โครงเรื่อง 4 ตอน</h2><ol><li><strong>ตอน 1 — Signal over the Glass Sea:</strong> ช่วยยานขนส่งพลเรือนที่เกยเขตทุ่นระเบิด ขณะเดียวกันมีเวลาพอเก็บกู้ได้เพียงหนึ่งอย่าง: ผู้รอดชีวิตหรือ black box ของ frame ที่หายไป</li><li><strong>ตอน 2 — No IFF for Ghosts:</strong> สืบในสุสานหุ่นและสถานีสื่อสารที่ไม่มีฝ่ายใดยอมรับว่าเป็นเจ้าของ ผู้เล่นพบหลักฐานว่ารหัส IFF ถูกโคลนและมีคนสั่งยิงใส่ฝ่ายเดียวกัน</li><li><strong>ตอน 3 — Blue Reactor:</strong> Kade Vey บุกชิงแกนพลังงานเพื่อป้องกันการกวาดล้างชุมชน การต่อสู้จบได้ด้วยการเจรจา, ช่วยช่าง, หรือแย่งแกนพลังงาน แต่ทุกทางมีราคา</li><li><strong>ตอน 4 — The City Below:</strong> ทั้งสองฝ่ายมาถึงแกนกลาง Ash Ring พร้อมกัน Morrow ส่งหลักฐานให้ทุกคนได้ แต่ต้องเลือกระหว่างเปิดเผยทั้งหมด, ปล่อยให้ AI ตัดสินใจเอง, หรือทำลายหลักฐานเพื่อหยุดการยิงทันที</li></ol><h2>จุดจบที่เลือกได้</h2><ul><li><strong>เปิดโปง:</strong> สงครามเสี่ยงกลับมา แต่ประชาชนได้รับความจริงและผู้เล่นต้องปกป้องพยาน</li><li><strong>ข้อตกลงใหม่:</strong> ใช้หลักฐานต่อรองเขตปลอดทหารและตั้งคณะสอบสวนอิสระ</li><li><strong>ปิดสัญญาณ:</strong> ป้องกันการรบในคืนนี้ แต่ฝ่ายใดฝ่ายหนึ่งอาจนำเรื่องเล่าปลอมไปใช้ในอนาคต</li><li><strong>ปล่อย Morrow:</strong> AI ส่งสำเนาหลักฐานออกสู่เครือข่าย ทำให้ผลลัพธ์ขึ้นกับผู้เล่นว่าจะคุ้มครองมันอย่างไร</li></ul><p><strong>คำถามเปิดฉาก:</strong> “เมื่อ Morrow ถามว่า ‘ถ้าความจริงทำให้คนตายเพิ่ม คุณยังต้องการให้ฉันส่งมันหรือไม่?’ นักบินคนไหนเป็นคนตอบก่อน?”</p>"
+      }
+    },
+    {
+      "_id": "caced7380a9d4efe",
+      "name": "กำไลบัญชาการ — ฉากเรียกหุ่น",
+      "type": "text",
+      "sort": 900,
+      "text": {
+        "format": 1,
+        "content": "<h1>Finale: สัญญาณจากกำไล</h1><p>ผู้เล่นถือ Mecha Command Bracelet ตั้งแต่ก่อนถึงฉากสุดท้าย บอสเปิดตัวหุ่นของตนและกดดันทีมจนถึงจุดที่กำไลตอบสนอง ผู้เล่นกด Activate บน Bracelet แล้วเลือก “เรียกหุ่น / แปลงร่าง” ระบบวาง Aegis M-01 ข้าง Pilot และสลับการควบคุม</p><ol><li>GM นำเข้า Aegis M-01 จาก <em>RnR — Mecha Frames</em> และเพิ่มความสามารถจาก Abilities</li><li>ให้ Pilot เป็น Owner ของ Actor หุ่น, วาง Token Pilot ใน Scene และอนุญาตสิทธิ์สร้าง Token</li><li>เปิด Bracelet ให้ผู้เล่นจาก Equipment Compendium</li><li>GM เริ่มเรียกหุ่นจาก Pilot ได้ คำขอแบบ private จะเปิด popup ให้ Player Owner; ผู้เล่นต้องมีสิทธิ์สร้าง Token บน Scene เพื่อยืนยันการเรียกจาก Client ของตน</li><li>กำหนดจังหวะเรียกหุ่นเป็น Action, Reaction หรือเหตุการณ์ cinematic ตาม pacing; ระบบไม่บังคับต้นทุน action หรือจำนวนครั้ง</li></ol><p>Mecha Actor แยกจาก Pilot เพื่อไม่เขียนทับข้อมูลตัวละคร เมื่อเลือก “กลับเป็น Pilot” ระบบลบ Mecha Token ที่ Bracelet เรียกออกจาก Scene แล้วสลับการควบคุมกลับสู่ Pilot; Actor Vehicle ยังคงอยู่ใน World</p>"
+      },
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 2
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.17",
+    "coreVersion": "14"
+  }
+}

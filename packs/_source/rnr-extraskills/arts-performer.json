@@ -1,0 +1,41 @@
+{
+  "_id": "rnrextra00000008",
+  "name": "Performer",
+  "type": "extraskills",
+  "img": "icons/skills/trades/music-instrument-drum-black.webp",
+  "system": {
+    "description": {
+      "value": "You are skilled in one performing art (music, acting, dance). +2 bonus to related Charm and Empathy checks. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: REACTION. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: REACTION.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "category": "arts",
+    "attribute": "charm",
+    "cost": 1,
+    "bonus": 2,
+    "skills": [
+      "empathy"
+    ],
+    "effect": "+2 Charm and Empathy for performance.",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "abilityType": "reaction",
+    "actionType": "reaction",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

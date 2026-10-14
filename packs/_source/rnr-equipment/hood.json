@@ -1,0 +1,41 @@
+{
+  "_id": "rnrequip00000006",
+  "name": "Hood",
+  "type": "equipment",
+  "img": "icons/equipment/clothing/clothing-leather-hood-brown.webp",
+  "system": {
+    "description": {
+      "value": "A close-fitting hood. Keeps the head warm and offers light concealment. +1 to Hide & Sneak while worn.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 1,
+    "price": {
+      "value": 5,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "worn",
+    "slot": "head",
+    "allowedSlot": "head",
+    "bonus": 1,
+    "skill": "hideAndSneak",
+    "attributeBonus": 1,
+    "attribute": "aptitude",
+    "properties": [
+      "clothing"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

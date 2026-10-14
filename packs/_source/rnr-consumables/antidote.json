@@ -1,0 +1,39 @@
+{
+  "_id": "rnrconsumab00003",
+  "name": "Antidote",
+  "type": "consumable",
+  "img": "icons/consumables/potions/potion-round-corked-green.webp",
+  "system": {
+    "description": {
+      "value": "Cures poison. Must be taken within 1 hour of poisoning.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0.2,
+    "price": {
+      "value": 80,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "consumableType": "potion",
+    "effect": "Remove poisoned condition",
+    "uses": {
+      "value": 1,
+      "max": 1,
+      "per": "charges"
+    },
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "healingFormula": "",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

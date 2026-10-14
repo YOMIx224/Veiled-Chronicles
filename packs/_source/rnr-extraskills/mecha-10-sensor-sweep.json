@@ -1,0 +1,41 @@
+{
+  "_id": "033807295bb47e8c",
+  "name": "Mecha — Sensor Sweep",
+  "type": "extraskills",
+  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "system": {
+    "description": {
+      "value": "Sweep a zone with the frame’s sensors. The GM sets any Perception/Search check and decides which heat signatures, movement, or electronic emissions are detectable.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Extra Skills"
+    },
+    "category": "science",
+    "attribute": "aptitude",
+    "cost": 1,
+    "bonus": 0,
+    "skills": [],
+    "effect": "Action: scan a zone for heat signatures, movement, or electronic emissions; GM sets the check and what the scan can reveal.",
+    "properties": [],
+    "abilityType": "active",
+    "actionType": "action",
+    "attackRoll": false,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "_id": "rnrarmor00000002",
+  "name": "Leather Armor",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-leather-brown.webp",
+  "system": {
+    "description": {
+      "value": "Hardened leather protecting the torso and limbs.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 10,
+    "price": {
+      "value": 50,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "armorType": "light",
+    "armorValue": 2,
+    "maxDex": 99,
+    "strengthReq": 0,
+    "stealthDisadv": false,
+    "properties": [],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

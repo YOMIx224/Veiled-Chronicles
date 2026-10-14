@@ -1,0 +1,47 @@
+{
+  "_id": "rnrweapon0000002",
+  "name": "Knife",
+  "type": "weapon",
+  "img": "icons/weapons/daggers/dagger-curved-black.webp",
+  "system": {
+    "description": {
+      "value": "A small blade, easy to conceal. Can be thrown.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0.5,
+    "price": {
+      "value": 5,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "weaponType": "melee",
+    "attribute": "dexterity",
+    "damageFormula": "1d4",
+    "damageType": "piercing",
+    "damageBonus": 0,
+    "attackBonus": 0,
+    "range": "20/60",
+    "reach": 5,
+    "caliber": "",
+    "ammunition": 0,
+    "reload": "",
+    "properties": [
+      "light",
+      "finesse",
+      "thrown"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

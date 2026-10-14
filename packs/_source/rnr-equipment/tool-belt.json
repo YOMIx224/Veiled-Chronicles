@@ -1,0 +1,40 @@
+{
+  "_id": "rnrequip00000016",
+  "name": "Tool Belt",
+  "type": "equipment",
+  "img": "icons/equipment/adventuring-kit/leather-kit.webp",
+  "system": {
+    "description": {
+      "value": "A broad belt of loops and pouches. +2 to Mechanical checks and +1 to Craft while worn.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 1.5,
+    "price": {
+      "value": 30,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "worn",
+    "slot": "waist",
+    "allowedSlot": "waist",
+    "bonus": 2,
+    "skill": "mechanical",
+    "properties": [
+      "tools",
+      "worn"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

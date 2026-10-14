@@ -1,0 +1,17 @@
+{
+  "name": "packs",
+  "version": "1.0.0",
+  "description": "Build tools for Role&Roll compendium packs.",
+  "scripts": {
+    "generate:universal": "node generate-universal-content.mjs && node normalize-universal-content.mjs",
+    "build": "node build-packs.mjs",
+    "build:pack": "node build-packs.mjs"
+  },
+  "keywords": ["foundryvtt", "compendium", "role-roll"],
+  "author": "YOMIx224",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "dependencies": {
+    "classic-level": "^3.0.0"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "_id": "rnrgenre00000001",
+  "name": "RnR Genre Toolkit — Six Settings",
+  "img": "icons/magic/symbols/runes-star-yellow.webp",
+  "pages": [
+    {
+      "_id": "genreoverview001",
+      "name": "วิธีใช้ Toolkit",
+      "type": "text",
+      "sort": 0,
+      "text": {
+        "format": 1,
+        "content": "<h1>RnR Genre Toolkit</h1><p>Role&amp;Roll ใช้แกนเดียวกันได้ทุกยุคทุกแนว: ทอย d20 + Modifier, ใช้ Reflex เป็นการทอยหลบ, Armor ลด Damage, และใช้ State Points, Conditions, Injury, Prosthetic และ Active Effects ตามความเหมาะสม</p><h2>หลักการ Reskin</h2><ul><li>Spell เปลี่ยนเป็น Technique, Program, Mutation หรือ Superpower ได้</li><li>Class เปลี่ยนเป็น School, Role, Crew, Guild หรือ Organization ได้</li><li>Race เปลี่ยนเป็น Origin, Species, Nation, Faction หรือ Background ได้</li><li>Vehicle ใช้ได้กับรถ เรือ ยานอวกาศ และหุ่นยนต์</li><li>Extra Skill ใช้แทน Training, Perk, Implant, Gadget หรือ Power Limitation ได้</li></ul><p>เลือก Campaign Setting Profile ใน Game Settings เพื่อแสดงคำแนะนำบนชีต การเลือกนี้ไม่ล็อก Item หรือกติกา และ GM สามารถผสมหลายแนวในโลกเดียวได้</p>"
+      }
+    },
+    {
+      "_id": "genrejan00000002",
+      "name": "จอมยุทธ์ / Martial Arts",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "format": 1,
+        "content": "<h1>จอมยุทธ์ / Martial Arts</h1><p>ใช้ Weapon แทนอาวุธประจำสำนักหรืออาวุธลับ, Ability แทนกระบวนท่า, และ Extra Skill แทนวิชาตัวเบา ลมปราณ หรือการฝึกเฉพาะทาง</p><h2>แนวทางแนะนำ</h2><ul><li>ใช้ Brawl, Weapons, Athlete, Stealth, Perception และ Empathy เป็นทักษะหลัก</li><li>กำหนด Stamina หรือ WillPower เป็นทรัพยากรของกระบวนท่า</li><li>ให้ Critical เพิ่ม Damage หรือเปิดสถานะ Broken Bone/Disarmed ตามการบรรยาย</li><li>ใช้ Armor DR เป็นเกราะ เสื้อคลุม เหล็กกล้า หรือพลังปราณป้องกัน</li><li>สำนักและสายเลือดใช้ Race/Class/Background ได้โดยไม่ต้องเป็นแฟนตาซี</li></ul><h2>ตัวอย่าง</h2><p>Ability ชื่อ Iron Palm ใช้ Damage Formula 1d8 และอธิบายว่าเป็นหมัด ไม่ใช่เวทมนตร์</p>"
+      }
+    },
+    {
+      "_id": "genremecha000003",
+      "name": "Mecha / Robot Combat",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "format": 1,
+        "content": "<h1>Mecha / ขี่หุ่นยนต์สู้กัน</h1><p>สร้าง Actor ประเภท NPC หรือ Vehicle เป็นหุ่นยนต์ และสร้าง Actor Character เป็น Pilot ใช้ Token แยกกันตามระดับความละเอียดที่ต้องการ</p><h2>โครงสร้างหุ่น</h2><ul><li>Health = Integrity หรือ Hull</li><li>Armor DR = Plating หรือ Shielding</li><li>Weapon = ปืนใหญ่ ดาบพลังงาน มิสไซล์ หรือหมัดกล</li><li>Ability = Boost, Barrier, Eject, Grapple หรือระบบอาวุธพิเศษ</li><li>Disabled Organs ใช้กับ Pilot ได้ ส่วน Disabled/Destroyed Systems ใช้เป็น Conditions ของหุ่น</li></ul><p>การขับหุ่นใช้ Pilot Skill เช่น Shooting Weapons, Mechanical หรือ Reflex ส่วนการตัดสินใจของ AI ใช้ NPC Actor ได้</p>"
+      }
+    },
+    {
+      "_id": "genrefantasy0004",
+      "name": "Fantasy",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "format": 1,
+        "content": "<h1>Fantasy</h1><p>ใช้ Class, Race, Spell, Ability และ Equipment ที่มีอยู่ใน Compendium เป็นพื้นฐาน แล้วเพิ่ม Origin หรือ Setting Item ของ GM ได้โดยตรง</p><h2>แนวทางแนะนำ</h2><ul><li>Spell ใช้ Attribute ที่เหมาะสมและกำหนด Damage Type เช่น fire, cold, radiant หรือ necrotic</li><li>Armor ให้ DR แทนการเพิ่มค่าหลบ</li><li>Reflex เป็นการทอยหลบ จึงเหมาะกับโล่ คาถาป้องกัน และ Cover ที่เพิ่มโบนัส</li><li>Conditions ใช้กับ Poisoned, Frightened, Bleeding และ Broken Bone</li></ul><p>โลกแฟนตาซีไม่จำเป็นต้องใช้ Proficiency และไม่จำเป็นต้องใช้ศัพท์ D&amp;D ทุกคำ</p>"
+      }
+    },
+    {
+      "_id": "genrefuture00005",
+      "name": "Future / Cybernetic",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "format": 1,
+        "content": "<h1>Future / Cybernetic</h1><p>ใช้ Equipment เป็น Implant, Drone, Smart Armor หรือ Tool และใช้ Prosthetic For: fullBody เพื่อสร้าง Cyborg หรือการทดแทนร่างกายทั้งตัว</p><h2>แนวทางแนะนำ</h2><ul><li>Weapon รองรับ Caliber, Ammunition, Reload, Range และ Critical</li><li>Armor DR ใช้เป็น Ballistic Armor, Nano-Plating หรือ Energy Shield</li><li>Extra Skill ใช้เป็น Training, Augmentation หรือ Software Module</li><li>Active Effects ใช้เพิ่ม Attribute, Skill, Speed, Attack และ Damage</li><li>Disabled Organs ใช้เป็น Injury ถาวรหรือข้อจำกัดของ Cyberware</li></ul><p>GM สามารถใช้ Credits แทนเงิน โดยเปลี่ยน Denomination ใน Item ตาม setting</p>"
+      }
+    },
+    {
+      "_id": "genrespace000006",
+      "name": "Space Opera",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "format": 1,
+        "content": "<h1>Space Opera</h1><p>ใช้ Vehicle เป็นยานอวกาศ, NPC เป็น Alien หรือ AI และใช้ Scene/Token แยกการต่อสู้บนยานกับการต่อสู้ในอวกาศ</p><h2>แนวทางแนะนำ</h2><ul><li>Ranged Weapon ใช้ Range, Cover และ Ammunition ตามระยะห่างของยาน</li><li>Mechanical, Electronic, Perception และ Survival เหมาะกับภารกิจอวกาศ</li><li>ใช้ WillPower หรือ Ability เป็น Psionic Power, Stasis หรือ Alien Gift</li><li>ใช้ Conditions กับ Decompression, Radiation, Zero-G และ System Failure โดยสร้างชื่อสถานะใหม่ตาม setting</li><li>ยานและหุ่นใช้ Health, DR และ Speed ของ Vehicle ได้</li></ul><p>ไม่จำเป็นต้องสร้างกฎ Zero-G ใหม่ หากการทอย Dexterity/Reflex และการกำหนด Cover ของ GM เพียงพอ</p>"
+      }
+    },
+    {
+      "_id": "genresuper000007",
+      "name": "Superhero",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "format": 1,
+        "content": "<h1>Superhero</h1><p>ใช้ Ability เป็นพลัง, Extra Skill เป็น Perk หรือ Limitation และใช้ Conditions/State Points เพื่อทำให้พลังมีผลกระทบและความเสี่ยง</p><h2>แนวทางแนะนำ</h2><ul><li>สร้างพลังแต่ละอย่างเป็น Ability พร้อม Attribute, Damage Formula, Effect และ Activation</li><li>ใช้ Active Effects สำหรับ Flight, Super Strength, Regeneration, Enhanced Reflex หรือ Armor</li><li>กำหนด Damage Type และ Critical ให้พลังแต่ละชนิดแตกต่างกัน</li><li>ใช้ Background เป็น Identity, Team, Agency หรือ Civilian Life</li><li>ให้ Flaw, Mental และ State Points ช่วยสร้างผลกระทบจากการใช้พลัง</li></ul><p>ระบบไม่ได้บังคับ Power Level ผู้เล่นและ GM ควรตกลงระดับ Damage, จำนวน Ability และขอบเขตการใช้พลังใน Session 0</p>"
+      }
+    }
+  ],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "RnR": {
+      "genreToolkit": true
+    }
+  },
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "14"
+  }
+}

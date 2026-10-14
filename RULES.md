@@ -1,0 +1,1 @@
+Damage is resolved in this order: raw damage, subtract Damage Reduction to a minimum of zero, then apply Resistance, Immunity, or Vulnerability. The chat notification reports each stage. A successful Defend or Dodge never exposes a damage-roll button; a successful Dodge that beats the attack exposes a one-use Counterattack button when a usable held weapon exists.

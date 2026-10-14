@@ -1,0 +1,40 @@
+{
+  "_id": "rnrrace000000001",
+  "name": "Human",
+  "type": "race",
+  "img": "icons/environment/people/group.webp",
+  "system": {
+    "description": {
+      "value": "Humans are the most adaptable and ambitious people among the common races. They have widely varying tastes, morals, and customs.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "raceName": "Human",
+    "size": "med",
+    "speed": 30,
+    "traits": "Versatile: Choose 2 attributes to gain +1. Skilled: Gain 1 extra skill point.",
+    "attributeBonus": {},
+    "languages": [
+      "Common",
+      "one extra"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

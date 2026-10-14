@@ -1,0 +1,45 @@
+{
+  "_id": "rnrweapon0000004",
+  "name": "Longsword",
+  "type": "weapon",
+  "img": "icons/weapons/swords/sword-broad-engraved.webp",
+  "system": {
+    "description": {
+      "value": "A versatile straight blade used one or two-handed.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 3,
+    "price": {
+      "value": 50,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "weaponType": "melee",
+    "attribute": "strength",
+    "damageFormula": "1d8",
+    "damageType": "slashing",
+    "damageBonus": 0,
+    "attackBonus": 0,
+    "range": "",
+    "reach": 5,
+    "caliber": "",
+    "ammunition": 0,
+    "reload": "",
+    "properties": [
+      "versatile"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "_id": "rnrbackgd0000001",
+  "name": "Street Kid",
+  "type": "background",
+  "img": "icons/environment/settlement/city-street-market.webp",
+  "system": {
+    "description": {
+      "value": "You grew up on the streets, surviving by your wits. You know every alley, fence, and black-market dealer in any city.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to Larceny and Stealth. You always know where to find black-market goods in a city (DC 10 Rhetoric).",
+    "skills": [
+      "larceny",
+      "stealth"
+    ],
+    "languages": [],
+    "tools": [
+      "thieves-tools"
+    ],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

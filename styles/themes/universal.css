@@ -1,0 +1,29 @@
+/* RnR setting theme: Universal / Custom
+   The neutral fallback. Deliberately restrained: with no genre chosen this
+   should read as "unremarkable sheet", not as a statement about the game.
+
+   These values are the same as the defaults in _tokens.css. They live in
+   their own file so that Universal is a real theme that can be restyled on
+   its own, and so that the load order in system.json stays uniform.
+*/
+[data-rnr-theme="universal"] {
+  --rnr-bg:            #171a21;
+  --rnr-surface:       #20242d;
+  --rnr-surface-2:     #252a34;
+  --rnr-surface-3:     #2b3140;
+  --rnr-border:        #3b4351;
+  --rnr-border-soft:   #2e3541;
+  --rnr-text:          #e8eaf0;
+  --rnr-muted:         #9da5b3;
+  --rnr-accent:        #c7a36b;
+  --rnr-accent-soft:   #3b3022;
+  --rnr-accent-hover:  #e0bd7f;
+  --rnr-accent-text:   #171a21;
+  --rnr-heading:       #d4af7a;
+  --rnr-shadow:        rgba(0, 0, 0, .45);
+  --rnr-pos:           #8ab88a;
+  --rnr-neg:           #e07a7a;
+  --rnr-hp:            #a8453f;
+  --rnr-wp:            #4a7fa8;
+  --rnr-focus:         #e0bd7f;
+}

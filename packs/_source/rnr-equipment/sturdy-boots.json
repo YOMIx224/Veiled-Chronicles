@@ -1,0 +1,41 @@
+{
+  "_id": "rnrequip00000017",
+  "name": "Sturdy Boots",
+  "type": "equipment",
+  "img": "icons/equipment/clothing/boots-leather-brown.webp",
+  "system": {
+    "description": {
+      "value": "High-laced boots. +5 ft Speed while worn, and +1 to Athlete and Stealth.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 2,
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "worn",
+    "slot": "feet",
+    "allowedSlot": "feet",
+    "speedBonus": 5,
+    "bonus": 1,
+    "attribute": "dexterity",
+    "properties": [
+      "clothing",
+      "worn"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

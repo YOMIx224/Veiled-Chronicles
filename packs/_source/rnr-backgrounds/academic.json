@@ -1,0 +1,39 @@
+{
+  "_id": "rnrbackgd0000003",
+  "name": "Academic",
+  "type": "background",
+  "img": "icons/skills/trades/academics-book-lamp-research-yellow.webp",
+  "system": {
+    "description": {
+      "value": "You studied at a university or under a mentor. You have extensive knowledge and connections in academic circles.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "benefit": "+1 to General Education and History. Access to academic libraries and research institutions.",
+    "skills": [
+      "generalEducation",
+      "history"
+    ],
+    "languages": [
+      "one extra language"
+    ],
+    "tools": [],
+    "source": {
+      "book": "RnR Core",
+      "page": ""
+    }
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_id": "375645d03e548e41",
+  "name": "Mecha — Beam Saber Cut",
+  "type": "ability",
+  "img": "icons/weapons/guns/gun-blunderbuss-steel.webp",
+  "system": {
+    "description": {
+      "value": "Attack: strike with a powered blade. Roll the attack and damage using this item.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Abilities"
+    },
+    "abilityType": "active",
+    "attribute": "strength",
+    "damageFormula": "2d10",
+    "damageType": "energy",
+    "healingFormula": "",
+    "actionType": "action",
+    "attackRoll": true,
+    "range": "5 ft",
+    "target": "One target in melee reach",
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "effect": "Attack: strike with a powered blade. Roll the attack and damage using this item.",
+    "properties": [],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

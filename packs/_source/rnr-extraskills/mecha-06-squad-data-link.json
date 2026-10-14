@@ -1,0 +1,44 @@
+{
+  "_id": "998f9a45c5fd34af",
+  "name": "Mecha — Squad Data Link",
+  "type": "extraskills",
+  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "system": {
+    "description": {
+      "value": "Shared tactical feeds help you read allies and direct a formation. Gain +1 to Persuade and Empathy checks when coordinating through a squad network.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Extra Skills"
+    },
+    "category": "communication",
+    "attribute": "rhetoric",
+    "cost": 2,
+    "bonus": 1,
+    "skills": [
+      "persuade",
+      "empathy"
+    ],
+    "effect": "Passive: +1 to Persuade and Empathy checks when coordinating through a squad network.",
+    "properties": [],
+    "abilityType": "passive",
+    "actionType": "passive",
+    "attackRoll": false,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

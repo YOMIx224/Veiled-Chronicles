@@ -1,0 +1,35 @@
+{
+  "_id": "rnrequip00000002",
+  "name": "Rope (50 ft)",
+  "type": "equipment",
+  "img": "icons/sundries/survival/rope-coiled-tan-red.webp",
+  "system": {
+    "description": {
+      "value": "50 feet of hemp rope. Can support up to 300 lbs. Useful for climbing, binding, or rigging.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 10,
+    "price": {
+      "value": 1,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "gear",
+    "slot": "",
+    "properties": [],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "armorValue": 0,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

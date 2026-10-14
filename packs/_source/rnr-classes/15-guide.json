@@ -1,0 +1,35 @@
+{
+  "_id": "uniclas000000015",
+  "name": "Guide",
+  "type": "class",
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "system": {
+    "description": {
+      "value": "Guide is a setting-neutral character role.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "role": "Guide",
+    "hitDie": "1d6",
+    "subclass": "",
+    "features": "Core Guide feature; choose campaign-appropriate specialization.",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

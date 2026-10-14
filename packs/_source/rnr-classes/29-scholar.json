@@ -1,0 +1,35 @@
+{
+  "_id": "uniclas000000029",
+  "name": "Scholar",
+  "type": "class",
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "system": {
+    "description": {
+      "value": "Scholar is a setting-neutral character role.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "role": "Scholar",
+    "hitDie": "1d10",
+    "subclass": "",
+    "features": "Core Scholar feature; choose campaign-appropriate specialization.",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

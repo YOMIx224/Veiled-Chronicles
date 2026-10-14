@@ -1,0 +1,153 @@
+{
+  "_id": "9ae74de9f7a54777",
+  "name": "RnR — คู่มือการใช้งานฉบับละเอียด",
+  "img": "icons/sundries/books/book-red-exclamation.webp",
+  "pages": [
+    {
+      "_id": "910fe3bde6d94bdd",
+      "name": "เริ่มต้นใช้งาน RnR",
+      "type": "text",
+      "sort": 100,
+      "text": {
+        "content": "<h1>คู่มือ RnR — เริ่มต้นใช้งาน</h1><p>คู่มือนี้อธิบายการใช้ระบบ Role&amp;Roll (RnR) ใน Foundry VTT v14 ตั้งแต่การสร้างตัวละครจนถึงการต่อสู้ โดยยึดข้อมูลจริงจาก Actor Sheet, Item Sheet, Chat Card และ Compendium ของระบบ หากฟิลด์ใดไม่ได้ระบุว่าทำอัตโนมัติ ให้ GM เป็นผู้ตัดสินและบันทึกผล</p><h2>ลำดับตั้งต้นสำหรับ GM</h2><ol><li>ติดตั้ง/เปิดใช้ RnR ใน World แล้วรีโหลด Foundry ให้แพ็ก Compendium โหลดครบ</li><li>ไปที่ Game Settings → Configure Settings → RnR แล้วเลือก Setting Profile ให้ตรงแนวเกม (ธีมและคำแนะนำ ไม่ได้เปลี่ยนกติกา)</li><li>สร้าง Character ให้ผู้เล่น และสร้าง NPC หรือ Vehicle ให้ GM</li><li>วาง Token ของผู้เล่นลง Scene แล้วมอบ Owner permission ให้ผู้เล่น</li><li>เปิด Compendium ของ RnR เพื่อเพิ่มอุปกรณ์ ความสามารถ และ Extra Skills</li></ol><p><strong>ตัวอย่าง:</strong> เกม Mecha เลือกโปรไฟล์ Mecha, นำเข้า Aegis M-01 จาก Compendium Frames, มอบ Ownership ให้ Pilot และเพิ่ม Pulse Carbine Burst กับ Vector Thrusters จาก Abilities</p><h2>ข้อควรรู้</h2><ul><li>Character, NPC และ Vehicle เป็น Actor คนละประเภท แต่ใช้ระบบ Attributes, Vitals, Conditions และ Items ร่วมกันบางส่วน</li><li>ผู้เล่นแก้ Actor ได้เมื่อมีสิทธิ์ Owner; การสร้าง Token บน Scene ยังขึ้นกับสิทธิ์ของ Scene/World</li><li>เปลี่ยนค่าในช่อง NPC/Vehicle แล้วออกจากช่องเพื่อบันทึก ระบบบันทึกเมื่อ change และส่งฟอร์มซ้ำตอนปิดชีต</li></ul>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "bf032cd337c44a15",
+      "name": "Actor Sheet และ Main",
+      "type": "text",
+      "sort": 200,
+      "text": {
+        "content": "<h1>Actor Sheet: Main และโครงสร้างข้อมูล</h1><p>หน้า Main ของ Character แสดง Vitals, Attributes, Skills, Saving Throws, Extra Skills และ Conditions ในคอลัมน์หลัก ตัวเลขส่วนใหญ่เป็นค่าที่คำนวณจากข้อมูล Actor กับ Item</p><h2>สิ่งที่แก้ได้</h2><ul><li><strong>HP / Willpower:</strong> ค่าปัจจุบันและค่าสูงสุด อยู่บนแถบสรุป Actor</li><li><strong>Attributes:</strong> Strength, Dexterity, Toughness, Intellect, Aptitude, Sanity, Charm, Rhetoric และ Ego</li><li><strong>Skills:</strong> เลือกปุ่มชื่อทักษะเพื่อทอย; โบนัสประจำ skill อยู่ใน field ของ Actor และ Extra Skill ที่ให้โบนัสอาจเพิ่มตัวปรับ</li><li><strong>Inventory:</strong> อุปกรณ์ในมือ, อุปกรณ์สวมใส่ และของในกระเป๋า แก้/ใส่/ถอดผ่านปุ่มในรายการ</li><li><strong>Tabs:</strong> Features ใช้จัดเตรียมความสามารถที่ใช้งานได้, Backpack จัดของ, Biography เก็บข้อมูลตัวละคร</li></ul><h2>ตัวอย่าง</h2><p>ถ้า Dexterity 10 (modifier +2) และ Shooting Weapons bonus +1 ตัวปรับทอยเท่ากับ +3 ก่อนพิจารณา condition หรือ effect เพิ่มเติม ระบบแสดงผลรวมที่ปุ่มทักษะ</p><p>การเปลี่ยน attribute ให้แก้ค่าฐาน ไม่ใช่ค่ารวมที่มี modifier จาก implant/item รวมอยู่แล้ว</p><h2>ช่องสวมใส่บน Actor Sheet (12 slots)</h2><p>อุปกรณ์สวมใส่จัดเป็นผัง 3 คอลัมน์ตามตำแหน่งร่างกาย: Head อยู่เหนือ Neck; แถวลำตัวคือ Right Arm – Torso – Left Arm; แถวถัดมาคือ Right Hand – Back – Left Hand; จากนั้น Right Leg – ช่องว่าง – Left Leg และ Right Foot – ช่องว่าง – Left Foot.</p><p>มีทั้งหมด 12 ช่อง ได้แก่ Head, Neck, Torso, Back, Right/Left Arm, Right/Left Hand, Right/Left Leg และ Right/Left Foot. เลือกช่องด้วย dropdown หรือลาก Item ไปวางได้ ค่า slot เก่า เช่น hands, feet, ring และ waist จะจับคู่กับช่องที่ยังว่างเฉพาะตอนเตรียมชีต โดยไม่เขียนทับข้อมูลเดิม; หากต้องการกำหนดด้าน ให้เลือก slot ซ้ายหรือขวาโดยตรง.</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "22e9ac963e3d46e3",
+      "name": "ทอย Attributes และ Skills",
+      "type": "text",
+      "sort": 300,
+      "text": {
+        "content": "<h1>การทอย</h1><p>กดปุ่ม Attribute, Skill หรือ Saving Throw เพื่อเปิดหน้าต่างทอย เลือกโหมดตามที่ต้องการและยืนยัน ระบบสร้าง Roll และโพสต์ผลลง Chat</p><h2>Modifier</h2><ul><li>ค่า Attribute แปลงเป็น modifier ตามเส้นโค้งของ RnR โดยค่า baseline ปรับได้ใน Game Settings</li><li>Skill check รวม Attribute modifier, โบนัสที่บันทึกใน Actor, Extra Skill ที่เกี่ยวข้อง และ Active Effects ที่เข้ากัน</li><li>Saving Throw เป็นการทอย Attribute check ตามกติกา RnR; ไม่ใช่ proficiency</li><li>Condition ที่มี rollPenalty อาจหักผลตรวจตามระบบที่ใช้; GM ตรวจ panel Conditions ก่อนตัดสิน</li></ul><h2>ตัวอย่าง</h2><p>ตัวละครมี Aptitude modifier +2, Search bonus +1 และ Extra Skill ที่เพิ่ม Search +2: Search roll ใช้ +5 ก่อน penalty หรือโบนัสฉาก</p><p>NPC/Vehicle ใช้ Reflex Defense แบบค่าคงที่เมื่อถูกโจมตี ส่วน Character มักเปิดให้ผู้เล่นเลือกการป้องกัน</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "07577b3e628c46c1",
+      "name": "การต่อสู้และการป้องกัน",
+      "type": "text",
+      "sort": 400,
+      "text": {
+        "content": "<h1>การต่อสู้: Attack, Defense, Damage</h1><ol><li>ผู้โจมตีเลือกอาวุธ/Ability/Spell ที่ตั้ง attackRoll และระบุเป้าหมายด้วย Foundry Targeting ตามปกติ</li><li>กด Attack หรือทอยรายการโจมตี ระบบส่ง Attack Challenge Card ไป Chat</li><li>ผู้เล่นที่ควบคุม Actor เป้าหมายเลือก Defense ที่มีให้ เช่น ป้องกัน/หลบ ตามกติกาของระบบและสถานะของ Actor</li><li>เมื่อผลสรุปว่าถูกโจมตี ให้ผู้โจมตีกด Damage Roll; ระบบนำ DR/Resistance/Immunity ที่รองรับมาคำนวณตามข้อมูล Actor</li></ol><p><strong>รายการที่ไม่ใช่การโจมตี:</strong> Spell, Ability หรือ Extra Skill ที่ไม่มี attackRoll จะส่งการ์ดคำอธิบาย ไม่เปิด Attack Roll โดยอัตโนมัติ</p><h2>ตัวอย่าง</h2><p>Pulse Carbine Burst มี Attack flag และ damageFormula 2d8 energy: กดโจมตีเพื่อสร้าง challenge, เป้าหมายเลือก defense, จากนั้นทอยความเสียหายเมื่อเข้าเงื่อนไข</p><p>Vector Thrusters เป็น Reaction ที่ไม่มี attackRoll: ใช้การ์ดอ่านคำอธิบายและ adjudicate ผล ไม่ควรถูกขอให้ทอย Attack</p><p>ตรวจ Target ให้ถูก Actor; การเลือก Target ใน Foundry เป็นคนละอย่างกับการควบคุมสิทธิ์ Actor</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "468d673c1a2041b9",
+      "name": "Items, Backpack และ Equipment",
+      "type": "text",
+      "sort": 500,
+      "text": {
+        "content": "<h1>Items และอุปกรณ์</h1><p>RnR มีประเภท Item เช่น Weapon, Armor, Consumable, Tool, Loot, Spell, Ability, Extra Skill, Equipment, Class, Background และ Race แต่ละชนิดมีฟิลด์เฉพาะใน Item Sheet</p><h2>การใช้งานทั่วไป</h2><ul><li>ไอคอนลูกเต๋าหรือคลิกชื่อมักแสดง Item Card ใน Chat เพื่อให้อ่านรายละเอียดก่อน</li><li>Shift+Click ใช้ทางลัดเปิด/ทอยตามชนิดรายการ; ปุ่ม Attack ใช้ทอยการโจมตีโดยตรง</li><li>Consumable ใช้ปุ่ม ✓ Use; ระบบหักจำนวนเมื่อ handler รองรับ (เช่น การรักษาด้วย bandage)</li><li>Equip hand/slot เพื่อให้โบนัสที่คำนวณจากอุปกรณ์มีผล; Extra Skill ที่ซื้อจะถูกเพิ่มเป็น Item บน Actor</li><li>Body equipment เปลี่ยน slot ผ่าน dropdown หรือ drag-and-drop; ปุ่ม × ถอดของออก</li></ul><h2>ตัวอย่าง</h2><p>Armor DR 2 ที่ใส่ใน slot ที่ถูกต้องจะถูกนับเมื่อคำนวณการลดความเสียหาย หากเพียงอยู่ใน Backpack โบนัสอาจไม่ถูกนำไปใช้</p><p>Equipment wearable อาจให้ skill/attribute/speed/armor bonus หากกรอก field รองรับไว้ การอธิบายข้อความใน Description อย่างเดียวไม่ได้ทำให้โบนัสคำนวณเอง</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "ad11ad3d2bff49dd",
+      "name": "Extra Skill Shop",
+      "type": "text",
+      "sort": 600,
+      "text": {
+        "content": "<h1>Extra Skill Shop</h1><p>กด Shop ในส่วน Extra Skills เพื่อค้นหาและซื้อความสามารถที่อยู่ใน Extra Skill Compendium หรือ World Items มีช่อง Search ค้นจากชื่อ, effect, action type, attribute และ category พร้อม dropdown กรองหมวด</p><h2>ซื้อ / คืน</h2><ul><li>ตรวจ Points available และ cost ก่อนซื้อ</li><li>ระบบคัดลอก Skill เป็น embedded Item ลง Actor และลดแต้ม</li><li>แท็บ Owned แสดงรายการที่ซื้อไว้; Remove ลบ Item ที่เชื่อมและคืนแต้มตาม cost</li><li>รายการใน Shop แบ่งตาม Category และ Action economy เช่น Action, Reaction, Passive</li></ul><h2>ตัวอย่าง</h2><p>ค้น “sensor” เพื่อพบ Sensor Sweep หรือ Tactical Sensor Fusion; ค้น “reaction” เพื่อดูรายการที่ใช้เป็น Reaction แล้วเลือกหมวด Science/Combat ตามต้องการ</p><p>การซื้อไม่ได้แปลว่าระบบจะทำผลทุกอย่างอัตโนมัติ: หาก effect เป็นข้อความเฉพาะฉาก GM และผู้เล่นใช้คำอธิบายเป็นหลัก</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "91277a8814104394",
+      "name": "Features และ Action Economy",
+      "type": "text",
+      "sort": 700,
+      "text": {
+        "content": "<h1>Features และ Action Economy</h1><p>Features แสดง Spell, Ability, Extra Skill, Class, Subclass, Background และ Race ของ Actor แต่ละการ์ดแสดงชนิดของสิ่งนั้นและ Action Type ที่ตั้งไว้ ไม่ควรอนุมานว่าเป็น Active เพียงเพราะอยู่ใน Features</p><ul><li><strong>Action / Bonus Action / Reaction / Free Action:</strong> ระบุเวลาที่ใช้</li><li><strong>Part of Action / Part of Bonus Action / Part of Reaction:</strong> เป็นการใช้ย่อยตาม action หลัก</li><li><strong>Passive:</strong> ไม่มีปุ่มใช้ระหว่างเทิร์น และไม่ต้องเตรียมใน active bar</li><li><strong>Active:</strong> ความสามารถที่ระบบให้เตรียมใน Active Feature bar ได้</li></ul><p>การกด Show in Chat ส่งรายละเอียด หากต้องการทอยโจมตีต้องตั้ง <em>Requires an attack roll</em> ให้เป็นจริงเฉพาะรายการโจมตีเท่านั้น</p><h2>ตัวอย่าง</h2><p>Spell A = Action + attackRoll; Ability B = Reaction + ไม่มี attackRoll; Extra Skill C = Passive. การ์ด/ปุ่มจะแสดงข้อมูลตามค่าของแต่ละ Feature แทนการแสดง Active/Passive แบบเหมารวม</p><p>ระบบไม่ได้ใช้ action points โดยอัตโนมัติ เว้นแต่จะระบุไว้ในฟีเจอร์เฉพาะ ให้ GM เป็นผู้ติดตาม economy ของเทิร์น</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "2f94bc4463ad4673",
+      "name": "Conditions, HP และ Recovery",
+      "type": "text",
+      "sort": 800,
+      "text": {
+        "content": "<h1>Conditions, HP และ Recovery</h1><p>Conditions แบ่ง Injuries, Psychiatric Disorders และ Physical &amp; Mental States. GM ใช้ Manage เพื่อแก้รายการที่ active, คำอธิบาย และ roll penalty จากนั้นต้องกด Save; Cancel ทิ้งการเปลี่ยนแปลง</p><p>หลังบันทึก condition ระบบ sync สถานะที่รองรับไปยัง Token และรีเฟรช Sheet ที่เปิดอยู่ สถานะตัวละครไม่ได้หายไปเมื่อปิดหน้าต่าง</p><h2>Down &amp; Recovery</h2><p>เมื่อ Actor เข้าสู่สถานะ down ระบบติดตาม state, จำนวนรอบ และ recovery progress ตาม settings การฟื้นไม่ใช่ D&amp;D death save อัตโนมัติและไม่ฆ่าตัวละครเอง; GM เป็นผู้ตัดสินชะตา</p><h2>ตัวอย่าง</h2><p>GM เปิด Manage → เลือก Bleeding → ใส่คำอธิบาย/penalty → Save. หากไม่เห็นผลบนหน้าชีต ให้ปิด/เปิด Actor Sheet และตรวจสิทธิ์แก้ Actor</p><p>Vehicle/NPC ฟิลด์ HP, Speed, Handling, Cover, Armor DR และ Condition ใช้ Actor Data; ออกจากช่องหลังแก้เพื่อ commit การเปลี่ยนแปลง</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "051d4b89db5240ea",
+      "name": "Progression, Rest และ Actor options",
+      "type": "text",
+      "sort": 900,
+      "text": {
+        "content": "<h1>Progression, Rest และการตั้งค่า Actor</h1><ul><li><strong>State Point:</strong> ใช้หน้าต่างที่ระบบให้เพื่อเพิ่ม/ลด attribute ภายใต้ pool และกติกาที่แสดง</li><li><strong>Experience:</strong> GM มอบ XP ผ่านปุ่ม Award; ระบบจัดการ threshold/level ตาม progression ของ RnR</li><li><strong>Short Rest:</strong> เลือกจำนวน Hit Dice เพื่อฟื้น HP และฟื้น Willpower ตามสูตรที่แสดง</li><li><strong>Long Rest:</strong> เติม HP/Willpower และคืน Hit Dice ตามข้อมูล Actor; ตรวจผลหลังพัก</li><li><strong>Effects:</strong> Active Effects บางชนิดเปลี่ยนค่าที่คำนวณ; ตรวจ panel และวันหมดอายุ</li><li><strong>Identity/Biography:</strong> บันทึกประวัติ ตัวตน แหล่งที่มา และหมายเหตุ</li></ul><p><strong>ตัวอย่าง:</strong> หาก Actor มี 2 Hit Dice และ Toughness modifier +1 แล้วใช้ Short Rest 1 die ระบบทอย 1d6+1 และจำกัด HP ไม่เกินค่าสูงสุด</p><p>สิทธิ์ GM อาจจำเป็นสำหรับ XP, Conditions และเครื่องมือจัดการฉากบางรายการ</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "e311de2d838246b8",
+      "name": "NPC และ Vehicle / Mecha",
+      "type": "text",
+      "sort": 1000,
+      "text": {
+        "content": "<h1>NPC และ Vehicle / Mecha Sheet</h1><p>สร้าง Actor ชนิด NPC สำหรับตัวละครประกอบ และ Vehicle สำหรับรถ/หุ่น ระบบแยกหน้าชีตตามชนิด</p><h2>NPC</h2><ul><li>กำหนด Type, Size, CR, HP, Reflex Defense, Armor DR, Speed, Attributes และ Skills</li><li>Actions tab ใช้เพิ่ม Weapon/Ability/Spell และจัดการ Conditions</li><li>Biography ใช้บันทึกตัวตน คำอธิบาย และแหล่งข้อมูล</li></ul><h2>Vehicle</h2><ul><li>บันทึก Model, Manufacturer และ Serial Number ในช่องแยก แล้วกำหนด Vehicle Type, Speed, Handling, Cover, Armor DR, Crew, Passengers และ Cargo</li><li>ตั้ง HP/Reflex Defense และ Resistance/Immunity/Vulnerability ในส่วน stats</li><li>เพิ่ม Mecha Ability ผ่าน Actions หรือ drag จาก Compendium ลง Actor</li></ul><p>ทุกช่องที่พิมพ์แล้วควรเปลี่ยน/ออกจากช่องเพื่อบันทึก; RnR v0.3.14 เพิ่ม direct-save fallback สำหรับ NPC/Vehicle ใน Foundry v14</p><h2>ตัวอย่างหุ่น</h2><p>Aegis M-01 Field Mecha: HP 65, DR 6, Reflex Defense 12, Speed 40 ft, Crew 1. นำเข้า Actor จาก <em>RnR — Mecha Frames</em>; จากนั้นให้ GM เพิ่ม Mecha Abilities และตั้ง Ownership ให้ผู้เล่น</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "75b4cd7997ac46ef",
+      "name": "Mecha: กำไลและฉากบอส",
+      "type": "text",
+      "sort": 1100,
+      "text": {
+        "content": "<h1>Mecha Campaign: กำไลเรียกหุ่น</h1><p>โครงเรื่องที่แนะนำ: ผู้เล่นคนหนึ่งได้รับ <strong>Mecha Command Bracelet</strong> ตั้งแต่ต้นเกม แต่กำไลยังไม่มีพลังตอบสนองเต็มที่ ระหว่างทางผู้เล่นพบข้อมูล/ชิ้นส่วนของ Aegis M-01 และค่อย ๆ ปลดล็อกสัญญาณของมัน ในฉากสุดท้าย บอสเปิดตัวหุ่นประจัญบาน ผู้เล่นใช้กำไลเรียกหุ่นตัวเองเข้าสนาม</p><h2>เตรียมก่อนฉากสุดท้าย</h2><ol><li>GM นำเข้า Bracelet จาก Equipment ให้ Player Actor</li><li>GM นำเข้า Aegis M-01 จาก Mecha Frames ไป World</li><li>เพิ่ม Abilities เช่น Pulse Carbine Burst, Beam Saber Cut, Aegis Barrier และ Vector Thrusters ลงบน Mecha Actor</li><li>ตั้ง Ownership ของ Aegis ให้ Pilot และตรวจสิทธิ์สร้าง Token ใน Scene</li><li>วาง Pilot Token บน Scene; ผู้เล่นสวม Bracelet แล้วกด Activate</li></ol><h2>ในฉาก</h2><p>เลือก “เรียกหุ่น / แปลงร่าง” ระบบสร้าง Token Mecha ข้าง Pilot และเปลี่ยนการควบคุมไปยังหุ่น หากผู้เล่นไม่มีสิทธิ์สร้าง Token ให้ GM อนุญาตหรือวาง Token ให้ ส่วน “กลับเป็น Pilot” สลับกลับโดยไม่ลบหุ่น</p><p>เพื่อให้มีเดิมพัน GM อาจกำหนดว่าเรียกได้ครั้งเดียว, ต้องใช้ Action, ต้องผ่าน Mechanical check, หรือเรียกได้เมื่อบอสเผยแกนพลังงานแล้ว ทั้งหมดเป็นทางเลือกของฉาก ไม่ใช่ข้อบังคับโค้ด</p><p>ระบบเก็บ Pilot และ Mecha เป็น Actor คนละตัวเพื่อไม่เขียนทับค่าสถานะผู้เล่น; “แปลงร่าง” ในทางเล่นคือเปลี่ยนไปควบคุม Mecha</p>",
+        "format": 1
+      },
+      "flags": {}
+    },
+    {
+      "_id": "bd3d51c32b75481b",
+      "name": "Macros, Compendium และการแก้ปัญหา",
+      "type": "text",
+      "sort": 1200,
+      "text": {
+        "content": "<h1>Macros, Compendium และการตรวจปัญหา</h1><h2>มาโคร Mecha</h2><p>เปิด <em>RnR — Mecha Macros</em> และ import มาโครลง Macro Directory จากนั้นลากไป Hotbar ได้: <strong>Deploy &amp; Enter Mecha</strong> ใช้เรียกหุ่น; <strong>Return to Pilot</strong> สลับกลับ มาโครอาศัย API ของ RnR v0.3.14; เปิดระบบและรอ Ready ก่อนใช้</p><p>Bracelet มีปุ่ม Activate อยู่แล้ว จึงไม่จำเป็นต้องใช้ Macro แยก หากใช้ Macro ให้เลือก Token Pilot ก่อนหรือกำหนด Character ให้ User</p><h2>Compendium ว่าง/หน้า Journal ว่าง</h2><ol><li>ตรวจว่า manifest system.json อยู่ในโฟลเดอร์ระบบ และเปิดใช้ RnR v0.3.14 ขึ้นไป</li><li>รีสตาร์ต/reload World หลังแทนที่ pack files; แคช Compendium เก่าอาจต้องปิดแล้วเปิดใหม่</li><li>ตรวจ Console และ Foundry log หากพบ error ระหว่างโหลด LevelDB</li><li>Journal แบบหลายหน้าใช้ embedded JournalEntryPage records; คู่มือนี้ถูก build ด้วยรูปแบบ v14</li></ol><h2>กดบันทึกแล้วค่า NPC/Vehicle ไม่อยู่</h2><p>ตรวจว่า Actor ไม่เป็น read-only, user มี Owner permission, รอให้การบันทึกเสร็จก่อนปิด, คลิกออกจากช่อง และตรวจ Console ว่ามี permission/schema error หรือไม่ Conditions ต้องกด Save ในหน้าต่าง Manage แยกต่างหาก</p><h2>มาโครเรียกหุ่นไม่ได้</h2><ul><li>ต้องมี Vehicle Actor ที่ import จาก Frames อยู่ใน World และเปิด Ownership ให้ Player</li><li>ต้องมี Pilot Token วางอยู่บน Scene ปัจจุบัน</li><li>Player ต้องมีสิทธิ์สร้างและลบ Token บน Scene; หากไม่มี ให้ GM ปรับ permission ก่อนเรียกหุ่น (Token ที่ GM วางเองโดยไม่ผ่านกำไลจะไม่มี deployment flag สำหรับ Return)</li><li>มาโคร Return ใช้กับ Mecha Token ที่ถูกสร้างจากกำไล; Token นี้มี pilot reference flag</li></ul>",
+        "format": 1
+      },
+      "flags": {}
+    }
+  ],
+  "folder": null,
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "RnR": {
+      "completeSystemGuide": true
+    }
+  },
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.17",
+    "coreVersion": "14"
+  }
+}

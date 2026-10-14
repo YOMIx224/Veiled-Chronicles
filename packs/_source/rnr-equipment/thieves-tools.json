@@ -1,0 +1,37 @@
+{
+  "_id": "rnrequip00000003",
+  "name": "Thieves' Tools",
+  "type": "equipment",
+  "img": "icons/tools/hand/lockpick-steel-tan.webp",
+  "system": {
+    "description": {
+      "value": "A set of lock picks, a small mirror, scissors, and pliers. Required to pick locks or disarm traps. Gives +2 to Larceny checks.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 1,
+    "price": {
+      "value": 25,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "tool",
+    "slot": "",
+    "properties": [
+      "tool"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "armorValue": 0,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

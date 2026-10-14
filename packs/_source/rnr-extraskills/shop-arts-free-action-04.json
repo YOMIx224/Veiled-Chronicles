@@ -1,0 +1,43 @@
+{
+  "_id": "17af49f9fc73e5a8",
+  "name": "Expressive Timing (Free Action)",
+  "type": "extraskills",
+  "img": "icons/skills/trades/academics-study-reading-book.webp",
+  "system": {
+    "description": {
+      "value": "Use as a free action when this arts technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Extra Skill Expansion",
+      "page": ""
+    },
+    "category": "arts",
+    "attribute": "charm",
+    "cost": 1,
+    "bonus": 0,
+    "skills": [
+      "art",
+      "persuade"
+    ],
+    "effect": "Use as a free action when this arts technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "properties": [],
+    "abilityType": "active",
+    "actionType": "free action",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

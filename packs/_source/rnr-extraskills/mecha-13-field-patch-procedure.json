@@ -1,0 +1,41 @@
+{
+  "_id": "88dc823a9ac1657b",
+  "name": "Mecha — Field Patch Procedure",
+  "type": "extraskills",
+  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "system": {
+    "description": {
+      "value": "Use a prepared patch, sealant, or bypass while taking another Action. Make a Mechanical check to stabilize one damaged system. It does not restore HP unless the GM grants it.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Extra Skills"
+    },
+    "category": "science",
+    "attribute": "intellect",
+    "cost": 2,
+    "bonus": 0,
+    "skills": [],
+    "effect": "Part of an Action: make a Mechanical check to stabilize one damaged system; this does not restore HP unless the GM grants it.",
+    "properties": [],
+    "abilityType": "active",
+    "actionType": "part of action",
+    "attackRoll": false,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

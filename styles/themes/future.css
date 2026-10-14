@@ -1,0 +1,24 @@
+/* RnR setting theme: Future / Cybernetic
+   Cold black substrate with electric cyan, plus a magenta warning accent.
+*/
+[data-rnr-theme="future"] {
+  --rnr-bg:            #0a0d11;
+  --rnr-surface:       #11161c;
+  --rnr-surface-2:     #171d25;
+  --rnr-surface-3:     #1f2731;
+  --rnr-border:        #2b3742;
+  --rnr-border-soft:   #1e2730;
+  --rnr-text:          #dce8f2;
+  --rnr-muted:         #7f93a3;
+  --rnr-accent:        #34d1e0;
+  --rnr-accent-soft:   #0c2c33;
+  --rnr-accent-hover:  #6fe6f0;
+  --rnr-accent-text:   #0a0d11;
+  --rnr-heading:       #6fe6f0;
+  --rnr-shadow:        rgba(0, 0, 0, .6);
+  --rnr-pos:           #4fe0a8;
+  --rnr-neg:           #ff6b8a;
+  --rnr-hp:            #d94f6b;
+  --rnr-wp:            #2f8fd0;
+  --rnr-focus:         #6fe6f0;
+}

@@ -1,0 +1,41 @@
+{
+  "_id": "unirace000000009",
+  "name": "Curious Origin",
+  "type": "race",
+  "img": "icons/environment/people/group.webp",
+  "system": {
+    "description": {
+      "value": "Curious is a flexible origin that can represent culture, upbringing, lineage, training, or background.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "raceName": "Curious",
+    "size": "med",
+    "speed": 30,
+    "traits": "Choose narrative details that explain this origin's ego aptitude.",
+    "abilityScoreIncrease": {
+      "ego": 1
+    },
+    "languages": [
+      "Common"
+    ],
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

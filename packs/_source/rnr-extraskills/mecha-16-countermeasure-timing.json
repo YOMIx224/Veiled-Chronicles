@@ -1,0 +1,41 @@
+{
+  "_id": "4c399d60ac965afc",
+  "name": "Mecha — Countermeasure Timing",
+  "type": "extraskills",
+  "img": "icons/skills/engineering/blueprint-robotic.webp",
+  "system": {
+    "description": {
+      "value": "Deploy chaff, smoke, or a decoy as part of a Reaction defense. The GM decides whether the incoming threat can be fooled.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Mecha Field Manual",
+      "page": "Extra Skills"
+    },
+    "category": "combat",
+    "attribute": "aptitude",
+    "cost": 2,
+    "bonus": 0,
+    "skills": [],
+    "effect": "Part of a Reaction: deploy chaff, smoke, or a decoy while making a defense. The GM determines which sensor-guided threats are affected.",
+    "properties": [],
+    "abilityType": "reaction",
+    "actionType": "part of reaction",
+    "attackRoll": false,
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.8",
+    "coreVersion": "13"
+  }
+}

@@ -1,0 +1,4184 @@
+.rnr.sheet.actor {
+  background: #d8d4cd;
+  color: #171717;
+  min-width: 1200px;
+}
+
+.rnr.sheet.actor .window-content {
+  background: #d8d4cd;
+  padding: 0;
+}
+
+.rnr-sheet {
+  width: 100%;
+  min-height: 820px;
+  max-height: 92vh;
+  background: #ece5dc;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: #171717;
+  overflow: auto;
+}
+
+.rnr-sheet-inner {
+  padding: 12px 14px 16px;
+}
+
+.rnr-tabs {
+  display: flex;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 0 4px;
+  border-bottom: 3px solid #111;
+}
+
+.rnr-tabs .item {
+  padding: 8px 14px;
+  border: 2px solid #111;
+  border-bottom: 0;
+  background: #d4d2ce;
+  color: #171717;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.rnr-tabs .item.active {
+  background: #111;
+  color: #fff;
+}
+
+.rnr-header {
+  display: grid;
+  grid-template-columns: 0.9fr 1.7fr 1.15fr;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.rnr-brand-box,
+.rnr-character-box,
+.rnr-bio-box,
+.rnr-under-card,
+.rnr-stat-group,
+.rnr-side-block,
+.rnr-skill-panel,
+.rnr-equip-card,
+.rnr-hand-box,
+.rnr-item-box,
+.rnr-extra-box {
+  border: 3px solid #111;
+  background: rgba(255,255,255,0.35);
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.12);
+  border-radius: 10px;
+}
+
+.rnr-brand-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #f5f0eb 0%, #ddd4c8 100%);
+  padding: 8px;
+}
+
+.rnr-character-portrait {
+  width: 100%;
+  height: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid #111;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.12);
+}
+
+.rnr-character-box,
+.rnr-bio-box,
+.rnr-under-card,
+.rnr-stat-group,
+.rnr-skill-panel,
+.rnr-side-block {
+  padding: 8px;
+}
+
+.rnr-character-box.small-box {
+  min-height: 190px;
+}
+
+.rnr-character-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.rnr-state-point-btn {
+  background: #1f2d3d;
+  color: #fff;
+  border: 2px solid #111;
+  border-radius: 6px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.rnr-state-point-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rnr-state-point-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 700;
+}
+
+.rnr-state-point-row select {
+  min-height: 32px;
+  border: 2px solid #111;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.rnr-state-point-note {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.rnr-panel-title {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.rnr-character-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rnr-full-field input,
+.rnr-mini-field input,
+.rnr-vital-box input,
+.rnr-text-area-field textarea,
+.rnr-under-card textarea,
+.rnr-item-box textarea,
+.rnr-extra-row input,
+.rnr-box-body {
+  width: 100%;
+  background: rgba(255,255,255,0.65);
+  border: 2px solid #111;
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #171717;
+}
+
+.rnr-full-field input,
+.rnr-mini-field input,
+.rnr-vital-box input {
+  min-height: 30px;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+.rnr-inline-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rnr-inline-fields .wide {
+  grid-column: span 1;
+}
+
+.rnr-inline-fields .tiny {
+  min-width: 0;
+}
+
+.rnr-mini-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rnr-mini-field label,
+.rnr-vital-box label,
+.rnr-text-area-field label,
+.rnr-under-card label,
+.rnr-item-head {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rnr-vital-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rnr-vital-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rnr-fraction {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 4px;
+}
+
+.rnr-fraction span {
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.rnr-mental-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rnr-heart-track {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 4px;
+}
+
+.rnr-heart {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: #d9d9d9;
+  border: 2px solid #111;
+  transform: rotate(45deg);
+  position: relative;
+  margin: 4px auto;
+}
+
+.rnr-heart::before,
+.rnr-heart::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #111;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.rnr-heart::before { left: -8px; top: 0; }
+.rnr-heart::after { left: 0; top: -8px; }
+
+.rnr-heart.filled {
+  background: #e76464;
+}
+
+.rnr-text-area-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rnr-text-area-field textarea,
+.rnr-under-card textarea,
+.rnr-item-box textarea {
+  min-height: 70px;
+  resize: vertical;
+  padding: 0.35rem 0.5rem;
+}
+
+.rnr-bio-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.rnr-bio-inner img {
+  width: 100%;
+  min-height: 140px;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid #111;
+  border-radius: 8px;
+}
+
+.rnr-bio-inner textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.rnr-header-under {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.rnr-under-card {
+  min-height: 110px;
+  padding: 8px;
+}
+
+.rnr-main-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.rnr-left-column,
+.rnr-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rnr-stat-group,
+.rnr-skill-panel,
+.rnr-side-block {
+  display: flex;
+  gap: 8px;
+  min-height: 180px;
+}
+
+.rnr-skill-panel {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: start;
+}
+
+.rnr-group-label {
+  width: 32px;
+  min-width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d4d2ce;
+  border: 3px solid #111;
+  border-radius: 8px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rnr-table-block,
+.rnr-skill-table {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rnr-table-header {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 0.4fr;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.58rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 0;
+}
+
+.rnr-row,
+.rnr-skill-row {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 0.4fr;
+  gap: 8px;
+  align-items: center;
+  min-height: 26px;
+  padding: 3px 4px;
+  background: rgba(255,255,255,0.26);
+  border: 1px solid rgba(17,17,17,0.45);
+}
+
+.rnr-row.alt,
+.rnr-skill-row.alt,
+.rnr-extra-row.alt {
+  background: rgba(205, 210, 214, 0.55);
+}
+
+.rnr-dice-row,
+.rnr-dice {
+  display: none !important;
+}
+
+.rnr-check-box {
+  width: 16px;
+  height: 16px;
+  margin: 0 auto;
+  accent-color: #111;
+}
+
+.rnr-roll-button {
+  min-width: 34px;
+  padding: 2px 4px;
+  border: 2px solid #111;
+  border-radius: 4px;
+  background: #f5f0eb;
+  color: #111;
+  font-size: 0.62rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.rnr-skill-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.rnr-skill-panel-head {
+  display: contents;
+  gap: 8px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.rnr-skill-panel > .rnr-group-label {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.rnr-skill-table-wrap {
+  grid-column: 2;
+  flex: 1;
+  min-height: 28px;
+  min-width: 0;
+}
+
+.rnr-panel-kicker {
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  margin-bottom: 2px;
+}
+
+.rnr-skill-table-wrap small {
+  display: block;
+  text-transform: lowercase;
+  font-weight: 700;
+  color: #333;
+}
+
+.rnr-skill-row {
+  grid-template-columns: 1.35fr 1fr 0.4fr;
+}
+
+.rnr-skill-panel > .rnr-skill-table {
+  grid-column: 2;
+  min-width: 0;
+  width: 100%;
+}
+
+.rnr-skill-name,
+.rnr-skill-row span {
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.rnr-side-block {
+  display: flex;
+  align-items: stretch;
+}
+
+.rnr-side-label {
+  width: 34px;
+  min-width: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d7d9dc;
+  border: 3px solid #111;
+  border-radius: 8px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rnr-hand-boxes,
+.rnr-equip-grid,
+.rnr-extra-box,
+.rnr-item-box {
+  flex: 1;
+}
+
+.rnr-hand-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rnr-hand-box,
+.rnr-equip-card {
+  position: relative;
+  padding: 6px;
+  min-height: 120px;
+  background: rgba(255,255,255,0.24);
+  border: 2px solid #111;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rnr-box-header {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 6px;
+}
+
+.rnr-box-body {
+  min-height: 70px;
+  display: block;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.5);
+}
+
+.rnr-hand-box textarea.rnr-box-body {
+  min-height: 70px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.rnr-extra-notes {
+  width: 100%;
+  min-height: 150px;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 2px solid #111;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  color: #171717;
+  resize: vertical;
+}
+
+.rnr-watermark {
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(17,17,17,0.14);
+  line-height: 1;
+}
+
+.rnr-equip-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.rnr-item-list {
+  flex: 1;
+  min-width: 0;
+}
+
+.rnr-item-list-header,
+.rnr-item-row {
+  display: grid;
+  grid-template-columns: 1fr 42px 28px;
+  gap: 6px;
+  align-items: center;
+  min-height: 32px;
+  padding: 4px 6px;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.35);
+}
+
+.rnr-item-list-header {
+  font-size: 0.62rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.rnr-item-list-header button,
+.rnr-item-row button {
+  border: 0;
+  background: transparent;
+  color: #171717;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.rnr-item-row img {
+  display: none;
+}
+
+.rnr-item-name {
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rnr-empty {
+  padding: 14px 6px;
+  color: #555;
+  font-size: 0.72rem;
+}
+
+.rnr-extra-box {
+  padding: 8px;
+}
+
+.rnr-extra-head {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.rnr-extra-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rnr-extra-row {
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  background: rgba(255,255,255,0.28);
+  border: 1px solid rgba(17,17,17,0.35);
+  padding: 0 6px;
+}
+
+.rnr-extra-row input {
+  border: none;
+  background: transparent;
+  min-height: 22px;
+  font-size: 0.7rem;
+}
+
+.rnr-item-box {
+  padding: 8px;
+}
+
+.rnr-item-head {
+  margin-bottom: 6px;
+}
+
+.rnr-item-box textarea {
+  min-height: 90px;
+}
+
+.rnr-sheet input:focus,
+.rnr-sheet textarea:focus {
+  outline: 2px solid rgba(10, 82, 194, 0.35);
+  outline-offset: 1px;
+}
+
+@media (max-width: 1100px) {
+  .rnr.sheet.actor {
+    min-width: 0;
+  }
+
+  .rnr-header,
+  .rnr-main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.rnr.sheet.actor {
+  min-width: 0;
+  background: #101216;
+  color: #e7e9ec;
+}
+
+.rnr.sheet.actor .window-content,
+.rnr-sheet {
+  background: #15181d;
+  color: #e7e9ec;
+}
+
+.rnr-brand-box,
+.rnr-character-box,
+.rnr-bio-box,
+.rnr-under-card,
+.rnr-stat-group,
+.rnr-side-block,
+.rnr-skill-panel,
+.rnr-item-box,
+.rnr-extra-box {
+  border: 1px solid #3b4655;
+  border-radius: 4px;
+  background: #1d222a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.rnr-brand-box {
+  background: #242a33;
+}
+
+.rnr-character-portrait,
+.rnr-bio-inner img {
+  border: 1px solid #657286;
+  border-radius: 3px;
+}
+
+.rnr-group-label,
+.rnr-side-label {
+  background: #2a3038;
+  border: 1px solid #596372;
+  border-radius: 4px;
+  color: #dbe2ec;
+}
+
+.rnr-row,
+.rnr-skill-row {
+  background: #1b1f25;
+  border-color: #343d49;
+}
+
+.rnr-row.alt,
+.rnr-skill-row.alt,
+.rnr-extra-row.alt {
+  background: #242a32;
+}
+
+.rnr-roll-button {
+  border: 1px solid #758397;
+  background: #2d3744;
+  color: #e7e9ec;
+}
+
+.rnr-name-roll {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #dbe2ec;
+  cursor: pointer;
+  text-align: left;
+}
+
+.rnr-name-roll:hover,
+.rnr-name-roll:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.rnr-tabs .item {
+  border: 1px solid #3b4655;
+  border-bottom: 0;
+  background: #20262f;
+  color: #aeb7c5;
+}
+
+.rnr-tabs .item.active {
+  background: #3d536b;
+  color: #fff;
+}
+
+.rnr-sheet input,
+.rnr-sheet textarea,
+.rnr-box-body {
+  background: #12151a;
+  border-color: #3f4a59;
+  color: #e7e9ec;
+}
+
+@media (min-width: 700px) and (max-width: 1100px) {
+  .rnr-header {
+    grid-template-columns: 170px 1.4fr 1fr;
+  }
+
+  .rnr-main-layout {
+    grid-template-columns: 1.4fr 0.9fr;
+  }
+}
+
+/* RnR character sheet layout */
+.rnr-sheet {
+  min-width: 0;
+  min-height: 100%;
+  overflow: auto;
+  background: #15171a;
+  color: #e8e1d4;
+  font-family: "Roboto Condensed", "Trebuchet MS", sans-serif;
+}
+
+.rnr-topbar {
+  position: relative;
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 138px;
+  padding: 14px 18px 28px;
+  background: linear-gradient(145deg, #5e1519, #211316 58%, #111214);
+  border-bottom: 1px solid #a77b49;
+}
+
+.rnr-topbar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background: repeating-linear-gradient(125deg, transparent 0 18px, #d38c72 19px 20px, transparent 21px 34px);
+}
+
+.rnr-icon-button,
+.rnr-card-roll,
+.rnr-top-actions button {
+  position: relative;
+  z-index: 1;
+  border: 1px solid #b99869;
+  border-radius: 3px;
+  background: #171719;
+  color: #e8e1d4;
+  cursor: pointer;
+}
+
+.rnr-icon-button { width: 30px; height: 30px; }
+.rnr-top-left-tools { position: relative; z-index: 1; display: flex; align-items: center; gap: 5px; }
+.rnr-settings-button { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid #b99869; border-radius: 50%; background: #171719; color: #b9a98d; cursor: pointer; font-size: 1rem; line-height: 1; }
+.rnr-settings-button:hover, .rnr-settings-button.is-open { background: #9a7647; color: #171719; transform: rotate(22deg); }
+.rnr-state-point-button { position: relative; z-index: 1; border: 1px solid #b99869; border-radius: 3px; background: #171719; color: #e8e1d4; cursor: pointer; font-size: .55rem; font-weight: 900; padding: 7px 5px; writing-mode: vertical-rl; }
+.rnr-title-block { position: relative; z-index: 1; min-width: 0; }
+.rnr-title-block h1 { margin: 0 0 1px; color: #a99a84; font-family: "Trebuchet MS", sans-serif; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; }
+.rnr-title-block input { width: min(520px, 100%); border: 0; border-bottom: 2px solid #c9a876; background: transparent; color: #fff8ed; font: 800 2rem Georgia, serif; letter-spacing: .02em; }
+.rnr-title-block small { display: block; margin-top: 4px; color: #b99762; font-size: .68rem; font-weight: 800; text-transform: uppercase; }
+.rnr-top-actions { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; color: #ddd0be; font-size: 1.4rem; }
+.rnr-header-mark { padding: 0 4px; }
+.rnr-level-orb { position: absolute; right: 82px; top: 20px; z-index: 1; display: grid; place-items: center; width: 62px; height: 62px; border: 2px solid #c9a876; border-radius: 50%; background: #202126; }
+.rnr-level-orb strong { color: #fff; font: 2rem Georgia, serif; line-height: 1; }
+.rnr-level-orb small { color: #c9a876; font-size: .48rem; }
+.rnr-xp { position: absolute; right: 20px; bottom: 6px; z-index: 1; display: grid; grid-template-columns: auto 54px 54px auto; gap: 5px; align-items: center; color: #c9a876; font-size: .62rem; font-weight: 700; }
+.rnr-xp input { width: 62px; border: 1px solid #60462f; background: #171719; color: #fff; text-align: center; }
+.rnr-level-up { border: 1px solid #b99869; border-radius: 3px; background: #9a7647; color: #171719; cursor: pointer; font-size: .58rem; font-weight: 900; padding: 3px 6px; }
+.rnr-xp-bar { grid-column: 1 / -1; position: relative; left: auto; right: auto; bottom: auto; height: 4px; overflow: hidden; border: 1px solid #9b784d; background: #171719; }
+.rnr-xp-bar i { display: block; height: 100%; background: #c9a876; }
+
+.rnr-abilities { display: grid; grid-template-columns: repeat(9, minmax(58px, 1fr)); gap: 6px; padding: 10px 16px; background: #1a1c20; }
+.rnr-ability-card { display: grid; grid-template-rows: auto auto 24px; gap: 3px; padding: 6px; border: 1px solid #4a4f59; border-radius: 3px; background: #25282e; text-align: center; }
+.rnr-ability-name { border: 0; background: transparent; color: #b9b2a7; cursor: pointer; font-size: .68rem; font-weight: 800; }
+.rnr-ability-card strong { color: #fff; font-size: 1.2rem; }
+.rnr-ability-value { display: grid; place-items: center; width: 100%; box-sizing: border-box; background: #9a7647; color: #171719; font-weight: 900; }
+.rnr-tabs { display: flex; gap: 2px; padding: 8px 16px 0; background: #1a1c20; border: 0; }
+.rnr-tabs .item { padding: 7px 14px; border: 1px solid #484d56; background: #24272c; color: #aaa49a; font-size: .68rem; font-weight: 800; cursor: pointer; }
+.rnr-tabs .item.active { background: #9a7647; color: #171719; }
+.rnr-body { display: grid; grid-template-columns: 210px minmax(320px, 1.35fr) minmax(230px, .82fr); gap: 10px; padding: 10px 12px 24px; background: #17191d; }
+.rnr-panel, .rnr-portrait-card, .rnr-vital-card, .rnr-favorites { border: 1px solid #454b55; border-radius: 4px; background: #202329; box-shadow: 0 3px 12px #0008; }
+.rnr-sidebar, .rnr-right-column { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.rnr-portrait-card { position: relative; padding: 8px; }
+.rnr-portrait-card img { display: block; width: 100%; aspect-ratio: 1 / 1.18; object-fit: cover; border: 1px solid #b18c5b; background: #101114; }
+.rnr-markers { display: grid; grid-template-columns: repeat(9, 1fr); align-items: center; justify-items: center; gap: 1px; margin: 4px 3px 0; position: relative; }
+.rnr-markers i { width: 10px; height: 10px; border: 2px solid #c9a876; border-radius: 50%; background: #1b1d21; }
+.rnr-markers b { display: grid; place-items: center; width: 48px; height: 48px; margin: 0 4px; border: 2px solid #c9a876; border-radius: 50%; background: #17191d; color: #fff; font: 1.4rem Georgia, serif; }
+.rnr-markers i { display: block; width: 10px; height: 9px; position: relative; border: 0; border-radius: 0; background: transparent; transform: rotate(-45deg); }
+.rnr-markers i::before, .rnr-markers i::after { content: ""; position: absolute; width: 6px; height: 9px; top: 0; border: 1px solid #c9a876; border-radius: 8px 8px 0 0; background: #17191d; }
+.rnr-markers i::before { left: 1px; transform: rotate(-45deg); transform-origin: 0 100%; }
+.rnr-markers i::after { left: 4px; transform: rotate(45deg); transform-origin: 100% 100%; }
+.rnr-markers i.filled::before, .rnr-markers i.filled::after { background: #b64942; }
+.rnr-vital-triad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.rnr-vital-triad div { padding: 7px 2px; border: 1px solid #5b4d3b; background: #292a2c; text-align: center; }
+.rnr-vital-triad span, .rnr-vital-card label { display: block; color: #a99a84; font-size: .52rem; font-weight: 800; }
+.rnr-vital-triad strong { color: #e4c58d; font-size: 1rem; }
+.rnr-triad-input { width: 100%; box-sizing: border-box; border: 1px solid #424852; background: #15171b; color: #e4c58d; text-align: center; }
+.rnr-vital-card { padding: 8px; }
+.rnr-vital-card div { display: grid; grid-template-columns: 1fr auto 1fr; gap: 4px; align-items: center; }
+.rnr-vital-card input, .rnr-xp input, .rnr-skill-line input, .rnr-identity-panel input, .rnr-identity-panel textarea { min-width: 0; border: 1px solid #424852; background: #15171b; color: #eee; }
+.rnr-vital-card input { width: 100%; box-sizing: border-box; text-align: center; }
+.rnr-vital-card em { color: #c9a876; font-style: normal; }
+.rnr-favorites { padding: 8px; }
+.rnr-favorites h3 { margin: 0 0 8px; color: #c9a876; font-size: .66rem; }
+.rnr-favorites div { padding: 18px 4px; border: 1px dashed #70644f; color: #80776c; font-size: .62rem; text-align: center; }
+.rnr-panel { padding: 8px; }
+.rnr-panel h2 { display: grid; grid-template-columns: minmax(0, 1fr) 42px 52px; gap: 6px; margin: 0 0 8px; padding-bottom: 8px; border-bottom: 1px solid #5a4a37; color: #eee7da; font: 800 .76rem Georgia, serif; letter-spacing: .08em; }
+.rnr-panel h2 small { color: #958d81; font: 700 .5rem "Trebuchet MS", sans-serif; align-self: end; text-align: right; }
+.rnr-skill-group h3 { margin: 12px 0 3px; color: #c9a876; font-size: .62rem; text-transform: uppercase; }
+.rnr-skill-line, .rnr-save-line, .rnr-item-line { display: grid; grid-template-columns: minmax(0, 1fr) 40px; gap: 4px; align-items: center; min-height: 27px; padding: 2px 3px; border-bottom: 1px solid #343941; }
+.rnr-skill-line:nth-child(even), .rnr-save-line:nth-child(even), .rnr-item-line:nth-child(even) { background: #252930; }
+.rnr-proficiency { border: 0; background: transparent; color: #797d83; cursor: pointer; font-size: .65rem; }
+.rnr-proficiency.active { color: #d4af7a; }
+.rnr-skill-roll, .rnr-save-roll, .rnr-item-line button { overflow: hidden; border: 0; background: transparent; color: #eee; cursor: pointer; text-align: left; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-skill-roll small { display: inline-block; margin-left: 5px; color: #b08a56; font-size: .55rem; text-transform: uppercase; }
+.rnr-skill-line strong, .rnr-save-line strong { color: #d4af7a; text-align: right; }
+.rnr-skill-value { color: #f0eadf; text-align: center; }
+.rnr-saving-panel h2 { display: block; }
+.rnr-saving-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; padding: 7px; }
+.rnr-saving-panel h2 { grid-column: 1 / -1; margin-bottom: 3px; }
+.rnr-save-line { grid-template-columns: minmax(0, 1fr) 34px; min-height: 24px; padding: 2px 3px; gap: 3px; font-size: .68rem; }
+.rnr-identity-panel h2, .rnr-items-panel h2 { display: flex; justify-content: space-between; }
+.rnr-identity-panel label { display: grid; grid-template-columns: 78px 1fr; gap: 6px; align-items: center; margin: 6px 0; color: #a99a84; font-size: .6rem; }
+.rnr-identity-panel textarea { width: 100%; min-height: 55px; box-sizing: border-box; margin-top: 6px; resize: vertical; }
+.rnr-extra-skill-panel textarea { width: 100%; min-height: 78px; box-sizing: border-box; resize: vertical; }
+.rnr-extra-shop-button { border: 1px solid #b99869; border-radius: 3px; background: #9a7647; color: #171719; cursor: pointer; font-size: .55rem; padding: 3px 6px; }
+.rnr-extra-shop-button:disabled { border-color: #4a4f59; background: #292d34; color: #777d86; cursor: not-allowed; opacity: .8; }
+.rnr-extra-balance { margin-bottom: 7px; color: #a99a84; font-size: .62rem; }
+.rnr-extra-balance strong, .rnr-shop-balance strong { color: #d4af7a; }
+.rnr-extra-owned, .rnr-shop-owned { display: flex; justify-content: space-between; gap: 6px; padding: 5px 4px; border-bottom: 1px solid #343941; color: #eee; font-size: .66rem; }
+.rnr-extra-owned small, .rnr-shop-owned small { display: block; color: #9f8d78; font-size: .54rem; }
+.rnr-shop-empty { color: #84796c; font-size: .62rem; }
+.rnr-extra-skill-shop label { display: grid; gap: 4px; margin: 8px 0; color: #c9a876; font-size: .68rem; font-weight: 700; }
+.rnr-extra-skill-shop select, .rnr-extra-skill-shop input { min-height: 28px; box-sizing: border-box; border: 1px solid #424852; background: #15171b; color: #eee; }
+.rnr-shop-cost { color: #d4af7a; font-size: .68rem; }
+.rnr-extra-skill-shop h3 { margin: 12px 0 4px; color: #c9a876; font-size: .68rem; text-transform: uppercase; }
+.rnr-shop-owned button { border: 1px solid #6c5140; background: transparent; color: #d8b79b; cursor: pointer; font-size: .58rem; }
+.rnr-item-sheet { min-height: 100%; padding: 12px; box-sizing: border-box; background: #17191d; color: #eee7da; font-family: "Roboto Condensed", "Trebuchet MS", sans-serif; }
+.rnr-item-header { display: grid; grid-template-columns: 72px 1fr; gap: 10px; align-items: center; padding-bottom: 10px; border-bottom: 1px solid #5a4a37; }
+.rnr-item-header img { width: 72px; height: 72px; object-fit: cover; border: 1px solid #b18c5b; background: #101114; }
+.rnr-item-header input { width: 100%; box-sizing: border-box; border: 1px solid #424852; background: #15171b; color: #fff; font: 700 1rem Georgia, serif; }
+.rnr-item-header p { margin: 5px 0 0; color: #c9a876; font-size: .65rem; text-transform: uppercase; }
+.rnr-item-fields { display: grid; gap: 9px; padding-top: 12px; }
+.rnr-item-fields label { display: grid; gap: 4px; color: #c9a876; font-size: .68rem; font-weight: 700; }
+.rnr-item-fields input, .rnr-item-fields select, .rnr-item-fields textarea { min-height: 28px; box-sizing: border-box; border: 1px solid #424852; background: #15171b; color: #eee; }
+.rnr-item-fields textarea { min-height: 140px; padding: 6px; resize: vertical; }
+.rnr-item-description { margin-top: 4px; }
+.rnr-items-panel h2 button { border: 1px solid #8f7049; background: #9a7647; color: #171719; cursor: pointer; }
+.rnr-item-line { grid-template-columns: minmax(0, 1fr) 38px 22px; }
+.rnr-item-line span { color: #c9a876; text-align: center; }
+.rnr-backpack-presets { display: flex; flex-wrap: wrap; gap: 5px; margin: 6px 0 10px; }
+.rnr-backpack-presets button { border: 1px solid #8f7049; border-radius: 3px; background: #9a7647; color: #171719; cursor: pointer; font-size: .6rem; font-weight: 800; padding: 4px 7px; }
+.rnr-backpack-section { margin-top: 8px; }
+.rnr-backpack-section h3 { margin: 5px 0 4px; color: #c9a876; font-size: .62rem; letter-spacing: .08em; }
+.rnr-backpack-grid { display: grid; gap: 5px; }
+.rnr-hands-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.rnr-equipment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.rnr-backpack-slot { min-height: 82px; overflow: hidden; border: 1px solid #657080; background: #2b2e33; }
+.rnr-backpack-slot header { display: flex; justify-content: space-between; min-height: 20px; padding: 3px 5px; background: #111317; color: #e6dfd2; font-size: .58rem; font-weight: 800; }
+.rnr-backpack-slot header button { border: 0; background: transparent; color: #d4af7a; cursor: pointer; }
+.rnr-backpack-slot > div { min-height: 55px; padding: 7px 5px; background: #dedede; color: #111; font-size: .62rem; }
+.rnr-condition-panel > h3 { margin: 8px 0 4px; color: #c9a876; font-size: .65rem; text-transform: uppercase; }
+.rnr-condition-panel > h3 small { color: #9f8d78; font-size: .58rem; font-weight: 500; text-transform: none; }
+.rnr-condition-line { display: grid; grid-template-columns: minmax(110px, .8fr) 1.2fr; gap: 6px; align-items: center; padding: 5px 0; border-bottom: 1px solid #343941; color: #c9a876; font-size: .65rem; font-weight: 700; }
+.rnr-condition-line textarea { width: 100%; min-height: 28px; box-sizing: border-box; resize: vertical; }
+.rnr-condition-panel h2 { display: block; }
+.rnr-condition-panelbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0 8px;
+  border-bottom: 1px solid #343941;
+}
+.rnr-condition-panelbar-label {
+  color: #9f8d78;
+  font-size: .6rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.rnr-condition-panelbar .rnr-condition-penalty-badge { margin-left: 0; }
+.rnr-condition-panel h2 small, .rnr-condition-line small { display: block; margin-top: 2px; color: #9f8d78; font: 500 .58rem "Trebuchet MS", sans-serif; letter-spacing: 0; text-transform: none; }
+.rnr-condition-select { width: 100%; min-height: 68px; box-sizing: border-box; border: 1px solid #424852; background: #15171b; color: #eee; font-size: .65rem; }
+.rnr-condition-select option:checked { background: #8f663e; color: #fff; }
+.rnr-condition-panel h2 { position: relative; }
+.rnr-manage-conditions { margin-left: auto; border: 1px solid #b99869; border-radius: 3px; background: #9a7647; color: #171719; cursor: pointer; font-size: .55rem; padding: 3px 6px; }
+.rnr-condition-penalty-badge { margin-left: 6px; padding: 1px 4px; border-radius: 3px; background: #c24040; color: #fff; font-size: .52rem; text-transform: uppercase; letter-spacing: .5px; }
+.rnr-active-condition { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; padding: 6px 4px; border-bottom: 1px solid #343941; align-items: center; }
+.rnr-active-condition strong { color: #eee; font-size: .68rem; }
+.rnr-active-condition small { color: #9f8d78; font-size: .58rem; }
+.rnr-condition-penalty { justify-self: end; padding: 1px 3px; border-radius: 2px; background: #2e2f33; color: #e0d8c5; font-size: .56rem; }
+.rnr-active-condition p { grid-column: 1 / -1; margin: 2px 0 0; color: #c9c0b3; font-size: .62rem; white-space: pre-wrap; }
+.rnr-empty-status { min-height: 38px; display: grid; place-items: center; border: 1px dashed #5a4d3f; color: #84796c; font-size: .65rem; }
+.rnr-items-panel { display: none; }
+.rnr-biography-panel { display: none; }
+.rnr-biography-panel textarea { display: block; width: 100%; min-height: 60px; margin-top: 7px; box-sizing: border-box; resize: vertical; }
+.rnr-help-text { margin: 6px 0; color: #a99a84; font-size: .62rem; line-height: 1.35; }
+.rnr-organ-toggle { display: flex !important; grid-template-columns: none !important; align-items: center; gap: 7px; color: #d4af7a !important; font-weight: 800; }
+.rnr-organ-toggle input { width: 15px; height: 15px; accent-color: #b99869; }
+.rnr-multi-select:disabled { opacity: .42; cursor: not-allowed; }
+
+@media (max-width: 980px) {
+  .rnr-abilities { grid-template-columns: repeat(9, minmax(42px, 1fr)); gap: 4px; padding-inline: 8px; }
+  .rnr-body { grid-template-columns: 180px minmax(250px, 1fr) 210px; gap: 6px; padding-inline: 8px; }
+  .rnr-right-column { grid-column: auto; display: flex; }
+}
+
+@media (max-width: 650px) {
+  .rnr-topbar { min-height: 100px; padding: 12px; }
+  .rnr-title-block h1 { font-size: 1.8rem; }
+  .rnr-level-orb { right: 14px; top: 12px; transform: scale(.8); }
+  .rnr-xp { left: 54px; right: auto; }
+  .rnr-abilities { grid-template-columns: repeat(3, 1fr); padding: 8px; }
+  .rnr-body { grid-template-columns: 1fr; padding: 8px; }
+  .rnr-right-column { grid-column: auto; display: flex; }
+}
+
+/* ============================================================
+   Role & Roll — additions for new features
+   #2  Death Saves
+   #3  Combat Roll button
+   #4  Rest dialog
+   #6  Advantage/Disadvantage roll dialog + Chat cards
+   #9  NPC Sheet layout
+   ============================================================ */
+
+/* ── Actor sheet: Death Saves panel ────────────────────────── */
+.rnr-death-panel {
+  padding: 8px;
+}
+.rnr-death-panel h2 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #5a4a37;
+  color: #eee7da;
+  font: 800 .76rem Georgia, serif;
+  letter-spacing: .08em;
+}
+.rnr-death-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.rnr-death-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+.rnr-death-block span {
+  color: #a99a84;
+  font-size: .58rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+.rnr-death-pips {
+  display: flex;
+  gap: 5px;
+}
+.rnr-death-pip {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #7a6a56;
+  background: #15171b;
+  font-size: 0;
+  transition: background .15s;
+}
+.rnr-death-pip.success { background: #4caf82; border-color: #4caf82; }
+.rnr-death-pip.failure { background: #c04040; border-color: #c04040; }
+
+.rnr-death-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.rnr-death-roll-btn,
+.rnr-death-reset-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 5px 8px;
+  border: 1px solid #b99869;
+  border-radius: 3px;
+  background: #9a7647;
+  color: #171719;
+  cursor: pointer;
+  font-size: .62rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.rnr-death-reset-btn {
+  background: #3a2a1a;
+  color: #c9a876;
+  border-color: #6a4a2a;
+}
+.rnr-death-reset-btn:hover { background: #4a3a2a; }
+.rnr-stable { color: #4caf82; font-size: .8rem; }
+.rnr-dead   { color: #c04040; font-size: .8rem; }
+
+/* ── Actor sheet: Rest + Initiative buttons ─────────────────── */
+.rnr-utility-buttons {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin: 6px 0;
+}
+.rnr-utility-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 5px 8px;
+  border: 1px solid #b99869;
+  border-radius: 3px;
+  background: #26303d;
+  color: #c9a876;
+  cursor: pointer;
+  font-size: .62rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-align: center;
+}
+.rnr-utility-btn:hover { background: #344050; }
+
+/* ── Backpack: attack roll button per item ──────────────────── */
+.rnr-attack-btn {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid #b99869;
+  border-radius: 3px;
+  background: #9a7647;
+  color: #171719;
+  cursor: pointer;
+  font-size: .75rem;
+  line-height: 1;
+  text-align: center;
+}
+.rnr-attack-btn:hover { background: #b8904f; }
+
+/* ── Roll mode dialog ───────────────────────────────────────── */
+.rnr-roll-mode-dialog {
+  padding: 10px 4px 4px;
+}
+.rnr-roll-mode-label {
+  margin: 0 0 6px;
+  color: #c9a876;
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+.rnr-roll-mode-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.rnr-roll-mode-row label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #eee7da;
+  font-size: .75rem;
+  cursor: pointer;
+}
+.rnr-roll-mode-row input[type="radio"] {
+  accent-color: #c9a876;
+  width: 14px;
+  height: 14px;
+}
+.rnr-roll-mode-hint {
+  margin: 0;
+  color: #a99a84;
+  font-size: .68rem;
+}
+.rnr-roll-mode-hint strong { color: #d4af7a; }
+
+/* ── Rest dialog ────────────────────────────────────────────── */
+.rnr-rest-dialog {
+  padding: 6px 2px;
+}
+.rnr-rest-dialog h3 {
+  margin: 0 0 5px;
+  color: #c9a876;
+  font-size: .8rem;
+}
+.rnr-rest-dialog p {
+  margin: 0 0 6px;
+  color: #b0a898;
+  font-size: .7rem;
+  line-height: 1.4;
+}
+.rnr-rest-dialog label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c9a876;
+  font-size: .72rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.rnr-rest-dialog input[type="number"] {
+  width: 52px;
+  text-align: center;
+  border: 1px solid #424852;
+  background: #15171b;
+  color: #eee;
+  padding: 3px 5px;
+}
+.rnr-rest-dialog small {
+  color: #80796c;
+  font-size: .62rem;
+}
+.rnr-rest-dialog hr {
+  border: 0;
+  border-top: 1px solid #3a4050;
+  margin: 10px 0;
+}
+.rnr-rest-hint {
+  color: #9a8870 !important;
+  font-style: italic;
+}
+.rnr-rest-option h3::before { margin-right: 4px; }
+
+/* ── Chat cards ─────────────────────────────────────────────── */
+.rnr-chat-card {
+  padding: 0;
+  border: 1px solid #5a4a37;
+  border-radius: 5px;
+  background: #1d2128;
+  overflow: hidden;
+  font-family: "Roboto Condensed", "Trebuchet MS", sans-serif;
+  color: #eee7da;
+}
+.rnr-chat-card.rnr-card-crit { border-color: #c9a030; }
+.rnr-chat-card.rnr-card-fail { border-color: #8b2020; }
+
+.rnr-card-header {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 9px;
+  background: #141720;
+  border-bottom: 1px solid #3a4050;
+}
+.rnr-card-header img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border: 1px solid #7a6a56;
+  border-radius: 3px;
+  background: #0e1015;
+}
+.rnr-card-header strong {
+  display: block;
+  color: #fff;
+  font-size: .8rem;
+  line-height: 1.2;
+}
+.rnr-card-header span {
+  display: block;
+  color: #c9a876;
+  font-size: .65rem;
+}
+.rnr-card-header em {
+  display: block;
+  color: #9a8870;
+  font-size: .58rem;
+  font-style: normal;
+}
+
+.rnr-card-mode {
+  padding: 3px 7px;
+  border-radius: 3px;
+  font-size: .6rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.rnr-card-mode.adv { background: #1e4a2a; color: #5fcf80; }
+.rnr-card-mode.dis { background: #4a1e1e; color: #cf5f5f; }
+
+.rnr-card-dice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 10px;
+  flex-wrap: wrap;
+}
+.rnr-card-d20 {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #7a6a56;
+  border-radius: 50%;
+  background: #252830;
+  color: #fff;
+  font: 900 1.6rem Georgia, serif;
+  line-height: 1;
+}
+.rnr-card-d20.crit    { border-color: #c9a030; background: #2a2510; color: #f0c040; }
+.rnr-card-d20.fail    { border-color: #8b2020; background: #251010; color: #e05050; }
+.rnr-card-d20.dropped {
+  opacity: .4;
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  text-decoration: line-through;
+}
+.rnr-card-total {
+  color: #fff;
+  font: 900 2rem Georgia, serif;
+  min-width: 40px;
+  text-align: center;
+}
+.rnr-card-label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-top: -6px;
+}
+.rnr-card-label.crit { color: #f0c040; }
+.rnr-card-label.fail { color: #e05050; }
+
+.rnr-card-detail {
+  padding: 7px 10px;
+  border-top: 1px solid #3a4050;
+  background: #16191f;
+  color: #c0b8ac;
+  font-size: .72rem;
+  line-height: 1.5;
+}
+.rnr-card-detail strong { color: #eee7da; }
+.rnr-card-formula {
+  color: #9a8870;
+  font-size: .65rem;
+}
+
+/* Death save pips inside chat card */
+.rnr-death-pip.success { background: #4caf82; }
+.rnr-death-pip.failure { background: #c04040; }
+
+/* ── NPC Sheet ───────────────────────────────────────────────── */
+.rnr.sheet.actor.npc {
+  min-width: 0;
+}
+.rnr-npc-sheet {
+  min-height: 100%;
+  background: #15171a;
+  color: #e8e1d4;
+  font-family: "Roboto Condensed", "Trebuchet MS", sans-serif;
+  overflow: auto;
+}
+
+/* Header */
+.rnr-npc-header {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 14px;
+  background: linear-gradient(145deg, #1e3a1e, #14181d 60%, #111214);
+  border-bottom: 1px solid #6a9a6a;
+}
+.rnr-npc-portrait {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #6a9a6a;
+  border-radius: 4px;
+  background: #0e1015;
+  cursor: pointer;
+}
+.rnr-npc-title input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid #6a9a6a;
+  background: transparent;
+  color: #fff;
+  font: 700 1.3rem Georgia, serif;
+  margin-bottom: 6px;
+}
+.rnr-npc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.rnr-npc-meta label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #8ab88a;
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.rnr-npc-meta input,
+.rnr-npc-meta select {
+  max-width: 90px;
+  min-height: 24px;
+  padding: 2px 5px;
+  border: 1px solid #3a5a3a;
+  border-radius: 3px;
+  background: #1a1f1a;
+  color: #eee;
+  font-size: .72rem;
+}
+
+/* Top-right vitals */
+.rnr-npc-topright {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 220px;
+}
+.rnr-npc-vital-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+.rnr-npc-vital-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 4px;
+  border: 1px solid #3a5a3a;
+  border-radius: 3px;
+  background: #1a221a;
+  text-align: center;
+}
+.rnr-npc-vital-box span {
+  color: #8ab88a;
+  font-size: .52rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.rnr-npc-vital-box strong {
+  color: #c9e8a0;
+  font-size: 1rem;
+}
+.rnr-npc-vital-box div {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.rnr-npc-vital-box input {
+  width: 36px;
+  text-align: center;
+  border: 1px solid #3a5a3a;
+  background: #101410;
+  color: #eee;
+  font-size: .8rem;
+  padding: 2px;
+}
+.rnr-npc-vital-box em {
+  color: #6a9a6a;
+  font-style: normal;
+  font-size: .8rem;
+}
+
+.rnr-npc-action-row {
+  display: flex;
+  gap: 6px;
+}
+.rnr-npc-btn {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #6a9a6a;
+  border-radius: 3px;
+  background: #1e3a1e;
+  color: #c9e8a0;
+  cursor: pointer;
+  font-size: .62rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.rnr-npc-btn:hover { background: #2a4a2a; }
+
+.rnr-npc-btn-sm {
+  padding: 3px 7px;
+  border: 1px solid #6a9a6a;
+  border-radius: 3px;
+  background: #1e3a1e;
+  color: #c9e8a0;
+  cursor: pointer;
+  font-size: .58rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.rnr-npc-btn-sm:hover { background: #2a4a2a; }
+
+/* Tabs */
+.rnr-npc-sheet .rnr-tabs { background: #1a1c20; padding: 8px 14px 0; }
+.rnr-npc-sheet .rnr-tabs .item { border-color: #3a5a3a; background: #202820; color: #8ab88a; }
+.rnr-npc-sheet .rnr-tabs .item.active { background: #2a5a2a; color: #c9e8a0; }
+
+/* Body */
+.rnr-npc-body {
+  padding: 10px 12px 24px;
+  background: #17191d;
+}
+.rnr-npc-tab { display: block; }
+
+/* Stats grid */
+.rnr-npc-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.rnr-npc-attributes { grid-column: 1 / -1; }
+
+.rnr-npc-panel {
+  padding: 9px;
+  border: 1px solid #3a5a3a;
+  border-radius: 4px;
+  background: #1e2422;
+  box-shadow: 0 2px 8px #0006;
+}
+.rnr-npc-panel h2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #3a5a3a;
+  color: #c9e8a0;
+  font: 800 .76rem Georgia, serif;
+  letter-spacing: .08em;
+}
+.rnr-npc-panel h2 small {
+  color: #6a9a6a;
+  font: 500 .55rem "Trebuchet MS", sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.rnr-npc-panel label {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 6px;
+  align-items: center;
+  margin: 5px 0;
+  color: #8ab88a;
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.rnr-npc-panel input,
+.rnr-npc-panel select,
+.rnr-npc-panel textarea {
+  min-height: 26px;
+  box-sizing: border-box;
+  padding: 3px 6px;
+  border: 1px solid #3a5a3a;
+  border-radius: 3px;
+  background: #12171a;
+  color: #eee;
+  font-size: .72rem;
+}
+.rnr-npc-panel textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Attribute grid inside NPC */
+.rnr-npc-attr-grid {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(52px, 1fr));
+  gap: 5px;
+}
+.rnr-npc-attr-card {
+  display: grid;
+  grid-template-rows: auto auto 22px;
+  gap: 2px;
+  padding: 5px 3px;
+  border: 1px solid #3a5a3a;
+  border-radius: 3px;
+  background: #252e28;
+  text-align: center;
+}
+.rnr-npc-attr-name {
+  border: 0;
+  background: transparent;
+  color: #8ab88a;
+  cursor: pointer;
+  font-size: .6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0;
+}
+.rnr-npc-attr-name:hover { color: #c9e8a0; text-decoration: underline; }
+.rnr-npc-attr-card strong { color: #fff; font-size: 1.05rem; }
+.rnr-npc-attr-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 100%;
+}
+.rnr-npc-attr-btn {
+  width: 16px;
+  height: 22px;
+  padding: 0;
+  line-height: 20px;
+  font-size: 13px;
+  font-weight: 900;
+  background: #1e3a1e;
+  color: #a3e635;
+  border: 1px solid #3a5a3a;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+.rnr-npc-attr-btn:hover {
+  background: #2f5f2f;
+  color: #ffffff;
+}
+.rnr-npc-attr-input {
+  width: 28px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: 900;
+  font-size: 0.85rem;
+  color: #c9e8a0;
+  background: #1a231c;
+  border: 1px solid #3a5a3a;
+  border-radius: 2px;
+  -moz-appearance: textfield;
+}
+.rnr-npc-attr-input::-webkit-inner-spin-button,
+.rnr-npc-attr-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Save grid inside NPC */
+.rnr-npc-save-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px 8px;
+}
+
+/* Actions list */
+.rnr-npc-action-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.rnr-npc-action-line {
+  display: grid;
+  grid-template-columns: 26px minmax(0,1fr) 56px minmax(0,1fr) auto;
+  gap: 6px;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 5px;
+  border-bottom: 1px solid #2a3a2a;
+}
+.rnr-npc-action-line:nth-child(even) { background: #202e20; }
+.rnr-npc-action-roll {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid #6a9a6a;
+  border-radius: 3px;
+  background: #1e3a1e;
+  color: #c9e8a0;
+  cursor: pointer;
+  font-size: .9rem;
+  line-height: 1;
+  text-align: center;
+}
+.rnr-npc-action-roll:hover { background: #2a4a2a; }
+.rnr-npc-action-name { color: #eee; font-size: .75rem; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-npc-action-type { color: #6a9a6a; font-size: .58rem; text-transform: uppercase; letter-spacing: .06em; }
+.rnr-npc-action-detail { color: #a0b890; font-size: .65rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-npc-action-btns { display: flex; gap: 4px; }
+.rnr-npc-action-btns button {
+  width: 20px; height: 20px; padding: 0;
+  border: 1px solid #3a5a3a; border-radius: 2px;
+  background: transparent; color: #8ab88a;
+  cursor: pointer; font-size: .75rem; line-height: 1;
+}
+.rnr-npc-action-btns button:hover { background: #2a3a2a; color: #eee; }
+
+/* ── Actor sheet: new action buttons in backpack item lines ─── */
+.rnr-item-line {
+  grid-template-columns: minmax(0,1fr) 26px 38px 22px;
+}
+
+/* ── Proficiency bonus display ───────────────────────────────── */
+.rnr-prof-bonus {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border: 1px solid #5a4a37;
+  border-radius: 10px;
+  background: #252830;
+  color: #c9a876;
+  font-size: .65rem;
+  font-weight: 800;
+}
+.rnr-prof-bonus strong { color: #f0c070; font-size: .8rem; }
+
+/* ── Responsive NPC ──────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .rnr-npc-header     { grid-template-columns: 60px 1fr; }
+  .rnr-npc-topright   { grid-column: 1 / -1; }
+  .rnr-npc-vital-row  { grid-template-columns: repeat(2, 1fr); }
+  .rnr-npc-attr-grid  { grid-template-columns: repeat(3, 1fr); }
+  .rnr-npc-stats-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Extra Skill Shop v2 (compendium-driven) ─────────────────── */
+.rnr-shop-tabs {
+  display: flex;
+  gap: 4px;
+  margin: 8px 0 6px;
+}
+.rnr-shop-tab {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #5a4a37;
+  border-radius: 3px;
+  background: #252830;
+  color: #a99a84;
+  cursor: pointer;
+  font-size: .65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.rnr-shop-tab.active {
+  background: #9a7647;
+  color: #171719;
+  border-color: #c9a876;
+}
+
+.rnr-shop-panel {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.rnr-shop-cat-group {
+  margin-bottom: 10px;
+}
+.rnr-shop-cat-group h4 {
+  margin: 0 0 4px;
+  padding: 3px 6px;
+  background: #2a3040;
+  color: #c9a876;
+  font-size: .62rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.rnr-shop-row {
+  display: grid;
+  grid-template-columns: 1fr 48px 60px;
+  gap: 6px;
+  align-items: center;
+  min-height: 28px;
+  padding: 3px 6px;
+  border-bottom: 1px solid #343941;
+}
+.rnr-shop-row:nth-child(even) { background: #252930; }
+.rnr-shop-row.owned { opacity: .55; }
+
+.rnr-shop-item-name  { color: #eee; font-size: .72rem; }
+.rnr-shop-item-cost  { color: #c9a876; font-size: .65rem; text-align: center; }
+.rnr-shop-item-owned { color: #5fcf80; font-size: .6rem; text-align: center; }
+
+.rnr-shop-buy-btn {
+  padding: 3px 6px;
+  border: 1px solid #b99869;
+  border-radius: 3px;
+  background: #9a7647;
+  color: #171719;
+  cursor: pointer;
+  font-size: .6rem;
+  font-weight: 900;
+}
+.rnr-shop-buy-btn:hover { background: #b8904f; }
+
+/* ============================================================
+   Focused character tabs and item creation menu
+   ============================================================ */
+.rnr-sheet .rnr-tabs {
+  position: relative;
+  z-index: 5;
+  align-items: flex-end;
+  gap: 5px;
+  margin: 0;
+  padding: 10px 14px 0;
+  border-bottom: 2px solid #5b432d;
+  background: #141619;
+}
+
+.rnr-sheet .rnr-tabs .item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 104px;
+  min-height: 34px;
+  box-sizing: border-box;
+  padding: 7px 14px;
+  border: 1px solid #4c515b;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  background: #24272c;
+  color: #aaa49a;
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, transform .15s ease;
+}
+
+.rnr-sheet .rnr-tabs .item:hover,
+.rnr-sheet .rnr-tabs .item:focus-visible {
+  background: #3a3026;
+  color: #f5e4c5;
+  outline: 2px solid #b99869;
+  outline-offset: 1px;
+}
+
+.rnr-sheet .rnr-tabs .item.active {
+  background: #9a7647;
+  color: #171719;
+  border-color: #c4a06a;
+  box-shadow: 0 -2px 0 #e0bd7f inset;
+}
+
+.rnr-sheet .rnr-body[data-active-tab="backpack"],
+.rnr-sheet .rnr-body[data-active-tab="biography"] {
+  display: block;
+  padding: 14px 18px 24px;
+}
+
+.rnr-sheet .rnr-body[data-active-tab="backpack"] .rnr-right-column,
+.rnr-sheet .rnr-body[data-active-tab="biography"] .rnr-right-column {
+  display: block;
+  width: 100%;
+}
+
+.rnr-sheet .rnr-body[data-active-tab="backpack"] .rnr-items-panel,
+.rnr-sheet .rnr-body[data-active-tab="biography"] .rnr-biography-panel {
+  width: 100%;
+  min-height: 420px;
+  box-sizing: border-box;
+  border-color: #796043;
+}
+
+.rnr-item-create-menu {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  font-size: .62rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.rnr-item-create-menu summary {
+  list-style: none;
+  padding: 5px 9px;
+  border: 1px solid #b99869;
+  border-radius: 4px;
+  background: #9a7647;
+  color: #171719;
+  font: 800 .6rem "Segoe UI", sans-serif;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rnr-item-create-menu summary::-webkit-details-marker { display: none; }
+.rnr-item-create-menu summary::after { content: " ▾"; }
+.rnr-item-create-menu[open] summary { background: #c39b5f; }
+
+.rnr-item-create-options {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  gap: 4px;
+  min-width: 224px;
+  padding: 6px;
+  border: 1px solid #6e573b;
+  border-radius: 5px;
+  background: #202329;
+  box-shadow: 0 8px 18px #000b;
+}
+
+.rnr-item-create-options button {
+  min-height: 28px;
+  padding: 4px 7px;
+  border: 1px solid #4e5560;
+  border-radius: 3px;
+  background: #2b3038;
+  color: #eee7da;
+  font-size: .6rem;
+  cursor: pointer;
+}
+
+.rnr-item-create-options button:hover,
+.rnr-item-create-options button:focus-visible {
+  border-color: #c39b5f;
+  background: #4a3b2c;
+  color: #fff3d9;
+  outline: none;
+}
+
+.rnr-sheet .rnr-items-panel > h2,
+.rnr-sheet .rnr-identity-panel > h2 {
+  align-items: center;
+  min-height: 34px;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 650px) {
+  .rnr-sheet .rnr-tabs .item { min-width: 0; flex: 1; padding-inline: 7px; }
+  .rnr-item-create-options { right: 0; grid-template-columns: 1fr; min-width: 150px; }
+}
+
+/* Biography flow and Compendium picker */
+.rnr-bio-wide-field { align-items: start; }
+.rnr-bio-wide-field textarea { grid-column: 2; width: 100%; box-sizing: border-box; min-height: 82px; resize: vertical; }
+.rnr-state-point-summary { margin: 10px 0; padding: 8px 10px; border: 1px solid #6e573b; border-radius: 4px; background: #28241f; color: #c9a876; font-size: .68rem; }
+.rnr-state-point-summary strong { color: #f1d39b; font-size: .8rem; }
+
+/* ── Level & Experience ──────────────────────────────────────────────
+   .rnr-xp was written as an absolutely positioned footer strip. The Level/EXP
+   readout now lives in its own panel in the sheet sidebar, so the panel scope
+   puts it back into normal flow and gives the two inputs room to breathe.
+   The bar, the two-column layout and the colour stay as they were. */
+.rnr-progression-panel { padding: 8px 9px; }
+.rnr-progression-panel h2 { margin: 0 0 6px; }
+.rnr-progression-panel .rnr-xp {
+  position: static;
+  right: auto;
+  bottom: auto;
+  z-index: auto;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1.25fr) auto;
+  padding: 0;
+}
+.rnr-progression-panel .rnr-xp input {
+  /* The alternate theme block sets `.rnr-xp input { display: none }` so its
+     footer strip reads as a pure progress bar. Level and banked XP are editable
+     here, so the panel has to state `display` explicitly to win. */
+  display: block;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.rnr-xp-next { grid-column: 1 / -1; color: #9f8d78; font-size: .55rem; font-weight: 600; }
+.rnr-xp-next strong { color: #c9a876; }
+.rnr-xp-award {
+  min-width: 24px;
+  min-height: 22px;
+  padding: 0 5px;
+  border: 1px solid #b99869;
+  border-radius: 3px;
+  background: #9a7647;
+  color: #171719;
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.rnr-xp-award:hover { background: #b08c58; }
+.rnr-xp-dialog label { display: grid; gap: 4px; margin: 8px 0; color: #c9a876; font-size: .68rem; font-weight: 700; }
+.rnr-xp-dialog input { min-height: 30px; border: 1px solid #555d68; background: #15171b; color: #eee; text-align: center; }
+
+/* ── Custom attributes ────────────────────────────────────────────────
+   Rows are indexed (customAttributes.N.*) so the shared field-save handler
+   writes straight to the actor; only the add/remove buttons are scripted. */
+.rnr-custom-attributes { display: grid; gap: 5px; }
+.rnr-custom-attributes-panel .rnr-custom-attributes { margin-top: 2px; }
+.rnr-custom-attribute {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.4fr) auto;
+  gap: 5px;
+  align-items: end;
+  padding: 6px;
+  border: 1px solid #3f464f;
+  border-radius: 3px;
+  background: #24272c;
+}
+.rnr-custom-attribute label { display: grid; gap: 3px; min-width: 0; color: #c9a876; font-size: .58rem; font-weight: 700; }
+.rnr-custom-attribute input { width: 100%; min-width: 0; box-sizing: border-box; min-height: 24px; border: 1px solid #424852; background: #15171b; color: #eee; font-size: .66rem; }
+.rnr-custom-attr-remove {
+  min-width: 22px;
+  min-height: 24px;
+  border: 1px solid #6b3a3a;
+  border-radius: 3px;
+  background: #2a1d1d;
+  color: #d8b79b;
+  cursor: pointer;
+  font-size: .85rem;
+  line-height: 1;
+}
+.rnr-custom-attr-remove:hover { background: #3a2424; }
+.rnr-bio-add-btn {
+  float: right;
+  padding: 2px 7px;
+  border: 1px solid #b99869;
+  border-radius: 3px;
+  background: #9a7647;
+  color: #171719;
+  cursor: pointer;
+  font-size: .55rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.rnr-bio-add-btn:hover { background: #b08c58; }
+
+.rnr-compendium-dialog { display: grid; gap: 9px; }
+.rnr-compendium-note { margin: 0; color: #bdb4a8; font-size: .7rem; line-height: 1.4; }
+.rnr-compendium-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.rnr-compendium-filters label, .rnr-shop-filter label { display: grid; gap: 4px; color: #c9a876; font-size: .62rem; font-weight: 700; }
+.rnr-compendium-filters select, .rnr-shop-filter select { min-height: 29px; border: 1px solid #555d68; background: #15171b; color: #eee; }
+.rnr-compendium-list { display: grid; gap: 4px; max-height: 390px; overflow-y: auto; padding-right: 2px; }
+.rnr-compendium-row { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 7px; align-items: center; padding: 5px 6px; border: 1px solid #3f464f; border-radius: 3px; background: #24272c; }
+.rnr-compendium-row img { width: 30px; height: 30px; object-fit: cover; border: 1px solid #806b4e; }
+.rnr-compendium-row strong { display: block; overflow: hidden; color: #eee; font-size: .68rem; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-compendium-row small { display: block; margin-top: 2px; color: #9f8d78; font-size: .55rem; }
+.rnr-compendium-row button { min-width: 45px; border: 1px solid #b99869; border-radius: 3px; background: #9a7647; color: #171719; cursor: pointer; font-size: .6rem; font-weight: 800; }
+.rnr-shop-filter { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(150px, 1fr); gap: 8px; margin: 7px 0; }
+.rnr-shop-filter select, .rnr-shop-filter input { width: 100%; box-sizing: border-box; min-height: 29px; padding: 4px 6px; border: 1px solid #555d68; background: #15171b; color: #eee; }
+.rnr-mecha-bracelet-btn { padding: 3px 7px; border: 1px solid #d1b57e; border-radius: 3px; background: #52677b; color: #f5e7c8; cursor: pointer; font-size: .57rem; font-weight: 800; }
+.rnr-mecha-bracelet-btn:hover { background: #6b89a1; }
+
+@media (max-width: 650px) {
+  .rnr-compendium-filters { grid-template-columns: 1fr; }
+  .rnr-shop-filter { grid-template-columns: 1fr; }
+  .rnr-bio-wide-field textarea { grid-column: 1 / -1; }
+  .rnr-custom-attribute { grid-template-columns: 1fr auto; }
+}
+
+/* Four-slot anatomy equipment layout */
+.rnr-anatomy-section h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.rnr-anatomy-section h3 small { color: #9f8d78; font-size: .55rem; font-weight: 500; }
+.rnr-anatomy-layout { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; padding: 10px; border: 1px solid #574a3d; border-radius: 5px; background: radial-gradient(circle at 50% 45%, #302b26 0, #1a1c20 68%); }
+.rnr-body-slot { min-height: 92px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 7px 5px; border: 1px dashed #625849; border-radius: 5px; background: rgba(14, 16, 19, .62); text-align: center; }
+.rnr-body-slot.filled { border-style: solid; border-color: #b99869; background: linear-gradient(160deg, rgba(104, 76, 43, .32), rgba(20, 22, 26, .8)); }
+.rnr-body-slot-icon { color: #b99869; font-size: 1.1rem; line-height: 1; }
+.rnr-body-slot strong { color: #d6c29f; font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }
+.rnr-body-slot-item { max-width: 100%; overflow: hidden; color: #eee; font-size: .62rem; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-body-slot em { color: #81796d; font-size: .58rem; }
+.rnr-body-slot .rnr-slot-btns { display: flex; gap: 3px; }
+.rnr-body-slot .rnr-slot-btns button { min-width: 22px; padding: 1px 4px; border: 1px solid #50463b; border-radius: 3px; background: #29251f; color: #d5b98d; cursor: pointer; }
+.rnr-equip-btns select { max-width: 74px; min-height: 21px; border: 1px solid #555d68; border-radius: 2px; background: #15171b; color: #ddd; font-size: .55rem; }
+@media (max-width: 700px) { .rnr-anatomy-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Full-body anatomy equipment GUI */
+.rnr-fullbody-equipment { position: relative; display: grid; grid-template-columns: minmax(120px, 1fr) 150px minmax(120px, 1fr); grid-template-rows: repeat(4, minmax(74px, 1fr)); gap: 8px; min-height: 340px; padding: 14px; border: 1px solid #574a3d; border-radius: 6px; overflow: hidden; background: radial-gradient(circle at 50% 44%, #3a3027 0, #1d2025 42%, #15171b 76%); }
+.rnr-anatomy-silhouette { grid-column: 2; grid-row: 1 / 5; position: relative; min-height: 300px; opacity: .9; }
+.rnr-silhouette-head, .rnr-silhouette-torso, .rnr-silhouette-arm, .rnr-silhouette-leg { position: absolute; left: 50%; transform: translateX(-50%); border: 1px solid rgba(201, 168, 118, .45); background: linear-gradient(180deg, rgba(201, 168, 118, .24), rgba(95, 75, 53, .08)); }
+.rnr-silhouette-head { top: 4%; width: 49px; height: 57px; border-radius: 50% 50% 44% 44%; }
+.rnr-silhouette-torso { top: 24%; width: 88px; height: 130px; clip-path: polygon(18% 0, 82% 0, 100% 18%, 84% 100%, 16% 100%, 0 18%); }
+.rnr-silhouette-arm { top: 27%; width: 22px; height: 118px; border-radius: 12px; }
+.rnr-silhouette-arm.left { left: 19%; transform: rotate(9deg); }
+.rnr-silhouette-arm.right { left: 81%; transform: rotate(-9deg); }
+.rnr-silhouette-leg { top: 60%; width: 29px; height: 128px; border-radius: 12px 12px 8px 8px; }
+.rnr-silhouette-leg.left { left: 39%; transform: rotate(2deg); }
+.rnr-silhouette-leg.right { left: 61%; transform: rotate(-2deg); }
+.rnr-body-slot { position: relative; z-index: 1; min-height: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 7px 5px; border: 1px dashed #625849; border-radius: 5px; background: rgba(14, 16, 19, .82); text-align: center; }
+.rnr-body-slot.slot-head { grid-column: 1; grid-row: 1; }
+.rnr-body-slot.slot-neck { grid-column: 3; grid-row: 1; }
+.rnr-body-slot.slot-back { grid-column: 1; grid-row: 2; }
+.rnr-body-slot.slot-torso { grid-column: 3; grid-row: 2; }
+.rnr-body-slot.slot-hands { grid-column: 1; grid-row: 3; }
+.rnr-body-slot.slot-waist { grid-column: 3; grid-row: 3; }
+.rnr-body-slot.slot-feet { grid-column: 3; grid-row: 4; }
+.rnr-body-slot.slot-ring { grid-column: 1; grid-row: 4; }
+.rnr-body-slot.filled { border-style: solid; border-color: #b99869; background: linear-gradient(160deg, rgba(104, 76, 43, .42), rgba(20, 22, 26, .88)); }
+@media (max-width: 700px) { .rnr-fullbody-equipment { grid-template-columns: 1fr 100px 1fr; min-height: 390px; } .rnr-anatomy-silhouette { min-height: 350px; } }
+
+/* Full-width focused workspaces for Backpack and Biography */
+.rnr-body[data-active-tab="backpack"], .rnr-body[data-active-tab="biography"] { display: block !important; min-width: 0; }
+.rnr-body[data-active-tab="backpack"] .rnr-sidebar, .rnr-body[data-active-tab="backpack"] .rnr-main-column, .rnr-body[data-active-tab="biography"] .rnr-sidebar, .rnr-body[data-active-tab="biography"] .rnr-main-column { display: none !important; }
+.rnr-body[data-active-tab="backpack"] .rnr-right-column, .rnr-body[data-active-tab="biography"] .rnr-right-column { display: block !important; width: 100% !important; min-width: 0; }
+.rnr-body[data-active-tab="backpack"] .rnr-items-panel, .rnr-body[data-active-tab="biography"] .rnr-biography-panel { display: block !important; width: 100%; min-height: 520px; box-sizing: border-box; }
+.rnr-body[data-active-tab="backpack"] .rnr-items-panel > h2, .rnr-body[data-active-tab="biography"] .rnr-biography-panel > h2 { position: sticky; top: 0; z-index: 2; padding: 10px 0; background: #191b20; border-bottom: 1px solid #554735; }
+.rnr-body[data-active-tab="backpack"] .rnr-equipment-list { max-height: none; overflow: visible; }
+.rnr-body[data-active-tab="backpack"] .rnr-equip-row { min-height: 42px; }
+.rnr-body[data-active-tab="backpack"] .rnr-anatomy-section { margin-top: 12px; }
+.rnr-body[data-active-tab="backpack"] .rnr-fullbody-equipment { min-height: 390px; }
+.rnr-body[data-active-tab="backpack"] .rnr-items-panel { display: flex !important; flex-direction: column; }
+.rnr-body[data-active-tab="backpack"] .rnr-items-panel > h2 { order: 0; }
+.rnr-body[data-active-tab="backpack"] .rnr-items-panel > .rnr-inventory-toolbar { order: 1; }
+.rnr-body[data-active-tab="backpack"] .rnr-items-panel > .rnr-anatomy-section { order: 2; }
+.rnr-body[data-active-tab="backpack"] .rnr-items-panel > .rnr-hands-section { order: 3; }
+.rnr-body[data-active-tab="backpack"] .rnr-items-panel > .rnr-contents-section { order: 4; }
+
+/* Drag-and-drop affordances for Backpack → anatomy slots */
+.rnr-equip-row[draggable="true"] {
+  cursor: grab;
+  transition: background .15s ease, border-color .15s ease, opacity .15s ease;
+}
+.rnr-equip-row[draggable="true"]:hover,
+.rnr-equip-row[draggable="true"]:focus-within {
+  background: #342d25;
+  border-color: #9b784d;
+}
+.rnr-equip-row[draggable="true"].is-dragging {
+  opacity: .45;
+  cursor: grabbing;
+}
+.rnr-body-slot[data-drop-zone="body"] {
+  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+.rnr-body-slot[data-drop-zone="body"]::after {
+  content: "Drop to equip";
+  display: block;
+  margin-top: 3px;
+  color: #8d816f;
+  font-size: .5rem;
+  letter-spacing: .03em;
+  opacity: .75;
+}
+.rnr-body-slot[data-drop-zone="body"].filled::after { content: "Drop to replace"; }
+.rnr-body-slot[data-drop-zone="body"].is-drag-over {
+  border-color: #f0c070;
+  background: linear-gradient(160deg, rgba(154, 118, 71, .58), rgba(35, 29, 22, .92));
+  box-shadow: 0 0 0 2px rgba(240, 192, 112, .35), 0 0 16px rgba(201, 168, 118, .25);
+  transform: translateY(-1px);
+}
+.rnr-body-slot[data-drop-zone="body"].is-drag-over::after { color: #fff1cf; opacity: 1; }
+.rnr-body-slot[draggable="true"] { cursor: grab; }
+.rnr-body-slot[draggable="true"].is-dragging { opacity: .45; cursor: grabbing; }
+.rnr-contents-section[data-drop-zone="backpack"] { transition: background .15s ease, border-color .15s ease; }
+.rnr-contents-section[data-drop-zone="backpack"].is-drag-over { border-color: #c9a876; background: rgba(120, 84, 42, .2); }
+
+/* Clear, high-contrast Item Sheet fields */
+.rnr-item-sheet {
+  overflow: auto;
+  font-size: .8rem;
+}
+.rnr-item-fields {
+  gap: 12px;
+}
+.rnr-item-common-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 11px;
+  border: 1px solid #5c4d3d;
+  border-radius: 5px;
+  background: rgba(42, 36, 30, .38);
+}
+.rnr-item-fields label {
+  color: #e0c18d;
+  font-size: .75rem;
+  line-height: 1.25;
+}
+.rnr-item-fields input,
+.rnr-item-fields select,
+.rnr-item-fields textarea {
+  min-height: 34px;
+  padding: 6px 8px;
+  border-color: #6a5b4b;
+  border-radius: 4px;
+  background: #101318;
+  color: #f6f1e8;
+  font-size: .8rem;
+}
+.rnr-item-fields input:focus,
+.rnr-item-fields select:focus,
+.rnr-item-fields textarea:focus {
+  border-color: #d4af7a;
+  box-shadow: 0 0 0 2px rgba(212, 175, 122, .2);
+  outline: none;
+}
+.rnr-item-fields fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 11px;
+  border: 1px solid #5c4d3d;
+  border-radius: 5px;
+  background: rgba(42, 36, 30, .55);
+}
+.rnr-item-fields fieldset legend {
+  padding: 0 6px;
+  color: #f0cf98;
+  font: 800 .7rem Georgia, serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.rnr-item-description textarea { min-height: 120px; line-height: 1.45; }
+
+/* Larger type and stronger controls in custom dialogs */
+.rnr-roll-mode-dialog,
+.rnr-rest-dialog,
+.rnr-state-point-dialog,
+.rnr-condition-manager,
+.rnr-compendium-dialog,
+.rnr-extra-skill-shop {
+  color: #f1ece3;
+  font-size: .8rem;
+}
+.rnr-roll-mode-dialog label,
+.rnr-rest-dialog label,
+.rnr-state-point-dialog label,
+.rnr-condition-manager label,
+.rnr-compendium-dialog label,
+.rnr-extra-skill-shop label {
+  font-size: .78rem;
+}
+.rnr-roll-mode-dialog input,
+.rnr-rest-dialog input,
+.rnr-state-point-dialog input,
+.rnr-state-point-dialog select,
+.rnr-condition-manager textarea,
+.rnr-compendium-dialog select,
+.rnr-extra-skill-shop select {
+  min-height: 32px;
+  box-sizing: border-box;
+  border: 1px solid #6a5b4b;
+  border-radius: 4px;
+  background: #101318;
+  color: #f6f1e8;
+}
+.rnr-condition-manager textarea { width: 100%; padding: 6px; resize: vertical; }
+.rnr-compendium-dialog,
+.rnr-extra-skill-shop { gap: 11px; }
+.rnr-compendium-note,
+.rnr-shop-empty,
+.rnr-rest-dialog p,
+.rnr-state-point-note { font-size: .76rem; line-height: 1.5; }
+.rnr-compendium-list,
+.rnr-shop-panel { scrollbar-color: #806443 #17191d; }
+.rnr-compendium-row,
+.rnr-shop-row { min-height: 36px; padding: 6px 8px; }
+.rnr-compendium-row strong,
+.rnr-shop-item-name { font-size: .78rem; }
+.rnr-compendium-row small,
+.rnr-shop-item-name small { font-size: .65rem; line-height: 1.3; }
+.rnr-compendium-row button,
+.rnr-shop-buy-btn,
+.rnr-shop-owned button {
+  min-height: 28px;
+  padding: 4px 9px;
+  font-size: .68rem;
+  font-weight: 900;
+}
+.rnr-compendium-row button:hover,
+.rnr-shop-buy-btn:hover,
+.rnr-shop-owned button:hover,
+.rnr-item-create-options button:hover {
+  box-shadow: 0 0 0 2px rgba(201, 168, 118, .2);
+}
+
+@media (max-width: 560px) {
+  .rnr-item-common-grid { grid-template-columns: 1fr; }
+  .rnr-item-fields fieldset { grid-template-columns: 1fr; }
+  .rnr-compendium-filters { grid-template-columns: 1fr; }
+}
+
+/* D&D 5e-inspired inventory workspace */
+.rnr-items-panel {
+  background: linear-gradient(180deg, #1b1e24 0, #14161a 100%);
+}
+.rnr-items-panel > h2 {
+  color: #f3e7d4;
+}
+.rnr-items-panel > h2::after {
+  content: "INVENTORY";
+  margin-left: auto;
+  color: #9f8d78;
+  font: 700 .55rem "Trebuchet MS", sans-serif;
+  letter-spacing: .12em;
+}
+.rnr-inventory-group {
+  margin: 14px 0;
+  overflow: hidden;
+  border: 1px solid #414956;
+  border-radius: 4px;
+  background: #20242b;
+  box-shadow: 0 3px 10px #0006;
+}
+.rnr-inventory-group > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 32px;
+  padding: 0 10px;
+  background: linear-gradient(90deg, #63222a, #3b1d25);
+  border-bottom: 1px solid #a36354;
+}
+.rnr-inventory-group > header h3 {
+  margin: 0;
+  color: #fff2df;
+  font: 800 .78rem Georgia, serif;
+  letter-spacing: .04em;
+  text-transform: none;
+}
+.rnr-inventory-group > header span {
+  color: #d5b99d;
+  font-size: .6rem;
+}
+.rnr-inventory-group .rnr-equip-header {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) minmax(160px, 1fr) 48px minmax(155px, auto);
+  gap: 8px;
+  padding: 5px 9px;
+  border-bottom: 1px solid #3c424c;
+  color: #bcb4a8;
+  font-size: .57rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.rnr-inventory-group .rnr-equip-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) minmax(160px, 1fr) 48px minmax(155px, auto);
+  gap: 8px;
+  align-items: center;
+  min-height: 48px;
+  padding: 4px 9px;
+  border-bottom: 1px solid #343a44;
+  background: #292e36;
+}
+.rnr-inventory-group .rnr-equip-row:nth-child(odd) { background: #242930; }
+.rnr-inventory-group .rnr-equip-row:last-child { border-bottom: 0; }
+.rnr-equip-name {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 6px;
+  color: #f2eee7;
+  font-size: .75rem;
+}
+.rnr-equip-name img {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  object-fit: cover;
+  border: 1px solid #816b52;
+  border-radius: 3px;
+  background: #15171b;
+}
+.rnr-equip-name strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-equip-detail { overflow: hidden; color: #b8b0a4; font-size: .68rem; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-equip-qty { color: #f0cf98; font-size: .75rem; font-weight: 800; text-align: center; }
+.rnr-equip-btns { display: flex; align-items: center; justify-content: flex-end; gap: 4px; }
+.rnr-equip-btns button {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 2px 5px;
+  border: 1px solid #596372;
+  border-radius: 3px;
+  background: #20252d;
+  color: #e3c38e;
+  cursor: pointer;
+  font-size: .65rem;
+}
+.rnr-equip-btns button:hover { border-color: #c9a876; background: #493523; color: #fff3d9; }
+.rnr-equip-empty { padding: 24px 12px; color: #a99a84; text-align: center; }
+
+/* D&D 5e-inspired Biography cards */
+.rnr-bio-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.rnr-bio-card {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #454b55;
+  border-radius: 5px;
+  background: #20242b;
+  box-shadow: 0 2px 8px #0005;
+}
+.rnr-bio-wide-card { grid-column: 1 / -1; }
+.rnr-bio-card h3 {
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #694936;
+  color: #d8b77e;
+  font: 800 .75rem Georgia, serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.rnr-bio-field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+/* Read-only face strip above the editable identity fields. */
+.rnr-bio-summ {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+  margin: 2px 0 10px;
+  padding: 8px 10px;
+  border: 1px solid #49423a;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #1c1b18, #131210);
+}
+.rnr-bio-summ-name { overflow: hidden; color: #eddfc6; font: 700 .92rem Georgia, serif; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-bio-summ-meta { color: #b9a98d; font-size: .64rem; }
+.rnr-bio-summ-meta strong { color: #e0c58f; }
+.rnr-bio-card label { display: grid; gap: 5px; color: #cfc5b7; font-size: .68rem; font-weight: 700; }
+.rnr-bio-card input,
+.rnr-bio-card select,
+.rnr-bio-card textarea { width: 100%; box-sizing: border-box; border: 1px solid #4f5865; border-radius: 3px; background: #12151a; color: #f1ece3; font-size: .78rem; }
+.rnr-bio-card input,
+.rnr-bio-card select { min-height: 32px; padding: 5px 7px; }
+.rnr-bio-text-field textarea { min-height: 86px; padding: 7px; line-height: 1.45; resize: vertical; }
+.rnr-bio-card input:focus,
+.rnr-bio-card select:focus,
+.rnr-bio-card textarea:focus { border-color: #c9a876; box-shadow: 0 0 0 2px rgba(201, 168, 118, .18); outline: none; }
+.rnr-bio-card .rnr-help-text { margin: 10px 0; }
+.rnr-bio-card .rnr-state-point-summary { margin-bottom: 0; }
+.rnr-multi-select { min-height: 94px !important; padding: 5px !important; }
+.rnr-multi-select option:checked { background: #7c3035 linear-gradient(0deg, #7c3035, #7c3035); color: #fff4e3; }
+.rnr-backpack-slot.organ-disabled { border-color: #8c3c42; background: linear-gradient(145deg, rgba(94,28,34,.6), rgba(20,22,26,.95)); }
+.rnr-backpack-slot.organ-disabled .rnr-slot-body { color: #d78d83; }
+
+/* Categorized Create Item menu */
+.rnr-item-create-options {
+  grid-template-columns: repeat(2, minmax(155px, 1fr));
+  min-width: 360px;
+  padding: 9px;
+  gap: 9px;
+}
+.rnr-item-create-options section { display: grid; gap: 4px; }
+.rnr-item-create-options h4 {
+  margin: 0 0 2px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #604b3b;
+  color: #d8b77e;
+  font-size: .62rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.rnr-item-create-options button { text-align: left; font-size: .68rem; }
+
+@media (max-width: 760px) {
+  .rnr-inventory-group .rnr-equip-header { display: none; }
+  .rnr-inventory-group .rnr-equip-row { grid-template-columns: minmax(0, 1fr) 46px auto; }
+  .rnr-equip-detail { grid-column: 1 / 3; grid-row: 2; padding-left: 38px; }
+  .rnr-equip-btns { grid-column: 3; grid-row: 1 / 3; flex-wrap: wrap; }
+  .rnr-bio-layout { grid-template-columns: 1fr; }
+  .rnr-bio-wide-card { grid-column: auto; }
+}
+@media (max-width: 560px) {
+  .rnr-bio-field-grid { grid-template-columns: 1fr; }
+  .rnr-item-create-options { grid-template-columns: 1fr; min-width: 180px; }
+}
+
+/* Inventory toolbar and polished anatomy staging area */
+.rnr-inventory-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  padding: 7px;
+  border: 1px solid #3e4652;
+  border-radius: 4px;
+  background: #171a20;
+}
+.rnr-inventory-search {
+  display: flex !important;
+  flex: 1;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 6px !important;
+  margin: 0 !important;
+  color: #aa9c8a !important;
+  font-size: 1rem !important;
+}
+.rnr-inventory-search input {
+  width: 100%;
+  min-height: 30px;
+  padding: 4px 7px;
+  border: 1px solid #4f5865;
+  border-radius: 3px;
+  background: #101318;
+  color: #f1ece3;
+  font-size: .75rem;
+}
+.rnr-inventory-search input:focus { border-color: #c9a876; outline: none; box-shadow: 0 0 0 2px rgba(201, 168, 118, .18); }
+.rnr-inventory-hint { color: #958a7b; font-size: .62rem; white-space: nowrap; }
+.rnr-anatomy-section > h3 { color: #e0c18d; font-size: .7rem; }
+.rnr-fullbody-equipment {
+  min-height: 410px;
+  border-color: #6b5038;
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, .35), 0 4px 12px #0006;
+}
+.rnr-body-slot {
+  min-height: 82px;
+  border-width: 2px;
+  border-color: #7a6851;
+  background: linear-gradient(145deg, rgba(30, 29, 27, .96), rgba(13, 16, 20, .9));
+}
+.rnr-body-slot:hover { border-color: #c9a876; background: linear-gradient(145deg, rgba(74, 55, 36, .85), rgba(20, 22, 26, .95)); }
+.rnr-body-slot.filled { box-shadow: inset 0 0 12px rgba(201, 168, 118, .12); }
+.rnr-body-slot-icon { text-shadow: 0 0 8px rgba(201, 168, 118, .35); }
+
+@media (max-width: 700px) {
+  .rnr-inventory-toolbar { align-items: stretch; flex-direction: column; }
+  .rnr-inventory-hint { white-space: normal; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RnR — Missing CSS for new HTML templates
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Item sheet ────────────────────────────────────────────── */
+.rnr-item-sheet {
+  min-height: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  background: #17191d;
+  color: #eee7da;
+  font-family: "Roboto Condensed", "Trebuchet MS", sans-serif;
+}
+.rnr-item-header {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #5a4a37;
+}
+.rnr-item-header img {
+  width: 72px; height: 72px;
+  object-fit: cover;
+  border: 1px solid #b18c5b;
+  background: #101114;
+  cursor: pointer;
+}
+.rnr-item-header-info input {
+  width: 100%; box-sizing: border-box;
+  border: 1px solid #424852;
+  background: #15171b;
+  color: #fff;
+  font: 700 1rem Georgia, serif;
+}
+.rnr-item-type-label { margin: 5px 0 0; color: #c9a876; font-size: .65rem; text-transform: uppercase; }
+
+.rnr-item-fields { display: flex; flex-direction: column; gap: 10px; padding-top: 12px; }
+
+.rnr-item-common-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+.rnr-item-common-grid label,
+.rnr-item-fields label:not(.rnr-item-description):not(.rnr-item-checkbox) {
+  display: flex; flex-direction: column; gap: 3px;
+  color: #c9a876; font-size: .68rem; font-weight: 700;
+}
+.rnr-item-fields input,
+.rnr-item-fields select,
+.rnr-item-fields textarea {
+  min-height: 28px; box-sizing: border-box;
+  padding: 3px 6px;
+  border: 1px solid #424852; border-radius: 3px;
+  background: #15171b; color: #eee;
+  font-size: .72rem;
+}
+.rnr-item-fields textarea { min-height: 90px; resize: vertical; }
+
+/* Unified readable theme for all RnR popups */
+.rnr-dialog {
+  border: 1px solid #806443;
+  border-radius: 5px;
+  background: #17191d;
+  color: #eee7da;
+  box-shadow: 0 12px 36px #000b;
+}
+.rnr-dialog .window-header {
+  min-height: 34px;
+  padding: 7px 10px;
+  background: linear-gradient(90deg, #63222a, #3b1d25);
+  border-bottom: 1px solid #a36354;
+  color: #fff2df;
+  font: 800 .82rem Georgia, serif;
+}
+.rnr-dialog .window-content { padding: 12px; background: #1b1e24; color: #eee7da; }
+.rnr-dialog .dialog-buttons { gap: 6px; padding: 8px 10px; border-top: 1px solid #4d4034; background: #17191d; }
+.rnr-dialog .dialog-buttons button {
+  min-height: 30px; border: 1px solid #b99869; border-radius: 3px;
+  background: #9a7647; color: #171719; font-weight: 800; cursor: pointer;
+}
+.rnr-dialog .dialog-buttons button:hover { background: #c09a61; }
+.rnr-dialog input, .rnr-dialog select, .rnr-dialog textarea {
+  border: 1px solid #6a5b4b; border-radius: 4px; background: #101318; color: #f6f1e8;
+}
+.rnr-dialog input:focus, .rnr-dialog select:focus, .rnr-dialog textarea:focus {
+  border-color: #d4af7a; box-shadow: 0 0 0 2px rgba(212,175,122,.2); outline: none;
+}
+.rnr-chat-action { margin-top: 7px; padding: 4px 8px; border: 1px solid #b99869; border-radius: 3px; background: #9a7647; color: #171719; cursor: pointer; font-size: .65rem; font-weight: 800; }
+.rnr-chat-action:disabled { opacity: .6; cursor: default; }
+
+.rnr-item-fieldset {
+  border: 1px solid #4a4030;
+  border-radius: 4px;
+  padding: 8px 10px;
+  background: #1e2027;
+}
+.rnr-item-fieldset legend {
+  padding: 0 6px;
+  color: #c9a876;
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.rnr-item-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+}
+.rnr-item-checkbox {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 6px !important;
+  color: #c9a876;
+  font-size: .68rem;
+}
+.rnr-item-checkbox input[type="checkbox"] { width: 14px; height: 14px; accent-color: #c9a876; }
+
+.rnr-item-description { display: flex; flex-direction: column; gap: 4px; }
+.rnr-item-description textarea { min-height: 100px; resize: vertical; }
+
+/* ── Backpack slot bodies ───────────────────────────────────── */
+.rnr-backpack-slot header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 22px;
+  padding: 3px 6px;
+  background: #111317;
+  color: #e6dfd2;
+  font-size: .58rem;
+  font-weight: 800;
+  gap: 4px;
+}
+.rnr-backpack-slot header > span:first-child { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-slot-btns { display: flex; gap: 3px; flex-shrink: 0; }
+.rnr-slot-btns button {
+  min-width: 20px; padding: 1px 4px;
+  border: 1px solid #5a4a37; border-radius: 2px;
+  background: #26221c; color: #d4af7a;
+  cursor: pointer; font-size: .65rem; line-height: 1.4;
+}
+.rnr-slot-btns button:hover { background: #3a3028; }
+
+.rnr-slot-body {
+  min-height: 48px;
+  padding: 6px 6px;
+  background: #202429;
+  color: #c0b8ac;
+  font-size: .62rem;
+  line-height: 1.4;
+}
+.rnr-slot-body p { margin: 0 0 3px; }
+.rnr-dmg-tag  { display: block; color: #e08060; font-size: .6rem; margin-bottom: 2px; font-style: normal; }
+.rnr-armor-tag{ display: block; color: #70b0e0; font-size: .6rem; margin-bottom: 2px; font-style: normal; }
+
+/* ── Backpack header add buttons ───────────────────────────── */
+.rnr-backpack-add-btns { display: flex; gap: 4px; flex-wrap: wrap; }
+.rnr-backpack-add-btns button {
+  padding: 2px 6px;
+  border: 1px solid #8f7049; border-radius: 3px;
+  background: #2a2218; color: #c9a876;
+  cursor: pointer; font-size: .58rem; font-weight: 800;
+}
+.rnr-backpack-add-btns button:hover { background: #3a3020; }
+
+/* ── Equipment list (backpack tab) ─────────────────────────── */
+.rnr-equipment-list { display: flex; flex-direction: column; }
+.rnr-equip-header {
+  display: grid;
+  grid-template-columns: minmax(0,1.8fr) minmax(0,1.4fr) 40px 90px;
+  gap: 6px;
+  padding: 4px 6px;
+  background: #1a1d22;
+  color: #a99a84;
+  font-size: .58rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.rnr-equip-row {
+  display: grid;
+  grid-template-columns: minmax(0,1.8fr) minmax(0,1.4fr) 40px 90px;
+  gap: 6px;
+  align-items: center;
+  min-height: 32px;
+  padding: 3px 6px;
+  border-bottom: 1px solid #343941;
+  background: #202429;
+}
+.rnr-equip-row:nth-child(odd) { background: #252930; }
+.rnr-equip-empty { padding: 12px 6px; color: #84796c; font-size: .65rem; text-align: center; }
+
+.rnr-equip-name {
+  display: flex; align-items: center; gap: 4px;
+  overflow: hidden; color: #eee; font-size: .72rem;
+  white-space: nowrap; text-overflow: ellipsis;
+}
+.rnr-equip-detail { color: #a99a84; font-size: .62rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-equip-qty    { color: #c9a876; font-size: .65rem; text-align: center; }
+.rnr-equip-btns   { display: flex; gap: 3px; justify-content: flex-end; flex-shrink: 0; }
+.rnr-equip-btns button {
+  min-width: 20px; padding: 1px 4px;
+  border: 1px solid #5a4a37; border-radius: 2px;
+  background: #26221c; color: #d4af7a;
+  cursor: pointer; font-size: .62rem; line-height: 1.4;
+}
+.rnr-equip-btns button:hover { background: #3a3028; }
+
+/* ── Inline roll button inside equipment list ──────────────── */
+.rnr-roll-inline {
+  flex-shrink: 0;
+  width: 20px; height: 20px; padding: 0;
+  border: 1px solid #b99869; border-radius: 3px;
+  background: #9a7647; color: #171719;
+  cursor: pointer; font-size: .7rem; line-height: 1;
+  text-align: center;
+}
+.rnr-roll-inline:hover { background: #b8904f; }
+
+/* ── Skill bonus nudge input ───────────────────────────────── */
+.rnr-skill-line {
+  display: grid;
+  grid-template-columns: minmax(0,1fr) 40px 36px;
+  gap: 4px;
+  align-items: center;
+}
+.rnr-skill-bonus {
+  width: 36px;
+  text-align: center;
+  border: 1px solid #424852 !important;
+  background: #15171b !important;
+  color: #eee !important;
+  font-size: .62rem !important;
+  min-height: 22px !important;
+  padding: 1px 3px !important;
+}
+
+/* ── NPC: item-sheet fieldset inside npc panel ─────────────── */
+.rnr-npc-panel textarea {
+  width: 100%; min-height: 100px;
+  box-sizing: border-box;
+  border: 1px solid #3a5a3a;
+  background: #12171a; color: #eee;
+  resize: vertical; padding: 5px;
+}
+
+/* ── Responsive tweaks ─────────────────────────────────────── */
+@media (max-width: 520px) {
+  .rnr-item-common-grid { grid-template-columns: repeat(2,1fr); }
+  .rnr-item-field-grid  { grid-template-columns: 1fr; }
+  .rnr-equip-header     { display: none; }
+  .rnr-equip-row        { grid-template-columns: minmax(0,1fr) 36px auto; }
+  .rnr-equip-detail     { display: none; }
+}
+
+/* ── In-hand slot body: clickable to roll ───────────────────── */
+.rnr-slot-body {
+  cursor: pointer;
+  transition: background .12s;
+}
+.rnr-slot-body:hover {
+  background: #2a2f35;
+}
+/* When slot is empty it shouldn't show pointer */
+.rnr-backpack-slot:not([data-item-id]) .rnr-slot-body,
+.rnr-backpack-slot[data-item-id=""] .rnr-slot-body,
+.rnr-backpack-slot[data-item-id="undefined"] .rnr-slot-body {
+  cursor: default;
+}
+.rnr-backpack-slot[data-item-id]:not([data-item-id=""]):not([data-item-id="undefined"]) .rnr-slot-body::after {
+  content: "🎲";
+  float: right;
+  opacity: 0;
+  font-size: .65rem;
+  transition: opacity .15s;
+  pointer-events: none;
+}
+.rnr-backpack-slot[data-item-id]:not([data-item-id=""]):not([data-item-id="undefined"]) .rnr-slot-body:hover::after {
+  opacity: .5;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   Wave 2-4 additions
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Chat card: apply buttons ───────────────────────────────── */
+.rnr-card-actions {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  padding: 8px 10px;
+  border-top: 1px solid #3a4050;
+  background: #14171d;
+}
+.rnr-card-btn {
+  flex: 1; min-width: 100px;
+  padding: 5px 10px;
+  border: 1px solid #b99869; border-radius: 3px;
+  background: #9a7647; color: #171719;
+  cursor: pointer; font-size: .65rem; font-weight: 800;
+  text-align: center;
+}
+.rnr-card-btn:hover   { background: #b8904f; }
+.rnr-card-btn:disabled{ opacity: .5; cursor: default; }
+.rnr-card-btn.rnr-btn-heal {
+  background: #2a5a2a; color: #c9e8a0;
+  border-color: #6a9a6a;
+}
+.rnr-card-btn.rnr-btn-heal:hover { background: #3a6a3a; }
+.rnr-card-btn.rnr-btn-reload {
+  background: #4a3a6a; color: #d6c9e8;
+  border-color: #8a7aa9;
+}
+.rnr-card-btn.rnr-btn-reload:hover { background: #5a4a7a; }
+
+/* Ammunition picker — one row per stack, with its count and caliber. */
+.rnr-ammo-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.rnr-ammo-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid #4a4136;
+  border-radius: 3px;
+  background: #1f1d1a;
+  cursor: pointer;
+}
+.rnr-ammo-option:hover { border-color: #b99869; }
+.rnr-ammo-option input { flex: 0 0 auto; }
+.rnr-ammo-option-name {
+  flex: 1 1 auto;
+  color: #eee7da;
+  font-size: .78rem;
+  font-weight: 700;
+}
+.rnr-ammo-option-meta {
+  flex: 0 0 auto;
+  color: #9a9187;
+  font-size: .68rem;
+  font-variant-numeric: tabular-nums;
+}
+.rnr-ammo-amount {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #eee7da;
+  font-size: .75rem;
+}
+.rnr-ammo-amount input {
+  width: 70px;
+  padding: 4px 6px;
+  border: 1px solid #4a4136;
+  border-radius: 3px;
+  background: #14130f;
+  color: #eee7da;
+  font-size: .78rem;
+}
+
+.rnr-card-apply-results {
+  padding: 6px 10px;
+  color: #c0b8ac; font-size: .65rem; line-height: 1.5;
+}
+.rnr-card-range  { padding: 4px 10px; color: #a99a84; font-size: .62rem; border-top: 1px solid #3a4050; }
+.rnr-card-target { padding: 4px 10px; color: #c9a876; font-size: .65rem; font-weight: 700; }
+
+/* ── Damage type tags ────────────────────────────────────────── */
+.rnr-dmg-tag        { padding: 1px 5px; border-radius: 3px; font-size: .58rem; font-weight: 900; margin-left: 4px; }
+.rnr-dmg-tag.immune { background: #2a1a2a; color: #b070d0; }
+.rnr-dmg-tag.resist { background: #1a2a1a; color: #70c070; }
+.rnr-dmg-tag.vuln   { background: #2a1a1a; color: #c07070; }
+
+/* ── GM dialog ───────────────────────────────────────────────── */
+.rnr-gm-dialog { padding: 8px 4px; }
+.rnr-gm-dialog label { display: flex; flex-direction: column; gap: 4px; margin: 6px 0; color: #c9a876; font-size: .68rem; font-weight: 700; }
+.rnr-gm-dialog input, .rnr-gm-dialog select, .rnr-gm-dialog textarea {
+  min-height: 26px; padding: 3px 6px; border: 1px solid #424852; border-radius: 3px;
+  background: #15171b; color: #eee; font-size: .72rem;
+}
+.rnr-gm-dialog .rnr-gm-current { color: #c9a876; font-size: .72rem; margin-bottom: 6px; }
+.rnr-gm-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.rnr-gm-check { flex-direction: row !important; align-items: center; gap: 8px !important; }
+
+/* ── Active Effects panel ────────────────────────────────────── */
+.rnr-effects-panel { padding: 8px; }
+.rnr-effect-row {
+  display: grid; grid-template-columns: 26px minmax(0,1fr) 80px auto;
+  gap: 6px; align-items: center; min-height: 28px;
+  padding: 3px 5px; border-bottom: 1px solid #343941;
+}
+.rnr-effect-row.disabled { opacity: .4; }
+.rnr-effect-row img { width: 20px; height: 20px; object-fit: cover; border: 1px solid #5a4a37; border-radius: 2px; }
+.rnr-effect-name  { color: #eee; font-size: .68rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-effect-dur   { color: #9a8870; font-size: .58rem; text-align: right; }
+.rnr-effect-btns  { display: flex; gap: 3px; }
+.rnr-effect-btns button { width: 18px; height: 18px; padding: 0; border: 1px solid #5a4a37; border-radius: 2px; background: #26221c; color: #d4af7a; cursor: pointer; font-size: .62rem; }
+
+/* ── Active Effects dialog ───────────────────────────────────── */
+.rnr-ae-dialog { padding: 6px 4px; }
+.rnr-ae-dialog label { display: flex; flex-direction: column; gap: 3px; margin: 6px 0; color: #c9a876; font-size: .65rem; font-weight: 700; }
+.rnr-ae-dialog input, .rnr-ae-dialog select, .rnr-ae-dialog textarea {
+  min-height: 26px; padding: 3px 6px; border: 1px solid #424852; border-radius: 3px;
+  background: #15171b; color: #eee; font-size: .7rem;
+}
+.rnr-ae-dialog h4 { margin: 8px 0 4px; color: #c9a876; font-size: .68rem; text-transform: uppercase; }
+
+/* ── Inventory weight bar ────────────────────────────────────── */
+.rnr-weight-bar {
+  position: relative; height: 8px; border: 1px solid #5a4a37; border-radius: 4px;
+  background: #1d2128; overflow: hidden; margin: 6px 0;
+}
+.rnr-weight-bar-fill {
+  height: 100%; border-radius: 4px;
+  background: linear-gradient(90deg, #4caf82, #c9a876);
+  transition: width .3s ease;
+}
+.rnr-weight-bar-fill.overweight { background: #c04040; }
+.rnr-weight-label {
+  display: flex; justify-content: space-between;
+  color: #9a8870; font-size: .58rem; margin-top: 2px;
+}
+
+/* ── Level history tooltip ───────────────────────────────────── */
+.rnr-level-history { font-size: .6rem; color: #9a8870; }
+
+/* ── Speed display (read-only) ───────────────────────────────── */
+.rnr-speed-bonus { color: #4caf82; font-size: .58rem; margin-left: 3px; }
+
+
+/* ── Feature workspace, favorites, and readable item creation ── */
+.rnr-create-item-controls {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  padding: 10px;
+  min-width: 260px;
+  background: #f8f3ed;
+  border: 2px solid #171717;
+}
+.rnr-create-item-controls label { flex: 1; display: grid; gap: 4px; font-size: .7rem; font-weight: 800; text-transform: uppercase; }
+.rnr-create-item-controls select { min-height: 32px; border: 2px solid #171717; background: #fff; color: #171717; }
+.rnr-create-item-controls button { min-height: 32px; padding: 0 12px; border: 2px solid #171717; background: #171717; color: #fff; font-weight: 800; cursor: pointer; }
+.rnr-favorite-row { display: flex; align-items: center; gap: 9px; border: 2px solid #171717; background: rgba(255,255,255,.52); padding: 8px 10px; margin: 5px 0; }
+.rnr-favorite-row img { width: 30px; height: 30px; object-fit: cover; border: 1px solid #171717; }
+.rnr-favorite-row strong { display: block; }
+.rnr-favorite-row button { border: 1px solid #777; background: #fff; color: #171717; min-width: 28px; min-height: 26px; cursor: pointer; }
+.rnr-favorites { border: 3px solid #111; background: linear-gradient(180deg,#f8f1e8,#e4d9cc); padding: 10px; box-shadow: 4px 4px 0 rgba(0,0,0,.12); }
+.rnr-favorites h3 { margin: 0 0 8px; font-size: .8rem; }
+.rnr-favorites h3 small { float: right; font-weight: 500; opacity: .65; }
+.rnr-favorite-row { margin: 4px 0; padding: 5px; }
+.rnr-favorite-row strong { flex: 1; font-size: .75rem; }
+.rnr-favorites-empty { font-size: .75rem; opacity: .7; padding: 7px 0; }
+.rnr-damage-error { color: #8d1e1e; font-weight: 700; }
+.rnr-tabs .item[data-tab="features"] { background: #efe0b8; }
+.rnr-tabs .item[data-tab="features"].active { background: #111; color: #fff; }
+
+
+/* ============================================================
+   RnR UI refinement — full-width tabs and aligned anatomy
+   ============================================================ */
+
+/* Each tab is a workspace, not a narrow column inside the Main layout. */
+.rnr-tabs { align-items: stretch; }
+.rnr-tabs .item {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 44px;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.rnr-body[data-active-tab="backpack"],
+.rnr-body[data-active-tab="features"],
+.rnr-body[data-active-tab="biography"] {
+  display: block;
+  min-height: 520px;
+  padding: 14px 16px 28px;
+}
+.rnr-body[data-active-tab="backpack"] .rnr-right-column,
+.rnr-body[data-active-tab="features"] .rnr-right-column,
+.rnr-body[data-active-tab="biography"] .rnr-right-column {
+  display: block;
+  width: 100%;
+}
+.rnr-body[data-active-tab="backpack"] .rnr-items-panel,
+.rnr-body[data-active-tab="features"] .rnr-feature-panel,
+.rnr-body[data-active-tab="biography"] .rnr-biography-panel {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 470px;
+  padding: 16px;
+}
+.rnr-body[data-active-tab="backpack"] .rnr-panel h2,
+.rnr-body[data-active-tab="features"] .rnr-panel h2,
+.rnr-body[data-active-tab="biography"] .rnr-panel h2 {
+  min-height: 34px;
+  align-items: center;
+  font-size: .9rem;
+}
+
+/* Feature cards: readable horizontal cards instead of a squeezed sidebar. */
+
+/* Biography: balanced cards with readable fields. */
+.rnr-bio-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.rnr-bio-card {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #454b55;
+  border-radius: 5px;
+  background: #191c21;
+}
+.rnr-bio-card h3 { margin: 0 0 10px; color: #d4af7a; font: 800 .76rem Georgia, serif; letter-spacing: .08em; text-transform: uppercase; }
+.rnr-bio-field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.rnr-bio-card label { display: grid; gap: 5px; color: #b9b0a3; font-size: .62rem; font-weight: 800; text-transform: uppercase; }
+.rnr-bio-card input, .rnr-bio-card textarea, .rnr-bio-card select { width: 100%; box-sizing: border-box; padding: 7px; border: 1px solid #424852; border-radius: 3px; background: #111419; color: #eee; font-size: .72rem; }
+.rnr-bio-card textarea { min-height: 104px; resize: vertical; }
+.rnr-bio-wide-card { grid-column: 1 / -1; }
+.rnr-state-point-summary { margin-top: 10px; padding: 8px; border: 1px solid #6b5237; background: #29231d; color: #c9a876; font-size: .68rem; }
+.rnr-state-point-summary strong { float: right; color: #f0d39b; }
+
+/* Backpack full-width table and usable action columns. */
+.rnr-body[data-active-tab="backpack"] .rnr-equip-row { grid-template-columns: minmax(180px, 1.5fr) minmax(120px, 1fr) 48px minmax(170px, auto); }
+.rnr-body[data-active-tab="backpack"] .rnr-inventory-group { margin-bottom: 14px; }
+.rnr-body[data-active-tab="backpack"] .rnr-backpack-section { margin-top: 14px; }
+
+
+/* ============================================================
+   Final fit pass — compact dialogs and original anatomy layout
+   ============================================================ */
+
+/* Foundry dialogs should size to their content instead of opening as a
+   tiny clipped window with an unnecessary inner scrollbar. */
+.rnr-dialog {
+  min-height: 0 !important;
+  max-width: min(560px, calc(100vw - 24px)) !important;
+  max-height: calc(100vh - 24px) !important;
+}
+.rnr-dialog .window-content {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding: 10px 12px 0 !important;
+}
+.rnr-dialog .dialog-content,
+.rnr-dialog-content {
+  overflow: visible !important;
+  min-height: 0 !important;
+}
+.rnr-dialog .dialog-buttons {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+  padding: 0 10px 10px;
+}
+.rnr-dialog .dialog-button {
+  min-height: 30px !important;
+  padding: 5px 8px !important;
+  border: 1px solid #b99869 !important;
+  border-radius: 3px !important;
+  background: #9a7647 !important;
+  color: #171719 !important;
+  font-weight: 800 !important;
+}
+.rnr-roll-mode-dialog { padding: 6px 2px 2px; }
+.rnr-roll-mode-label { margin: 0 0 8px; }
+.rnr-roll-mode-row { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 0 0 8px; }
+.rnr-roll-mode-row label { white-space: nowrap; }
+.rnr-roll-mode-hint { margin: 0; line-height: 1.3; }
+
+/* Restore the former anatomy presentation: three columns, body silhouette in
+   the centre, and equipment slots around it. */
+.rnr-fullbody-equipment {
+  grid-template-columns: minmax(100px, 1fr) 150px minmax(100px, 1fr) !important;
+  grid-template-rows: repeat(4, minmax(74px, 1fr)) !important;
+  min-height: 340px !important;
+  padding: 14px !important;
+  gap: 8px !important;
+  background: radial-gradient(circle at 50% 44%, #3a3027 0, #1d2025 42%, #15171b 76%) !important;
+}
+.rnr-fullbody-equipment .rnr-anatomy-silhouette {
+  grid-column: 2 !important;
+  grid-row: 1 / 5 !important;
+  min-height: 300px !important;
+  opacity: .9 !important;
+  pointer-events: none;
+}
+.rnr-fullbody-equipment .rnr-body-slot {
+  min-height: 70px !important;
+  padding: 7px 5px !important;
+  background: rgba(14, 16, 19, .82) !important;
+}
+.rnr-fullbody-equipment .rnr-body-slot.slot-head  { grid-column: 1 !important; grid-row: 1 !important; }
+.rnr-fullbody-equipment .rnr-body-slot.slot-neck  { grid-column: 3 !important; grid-row: 1 !important; }
+.rnr-fullbody-equipment .rnr-body-slot.slot-back  { grid-column: 1 !important; grid-row: 2 !important; }
+.rnr-fullbody-equipment .rnr-body-slot.slot-torso { grid-column: 3 !important; grid-row: 2 !important; }
+.rnr-fullbody-equipment .rnr-body-slot.slot-hands { grid-column: 1 !important; grid-row: 3 !important; }
+.rnr-fullbody-equipment .rnr-body-slot.slot-waist { grid-column: 3 !important; grid-row: 3 !important; }
+.rnr-fullbody-equipment .rnr-body-slot.slot-feet  { grid-column: 3 !important; grid-row: 4 !important; }
+.rnr-fullbody-equipment .rnr-body-slot.slot-ring  { grid-column: 1 !important; grid-row: 4 !important; }
+@media (max-width: 700px) {
+  .rnr-fullbody-equipment { grid-template-columns: 1fr 100px 1fr !important; min-height: 390px !important; }
+  .rnr-fullbody-equipment .rnr-anatomy-silhouette { min-height: 350px !important; }
+}
+
+/* Keep every workspace inside the sheet viewport. */
+.rnr-sheet { box-sizing: border-box; max-width: 100%; }
+.rnr-panel,
+.rnr-bio-card,
+.rnr-body-slot { box-sizing: border-box; }
+.rnr-equip-btns { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 3px; }
+
+
+/* Minimal UI pass */
+.rnr-sheet .rnr-panel,
+.rnr-sheet .rnr-bio-card,
+.rnr-sheet .rnr-backpack-slot,
+.rnr-sheet .rnr-fullbody-equipment {   border-color: #343a44;   border-radius: 4px;   box-shadow: none; }
+.rnr-sheet .rnr-panel { padding: 12px; }
+.rnr-sheet .rnr-tabs { gap: 3px; padding-top: 6px; border-bottom-color: #343a44; }
+.rnr-sheet .rnr-tabs .item { min-height: 36px; border-radius: 3px 3px 0 0; font-size: .62rem; }
+.rnr-sheet .rnr-bio-layout { gap: 10px; }
+.rnr-sheet .rnr-bio-card { padding: 10px; }
+.rnr-sheet .rnr-bio-card textarea { min-height: 82px; }
+.rnr-sheet .rnr-multi-select { min-height: 96px; padding: 4px; }
+.rnr-sheet .rnr-multi-select option { padding: 3px 5px; }
+.rnr-sheet .rnr-equip-row { min-height: 34px; }
+.rnr-sheet .rnr-equip-btns button,
+.rnr-sheet .rnr-equip-btns select { min-height: 24px; }
+
+
+.rnr-title-block > small { display: block; overflow: hidden; color: #b99869; font-size: .58rem; letter-spacing: .04em; text-overflow: ellipsis; white-space: nowrap; }
+
+
+/* ============================================================
+   RnR UX/UI refresh — clean, compact, responsive workspace
+   Anatomy is intentionally removed from the sheet; wearable items
+   are equipped from the Backpack list instead.
+   ============================================================ */
+.rnr.sheet.actor {
+  min-width: 0;
+  min-height: 0;
+  background: #11141a;
+  color: #e8eaf0;
+}
+.rnr.sheet.actor .window-content { background: #11141a; }
+.rnr-sheet {
+  min-height: 0;
+  max-height: none;
+  height: 100%;
+  overflow: auto;
+  background: #171a21;
+  color: #e8eaf0;
+  font-size: 13px;
+}
+.rnr-sheet-inner { padding: 14px; }
+.rnr-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: auto minmax(180px, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #20242d;
+  border: 1px solid #343a47;
+  border-radius: 8px;
+  box-shadow: 0 5px 18px rgba(0,0,0,.25);
+}
+.rnr-title-block h1 { margin: 0 0 3px; font-size: .68rem; letter-spacing: .14em; color: #aeb5c2; }
+.rnr-title-block input[name="name"] { width: 100%; min-width: 0; border: 0; border-bottom: 2px solid #b8955f; border-radius: 0; background: transparent; color: #fff; font-size: 1.25rem; font-weight: 700; }
+.rnr-title-block input[name="name"]:focus { outline: 0; border-bottom-color: #e4c78b; }
+.rnr-level-orb { display: grid; place-items: center; min-width: 48px; padding: 6px; border: 1px solid #806b4d; border-radius: 50%; background: #2b241c; color: #e4c78b; }
+.rnr-xp { min-width: 150px; color: #aeb5c2; font-size: .72rem; }
+.rnr-xp input { display: none; }
+.rnr-xp-bar { height: 5px; margin-top: 5px; overflow: hidden; border-radius: 5px; background: #343a47; }
+.rnr-xp-bar i { display: block; height: 100%; background: #b8955f; }
+.rnr-abilities { display: grid; grid-template-columns: repeat(9, minmax(72px, 1fr)); gap: 6px; margin: 12px 0; }
+.rnr-ability-card { padding: 8px 5px; text-align: center; border: 1px solid #343a47; border-radius: 6px; background: #20242d; }
+.rnr-ability-name, .rnr-skill-roll, .rnr-save-roll { width: 100%; border: 0; background: transparent; color: #d8dce5; cursor: pointer; }
+.rnr-ability-name { font-size: .65rem; font-weight: 700; text-transform: uppercase; }
+.rnr-ability-card strong { display: block; margin: 3px 0; color: #e4c78b; font-size: 1.15rem; }
+.rnr-passive { color: #8f98a8; font-size: .68rem; }
+.rnr-tabs { gap: 5px; margin: 0 0 12px; padding: 0; border: 0; }
+.rnr-tabs .item { flex: 1; min-height: 38px; padding: 9px 12px; border: 1px solid #343a47; border-radius: 6px; background: #20242d; color: #9da5b3; font-size: .68rem; letter-spacing: .08em; }
+.rnr-tabs .item:hover { background: #2a303b; color: #fff; }
+.rnr-tabs .item.active { border-color: #b8955f; background: #332a20; color: #e4c78b; }
+.rnr-body { display: grid; grid-template-columns: minmax(180px, .72fr) minmax(300px, 1.35fr) minmax(230px, .95fr); gap: 12px; align-items: start; }
+.rnr-sidebar, .rnr-main-column, .rnr-right-column { min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.rnr-panel, .rnr-portrait-card, .rnr-vital-card, .rnr-favorites { border: 1px solid #343a47; border-radius: 7px; background: #1d2129; box-shadow: 0 3px 12px rgba(0,0,0,.16); }
+.rnr-panel { padding: 12px; }
+.rnr-panel h2, .rnr-panel h3 { margin: 0 0 10px; color: #e4c78b; font-size: .73rem; letter-spacing: .1em; }
+.rnr-panel h2 small, .rnr-panel h3 small { color: #8992a1; font-size: .62rem; letter-spacing: .03em; }
+.rnr-skills-panel, .rnr-items-panel, .rnr-feature-panel, .rnr-biography-panel { grid-column: 1 / -1; }
+.rnr-skill-group { margin-bottom: 10px; }
+.rnr-skill-group h3 { padding-bottom: 5px; border-bottom: 1px solid #343a47; color: #aeb5c2; font-size: .65rem; }
+.rnr-skill-line, .rnr-save-line { display: grid; grid-template-columns: minmax(0, 1fr) 34px 74px; gap: 7px; align-items: center; min-height: 30px; border-bottom: 1px solid #2b303a; }
+.rnr-skill-line:hover, .rnr-save-line:hover { background: #252a34; }
+.rnr-skill-roll { text-align: left; font-size: .78rem; }
+.rnr-skill-roll small { margin-left: 4px; color: #8f98a8; }
+.rnr-skill-line > strong, .rnr-save-line > strong { color: #e4c78b; text-align: right; }
+.rnr-inventory-toolbar { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.rnr-inventory-search { flex: 1; display: flex; align-items: center; gap: 7px; padding: 6px 9px; border: 1px solid #3b4351; border-radius: 5px; background: #14171d; color: #b8955f; }
+.rnr-inventory-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: #fff; }
+.rnr-inventory-hint { color: #8992a1; font-size: .68rem; }
+.rnr-backpack-section { margin-top: 12px; }
+.rnr-backpack-section > h3 { margin: 0 0 7px; color: #aeb5c2; font-size: .66rem; letter-spacing: .1em; }
+.rnr-backpack-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.rnr-backpack-slot { min-width: 0; padding: 9px; border: 1px solid #343a47; border-radius: 6px; background: #20242d; }
+.rnr-equip-header, .rnr-equip-row { display: grid; grid-template-columns: minmax(145px, 1.5fr) minmax(100px, 1fr) 45px minmax(150px, 1.2fr); gap: 8px; align-items: center; }
+.rnr-equip-header { padding: 7px 8px; color: #8992a1; font-size: .63rem; text-transform: uppercase; }
+.rnr-equip-row { min-height: 44px; padding: 6px 8px; border-top: 1px solid #2e343f; }
+.rnr-equip-row:hover { background: #252a34; }
+.rnr-equip-name { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.rnr-equip-name img { width: 28px; height: 28px; border: 1px solid #4b5361; border-radius: 4px; object-fit: cover; }
+.rnr-equip-name strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-equip-detail, .rnr-equip-qty { color: #aeb5c2; font-size: .72rem; }
+.rnr-equip-btns { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 3px; }
+.rnr-equip-btns button, .rnr-equip-btns select, .rnr-slot-btns button { min-height: 24px; padding: 2px 6px; border: 1px solid #46505f; border-radius: 4px; background: #292f39; color: #d8dce5; font-size: .68rem; }
+.rnr-equip-btns button:hover, .rnr-equip-btns select:hover, .rnr-slot-btns button:hover { border-color: #b8955f; color: #fff; }
+.rnr-bio-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; }
+.rnr-inventory-group, .rnr-bio-card { min-width: 0; padding: 10px; border: 1px solid #343a47; border-radius: 6px; background: #20242d; }
+.rnr-bio-field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.rnr-bio-card label { display: flex; flex-direction: column; gap: 4px; color: #aeb5c2; font-size: .7rem; }
+.rnr-bio-card input, .rnr-bio-card textarea, .rnr-bio-card select { border: 1px solid #3b4351; border-radius: 4px; background: #14171d; color: #e8eaf0; }
+.rnr-bio-card textarea { color: #e8eaf0 !important; caret-color: #f3d38a; opacity: 1; }
+.rnr-bio-card input { min-height: 30px; padding: 5px 7px; }
+.rnr-bio-card textarea { min-height: 85px; padding: 7px; resize: vertical; }
+.rnr-item-create-menu summary { cursor: pointer; color: #e4c78b; font-size: .7rem; }
+.rnr-create-item-controls { display: flex; gap: 7px; align-items: end; margin-top: 8px; padding: 8px; border: 1px solid #343a47; border-radius: 5px; background: #171a21; }
+.rnr-create-item-controls label { display: flex; flex-direction: column; gap: 3px; color: #aeb5c2; font-size: .68rem; }
+.rnr-create-item-controls select { min-height: 28px; }
+@media (max-width: 980px) {
+  .rnr-abilities { grid-template-columns: repeat(5, minmax(70px, 1fr)); }
+  .rnr-body { grid-template-columns: 1fr 1fr; }
+  .rnr-main-column { grid-column: 1 / -1; }
+  .rnr-right-column { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .rnr-sheet-inner { padding: 8px; }
+  .rnr-topbar { grid-template-columns: auto 1fr auto; gap: 8px; }
+  .rnr-xp { grid-column: 2 / -1; }
+  .rnr-abilities { grid-template-columns: repeat(3, 1fr); }
+  .rnr-body, .rnr-backpack-grid { grid-template-columns: 1fr; }
+  .rnr-equip-header { display: none; }
+  .rnr-equip-row { grid-template-columns: 1fr auto; gap: 5px; }
+  .rnr-equip-detail { grid-column: 1; }
+  .rnr-equip-qty { display: none; }
+  .rnr-equip-btns { grid-column: 2; grid-row: 1 / span 2; }
+  .rnr-inventory-hint { display: none; }
+}
+
+
+/* ============================================================
+   Unified tab theme and deterministic tab visibility
+   ============================================================ */
+/* The colour tokens themselves live in styles/themes/_tokens.css. Only the
+   surface binding belongs here; redefining --rnr-* in this file would
+   out-rank the setting themes and make them all look identical. */
+.rnr-sheet {
+  background: var(--rnr-bg);
+  color: var(--rnr-text);
+}
+.rnr-sheet .rnr-tabs { background: var(--rnr-bg); border-bottom: 1px solid var(--rnr-border); }
+.rnr-sheet .rnr-tabs .item,
+.rnr-sheet .rnr-tabs .item.active { border-color: var(--rnr-border); }
+.rnr-sheet .rnr-tabs .item { background: var(--rnr-surface); color: var(--rnr-muted); }
+.rnr-sheet .rnr-tabs .item:hover,
+.rnr-sheet .rnr-tabs .item:focus-visible { background: var(--rnr-surface-2); color: var(--rnr-text); outline-color: var(--rnr-accent); }
+.rnr-sheet .rnr-tabs .item.active { background: var(--rnr-accent-soft); color: var(--rnr-accent-hover); border-color: var(--rnr-accent); box-shadow: inset 0 -2px 0 var(--rnr-accent); }
+.rnr-sheet .rnr-panel,
+.rnr-sheet .rnr-portrait-card,
+.rnr-sheet .rnr-vital-card,
+.rnr-sheet .rnr-favorites,
+.rnr-sheet .rnr-backpack-slot,
+.rnr-sheet .rnr-inventory-group,
+.rnr-sheet .rnr-bio-card { background: var(--rnr-surface); border-color: var(--rnr-border); color: var(--rnr-text); }
+.rnr-sheet .rnr-panel h2,
+.rnr-sheet .rnr-panel h3,
+.rnr-sheet .rnr-backpack-section > h3 { color: var(--rnr-accent-hover); }
+.rnr-sheet .rnr-panel h2 small,
+.rnr-sheet .rnr-panel h3 small,
+.rnr-sheet .rnr-inventory-hint,
+.rnr-sheet .rnr-equip-detail,
+.rnr-sheet .rnr-passive { color: var(--rnr-muted); }
+.rnr-sheet button:not(.item),
+.rnr-sheet select,
+.rnr-sheet input,
+.rnr-sheet textarea { font-family: inherit; }
+.rnr-sheet button:not(.item):hover { border-color: var(--rnr-accent); }
+
+/* One source of truth for which workspace is visible. */
+.rnr-sheet .rnr-body[data-active-tab="main"] { display: grid !important; }
+.rnr-sheet .rnr-body[data-active-tab="main"] .rnr-sidebar,
+.rnr-sheet .rnr-body[data-active-tab="main"] .rnr-main-column,
+.rnr-sheet .rnr-body[data-active-tab="main"] .rnr-right-column { display: flex !important; }
+.rnr-sheet .rnr-body[data-active-tab="main"] .rnr-right-column > .rnr-items-panel,
+.rnr-sheet .rnr-body[data-active-tab="main"] .rnr-right-column > .rnr-feature-panel,
+.rnr-sheet .rnr-body[data-active-tab="main"] .rnr-right-column > .rnr-biography-panel { display: none !important; }
+.rnr-sheet .rnr-body[data-active-tab="backpack"],
+.rnr-sheet .rnr-body[data-active-tab="features"],
+.rnr-sheet .rnr-body[data-active-tab="biography"] { display: block !important; padding: 14px 18px 24px; }
+.rnr-sheet .rnr-body[data-active-tab="backpack"] .rnr-sidebar,
+.rnr-sheet .rnr-body[data-active-tab="backpack"] .rnr-main-column,
+.rnr-sheet .rnr-body[data-active-tab="features"] .rnr-sidebar,
+.rnr-sheet .rnr-body[data-active-tab="features"] .rnr-main-column,
+.rnr-sheet .rnr-body[data-active-tab="biography"] .rnr-sidebar,
+.rnr-sheet .rnr-body[data-active-tab="biography"] .rnr-main-column { display: none !important; }
+.rnr-sheet .rnr-body[data-active-tab="backpack"] .rnr-right-column,
+.rnr-sheet .rnr-body[data-active-tab="features"] .rnr-right-column,
+.rnr-sheet .rnr-body[data-active-tab="biography"] .rnr-right-column { display: block !important; width: 100% !important; }
+.rnr-sheet .rnr-body[data-active-tab="backpack"] .rnr-right-column > .rnr-panel:not(.rnr-items-panel),
+.rnr-sheet .rnr-body[data-active-tab="features"] .rnr-right-column > .rnr-panel:not(.rnr-feature-panel),
+.rnr-sheet .rnr-body[data-active-tab="biography"] .rnr-right-column > .rnr-panel:not(.rnr-biography-panel) { display: none !important; }
+.rnr-sheet .rnr-body[data-active-tab="backpack"] .rnr-items-panel,
+.rnr-sheet .rnr-body[data-active-tab="features"] .rnr-feature-panel,
+.rnr-sheet .rnr-body[data-active-tab="biography"] .rnr-biography-panel { display: block !important; width: 100%; min-height: 420px; box-sizing: border-box; }
+.rnr-sheet .rnr-body[data-active-tab="backpack"] .rnr-items-panel > h2,
+.rnr-sheet .rnr-body[data-active-tab="features"] .rnr-feature-panel > h2,
+.rnr-sheet .rnr-body[data-active-tab="biography"] .rnr-biography-panel > h2 { color: var(--rnr-accent-hover); border-bottom-color: var(--rnr-border); }
+/* The wearable body-slot grid, hand slots and backpack list are all live UI.
+   An earlier revision hid .rnr-anatomy-section / .rnr-fullbody-equipment /
+   .rnr-body-slot here; the first two no longer exist and the third is the
+   wearable grid, so equipping gear was impossible. Nothing is hidden now. */
+@media (max-width: 980px) {
+  .rnr-sheet .rnr-body[data-active-tab="main"] { display: block !important; }
+  .rnr-sheet .rnr-body[data-active-tab="main"] .rnr-sidebar,
+  .rnr-sheet .rnr-body[data-active-tab="main"] .rnr-main-column,
+  .rnr-sheet .rnr-body[data-active-tab="main"] .rnr-right-column { display: flex !important; margin-bottom: 12px; }
+}
+
+
+/* ============================================================
+   Progression, Backpack and Biography refinement
+   ============================================================ */
+.rnr-global-create-menu { position: relative; }
+.rnr-global-create-menu summary {
+  list-style: none;
+  min-height: 28px;
+  padding: 5px 8px;
+  border: 1px solid var(--rnr-border);
+  border-radius: 4px;
+  background: var(--rnr-surface-2);
+  color: var(--rnr-accent-hover);
+  cursor: pointer;
+  font-size: .67rem;
+  font-weight: 700;
+}
+.rnr-global-create-menu summary::-webkit-details-marker { display: none; }
+.rnr-global-create-menu[open] summary { border-color: var(--rnr-accent); background: var(--rnr-accent-soft); }
+.rnr-global-create-menu .rnr-create-item-controls {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 30;
+  display: grid;
+  min-width: 210px;
+  gap: 7px;
+  padding: 9px;
+  border: 1px solid var(--rnr-border);
+  border-radius: 6px;
+  background: var(--rnr-surface);
+  box-shadow: 0 10px 24px #0009;
+}
+.rnr-global-create-menu .rnr-create-item-controls label { display: grid; gap: 4px; color: var(--rnr-muted); font-size: .65rem; }
+.rnr-global-create-menu .rnr-create-item-controls select { min-height: 30px; background: #14171d; color: var(--rnr-text); }
+.rnr-global-create-menu .rnr-create-item-controls button { min-height: 30px; border: 1px solid var(--rnr-accent); border-radius: 4px; background: var(--rnr-accent); color: #171719; font-weight: 700; }
+.rnr-save-line { grid-template-columns: minmax(0, 1fr) 44px; min-height: 38px; }
+.rnr-save-roll { text-align: left; color: var(--rnr-text); font-size: .8rem; font-weight: 600; }
+.rnr-save-line > strong { font-size: .9rem; }
+.rnr-items-panel > h2 { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.rnr-items-panel > h2 small { color: var(--rnr-muted); font-size: .58rem; font-weight: 500; letter-spacing: .05em; }
+.rnr-items-panel .rnr-inventory-toolbar { margin-bottom: 16px; border-color: var(--rnr-border); background: #191d25; }
+.rnr-items-panel .rnr-inventory-group { margin: 10px 0; border-color: var(--rnr-border); background: var(--rnr-surface); box-shadow: none; }
+.rnr-items-panel .rnr-inventory-group > header { min-height: 38px; padding: 0 12px; background: var(--rnr-surface-2); border-bottom: 1px solid var(--rnr-border); }
+.rnr-items-panel .rnr-inventory-group > header h3 { color: var(--rnr-accent-hover); font-family: inherit; font-size: .7rem; letter-spacing: .08em; }
+.rnr-items-panel .rnr-inventory-group > header span { color: var(--rnr-muted); }
+.rnr-items-panel .rnr-inventory-group .rnr-equip-row { min-height: 54px; background: var(--rnr-surface); border-bottom-color: var(--rnr-border-soft); }
+.rnr-items-panel .rnr-inventory-group .rnr-equip-row:nth-child(odd) { background: #222731; }
+.rnr-items-panel .rnr-inventory-group .rnr-equip-row:hover { background: #2b323e; }
+.rnr-items-panel .rnr-equip-name { color: var(--rnr-text); }
+.rnr-items-panel .rnr-equip-detail { color: var(--rnr-muted); }
+.rnr-items-panel .rnr-equip-btns button,
+.rnr-items-panel .rnr-equip-btns select { border-color: var(--rnr-border); background: #292f39; color: var(--rnr-accent-hover); }
+.rnr-biography-panel > h2 { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid var(--rnr-border); }
+.rnr-biography-panel .rnr-bio-layout { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px; }
+.rnr-biography-panel .rnr-bio-card { grid-column: span 4; border-color: var(--rnr-border); background: var(--rnr-surface); box-shadow: none; }
+/* 4 + 4 + 4 fills row one and 6 + 6 fills row two, so the tab has no ragged
+   gap. The markup is ordered to match; see the note in the template. */
+.rnr-biography-panel .rnr-bio-card.rnr-bio-wide-card { grid-column: span 6; }
+/* The Identity card is the one whose fields are all short and one line, so it
+   gets a tighter two-up grid than the prose cards around it. */
+.rnr-biography-panel .rnr-bio-card.rnr-bio-basics .rnr-bio-field-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.rnr-biography-panel .rnr-bio-card.rnr-bio-basics h3 { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.rnr-biography-panel .rnr-bio-card.rnr-bio-basics h3 .rnr-bio-add-btn { margin-left: auto; }
+.rnr-biography-panel .rnr-bio-card h3 { color: var(--rnr-accent-hover); border-bottom-color: var(--rnr-border); font-family: inherit; }
+.rnr-biography-panel .rnr-bio-card input,
+.rnr-biography-panel .rnr-bio-card textarea,
+.rnr-biography-panel .rnr-bio-card select { border-color: var(--rnr-border); background: #171b22; color: var(--rnr-text); }
+.rnr-biography-panel .rnr-bio-card input:focus,
+.rnr-biography-panel .rnr-bio-card textarea:focus,
+.rnr-biography-panel .rnr-bio-card select:focus { border-color: var(--rnr-accent); box-shadow: 0 0 0 2px rgba(199,163,107,.16); }
+.rnr-organ-toggle { display: flex !important; flex-direction: row !important; align-items: center; gap: 7px !important; margin-top: 12px; padding: 8px; border: 1px solid var(--rnr-border); border-radius: 5px; background: #252b35; color: var(--rnr-text) !important; }
+.rnr-organ-toggle input { width: 15px !important; min-height: 15px !important; accent-color: var(--rnr-accent); }
+.rnr-help-text { color: var(--rnr-muted); font-size: .7rem; line-height: 1.45; }
+.rnr-organ-picker { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin-top: 7px; }
+.rnr-organ-picker.is-disabled { opacity: .48; }
+.rnr-organ-choice { display: grid !important; grid-template-columns: 18px 24px 1fr; align-items: center; gap: 6px !important; min-height: 45px; padding: 6px 7px; border: 1px solid var(--rnr-border); border-radius: 5px; background: #1a1f27; cursor: pointer; }
+.rnr-organ-choice:hover { border-color: var(--rnr-accent); background: #252c37; }
+.rnr-organ-choice.selected { border-color: #a96770; background: #30242b; }
+.rnr-organ-choice input { width: 15px !important; min-height: 15px !important; accent-color: var(--rnr-accent); }
+.rnr-organ-choice-mark { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #303744; color: var(--rnr-muted); font-weight: 800; }
+.rnr-organ-choice.selected .rnr-organ-choice-mark { background: #914b59; color: #fff; }
+.rnr-organ-choice strong { display: block; color: var(--rnr-text); font-size: .72rem; }
+.rnr-organ-choice small { display: block; margin-top: 2px; color: var(--rnr-muted); font-size: .58rem; }
+.rnr-state-point-summary { border-color: var(--rnr-border); background: var(--rnr-accent-soft); color: var(--rnr-accent-hover); }
+@media (max-width: 820px) {
+  .rnr-biography-panel .rnr-bio-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rnr-biography-panel .rnr-bio-card,
+  .rnr-biography-panel .rnr-bio-card.rnr-bio-wide-card { grid-column: span 1; }
+  .rnr-biography-panel .rnr-bio-wide-card:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .rnr-biography-panel .rnr-bio-layout { grid-template-columns: 1fr; }
+  .rnr-biography-panel .rnr-bio-card,
+  .rnr-biography-panel .rnr-bio-card.rnr-bio-wide-card,
+  .rnr-biography-panel .rnr-bio-wide-card:last-child { grid-column: auto; }
+  .rnr-organ-picker { grid-template-columns: 1fr; }
+}
+
+
+/* Restored wearable equipment and compact inventory controls */
+.rnr-wearable-section { margin-top: 12px; }
+.rnr-wearable-section > h3 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 0 0 7px; color: var(--rnr-accent-hover, #d8b77e); font-size: .72rem; letter-spacing: .06em; }
+.rnr-wearable-section > h3 small { color: var(--rnr-muted, #9da5b3); font-size: .58rem; font-weight: 400; letter-spacing: 0; }
+.rnr-wearable-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    ". head ."
+    ". neck ."
+    "right-arm torso left-arm"
+    "right-hand back left-hand"
+    "right-leg . left-leg"
+    "right-foot . left-foot";
+  gap: 7px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 2px 4px;
+}
+.rnr-wearable-grid > .slot-head { grid-area: head; }
+.rnr-wearable-grid > .slot-neck { grid-area: neck; }
+.rnr-wearable-grid > .slot-rightArm { grid-area: right-arm; }
+.rnr-wearable-grid > .slot-torso { grid-area: torso; }
+.rnr-wearable-grid > .slot-leftArm { grid-area: left-arm; }
+.rnr-wearable-grid > .slot-rightHand { grid-area: right-hand; }
+.rnr-wearable-grid > .slot-back { grid-area: back; }
+.rnr-wearable-grid > .slot-leftHand { grid-area: left-hand; }
+.rnr-wearable-grid > .slot-rightLeg { grid-area: right-leg; }
+.rnr-wearable-grid > .slot-leftLeg { grid-area: left-leg; }
+.rnr-wearable-grid > .slot-rightFoot { grid-area: right-foot; }
+.rnr-wearable-grid > .slot-leftFoot { grid-area: left-foot; }
+.rnr-body-slot { min-width: 0; min-height: 66px; padding: 6px; border: 1px solid var(--rnr-border, #3b4351); border-radius: 5px; background: var(--rnr-surface, #20242d); }
+.rnr-body-slot.is-drag-over, .rnr-body-slot:hover { border-color: var(--rnr-accent, #c7a36b); background: #29313c; }
+.rnr-body-slot.filled { border-color: #806443; }
+.rnr-body-slot-head { display: flex; align-items: center; gap: 5px; color: var(--rnr-muted, #9da5b3); font-size: .6rem; text-transform: uppercase; }
+.rnr-body-slot-icon { color: var(--rnr-accent-hover, #d8b77e); font-size: .8rem; }
+.rnr-body-slot-item { display: flex; align-items: center; gap: 5px; min-width: 0; margin-top: 6px; color: var(--rnr-text, #e8eaf0); font-size: .66rem; }
+.rnr-body-slot-item img { width: 22px; height: 22px; flex: 0 0 22px; object-fit: cover; border: 1px solid var(--rnr-border, #3b4351); border-radius: 3px; }
+.rnr-body-slot-item span { overflow: hidden; flex: 1; text-overflow: ellipsis; white-space: nowrap; }
+.rnr-body-slot-item button { width: 18px; height: 18px; padding: 0; border: 1px solid var(--rnr-border, #3b4351); border-radius: 3px; background: transparent; color: #d58f8f; font-size: .65rem; }
+.rnr-body-slot-empty { margin-top: 8px; color: var(--rnr-muted, #9da5b3); font-size: .58rem; font-style: italic; }
+.rnr-items-panel .rnr-equip-row { min-height: 38px; padding: 3px 6px; gap: 5px; }
+.rnr-items-panel .rnr-equip-name { gap: 4px; font-size: .68rem; }
+.rnr-items-panel .rnr-equip-name img { width: 24px; height: 24px; flex-basis: 24px; }
+.rnr-items-panel .rnr-equip-detail { font-size: .6rem; }
+.rnr-items-panel .rnr-equip-qty { font-size: .66rem; }
+.rnr-items-panel .rnr-equip-btns { gap: 2px; }
+.rnr-items-panel .rnr-equip-btns button, .rnr-items-panel .rnr-equip-btns select { min-width: 20px; min-height: 20px; height: 20px; padding: 1px 3px; font-size: .58rem; }
+.rnr-items-panel .rnr-roll-inline { width: 20px; height: 20px; padding: 0; font-size: .62rem; }
+.rnr-items-panel .rnr-inventory-group > header { min-height: 29px; }
+
+
+/* Conditions manager: keep the dialog usable on short screens and pin Save/Cancel */
+.dialog:has(.rnr-condition-manager) .window-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.dialog:has(.rnr-condition-manager) .dialog-content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.rnr-condition-manager {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+.rnr-condition-manager-scroll {
+  flex: 1;
+  max-height: 480px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #806443 #171a20;
+}
+.rnr-condition-manager-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.rnr-condition-manager-scroll::-webkit-scrollbar-track {
+  background: #171a20;
+}
+.rnr-condition-manager-scroll::-webkit-scrollbar-thumb {
+  background: #806443;
+  border-radius: 3px;
+}
+.rnr-condition-manager-group { margin-bottom: 12px; }
+.rnr-condition-manager-entry textarea { min-height: 34px; max-height: 70px; resize: vertical; }
+
+/* Compact backpack actions: ensure item name has priority space */
+.rnr-items-panel .rnr-equip-row {
+  min-height: 34px;
+  padding: 2px 6px;
+  gap: 4px;
+}
+.rnr-items-panel .rnr-equip-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 6px;
+}
+.rnr-items-panel .rnr-equip-name strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rnr-items-panel .rnr-equip-detail {
+  font-size: .65rem;
+}
+.rnr-items-panel .rnr-equip-qty {
+  font-size: .68rem;
+}
+.rnr-items-panel .rnr-equip-btns {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.rnr-items-panel .rnr-equip-btns button,
+.rnr-items-panel .rnr-equip-btns select {
+  min-width: 18px !important;
+  width: auto;
+  min-height: 18px !important;
+  height: 18px;
+  padding: 0 3px !important;
+  border-radius: 3px;
+  font-size: .52rem !important;
+  line-height: 1;
+}
+.rnr-items-panel .rnr-equip-btns select {
+  max-width: 52px;
+}
+.rnr-items-panel .rnr-roll-inline {
+  width: 18px;
+  height: 18px;
+  font-size: .55rem;
+}
+
+/* ── Interactive Item Clicks in Sheets ─────────────────────── */
+.rnr-equip-name {
+  cursor: pointer;
+}
+.rnr-equip-name:hover strong {
+  color: #a3e635;
+  text-decoration: underline;
+}
+.rnr-npc-action-name {
+  cursor: pointer;
+}
+.rnr-npc-action-name:hover {
+  color: #a3e635;
+  text-decoration: underline;
+}
+
+/* ── Item Sheet Header Button ──────────────────────────────── */
+.rnr-item-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.rnr-item-header-btn {
+  margin-left: auto;
+  background: #2a4d2a;
+  color: #c9e8a0;
+  border: 1px solid #4a7d4a;
+  border-radius: 3px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+.rnr-item-header-btn:hover {
+  background: #3b6b3b;
+  color: #fff;
+  border-color: #6a9a6a;
+}
+
+/* ── Rich Item Chat Card Styles ─────────────────────────────── */
+.rnr-card-item-title {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem !important;
+  font-weight: 700;
+  color: #fff !important;
+  margin-top: 2px;
+}
+.rnr-card-item-icon {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: cover;
+  border-radius: 2px;
+  border: 1px solid #7a6a56;
+  vertical-align: middle;
+}
+
+/* Card Pills / Badges */
+.rnr-card-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 10px 0 10px;
+  background: #141720;
+}
+.rnr-card-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #d0d7de;
+  letter-spacing: 0.02em;
+}
+.rnr-card-pill.rarity-uncommon { color: #86efac; border-color: #22c55e; background: rgba(34, 197, 94, 0.12); }
+.rnr-card-pill.rarity-rare     { color: #93c5fd; border-color: #3b82f6; background: rgba(59, 130, 246, 0.12); }
+.rnr-card-pill.rarity-very-rare{ color: #d8b4fe; border-color: #a855f7; background: rgba(168, 85, 247, 0.12); }
+.rnr-card-pill.rarity-legendary{ color: #fde047; border-color: #eab308; background: rgba(234, 179, 8, 0.12); }
+
+/* Card Section Titles */
+.rnr-card-section-title {
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8ab88a;
+  padding: 6px 10px 0 10px;
+}
+
+/* Target Reflex Hit / Miss banner */
+.rnr-card-target-hit {
+  margin: 4px 10px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rnr-card-target-hit.hit  { background: rgba(34, 197, 94, 0.15); border: 1px solid #22c55e; color: #86efac; }
+.rnr-card-target-hit.miss { background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #fca5a5; }
+
+/* Damage Block */
+.rnr-card-damage-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(185, 28, 28, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 4px 10px 6px 10px;
+}
+.rnr-card-damage-block.healing {
+  background: rgba(22, 101, 52, 0.15);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+.rnr-card-damage-total {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #fca5a5;
+  font-family: Georgia, serif;
+  line-height: 1.1;
+}
+.rnr-card-damage-formula {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* Action Buttons (Apply Damage, Apply Half, Apply Healing) */
+.rnr-card-actions {
+  display: flex;
+  gap: 6px;
+  padding: 4px 10px 8px 10px;
+}
+.rnr-card-btn {
+  flex: 1;
+  background: #252830;
+  border: 1px solid #5a4a37;
+  color: #eee7da;
+  padding: 5px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+.rnr-card-btn:hover {
+  background: #3a3f4d;
+  color: #fff;
+  border-color: #8a7a67;
+}
+.rnr-card-btn.apply-dmg:hover {
+  background: #7f1d1d;
+  border-color: #ef4444;
+  color: #fecaca;
+}
+.rnr-card-btn.apply-half:hover {
+  background: #475569;
+  border-color: #94a3b8;
+  color: #f1f5f9;
+}
+.rnr-card-btn.apply-heal:hover {
+  background: #14532d;
+  border-color: #22c55e;
+  color: #bbf7d0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ATTRIBUTES & MODIFIERS  (inside the Features tab)
+   The `stats` tab was removed and its content folded into Features,
+   so the tab-scoped selectors that used to live here are gone. The
+   `.rnr-stats-*` component rules below are unchanged and still apply,
+   because the markup kept its class names.
+   ══════════════════════════════════════════════════════════════ */
+
+
+
+
+
+/* ══════════════════════════════════════════════════════════════
+   ID CARD
+   Shown in a Dialog, not on the sheet. Sized for a screen rather
+   than a printer, but narrow enough to read at a glance.
+   ══════════════════════════════════════════════════════════════ */
+.rnr-id-card {
+  --rnr-id-line: #4a4136;
+  --rnr-id-dim: #8b8378;
+  --rnr-id-text: #eee7da;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.rnr-id-header {
+  display: flex; align-items: center; gap: 12px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--rnr-id-line);
+}
+.rnr-id-header img {
+  width: 64px; height: 64px; object-fit: cover;
+  border: 1px solid #6a5c44; border-radius: 3px; background: #14130f;
+}
+.rnr-id-header-text { min-width: 0; }
+.rnr-id-header h2 { margin: 0; color: #c9a876; font-size: 1.05rem; font-weight: 800; }
+.rnr-id-subtitle { margin: 2px 0 0; color: var(--rnr-id-dim); font-size: .74rem; }
+.rnr-id-tags { display: flex; flex-wrap: wrap; gap: 5px; margin: 6px 0 0; }
+.rnr-id-tag {
+  padding: 2px 7px; border: 1px solid var(--rnr-id-line); border-radius: 10px;
+  background: #1f1d1a; color: var(--rnr-id-dim);
+  font-size: .62rem; font-weight: 700; letter-spacing: .03em;
+}
+.rnr-id-tag.setting { color: #c9e8a0; border-color: #6a9a6a; }
+.rnr-id-tag.flaw { color: #f3d3d3; border-color: #a35f5f; }
+
+.rnr-id-vitals {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.rnr-id-vitals > div {
+  padding: 6px 9px; border: 1px solid var(--rnr-id-line); border-radius: 3px; background: #1f1d1a;
+}
+.rnr-id-vitals span {
+  display: block; color: var(--rnr-id-dim);
+  font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+}
+.rnr-id-vitals strong {
+  display: block; margin-top: 2px; color: #c9a876;
+  font-size: .92rem; font-weight: 800; font-variant-numeric: tabular-nums;
+}
+
+.rnr-id-section > h3 {
+  margin: 0 0 6px; color: var(--rnr-id-dim);
+  font-size: .64rem; font-weight: 800; text-transform: uppercase; letter-spacing: .09em;
+}
+.rnr-id-fields { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 12px; }
+.rnr-id-field {
+  display: flex; justify-content: space-between; gap: 8px;
+  padding: 3px 0; border-bottom: 1px dotted var(--rnr-id-line);
+  font-size: .74rem;
+}
+.rnr-id-field span { color: var(--rnr-id-dim); }
+.rnr-id-field strong {
+  color: var(--rnr-id-text); font-weight: 700; text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.rnr-id-attributes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+.rnr-id-attribute {
+  display: flex; align-items: baseline; gap: 5px;
+  padding: 4px 7px; border: 1px solid var(--rnr-id-line); border-radius: 3px; background: #1f1d1a;
+}
+.rnr-id-attribute span {
+  flex: 1 1 auto; color: var(--rnr-id-dim);
+  font-size: .62rem; font-weight: 800; letter-spacing: .05em;
+}
+.rnr-id-attribute strong { color: var(--rnr-id-text); font-size: .84rem; font-variant-numeric: tabular-nums; }
+.rnr-id-attribute small { color: #9a9187; font-size: .64rem; font-variant-numeric: tabular-nums; }
+
+.rnr-id-prose {
+  margin: 0; max-height: 5.5em; overflow-y: auto;
+  color: #c0b8ac; font-size: .74rem; line-height: 1.55; white-space: pre-wrap;
+}
+.rnr-id-section-compact .rnr-id-prose { max-height: 3.5em; }
+
+/* ══════════════════════════════════════════════════════════════
+   FEATURES TAB
+   ══════════════════════════════════════════════════════════════ */
+.rnr-no-search-results {
+  margin: 10px 0 0; padding: 10px;
+  border: 1px dashed #4a4136; border-radius: 3px;
+  color: #8b8378; font-size: .72rem; text-align: center;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ACTIVE ABILITY BAR
+   The `stats` tab is gone and its contents folded into Features, so
+   the ability list and the attribute grids share one panel. The bar
+   at the top of that panel is the "ready to use" tray: a spell or
+   ability is dragged up into it to make it quick to reach, and
+   dragged back out to put it away.
+
+   The two drop zones are siblings with different jobs, so they are
+   styled as one tray that changes colour depending on what is
+   hovering over it: the bar means "make ready", the list below means
+   "put away".
+   ══════════════════════════════════════════════════════════════ */
+.rnr-active-section { margin-top: 0; }
+.rnr-feature-list-section { margin-top: 18px; }
+
+/* The tab holds one list, so the panel is given a fixed height and the list
+   scrolls inside it. Letting the panel grow with the number of spells made the
+   tab taller than the sheet itself, and pushed the Backpack tab's own controls
+   off the bottom on a character with a full spell list. */
+.rnr-body[data-active-tab="features"] .rnr-feature-panel {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 190px);
+}
+.rnr-body[data-active-tab="features"] .rnr-feature-list-section {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  margin-top: 10px;
+}
+.rnr-body[data-active-tab="features"] .rnr-feature-list-section .rnr-equipment-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+/* A slim scrollbar, so a long list does not add a second heavy visual edge
+   next to the panel border. */
+.rnr-body[data-active-tab="features"] .rnr-equipment-list::-webkit-scrollbar { width: 7px; }
+.rnr-body[data-active-tab="features"] .rnr-equipment-list::-webkit-scrollbar-track { background: #14161b; border-radius: 4px; }
+.rnr-body[data-active-tab="features"] .rnr-equipment-list::-webkit-scrollbar-thumb { background: #3d444f; border-radius: 4px; }
+.rnr-body[data-active-tab="features"] .rnr-equipment-list::-webkit-scrollbar-thumb:hover { background: #55606f; }
+
+/* The hotbar stays put while the list scrolls, so an ability that is ready is
+   still reachable without scrolling back to the top of the tab. */
+.rnr-body[data-active-tab="features"] .rnr-active-section {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  margin: 0 -2px 4px;
+  padding: 2px;
+  background: var(--rnr-surface);
+}
+/* Section headings are the tab's only structure now, so they carry a rule
+   instead of relying on the panel header to separate things. */
+.rnr-body[data-active-tab="features"] .rnr-feature-list-section > h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--rnr-border);
+  color: var(--rnr-accent-hover);
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+.rnr-body[data-active-tab="features"] .rnr-active-section > h3 { margin-bottom: 6px; }
+.rnr-body[data-active-tab="features"] .rnr-active-section > h3 small {
+  color: #8b8378;
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.rnr-body[data-active-tab="features"] .rnr-inventory-group > header h3 { margin: 0; }
+.rnr-active-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+  gap: 8px;
+  min-height: 78px;
+  padding: 8px;
+  border: 1px solid #3b3428;
+  border-radius: 4px;
+  /* The gold wash marks a legal drop target without changing layout,
+     so nothing shifts at the moment the drag starts. */
+  background:
+    linear-gradient(180deg, rgba(154, 118, 71, .07), rgba(0, 0, 0, .18)),
+    #17150f;
+  transition: border-color .12s ease, box-shadow .12s ease;
+}
+.rnr-active-bar.is-drag-over {
+  border-color: #b8904f;
+  box-shadow: inset 0 0 0 1px rgba(184, 144, 79, .55), 0 0 12px rgba(184, 144, 79, .22);
+}
+.rnr-active-empty {
+  grid-column: 1 / -1;
+  align-self: center;
+  margin: 0;
+  color: #7d7466;
+  font-size: .68rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.rnr-active-slot {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-areas: "img name" "img type" "img btns";
+  align-items: center;
+  gap: 1px 8px;
+  padding: 5px 6px 5px 5px;
+  border: 1px solid #6d573a;
+  border-left: 3px solid #b8904f;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #241f18, #191713);
+  cursor: grab;
+}
+.rnr-active-slot:hover { border-color: #b8904f; background: linear-gradient(180deg, #2b241a, #1d1a15); }
+.rnr-active-slot.is-dragging { opacity: .4; }
+.rnr-active-slot img {
+  grid-area: img;
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border: 1px solid #171717;
+  border-radius: 3px;
+  background: #0e0d0b;
+}
+.rnr-active-slot-name {
+  grid-area: name;
+  overflow: hidden;
+  color: #f0e8da;
+  font-size: .72rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rnr-active-slot-type {
+  grid-area: type;
+  color: #c9a876;
+  font-size: .55rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.rnr-active-slot-btns { grid-area: btns; display: flex; gap: 4px; margin-top: 3px; }
+.rnr-active-slot-btns button {
+  min-width: 22px;
+  height: 20px;
+  padding: 0 4px;
+  border: 1px solid #75583c;
+  border-radius: 2px;
+  background: #28211d;
+  color: #e4c58d;
+  font-size: .62rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.rnr-active-slot-btns button:hover { background: #9a7647; color: #171719; }
+.rnr-active-slot-btns button[data-action="feature-deactivate"]:hover { background: #7a3d3d; border-color: #a35f5f; color: #f3d3d3; }
+
+/* "READY" marker on the row for an ability that is in the bar. */
+.rnr-active-badge {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 1px 4px;
+  border: 1px solid #b8904f;
+  border-radius: 2px;
+  background: #3a2c17;
+  color: #e4c58d;
+  font-size: .52rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  vertical-align: 1px;
+}
+.rnr-equip-row.is-active {
+  border-left: 3px solid #b8904f;
+  background: rgba(154, 118, 71, .13);
+}
+.rnr-feature-type {
+  margin-left: 6px;
+  color: #8b8378;
+  font-size: .56rem;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.rnr-feature-mode { padding: 1px 4px; border: 1px solid currentColor; border-radius: 3px; font-size: .52rem; }
+.rnr-feature-mode-ACTIVE { color: #d8b77e; }
+.rnr-feature-mode-PASSIVE { color: #8fc7a0; }
+.rnr-feature-mode-REACTION { color: #c69be8; }
+.rnr-defense-summary { display: flex; justify-content: space-between; align-items: center; margin: 8px 0; padding: 8px 10px; border: 1px solid var(--rnr-border, #51483b); border-left: 3px solid var(--rnr-accent, #b8904f); border-radius: 4px; background: rgba(184, 144, 79, .1); }
+.rnr-defense-summary span { color: var(--rnr-muted, #9da5b3); font-size: .62rem; font-weight: 800; letter-spacing: .06em; }
+.rnr-defense-summary strong { color: var(--rnr-accent-hover, #e4c78b); font-size: 1rem; }
+.rnr-reaction-summary { display: grid; grid-template-columns: 1fr auto; gap: 3px 8px; margin: 6px 0 10px; padding: 6px 8px; border: 1px solid var(--rnr-border, #51483b); border-radius: 4px; font-size: .58rem; }
+.rnr-reaction-summary span { color: var(--rnr-muted, #9da5b3); font-weight: 800; }
+.rnr-reaction-summary strong { color: #8fc7a0; font-size: .62rem; }
+.rnr-card-outcome-note { color: #8fc7a0; font-size: .68rem; font-weight: 700; }
+
+/* A feature that is not a spell or ability has no ready state, so it gets no
+   drag handle and says why rather than silently ignoring the drag. */
+.rnr-feature-static { cursor: default; }
+.rnr-feature-static .rnr-equip-name strong,
+.rnr-feature-static .rnr-equip-name img { cursor: default; }
+.rnr-feature-static-note {
+  display: block;
+  color: #7d7466;
+  font-size: .6rem;
+  font-style: italic;
+}
+
+/* The ID card in chat reuses the dialog markup, so the prose rules that make it
+   readable on a dialog are restated at log size. */
+.rnr-id-card-chat {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.rnr-id-card-chat .rnr-id-header { gap: 8px; padding-bottom: 7px; }
+.rnr-id-card-chat .rnr-id-header img { width: 44px; height: 44px; }
+.rnr-id-card-chat .rnr-id-section { margin-top: 8px; }
+.rnr-id-card-chat .rnr-id-header-text h2 { font-size: .95rem; }
+.rnr-id-card-chat .rnr-id-fields { grid-template-columns: 1fr; gap: 2px; }
+.rnr-id-card-chat .rnr-id-field { min-width: 0; font-size: .68rem; }
+.rnr-id-card-chat .rnr-id-field strong { min-width: 0; overflow-wrap: anywhere; }
+.rnr-id-card-chat .rnr-id-attributes { gap: 4px; }
+.rnr-id-card-chat .rnr-id-prose { display: none; }
+
+.rnr-npc-modifier { color: var(--rnr-accent-hover, #d8b77e); font-variant-numeric: tabular-nums; }
+.rnr-modifier-note { color: var(--rnr-muted, #9da5b3); font-size: .55rem; white-space: nowrap; }
+.rnr-npc-total { color: var(--rnr-text, #e8eaf0); font-size: .55rem; font-variant-numeric: tabular-nums; }
+
+/* Features use the same compact density as Backpack rows. */
+.rnr-feature-panel .rnr-equip-row {
+  min-height: 34px;
+  padding: 2px 6px;
+  gap: 4px;
+}
+.rnr-feature-panel .rnr-equip-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 6px;
+}
+.rnr-feature-panel .rnr-equip-name strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rnr-feature-panel .rnr-equip-detail { font-size: .65rem; }
+.rnr-feature-panel .rnr-equip-qty { font-size: .68rem; }
+.rnr-feature-panel .rnr-equip-btns {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.rnr-feature-panel .rnr-equip-btns button {
+  min-width: 18px !important;
+  min-height: 18px !important;
+  height: 18px;
+  padding: 0 3px !important;
+  border-radius: 3px;
+  font-size: .52rem !important;
+  line-height: 1;
+}
+
+
+/* Extra Skill Shop: action-economy groups and timing labels */
+.rnr-shop-action-group { margin: 8px 0 12px; }
+.rnr-shop-action-group > h5 { margin: 6px 0 4px; color: var(--rnr-accent-hover, #d8b77e); font-size: .64rem; letter-spacing: .04em; text-transform: uppercase; }
+.rnr-shop-action-group > h5 small, .rnr-shop-action-type { color: var(--rnr-muted, #9da5b3); font-size: .58rem; font-weight: 500; }
+.rnr-shop-action-type { display: inline-block; margin-left: 6px; padding: 1px 4px; border: 1px solid var(--rnr-border, #51483b); border-radius: 3px; }

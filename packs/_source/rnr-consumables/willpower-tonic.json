@@ -1,0 +1,39 @@
+{
+  "_id": "rnrconsumab00004",
+  "name": "Willpower Tonic",
+  "type": "consumable",
+  "img": "icons/consumables/potions/potion-round-corked-blue.webp",
+  "system": {
+    "description": {
+      "value": "A calming tonic that restores mental clarity. Restores 1d4+1 WillPower.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0.3,
+    "price": {
+      "value": 60,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "consumableType": "potion",
+    "effect": "Restore WillPower",
+    "uses": {
+      "value": 1,
+      "max": 1,
+      "per": "charges"
+    },
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "healingFormula": "1d4+1",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

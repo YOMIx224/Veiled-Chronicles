@@ -1,0 +1,35 @@
+{
+  "_id": "uniclas000000004",
+  "name": "Analyst",
+  "type": "class",
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "system": {
+    "description": {
+      "value": "Analyst is a setting-neutral character role.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "role": "Analyst",
+    "hitDie": "1d6",
+    "subclass": "",
+    "features": "Core Analyst feature; choose campaign-appropriate specialization.",
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

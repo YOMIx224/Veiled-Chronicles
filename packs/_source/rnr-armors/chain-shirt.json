@@ -1,0 +1,37 @@
+{
+  "_id": "rnrarmor00000003",
+  "name": "Chain Shirt",
+  "type": "armor",
+  "img": "icons/equipment/chest/breastplate-metal-scaled-grey.webp",
+  "system": {
+    "description": {
+      "value": "Interlocking metal rings providing solid protection without full plate weight.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 20,
+    "price": {
+      "value": 200,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "armorType": "medium",
+    "armorValue": 3,
+    "maxDex": 2,
+    "strengthReq": 0,
+    "stealthDisadv": false,
+    "properties": [],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

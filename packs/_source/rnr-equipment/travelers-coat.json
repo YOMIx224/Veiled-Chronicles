@@ -1,0 +1,39 @@
+{
+  "_id": "rnrequip00000012",
+  "name": "Traveler's Coat",
+  "type": "equipment",
+  "img": "icons/equipment/clothing/clothing-leather-jacket-brown.webp",
+  "system": {
+    "description": {
+      "value": "A long belted coat. Pockets keep small items to hand, and the heavy weave adds +1 Armor DR against slashing and bludgeoning damage.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 4,
+    "price": {
+      "value": 35,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "equipType": "worn",
+    "slot": "torso",
+    "allowedSlot": "torso",
+    "armorValue": 1,
+    "properties": [
+      "clothing",
+      "worn"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "_id": "rnrweapon0000009",
+  "name": "Spear",
+  "type": "weapon",
+  "img": "icons/weapons/polearms/spear-flared-worn.webp",
+  "system": {
+    "description": {
+      "value": "A long thrusting weapon with extended reach.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 3,
+    "price": {
+      "value": 10,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "weaponType": "melee",
+    "attribute": "strength",
+    "damageFormula": "1d6",
+    "damageType": "piercing",
+    "damageBonus": 0,
+    "attackBonus": 0,
+    "range": "20/60",
+    "reach": 10,
+    "caliber": "",
+    "ammunition": 0,
+    "reload": "",
+    "properties": [
+      "reach",
+      "thrown",
+      "versatile"
+    ],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

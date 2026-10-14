@@ -1,0 +1,44 @@
+{
+  "_id": "rnrability000002",
+  "name": "Dodge",
+  "type": "ability",
+  "img": "icons/skills/movement/arrows-direction-blue.webp",
+  "system": {
+    "description": {
+      "value": "Until the start of your next turn, any attack roll against you has disadvantage if you can see the attacker, and you make Dexterity saves with advantage.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "abilityType": "active",
+    "attribute": "dexterity",
+    "effect": "Attack rolls against you have disadvantage. Dexterity saves at advantage.",
+    "damageFormula": "",
+    "damageType": "",
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "actionType": "action",
+    "range": "Self",
+    "properties": [],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}

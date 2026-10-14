@@ -1,0 +1,44 @@
+{
+  "_id": "rnrability000003",
+  "name": "Intimidating Presence",
+  "type": "ability",
+  "img": "icons/skills/social/intimidation-impressing.webp",
+  "system": {
+    "description": {
+      "value": "As an action, make an Intimidate check (DC 12) against a target within 30 ft. On success, the target is frightened until the end of your next turn.",
+      "chat": ""
+    },
+    "quantity": 1,
+    "weight": 0,
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "common",
+    "handSlot": "",
+    "abilityType": "active",
+    "attribute": "charm",
+    "effect": "Target frightened on successful Intimidate check (DC 12).",
+    "damageFormula": "",
+    "damageType": "",
+    "uses": {
+      "value": 0,
+      "max": 0,
+      "per": ""
+    },
+    "actionType": "action",
+    "range": "30 ft",
+    "properties": [],
+    "source": {
+      "book": "RnR Universal Collection",
+      "page": ""
+    },
+    "universal": true
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "RnR",
+    "systemVersion": "0.3.7",
+    "coreVersion": "13"
+  }
+}
