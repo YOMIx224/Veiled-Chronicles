@@ -1,5 +1,5 @@
 // =============================================================
-//  Role & Roll  —  RnR.js  (v0.3.17)
+//  Role & Roll  —  RnR.js  (v0.3.18)
 // =============================================================
 
 // ── Module imports ────────────────────────────────────────────
@@ -2341,7 +2341,7 @@ async function extraSkillShop(actor) {
   let compItems = [];
   try {
     for (const pack of game.packs) {
-      if (pack.metadata.system !== "RnR") continue;
+      if (pack.metadata.system !== game.system.id) continue;
       if (pack.metadata.type !== "Item") continue;
       const index = await pack.getIndex({ fields: ["name","type","system.category","system.cost","system.attribute","system.effect","system.actionType","system.abilityType"] });
       for (const e of index) {

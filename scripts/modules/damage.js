@@ -4,6 +4,8 @@
 //  per damage type + chat card Apply buttons + multi-target
 // =============================================================
 
+import { getRnRFlag, setRnRFlag } from "./flags.js";
+
 // Known damage types (used in UI dropdowns)
 export const DAMAGE_TYPES = [
   "physical", "bludgeoning", "slashing", "piercing",
@@ -174,14 +176,12 @@ export async function applyDamage(actor, amount, damageType = "", { healing = fa
 const TARGET_APPLICATIONS_FLAG = "damageApplications";
 
 function readTargetApplications(actor) {
-  return actor.getFlag?.("RnR", TARGET_APPLICATIONS_FLAG)
-    ?? actor.flags?.RnR?.[TARGET_APPLICATIONS_FLAG]
-    ?? {};
+  return getRnRFlag(actor, TARGET_APPLICATIONS_FLAG) ?? {};
 }
 
 async function writeTargetApplications(actor, applications) {
-  if (typeof actor.setFlag === "function") {
-    await actor.setFlag("RnR", TARGET_APPLICATIONS_FLAG, applications);
+  if (typeof actor.update === "function") {
+    await setRnRFlag(actor, TARGET_APPLICATIONS_FLAG, applications);
     return;
   }
   actor.flags ??= {};

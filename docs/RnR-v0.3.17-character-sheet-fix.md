@@ -1,4 +1,4 @@
-# RnR v0.3.17 — إصلاحการเปิด Character Sheet
+# RnR v0.3.17 — แก้การเปิด Character Sheet
 
 **วันที่:** 11 ตุลาคม 2026  
 **เป้าหมาย:** แก้การ render Actor, NPC/Vehicle และ Item sheets บน Foundry VTT v14

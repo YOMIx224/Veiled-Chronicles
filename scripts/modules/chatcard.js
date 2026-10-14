@@ -10,6 +10,7 @@
 
 import { checkAttackFeasibility, attackFeasibilitySummary } from "./targeting.js";
 import { applyDamageToTargets } from "./damage.js";
+import { getRnRFlag } from "./flags.js";
 
 // ─────────────────────────────────────────────────────────────
 //  CARD TEMPLATE HELPER
@@ -243,7 +244,7 @@ function reportCardError(label, error) {
 const APPLY_ACTION_SELECTOR = "[data-action='apply-damage'], [data-action='apply-half-damage'], [data-action='apply-healing']";
 
 function legacyApplyActionState(message) {
-  return message?.getFlag?.("RnR", "damageApplication") ?? message?.flags?.RnR?.damageApplication ?? null;
+  return getRnRFlag(message, "damageApplication") ?? null;
 }
 
 function setApplyButtonsDisabled(root, disabled, title = "") {

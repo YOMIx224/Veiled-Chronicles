@@ -5,6 +5,10 @@ import { armorDamageReduction, applyDamage, applyDamageToTargets, collectDamageD
 import { hasLineOfSight } from "../scripts/modules/targeting.js";
 import { activateChatCardListeners } from "../scripts/modules/chatcard.js";
 
+function assertFoundryFlagScope(scope) {
+  if (!["core", "world", "rnr"].includes(scope)) throw new Error(`Flag scope "${scope}" is not valid or not currently active`);
+}
+
 function setFoundryGlobals({ collision = () => false, isGM = false } = {}) {
   globalThis.foundry = {
     utils: {
@@ -129,11 +133,18 @@ test("a target owner can apply a Chat Card once without editing the ChatMessage"
     items: { contents: [] },
     effects: { contents: [] },
     getActiveTokens: () => [],
-    getFlag(scope, key) { return this.flags?.[scope]?.[key]; },
-    async setFlag(scope, key, value) {
-      this.flags[scope] = { ...(this.flags[scope] ?? {}), [key]: structuredClone(value) };
+    // Foundry v13+ only accepts the system id ("rnr") as a flag scope; RnR
+    // data lives under flags.RnR, so the system must not call getFlag/setFlag.
+    getFlag(scope, key) { assertFoundryFlagScope(scope); return this.flags?.[scope]?.[key]; },
+    async setFlag(scope, key, value) { assertFoundryFlagScope(scope); return this.update({ [`flags.${scope}.${key}`]: value }); },
+    async update(data) {
+      for (const [path, value] of Object.entries(data)) {
+        const parts = path.split(".");
+        const last = parts.pop();
+        const target = parts.reduce((obj, part) => (obj[part] ??= {}), this);
+        target[last] = structuredClone(value);
+      }
     },
-    async update(data) { this.system.vitals.health.value = data["system.vitals.health.value"]; },
   };
   globalThis.game.actors = { get: id => id === actor.id ? actor : null };
   globalThis.game.user.targets = new Set();
@@ -141,7 +152,7 @@ test("a target owner can apply a Chat Card once without editing the ChatMessage"
   const first = await applyDamageToTargets(5, "physical", { sourceMessageId: "chat-card-1", action: "apply-damage", targetActorIds: [actor.id] });
   assert.equal(first.length, 1);
   assert.equal(actor.system.vitals.health.value, 15);
-  assert.equal(actor.getFlag("RnR", "damageApplications")["chat-card-1"].status, "applied");
+  assert.equal(actor.flags.RnR.damageApplications["chat-card-1"].status, "applied");
 
   const repeated = await applyDamageToTargets(5, "physical", { sourceMessageId: "chat-card-1", action: "apply-damage", targetActorIds: [actor.id] });
   assert.equal(repeated.length, 0);

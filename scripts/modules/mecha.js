@@ -1,4 +1,5 @@
-const MODULE_NAME = "RnR";
+import { FLAG_NAMESPACE as MODULE_NAME, getRnRFlag } from "./flags.js";
+
 const pendingOwnerPopupMessages = new Set();
 
 function escapeHtml(value) {
@@ -58,7 +59,7 @@ function pilotTokenFor(actor) {
 
 function deploymentTokenForPilot(actor) {
   return canvas?.tokens?.placeables?.find(token =>
-    token.actor?.type === "vehicle" && token.document.getFlag(MODULE_NAME, "mechaDeployment.pilotActorId") === actor?.id
+    token.actor?.type === "vehicle" && getRnRFlag(token.document, "mechaDeployment.pilotActorId") === actor?.id
   ) ?? null;
 }
 
@@ -209,7 +210,7 @@ export async function summonMecha(actor = null, mechaId = null) {
 }
 
 export function handleMechaSummonMessage(message) {
-  const request = message?.getFlag?.(MODULE_NAME, "mechaSummonRequest");
+  const request = getRnRFlag(message, "mechaSummonRequest");
   if (!request?.requestId || !request.pilotActorId) return;
   if (!(message.whisper ?? []).includes(game.user?.id)) return;
 
@@ -261,17 +262,17 @@ export function handleMechaSummonMessage(message) {
 
 export async function returnToPilot(actor = null) {
   const controlled = canvas?.tokens?.controlled?.[0] ?? null;
-  const mechToken = controlled?.actor?.type === "vehicle" && controlled.document.getFlag(MODULE_NAME, "mechaDeployment.pilotActorId")
+  const mechToken = controlled?.actor?.type === "vehicle" && getRnRFlag(controlled.document, "mechaDeployment.pilotActorId")
     ? controlled
     : actor?.type === "vehicle"
-      ? canvas?.tokens?.placeables?.find(token => token.actor?.id === actor.id && token.document.getFlag(MODULE_NAME, "mechaDeployment.pilotActorId"))
+      ? canvas?.tokens?.placeables?.find(token => token.actor?.id === actor.id && getRnRFlag(token.document, "mechaDeployment.pilotActorId"))
       : deploymentTokenForPilot(actor);
   if (!mechToken) {
     ui.notifications.warn("ไม่พบ Token หุ่นที่เรียกด้วยกำไล ให้เลือก Token หุ่น หรือเลือก Token Pilot ก่อน");
     return null;
   }
 
-  const pilotId = mechToken.document.getFlag(MODULE_NAME, "mechaDeployment.pilotActorId");
+  const pilotId = getRnRFlag(mechToken.document, "mechaDeployment.pilotActorId");
   const pilot = game.actors?.get(pilotId);
   const pilotToken = pilotTokenFor(pilot);
   if (!pilotToken) {

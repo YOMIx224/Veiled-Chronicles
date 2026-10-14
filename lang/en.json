@@ -323,5 +323,28 @@
         "hint": "Use Vehicles or NPC Actors for machines, pilots, armor, and systems."
       }
     }
+  },
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC",
+      "vehicle": "Vehicle"
+    },
+    "Item": {
+      "weapon": "Weapon",
+      "armor": "Armor",
+      "consumable": "Consumable",
+      "tool": "Tool",
+      "loot": "Loot",
+      "spell": "Spell",
+      "extraskills": "Extra Skill",
+      "class": "Class",
+      "subclass": "Subclass",
+      "background": "Background",
+      "race": "Race",
+      "ability": "Ability",
+      "equipment": "Equipment",
+      "skill": "Skill"
+    }
   }
 }
