@@ -15,3 +15,4 @@ Thumbs.db
 
 # Release output (tools/release.mjs)
 dist/
+*.zip
