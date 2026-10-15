@@ -5,7 +5,7 @@
   "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
-      "value": "Spend a Bonus Action to designate one visible target. The next mecha attack against it before the end of your next turn gains +1 to its attack roll. This bonus is applied manually by the GM/player.",
+      "value": "<p><strong>Always on:</strong> +1 to Shooting Weapons.</p><p><strong>Bonus Action:</strong> designate one visible target; your next Mecha attack against it before the end of your next turn gains +1.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,14 +23,17 @@
     "category": "combat",
     "attribute": "intellect",
     "cost": 2,
-    "bonus": 0,
-    "skills": [],
-    "effect": "Bonus Action: designate one visible target. The next mecha attack against it before the end of your next turn gains +1 to its attack roll; track this bonus manually.",
+    "bonus": 1,
+    "skills": [
+      "shootingWeapons"
+    ],
+    "effect": "Always on: +1 to Shooting Weapons. Bonus Action: designate one visible target; your next Mecha attack against it before the end of your next turn gains +1.",
     "properties": [],
     "abilityType": "active",
     "actionType": "bonus action",
     "attackRoll": false,
-    "universal": true
+    "universal": true,
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

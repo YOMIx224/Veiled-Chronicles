@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Vanguard is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d10</p><p><strong>Class skills (automated):</strong> +1 to Weapons and Athlete when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Charge: move at least 15 ft in a straight line before a melee attack to add +2 damage.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Vanguard",
     "hitDie": "1d10",
     "subclass": "",
-    "features": "Core Vanguard feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Charge: move at least 15 ft in a straight line before a melee attack to add +2 damage.",
+    "universal": true,
+    "skills": [
+      "weapons",
+      "athlete"
+    ]
   },
   "flags": {},
   "_stats": {

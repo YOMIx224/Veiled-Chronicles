@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Mobile Defense is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Bonus action · Self</strong></p><p>Move up to 15 ft. Until the start of your next turn, add +1 to Reflex and to Defend rolls.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,12 +21,12 @@
       "page": ""
     },
     "abilityType": "active",
-    "attribute": "ego",
-    "effect": "Mobile Defense: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "dexterity",
+    "effect": "Move up to 15 ft. Until the start of your next turn, add +1 to Reflex and to Defend rolls.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
+    "actionType": "bonus action",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

@@ -116,8 +116,16 @@
             <option value="medium" {{#if isMedium}}selected{{/if}}>Medium</option>
             <option value="heavy"  {{#if isHeavy}}selected{{/if}}>Heavy</option>
             <option value="shield" {{#if isShield}}selected{{/if}}>Shield</option>
+            <option value="accessory" {{#if isAccessory}}selected{{/if}}>Accessory (helm, gloves, boots…)</option>
           </select>
         </label>
+        {{#if isAccessory}}
+        <label>Worn on
+          <select name="system.allowedSlot">
+            {{#each allowedSlotOptions}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}
+          </select>
+        </label>
+        {{/if}}
         <label>Damage Reduction
           <input name="system.armorValue" type="number" min="0" value="{{system.armorValue}}" />
         </label>

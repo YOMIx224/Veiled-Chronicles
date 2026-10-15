@@ -8,7 +8,7 @@
       "name": "YOMIx224"
     }
   ],
-  "version": "0.4.2",
+  "version": "0.4.3",
   "license": "UNLICENSED",
   "url": "",
   "manifest": "",
@@ -138,6 +138,13 @@
       "name": "rnr-user-guide",
       "label": "RnR — User Guide",
       "path": "packs/rnr-user-guide",
+      "type": "JournalEntry",
+      "system": "rnr"
+    },
+    {
+      "name": "rnr-session-zero",
+      "label": "RnR — Session 0",
+      "path": "packs/rnr-session-zero",
       "type": "JournalEntry",
       "system": "rnr"
     },

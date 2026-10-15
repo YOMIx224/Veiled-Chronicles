@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Data Pad is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Worn on the forearm: +1 to Electronic and General Education checks; stores maps, notes and references.</p><p><em>Bonus applies automatically while the item is worn in its slot.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "equipType": "worn",
     "equipmentSlot": "",
-    "allowedSlot": "",
+    "allowedSlot": "leftArm",
     "prostheticFor": "",
     "armorValue": 0,
     "speedBonus": 0,
@@ -32,9 +32,15 @@
     "attribute": "",
     "attributeBonus": 0,
     "skill": "",
-    "bonus": 0,
+    "bonus": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "leftArm",
+    "skills": [
+      "electronic",
+      "generalEducation"
+    ],
+    "effect": "Worn on the forearm: +1 to Electronic and General Education checks; stores maps, notes and references."
   },
   "flags": {},
   "_stats": {

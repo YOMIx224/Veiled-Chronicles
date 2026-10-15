@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a bonus action when this other technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Medicine and First Aid checks.</p><p><strong>Bonus Action (once per scene):</strong> your next Medicine and First Aid check before the end of your turn gains a further +1.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,18 +21,23 @@
       "page": ""
     },
     "category": "other",
-    "attribute": "ego",
+    "attribute": "intellect",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
-      "survival",
-      "generalEducation"
+      "medicine",
+      "firstAid"
     ],
-    "effect": "Use as a bonus action when this other technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Medicine and First Aid. Bonus Action (once per scene): your next Medicine and First Aid check before the end of your turn gains a further +1.",
     "properties": [],
     "abilityType": "active",
     "actionType": "bonus action",
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

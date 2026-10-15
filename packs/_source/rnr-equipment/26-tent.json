@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Tent is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Shelters two people. A Long Rest in the tent counts as a secure rest even in the wild.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,7 +20,7 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "equipType": "worn",
+    "equipType": "gear",
     "equipmentSlot": "",
     "allowedSlot": "",
     "prostheticFor": "",
@@ -34,7 +34,10 @@
     "skill": "",
     "bonus": 0,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "",
+    "skills": [],
+    "effect": "Shelters two people. A Long Rest in the tent counts as a secure rest even in the wild."
   },
   "flags": {},
   "_stats": {

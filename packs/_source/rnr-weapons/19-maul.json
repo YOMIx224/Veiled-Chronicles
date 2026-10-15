@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-bronze.webp",
   "system": {
     "description": {
-      "value": "Maul suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · two-handed · 2d6 + STR bludgeoning. On a critical hit the target is knocked prone.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "weaponType": "melee",
     "attribute": "strength",
-    "damageFormula": "1d6",
+    "damageFormula": "2d6",
     "damageType": "bludgeoning",
     "damageBonus": 0,
     "attackBonus": 0,
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 2,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · two-handed · 2d6 + STR bludgeoning. On a critical hit the target is knocked prone."
   },
   "flags": {},
   "_stats": {

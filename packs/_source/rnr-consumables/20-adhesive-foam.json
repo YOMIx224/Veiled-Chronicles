@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Adhesive Foam is a single-use universal resource.",
+      "value": "<p>Spray a creature within 10 ft: it makes an Athlete check (DC 12) or its Speed is 0 until it uses an Action to tear free.</p><p><em>Single use: using it from the Backpack reduces the quantity by 1.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,7 +21,7 @@
       "page": ""
     },
     "consumableType": "supply",
-    "effect": "Adhesive Foam provides its described utility.",
+    "effect": "Spray a creature within 10 ft: it makes an Athlete check (DC 12) or its Speed is 0 until it uses an Action to tear free.",
     "healingFormula": "",
     "damageFormula": "",
     "damageType": "",
@@ -33,7 +33,8 @@
       "per": "charges"
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

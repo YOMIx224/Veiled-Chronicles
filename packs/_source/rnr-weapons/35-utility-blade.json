@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Utility Blade suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · one-handed · 1d4 + DEX slashing. Light: +1 to attack (automated).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,13 +20,13 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "weaponType": "ranged",
+    "weaponType": "melee",
     "attribute": "dexterity",
-    "damageFormula": "1d6",
-    "damageType": "piercing",
+    "damageFormula": "1d4",
+    "damageType": "slashing",
     "damageBonus": 0,
-    "attackBonus": 0,
-    "range": "30/120 ft",
+    "attackBonus": 1,
+    "range": "",
     "reach": 5,
     "caliber": "",
     "ammunition": 0,
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · one-handed · 1d4 + DEX slashing. Light: +1 to attack (automated)."
   },
   "flags": {},
   "_stats": {

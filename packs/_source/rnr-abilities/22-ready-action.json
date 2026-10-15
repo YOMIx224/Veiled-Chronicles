@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Ready Action is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Self</strong></p><p>Choose a trigger you can see and one Action. When the trigger happens before your next turn, you take that Action as your Reaction.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,9 +20,9 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "passive",
+    "abilityType": "active",
     "attribute": "intellect",
-    "effect": "Ready Action: gain an appropriate situational benefit when the GM agrees it applies.",
+    "effect": "Choose a trigger you can see and one Action. When the trigger happens before your next turn, you take that Action as your Reaction.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

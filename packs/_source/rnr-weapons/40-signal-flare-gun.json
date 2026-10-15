@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Signal Flare Gun suitable for any campaign that uses its profile.",
+      "value": "<p>Ranged · one-handed · 1d4 + DEX fire · 60/180 ft. Fired upward it lights a 60 ft radius for 1 minute.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,11 +22,11 @@
     },
     "weaponType": "ranged",
     "attribute": "dexterity",
-    "damageFormula": "1d6",
-    "damageType": "bludgeoning",
+    "damageFormula": "1d4",
+    "damageType": "fire",
     "damageBonus": 0,
     "attackBonus": 0,
-    "range": "30/120 ft",
+    "range": "60/180 ft",
     "reach": 5,
     "caliber": "",
     "ammunition": 0,
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Ranged · one-handed · 1d4 + DEX fire · 60/180 ft. Fired upward it lights a 60 ft radius for 1 minute."
   },
   "flags": {},
   "_stats": {

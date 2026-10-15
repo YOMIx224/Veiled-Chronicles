@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Levitate is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 60 ft · 1 minute · APT</strong></p><p>One creature or object rises up to 20 ft and hovers. An unwilling creature makes a Strength save against 10 + your APT modifier.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "aptitude",
     "castingTime": "1 action",
-    "range": "Self",
-    "duration": "instantaneous",
-    "effect": "Levitate: resolve the described effect with the GM.",
+    "range": "60 ft",
+    "duration": "1 minute",
+    "effect": "One creature or object rises up to 20 ft and hovers. An unwilling creature makes a Strength save against 10 + your APT modifier.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

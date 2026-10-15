@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a part of reaction when this science & medicine technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Electronic and Mechanical checks.</p><p><strong>Part of a Reaction:</strong> owning any Extra Skill with “Reaction” in its name gives you a <strong>second Defense each turn</strong> (automated). When you Defend or Dodge against a threat linked to Electronic and Mechanical, add +1 to that roll.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,16 +23,21 @@
     "category": "science",
     "attribute": "intellect",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
       "electronic",
       "mechanical"
     ],
-    "effect": "Use as a part of reaction when this science & medicine technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Electronic and Mechanical. Part of a Reaction: owning any Extra Skill with “Reaction” in its name gives you a second Defense each turn (automated). When you Defend or Dodge against a threat linked to Electronic and Mechanical, add +1 to that roll.",
     "properties": [],
     "abilityType": "reaction",
     "actionType": "part of reaction",
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

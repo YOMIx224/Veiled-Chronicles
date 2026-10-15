@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Mist Form is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · Self · 1 minute · RHT</strong></p><p>You become mist: you cannot attack, you can pass through gaps, and you resist (½) physical damage. Add “physical” to your Resistance while it lasts.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -26,7 +26,7 @@
     "castingTime": "1 action",
     "range": "Self",
     "duration": "1 minute",
-    "effect": "Mist Form: resolve the described effect with the GM.",
+    "effect": "You become mist: you cannot attack, you can pass through gaps, and you resist (½) physical damage. Add “physical” to your Resistance while it lasts.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

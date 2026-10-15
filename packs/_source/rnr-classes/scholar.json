@@ -1,11 +1,11 @@
 {
   "_id": "rnrclass00000003",
-  "name": "Scholar",
+  "name": "Sage",
   "type": "class",
   "img": "icons/skills/trades/academics-book-study-purple.webp",
   "system": {
     "description": {
-      "value": "A learned intellectual. Scholars apply knowledge and analysis to solve problems others cannot.",
+      "value": "<p><strong>Hit Die:</strong> 1d6</p><p><strong>Class skills (automated):</strong> +1 to Occult and General Education when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Insight: once per scene, add your INT modifier again to an Occult or General Education check.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -16,15 +16,19 @@
     },
     "rarity": "common",
     "handSlot": "",
-    "role": "Support / Knowledge",
+    "role": "Sage",
     "hitDie": "1d6",
     "subclass": "",
-    "features": "Research, Knowledge is Power, Field Analysis, Lore Keeper",
+    "features": "Insight: once per scene, add your INT modifier again to an Occult or General Education check.",
     "source": {
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "universal": true
+    "universal": true,
+    "skills": [
+      "occult",
+      "generalEducation"
+    ]
   },
   "flags": {},
   "_stats": {

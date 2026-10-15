@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Cold Pack is a single-use universal resource.",
+      "value": "<p>Regain 1 Health (automated) and reduce swelling: the next First Aid check on you gains +1.</p><p><em>Single use: using it from the Backpack reduces the quantity by 1.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,8 +21,8 @@
       "page": ""
     },
     "consumableType": "supply",
-    "effect": "Cold Pack provides its described utility.",
-    "healingFormula": "",
+    "effect": "Regain 1 Health (automated) and reduce swelling: the next First Aid check on you gains +1.",
+    "healingFormula": "1",
     "damageFormula": "",
     "damageType": "",
     "caliber": "",
@@ -33,7 +33,8 @@
       "per": "charges"
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

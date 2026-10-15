@@ -5,7 +5,7 @@
   "img": "icons/equipment/chest/breastplate-layered-steel.webp",
   "system": {
     "description": {
-      "value": "Shoulder Guard provides reliable, setting-neutral protection.",
+      "value": "<p>Accessory armour (arms slot) · Armor DR +1. Worn on one arm (choose Left or Right Arm).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,15 +20,19 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "armorType": "medium",
-    "armorValue": 3,
+    "armorType": "accessory",
+    "armorValue": 1,
     "maxDex": 2,
     "strengthReq": 0,
     "speedBonus": 0,
     "stealthDisadv": false,
     "equipmentSlot": "torso",
     "properties": [],
-    "universal": true
+    "universal": true,
+    "allowedSlot": "arms",
+    "skills": [],
+    "bonus": 0,
+    "effect": "Accessory armour (arms slot) · Armor DR +1. Worn on one arm (choose Left or Right Arm)."
   },
   "flags": {},
   "_stats": {

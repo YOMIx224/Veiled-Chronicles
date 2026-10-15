@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Guardian is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d8</p><p><strong>Class skills (automated):</strong> +1 to Weapons and Perception when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Watchful Guard: you cannot be surprised, and allies within 10 ft add +1 to Reflex.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Guardian",
     "hitDie": "1d8",
     "subclass": "",
-    "features": "Core Guardian feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Watchful Guard: you cannot be surprised, and allies within 10 ft add +1 to Reflex.",
+    "universal": true,
+    "skills": [
+      "weapons",
+      "perception"
+    ]
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Technician is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d8</p><p><strong>Class skills (automated):</strong> +1 to Electronic and Mechanical when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Diagnostics: learn a device's or vehicle's weakest system and its current Health with a minute of study.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Technician",
     "hitDie": "1d8",
     "subclass": "",
-    "features": "Core Technician feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Diagnostics: learn a device's or vehicle's weakest system and its current Health with a minute of study.",
+    "universal": true,
+    "skills": [
+      "electronic",
+      "mechanical"
+    ]
   },
   "flags": {},
   "_stats": {

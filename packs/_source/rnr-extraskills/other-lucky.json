@@ -5,7 +5,7 @@
   "img": "icons/magic/nature/leaf-glow-triple-green.webp",
   "system": {
     "description": {
-      "value": "Once per session, you may reroll any one die result and keep the new result. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: PASSIVE.",
+      "value": "<p><strong>Always on:</strong> +1 to Bet.</p><p><strong>Once per session:</strong> reroll any one die you rolled and keep the new result.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -19,15 +19,19 @@
     "category": "other",
     "attribute": "ego",
     "cost": 1,
-    "bonus": 0,
-    "effect": "Reroll any die once per session.",
+    "bonus": 1,
+    "effect": "Always on: +1 to Bet. Once per session: reroll any one die you rolled and keep the new result.",
     "source": {
       "book": "RnR Universal Collection",
       "page": ""
     },
     "abilityType": "passive",
     "actionType": "passive",
-    "universal": true
+    "universal": true,
+    "skills": [
+      "bet"
+    ],
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

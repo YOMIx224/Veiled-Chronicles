@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Soothing Wave is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 15 ft · Instant · SAN</strong></p><p>Each ally within 15 ft regains 1d4+1 Health (roll once, apply to each target; automated).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,12 +24,12 @@
     "school": "universal",
     "attribute": "sanity",
     "castingTime": "1 action",
-    "range": "30 ft",
-    "duration": "instantaneous",
-    "effect": "Soothing Wave: resolve the described effect with the GM.",
+    "range": "15 ft",
+    "duration": "Instant",
+    "effect": "Each ally within 15 ft regains 1d4+1 Health (roll once, apply to each target; automated).",
     "damageFormula": "",
     "damageType": "",
-    "healingFormula": "",
+    "healingFormula": "1d4+1",
     "saveAttribute": "",
     "saveDC": 0,
     "uses": {
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

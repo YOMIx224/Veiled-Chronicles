@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Take Cover is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Bonus action · Self</strong></p><p>Duck behind nearby cover: until you move, you have Partial Cover (+2 Reflex, the world setting).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,12 +21,12 @@
       "page": ""
     },
     "abilityType": "active",
-    "attribute": "toughness",
-    "effect": "Take Cover: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "dexterity",
+    "effect": "Duck behind nearby cover: until you move, you have Partial Cover (+2 Reflex, the world setting).",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
+    "actionType": "bonus action",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

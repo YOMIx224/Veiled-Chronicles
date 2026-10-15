@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Compact Launcher suitable for any campaign that uses its profile.",
+      "value": "<p>Ranged · two-handed · 2d6 + DEX fire · 60/180 ft. Blast: apply the damage to the target and to each creature within 5 ft of it (they may Dodge).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,8 +22,8 @@
     },
     "weaponType": "ranged",
     "attribute": "dexterity",
-    "damageFormula": "1d8",
-    "damageType": "piercing",
+    "damageFormula": "2d6",
+    "damageType": "fire",
     "damageBonus": 0,
     "attackBonus": 0,
     "range": "60/180 ft",
@@ -34,7 +34,8 @@
     "reload": "1 action",
     "handsRequired": 2,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Ranged · two-handed · 2d6 + DEX fire · 60/180 ft. Blast: apply the damage to the target and to each creature within 5 ft of it (they may Dodge)."
   },
   "flags": {},
   "_stats": {

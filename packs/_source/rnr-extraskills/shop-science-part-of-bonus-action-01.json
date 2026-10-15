@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a part of bonus action when this science & medicine technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Herb and Medicine checks.</p><p><strong>Action (once per scene):</strong> spend your Action on this technique; your next Herb and Medicine check this scene gains a further +2.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,16 +23,21 @@
     "category": "science",
     "attribute": "intellect",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
-      "electronic",
-      "mechanical"
+      "herb",
+      "medicine"
     ],
-    "effect": "Use as a part of bonus action when this science & medicine technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Herb and Medicine. Action (once per scene): spend your Action on this technique; your next Herb and Medicine check this scene gains a further +2.",
     "properties": [],
     "abilityType": "active",
     "actionType": "part of bonus action",
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

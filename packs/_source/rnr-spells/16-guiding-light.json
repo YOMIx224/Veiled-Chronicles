@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Guiding Light is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 60 ft · 1 round · INT</strong></p><p>Automated attack and 1d6 + INT radiant damage; the next attack against the target before the end of your next turn has advantage.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,11 +24,11 @@
     "school": "universal",
     "attribute": "intellect",
     "castingTime": "1 action",
-    "range": "Self",
-    "duration": "instantaneous",
-    "effect": "Guiding Light: resolve the described effect with the GM.",
-    "damageFormula": "",
-    "damageType": "",
+    "range": "60 ft",
+    "duration": "1 round",
+    "effect": "Automated attack and 1d6 + INT radiant damage; the next attack against the target before the end of your next turn has advantage.",
+    "damageFormula": "1d6",
+    "damageType": "radiant",
     "healingFormula": "",
     "saveAttribute": "",
     "saveDC": 0,
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": true
   },
   "flags": {},
   "_stats": {

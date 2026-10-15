@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Heavy Crossbow suitable for any campaign that uses its profile.",
+      "value": "<p>Ranged · two-handed · 1d10 + DEX piercing · 100/400 ft. Loading: reload after each shot.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,11 +22,11 @@
     },
     "weaponType": "ranged",
     "attribute": "dexterity",
-    "damageFormula": "1d8",
+    "damageFormula": "1d10",
     "damageType": "piercing",
     "damageBonus": 0,
     "attackBonus": 0,
-    "range": "30/120 ft",
+    "range": "100/400 ft",
     "reach": 5,
     "caliber": "",
     "ammunition": 0,
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 2,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Ranged · two-handed · 1d10 + DEX piercing · 100/400 ft. Loading: reload after each shot."
   },
   "flags": {},
   "_stats": {

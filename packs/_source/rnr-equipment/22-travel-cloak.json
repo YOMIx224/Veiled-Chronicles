@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Travel Cloak is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Worn on the back: +1 to Survival, and rain, wind and cold impose no penalties on you while travelling.</p><p><em>Bonus applies automatically while the item is worn in its slot.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "equipType": "worn",
     "equipmentSlot": "",
-    "allowedSlot": "",
+    "allowedSlot": "back",
     "prostheticFor": "",
     "armorValue": 0,
     "speedBonus": 0,
@@ -32,9 +32,14 @@
     "attribute": "",
     "attributeBonus": 0,
     "skill": "",
-    "bonus": 0,
+    "bonus": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "back",
+    "skills": [
+      "survival"
+    ],
+    "effect": "Worn on the back: +1 to Survival, and rain, wind and cold impose no penalties on you while travelling."
   },
   "flags": {},
   "_stats": {

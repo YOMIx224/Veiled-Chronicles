@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Artisan is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d10</p><p><strong>Class skills (automated):</strong> +1 to Craft and Art when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Masterwork: items you craft with time and materials gain +1 to one stat the GM approves (attack, damage, Armor Value or a skill).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Artisan",
     "hitDie": "1d10",
     "subclass": "",
-    "features": "Core Artisan feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Masterwork: items you craft with time and materials gain +1 to one stat the GM approves (attack, damage, Armor Value or a skill).",
+    "universal": true,
+    "skills": [
+      "craft",
+      "art"
+    ]
   },
   "flags": {},
   "_stats": {

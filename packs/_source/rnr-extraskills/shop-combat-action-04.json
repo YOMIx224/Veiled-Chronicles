@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a action when this combat technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Weapons and Intimidate checks.</p><p><strong>Action (once per scene):</strong> spend your Action on this technique; your next Weapons and Intimidate check this scene gains a further +2.</p><p><strong>Technique strike (automated):</strong> use the item to roll an attack (STR modifier) and 1d6 + STR modifier physical damage. Targets Defend or Dodge as normal.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,16 +23,21 @@
     "category": "combat",
     "attribute": "strength",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
-      "brawl",
-      "weapons"
+      "weapons",
+      "intimidate"
     ],
-    "effect": "Use as a action when this combat technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Weapons and Intimidate. Action (once per scene): spend your Action on this technique; your next Weapons and Intimidate check this scene gains a further +2. Technique strike (automated): use the item to roll an attack (STR modifier) and 1d6 + STR modifier physical damage. Targets Defend or Dodge as normal.",
     "properties": [],
     "abilityType": "active",
     "actionType": "action",
-    "universal": true
+    "universal": true,
+    "attackRoll": true,
+    "damageFormula": "1d6",
+    "damageType": "physical",
+    "healingFormula": "",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Scry is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · Unlimited · 1 minute · SAN</strong></p><p>See and hear a creature or place you know well. A creature that is aware of you can make an Ego save against 10 + your SAN modifier to block it.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "sanity",
     "castingTime": "1 action",
-    "range": "30 ft",
+    "range": "Unlimited",
     "duration": "1 minute",
-    "effect": "Scry: resolve the described effect with the GM.",
+    "effect": "See and hear a creature or place you know well. A creature that is aware of you can make an Ego save against 10 + your SAN modifier to block it.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

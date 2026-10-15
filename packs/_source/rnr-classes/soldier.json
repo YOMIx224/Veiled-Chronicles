@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/weapons-crossed-swords-yellow.webp",
   "system": {
     "description": {
-      "value": "A trained warrior. Masters of weapons and tactics, soldiers excel in direct combat.",
+      "value": "<p><strong>Hit Die:</strong> 1d10</p><p><strong>Class skills (automated):</strong> +1 to Weapons and Shooting Weapons when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Drilled: once per rest, take an extra Action on your turn.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -19,12 +19,16 @@
     "role": "Fighter",
     "hitDie": "1d10",
     "subclass": "",
-    "features": "Weapon Mastery, Fighting Style, Second Wind, Extra Attack (advanced tier)",
+    "features": "Drilled: once per rest, take an extra Action on your turn.",
     "source": {
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "universal": true
+    "universal": true,
+    "skills": [
+      "weapons",
+      "shootingWeapons"
+    ]
   },
   "flags": {},
   "_stats": {

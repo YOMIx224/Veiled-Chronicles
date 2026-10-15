@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Uncanny Timing is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Passive · Self</strong></p><p>Passive. Add +2 to Initiative rolls (add it when the tracker rolls) and you cannot be surprised while conscious.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,13 +20,13 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "active",
-    "attribute": "ego",
-    "effect": "Uncanny Timing: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "passive",
+    "attribute": "dexterity",
+    "effect": "Passive. Add +2 to Initiative rolls (add it when the tracker rolls) and you cannot be surprised while conscious.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
+    "actionType": "passive",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

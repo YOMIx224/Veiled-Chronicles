@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Data Chip is a single-use universal resource.",
+      "value": "<p>Stores files, maps or recordings; slotting it into a terminal gives +1 to one Electronic check that uses its data.</p><p><em>Single use: using it from the Backpack reduces the quantity by 1.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,7 +21,7 @@
       "page": ""
     },
     "consumableType": "supply",
-    "effect": "Data Chip provides its described utility.",
+    "effect": "Stores files, maps or recordings; slotting it into a terminal gives +1 to one Electronic check that uses its data.",
     "healingFormula": "",
     "damageFormula": "",
     "damageType": "",
@@ -33,7 +33,8 @@
       "per": "charges"
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Bolt Bundle is a single-use universal resource.",
+      "value": "<p>20 bolts for crossbows. Load it with the weapon's Reload control: the weapon's ammunition goes up and this stack goes down (automated). An empty weapon offers Reload instead of attacking.</p>",
       "chat": ""
     },
     "quantity": 20,
@@ -21,7 +21,7 @@
       "page": ""
     },
     "consumableType": "ammunition",
-    "effect": "Bolt Bundle provides its described utility.",
+    "effect": "20 bolts for crossbows. Load it with the weapon's Reload control: the weapon's ammunition goes up and this stack goes down (automated). An empty weapon offers Reload instead of attacking.",
     "healingFormula": "",
     "damageFormula": "",
     "damageType": "",

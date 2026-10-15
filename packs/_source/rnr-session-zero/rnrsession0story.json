@@ -1,0 +1,201 @@
+{
+  "_id": "rnrsession0story",
+  "name": "Session 0 — เรื่องเล่าฝึกหัด: เวรแรกที่ประตูฮาร์โรว์",
+  "img": "icons/sundries/books/book-red-exclamation.webp",
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "RnR": {
+      "sessionZero": "story"
+    }
+  },
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.3",
+    "coreVersion": "14"
+  },
+  "pages": [
+    {
+      "_id": "rnrs0story000000",
+      "name": "00 — ภาพรวมและการเตรียมตัว",
+      "type": "text",
+      "sort": 0,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>เวรแรกที่ประตูฮาร์โรว์ (The First Shift)</h1>\n<p>เรื่องเล่าสั้นสำหรับ Session 0 ความยาวประมาณ <strong>3–4 ชั่วโมง</strong> ผู้เล่นรับบทสมาชิกใหม่ของ <strong>หน่วยรับมือประตูฮาร์โรว์</strong> หน่วยเล็ก ๆ ที่ดูแลเมืองชายแดนชื่อ <em>ฮาร์โรว์เกต</em> ในเวรแรกของพวกเขา คลังเสบียงถูกงัด ขบวนส่งยาหายไป และทุกอย่างจบที่การซุ่มโจมตีบนสะพานเก่า</p>\n<p>เรื่องนี้ออกแบบให้ <strong>ทุกฉากสอนกลไกของ RnR หนึ่งเรื่อง</strong> ผู้เล่นจึงได้เรียนกติกาด้วยการเล่นจริง ไม่ต้องนั่งฟังบรรยาย เมื่อจบเรื่อง ผู้เล่นจะได้ใช้ทุกส่วนของ Sheet อย่างน้อยหนึ่งครั้ง</p>\n<h2>โครงเรื่องและกลไกที่สอน</h2>\n<table><thead><tr><th>ฉาก</th><th>เหตุการณ์</th><th>กลไกที่สอน</th><th>เวลา</th></tr></thead><tbody><tr><td>0</td><td>ปฐมนิเทศที่กองบัญชาการ</td><td>สร้างตัวละคร, State Points, Origin / Class / Background, Disabled Organs, ID Card</td><td>45–60 นาที</td></tr><tr><td>1</td><td>คลังเสบียงที่ถูกงัด</td><td>Attribute check, Skill check, DC, Advantage / Disadvantage, Passive</td><td>20 นาที</td></tr><tr><td>2</td><td>สอบปากคำคนเฝ้าคลัง</td><td>ทักษะสังคม, Sense of Lie, การช่วยกัน (Teamwork)</td><td>20 นาที</td></tr><tr><td>3</td><td>เบิกอุปกรณ์</td><td>Backpack, ถือของในมือ, Wearable Equipment, Armor DR, Consumables</td><td>20 นาที</td></tr><tr><td>4</td><td>ซุ่มโจมตีบนสะพาน</td><td>Initiative, การโจมตี, Defend / Dodge / Take the Hit, Counterattack, ดาเมจ, Cover</td><td>45 นาที</td></tr><tr><td>5</td><td>มีคนล้ม</td><td>Down, Recovery roll, การรักษา</td><td>15 นาที</td></tr><tr><td>6</td><td>หลังการต่อสู้</td><td>Conditions, Willpower, Mental</td><td>10 นาที</td></tr><tr><td>7</td><td>พักที่ด่าน</td><td>Short Rest, Long Rest, Hit Dice</td><td>10 นาที</td></tr><tr><td>8</td><td>รายงานตัวและเลื่อนขั้น</td><td>XP, Level, Growth Points, Extra Skill Shop</td><td>20 นาที</td></tr><tr><td>เสริม</td><td>สัญญาณจากซากเหล็ก</td><td>Mecha และกำไลบัญชาการ (ถ้าแคมเปญใช้หุ่น)</td><td>20 นาที</td></tr></tbody></table>\n<h2>เตรียมก่อนเล่น</h2>\n<ol>\n<li>ตั้งค่าใน <strong>Game Settings → Configure Settings → Role&amp;Roll</strong> ให้ตรงกับแคมเปญ ถ้าไม่แน่ใจให้ใช้ค่าเริ่มต้น</li>\n<li>สร้าง Actor ประเภท <strong>NPC</strong> ตามค่าใน “ภาคผนวก — ค่าสถานะ NPC” แล้วลากอาวุธจาก Compendium <em>RnR — Weapons</em> ใส่แท็บ Actions ของแต่ละตัว</li>\n<li>เตรียม Scene สะพาน (กำแพงเตี้ยหนึ่งแนว ใช้สอน Cover) หรือเล่นแบบ Theatre of the Mind ก็ได้</li>\n<li>เปิด Compendium <em>RnR — Session 0</em> ให้ผู้เล่นเห็น <strong>“เอกสารแจกผู้เล่น”</strong></li>\n<li>อ่าน <strong>“คู่มือ GM: อธิบายผู้เล่นทีละขั้น”</strong> ก่อนเล่นหนึ่งรอบ มีบทพูดและตัวอย่างตัวเลขให้พร้อม</li>\n</ol>\n<h2>ปรับให้เข้ากับแนวเรื่อง (Reskin)</h2>\n<table><thead><tr><th>แนว</th><th>ฮาร์โรว์เกตคือ…</th><th>หน่วยรับมือคือ…</th><th>ศัตรูบนสะพาน</th></tr></thead><tbody><tr><td>Fantasy</td><td>เมืองป้อมชายแดน</td><td>หน่วยพิทักษ์ของเจ้าเมือง</td><td>โจรป่าและหัวหน้าทหารรับจ้าง</td></tr><tr><td>Modern</td><td>เมืองเหมืองแร่ในหุบเขา</td><td>หน่วยกู้ภัยท้องถิ่น</td><td>แก๊งขนของเถื่อน</td></tr><tr><td>Future / Cybernetic</td><td>นิคมอาณานิคม</td><td>ฝ่ายความมั่นคงนิคม</td><td>นักล่าซากเครื่องจักรที่ฝังชิป</td></tr><tr><td>Martial Arts</td><td>สำนักริมด่าน</td><td>ศิษย์ผู้รักษาด่าน</td><td>ชาวยุทธ์นอกรีต</td></tr><tr><td>Space Opera</td><td>สถานีเติมเชื้อเพลิง</td><td>ทีมรักษาการณ์สถานี</td><td>โจรสลัดอวกาศ</td></tr><tr><td>Superhero</td><td>ย่านชานเมือง</td><td>ทีมฮีโร่มือใหม่</td><td>สมุนของวายร้ายท้องถิ่น</td></tr></tbody></table>\n<p>ทุกชื่อสถานที่ คน และสิ่งของในเรื่องเปลี่ยนได้ ตัวเลขและกลไกใช้ได้เหมือนเดิมทุกแนว</p>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000001",
+      "name": "ฉาก 0 — ปฐมนิเทศ: สร้างตัวละคร",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ฉาก 0 — ปฐมนิเทศที่กองบัญชาการ</h1>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> เช้าตรู่ในห้องรับสมัครของหน่วยรับมือประตูฮาร์โรว์ ผู้กองเวรา ผู้หญิงผมสั้นเสียงแหบ วางแฟ้มลงตรงหน้าพวกคุณ “ก่อนฉันจะยอมให้พวกเธอแตะกุญแจคลัง ฉันต้องรู้ก่อนว่าพวกเธอคือใคร มาจากไหน และทำอะไรเป็นบ้าง” เธอยื่นแบบฟอร์มให้คนละแผ่น</p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li>การสร้างตัวละครทั้งหมด ผ่านคำถามของผู้กองเวรา</li><li>State Points 30 แต้ม, Attribute modifier, Origin / Class / Background, Disabled Organs และ ID Card</li></ul>\n<h2>คำถามของผู้กองเวรา และสิ่งที่ผู้เล่นทำ</h2>\n<table><thead><tr><th>ผู้กองถาม</th><th>ผู้เล่นทำบน Sheet</th></tr></thead><tbody><tr><td>“ชื่ออะไร”</td><td>สร้าง Actor ประเภท <strong>Character</strong> แล้วพิมพ์ชื่อที่แถบหัว ตั้งรูปผ่าน Actor configuration</td></tr><tr><td>“โตมาที่ไหน”</td><td>ลาก <strong>Origin</strong> จาก <em>RnR — Origins</em> ใส่ Sheet ระบบบวก Attribute ให้ 1 แต้มอัตโนมัติ และไม่นับเป็น State Points</td></tr><tr><td>“ก่อนมาที่นี่ทำงานอะไร”</td><td>ลาก <strong>Background</strong> จาก <em>RnR — Backgrounds</em> ได้ +1 ใน 2 Skill อัตโนมัติ และได้ความสามารถเชิงเรื่องราว (อ่านในช่อง Benefit)</td></tr><tr><td>“ในหน่วยนี้อยากทำหน้าที่อะไร”</td><td>ลาก <strong>Class</strong> จาก <em>RnR — Classes</em> ได้ +1 ใน 2 Class Skill อัตโนมัติ และได้ Class Feature หนึ่งอย่าง</td></tr><tr><td>“เก่งอะไร อ่อนอะไร”</td><td>กดปุ่ม <strong>STATE PT</strong> ที่มุมซ้ายบน แจก <strong>30 State Points</strong> ทุก Attribute เริ่มที่ 8 แต่ละแต้มเพิ่ม 1 สูงสุด 20</td></tr><tr><td>“มีอะไรในร่างกายที่ใช้ไม่ได้ไหม”</td><td>ถ้าตกลงใช้กฎนี้ ไปที่แท็บ Biography การ์ด <strong>Body Condition</strong> เปิด <em>Enable disabled-organ rules</em> แล้วคลิกอวัยวะบนรูปร่างกาย แต่ละอวัยวะได้ State Points เพิ่ม 2 แต้ม</td></tr><tr><td>“ทำอะไรได้พิเศษบ้าง”</td><td>แท็บ Features กด <strong>Extra Skill Shop</strong> ตัวละครใหม่มี <strong>6 Extra Skill Points</strong> ซื้อได้เลย</td></tr><tr><td>“ขอดูบัตรหน่อย”</td><td>กด <strong>ID Card</strong> ส่งบัตรประจำตัวขึ้นแชท</td></tr></tbody></table>\n<h2>อธิบาย Attribute modifier ตอนแจกแต้ม</h2>\n<p>Modifier = ปัดลงของ (ค่า − 8) ÷ 2 ค่า 8 คือ +0, ค่า 10 คือ +1, ค่า 12 คือ +2 และค่า 20 คือ +6 <strong>ทุกการทอยใช้ Modifier ไม่ได้ใช้ค่าเต็ม</strong> แนะนำให้เพิ่มเป็นเลขคู่ เพราะเลขคี่ไม่เพิ่ม Modifier</p>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li>ให้ผู้เล่นแต่ละคนตอบคำถามผู้กองด้วยเสียงตัวละครสั้น ๆ ทุกคนจะได้รู้จักกันไปพร้อมกัน</li><li>ถ้าผู้เล่นใช้ Disabled Organs ให้ถามว่าเกิดจากอะไร และอยากได้ Prosthetic ไหม (Equipment เช่น <em>Prosthetic Hand</em> ใส่แล้วอวัยวะนั้นกลับมาใช้ได้)</li><li>จบฉากเมื่อทุกคนมี Origin, Class, Background ครบ, ใช้ State Points ครบ 30 และซื้อ Extra Skill อย่างน้อย 1 อย่าง</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000002",
+      "name": "ฉาก 1 — คลังเสบียงที่ถูกงัด",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ฉาก 1 — คลังเสบียงที่ถูกงัด</h1>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> ผู้กองเวรายังพูดไม่ทันจบ เสียงระฆังก็ดังจากลานด้านหลัง ประตูคลังเสบียงเปิดแง้ม แม่กุญแจหักห้อยอยู่ ลังยาสามลังหายไป เหลือแค่รอยลากบนพื้นฝุ่น “เอาล่ะ เวรแรกของพวกเธอเริ่มแล้ว” เธอพูด “หาให้เจอว่าใครทำ”</p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li><strong>Attribute check</strong> และ <strong>Skill check</strong>: ทอย 1d20 + modifier เทียบกับ DC</li><li><strong>Advantage / Disadvantage</strong>: ทอย 2 ลูกแล้วเลือกลูกที่ดีกว่าหรือแย่กว่า</li><li><strong>Passive</strong>: 10 + modifier ใช้เมื่อไม่ได้ตั้งใจทอย</li></ul>\n<h2>สิ่งที่หาได้ในคลัง</h2>\n<table><thead><tr><th>ผู้เล่นทำ</th><th>ทอย</th><th>DC</th><th>ผลสำเร็จ</th></tr></thead><tbody><tr><td>ตรวจรอยลากบนพื้น</td><td>Search</td><td>10</td><td>ลังถูกลากออกประตูหลัง ไปทางสะพานเก่า มีรอยเท้า 3 คู่</td></tr><tr><td>ดูแม่กุญแจ</td><td>Mechanical</td><td>12</td><td>กุญแจถูกตัดด้วยเครื่องมือดี ๆ ไม่ใช่ทุบ คนทำเป็นมืออาชีพ</td></tr><tr><td>สังเกตรอบตัว</td><td>Perception (ใช้ Passive ได้)</td><td>13</td><td>เห็นผ้าพันแผลเปื้อนเลือดใต้ชั้น คนร้ายคนหนึ่งบาดเจ็บ</td></tr><tr><td>ยกชั้นที่ล้มทับประตูหลัง</td><td>Strength (Attribute)</td><td>12</td><td>เปิดทางได้ ถ้าไม่สำเร็จก็เปิดได้ แต่เสียเวลา และฉาก 2 เริ่มช้าไป</td></tr><tr><td>รู้จักชนิดยาที่หายไป</td><td>Medicine</td><td>11</td><td>เป็นยาแก้ไข้ป่าที่หมู่บ้านใต้สะพานรออยู่ เดิมพันจึงสูงขึ้น</td></tr></tbody></table>\n<h3>ผู้เล่นทำอะไรบน Sheet</h3><ol><li>ทอย Skill: แท็บ Main คลิกชื่อ Skill ในรายการ Skills จะเปิดหน้าต่างทอย</li><li>ทอย Attribute: คลิกชื่อ Attribute ในแถวบนสุดของ Sheet</li><li>Advantage / Disadvantage: เลือกในหน้าต่างทอย</li></ol>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li><strong>ตารางความยาก:</strong> ง่าย 8 · ปกติ 10 · ยาก 13 · ยากมาก 16 · แทบเป็นไปไม่ได้ 20</li><li>ให้ Advantage เมื่อมีเครื่องมือดีหรือมีเวลา ให้ Disadvantage เมื่อรีบหรือมืด สอนผ่านเหตุการณ์ เช่น “ไฟในคลังดับครึ่งหนึ่ง ทอย Search แบบ Disadvantage นะ”</li><li>อย่าให้การทอยพลาดหยุดเรื่อง ทอยพลาดแปลว่าได้ข้อมูลช้าลงหรือต้องจ่ายราคาบางอย่าง ไม่ใช่ทางตัน</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000003",
+      "name": "ฉาก 2 — สอบปากคำคนเฝ้าคลัง",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ฉาก 2 — สอบปากคำคนเฝ้าคลัง</h1>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> ทอมมี คนเฝ้าคลังวัยสิบเจ็ด นั่งตัวสั่นอยู่ในโรงอาหาร มือกำหมวกแน่น “ผมหลับไปแค่แป๊บเดียวจริง ๆ ครับ” เขาพูดโดยไม่สบตาใคร</p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li>ทักษะสังคม: Persuade, Intimidate, Empathy, Sense of Lie</li><li>การทอยแข่งกัน (Opposed check)</li><li>การช่วยกัน: ความสามารถ <em>Teamwork</em> หรือการช่วยแบบทั่วไป ทำให้เพื่อนได้ Advantage</li></ul>\n<h2>ความลับของทอมมี</h2>\n<p>ทอมมีไม่ได้หลับ คนร้ายจ่ายเงินให้เขาเปิดประตูหลัง เขาเสียใจเพราะเพิ่งรู้ว่าของที่หายไปคือยาที่หมู่บ้านของแม่เขารออยู่</p>\n<table><thead><tr><th>วิธีของผู้เล่น</th><th>ทอย</th><th>ทอมมีต้าน</th><th>ผลสำเร็จ</th></tr></thead><tbody><tr><td>จับโกหก</td><td>Sense of Lie</td><td>Persuade ของทอมมี (+1)</td><td>รู้ว่าเขาโกหกเรื่องหลับ</td></tr><tr><td>ปลอบใจ เข้าใจเขา</td><td>Empathy หรือ Persuade</td><td>DC 12</td><td>ทอมมียอมเล่าทั้งหมด และบอกว่าคนร้ายจะรอขนของที่สะพานตอนพลบค่ำ</td></tr><tr><td>ขู่ให้กลัว</td><td>Intimidate</td><td>Ego save ของทอมมี (+0)</td><td>ได้ความจริง แต่ทอมมีจะไม่ช่วยอีก และผู้กองไม่พอใจ</td></tr></tbody></table>\n<h3>ผู้เล่นทำอะไรบน Sheet</h3><ol><li>ทอยแข่ง: ผู้เล่นทอย Skill ของตัวเอง GM ทอยฝั่ง NPC ใครได้มากกว่าชนะ ถ้าเสมอ ฝ่ายที่ตั้งรับชนะ</li><li>ช่วยกัน: ผู้เล่นอีกคนอธิบายว่าช่วยอย่างไร คนที่ทอยหลักได้ Advantage ถ้ามีความสามารถ <em>Teamwork</em> ให้กดใช้จากแท็บ Features</li></ol>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li>ฉากนี้สอนว่า <strong>วิธีที่เลือกมีผลต่อเรื่อง</strong> ไม่ใช่แค่ตัวเลข การขู่ได้ข้อมูลเร็วกว่า แต่เสียพันธมิตร</li><li>ถ้าทอมมีเปิดใจ ให้เขามอบ <em>Medicine Dose</em> 1 ขวดเป็นการไถ่โทษ ผู้เล่นจะได้ใช้ในฉาก 5</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000004",
+      "name": "ฉาก 3 — เบิกอุปกรณ์",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ฉาก 3 — เบิกอุปกรณ์</h1>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> ผู้กองเวราโยนกุญแจห้องอาวุธมาให้ “เบิกได้คนละไม่เกินที่ถือไหว พลบค่ำแล้วไปถึงสะพานก่อนพวกมัน”</p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li><strong>Backpack</strong>: ของที่พกไว้</li><li><strong>ถือในมือ</strong>: อาวุธต้องอยู่ในมือซ้ายหรือขวาถึงจะโจมตีและ Defend ได้ อาวุธสองมือใช้ทั้งสองมือ</li><li><strong>Wearable Equipment</strong>: เกราะ หมวก ถุงมือ รองเท้า ใส่ตามช่องของร่างกาย</li><li><strong>Armor DR</strong>: ลดดาเมจทุกครั้งที่โดน</li><li><strong>Consumables</strong>: ของใช้แล้วหมด</li></ul>\n<h2>ของที่เบิกได้ (ให้ผู้เล่นลากจาก Compendium)</h2>\n<ul>\n<li>อาวุธหนึ่งชิ้นจาก <em>RnR — Weapons</em> ตามที่ถนัด</li>\n<li>เกราะลำตัวหนึ่งชิ้นจาก <em>RnR — Armor</em> เช่น <em>Leather Armor</em> (DR 2) หรือ <em>Chain Shirt</em></li>\n<li>อุปกรณ์เสริมหนึ่งชิ้น เช่น <em>Helm</em> (หัว, DR +1) หรือ <em>Gloves</em> (มือ, +1 Brawl และ Craft)</li>\n<li><em>Bandage</em> 1 ชิ้น และ <em>Pain Reliever</em> 1 ชิ้นจาก <em>RnR — Consumables</em></li>\n</ul>\n<h3>ผู้เล่นทำอะไรบน Sheet</h3><ol><li>ลากของจาก Compendium ใส่ Sheet ของจะเข้า <strong>Backpack</strong></li><li>แท็บ Backpack: ลากอาวุธใส่ <strong>ช่องมือ</strong> หรือกดปุ่ม L / R</li><li>ลากเกราะใส่ช่อง <strong>Torso</strong> บนรูปร่างกายในส่วน Wearable Equipment ช่องนั้นจะเป็นสีทอง และ Armor DR ที่หัวข้อจะเพิ่มขึ้น</li><li>ชี้เมาส์ที่ช่อง จะเห็นส่วนของร่างกายบนรูปสว่างขึ้น ช่องลายแดงคือส่วนที่ใช้ไม่ได้ (Disabled Organs)</li><li>คลิกชื่อไอเทมเพื่อดูการ์ดกฎในแชท ไอเทมที่มีสูตรจะมีปุ่ม Attack, Damage หรือ Heal</li></ol>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li>ให้ผู้เล่นลองใส่หมวกกับเกราะ แล้วดูว่า Armor DR รวมเปลี่ยนไปอย่างไร</li><li>อาวุธยิงต้องมีกระสุน ถ้ายิงตอนกระสุนหมด ระบบจะเปิดหน้าต่าง Reload ให้แทน ให้ผู้เล่นที่ใช้ปืนหรือธนูเบิก <em>Arrow Bundle</em> หรือ <em>Universal Ammunition</em> ไปด้วย</li><li>Equipment ที่สวมใส่ เช่น <em>Climbing Kit</em> หรือ <em>Lens Kit</em> ให้โบนัส Skill อัตโนมัติเฉพาะตอนสวมอยู่</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000005",
+      "name": "ฉาก 4 — ซุ่มโจมตีบนสะพาน",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ฉาก 4 — ซุ่มโจมตีบนสะพาน</h1>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> พลบค่ำ สะพานหินเก่าทอดข้ามลำธาร เกวียนคันหนึ่งจอดอยู่ฝั่งตรงข้าม ลังยาสามลังวางอยู่ท้ายเกวียน ชายสามคนกำลังขนของ ชายผมแดงที่ยืนคุมอยู่หันมาพอดี “เด็กใหม่ของเวราเหรอ” เขาชักดาบออกมาช้า ๆ “กลับไปซะ ก่อนจะมีใครเจ็บ”</p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li><strong>Initiative</strong>: 1d20 + DEX modifier</li><li><strong>การโจมตี</strong>: 1d20 + modifier ของอาวุธ เป้าหมายเลือก Defend, Dodge หรือ Take the Hit</li><li><strong>Natural 20</strong> คือ Critical (ทอยลูกเต๋าดาเมจเป็นสองเท่า), <strong>Natural 1</strong> ตอนป้องกันคือพลาดแน่นอน</li><li><strong>Counterattack</strong>: Dodge ได้มากกว่าค่าโจมตี</li><li><strong>ดาเมจ</strong>: ลบด้วย Armor DR ก่อน แล้วจึงคิด Resistance / Vulnerability</li><li><strong>Cover</strong>: หลบหลังกำแพงได้ +Reflex</li></ul>\n<h2>ศัตรู (ดูค่าเต็มที่ภาคผนวก)</h2>\n<ul><li><strong>โจรขนของ ×3</strong>: Health 10 · Reflex 11 · Armor DR 1 · อาวุธ <em>Sabre</em> (1d6, +1 โจมตี)</li><li><strong>ราเวน ผมแดง</strong> หัวหน้า: Health 18 · Reflex 12 · Armor DR 2 · อาวุธ <em>Longsword</em> (1d8) · ความสามารถ <em>Threaten</em></li></ul>\n<h2>ลำดับการต่อสู้ (สอนทีละขั้นในรอบแรก)</h2>\n<ol>\n<li><strong>เริ่ม Combat:</strong> GM ลาก Token ลง Scene แล้วกด Begin Combat ผู้เล่นกด <em>Roll Initiative</em> บน Sheet</li>\n<li><strong>เลือกเป้า:</strong> ผู้เล่นคลิกขวา Token ศัตรู แล้วกดไอคอนเป้า (หรือกด T ขณะชี้เมาส์)</li>\n<li><strong>โจมตี:</strong> คลิกชื่ออาวุธในช่องมือ แล้วกด <em>Attack Roll</em> บนการ์ด (Shift+Click เพื่อเลือก Advantage / Disadvantage)</li>\n<li><strong>ป้องกัน:</strong> การ์ดของเป้าหมายจะมี 3 ปุ่ม เจ้าของเป้าหมาย (หรือ GM สำหรับ NPC) เลือก:\n  <ul><li><strong>Defend</strong>: ทอย 1d20 + modifier ของอาวุธที่ถืออยู่ ต้องถืออาวุธ</li><li><strong>Dodge / Reflex</strong>: ทอย 1d20 + DEX modifier + Reflex skill ใช้ได้ทุกเมื่อ</li><li><strong>Take the Hit</strong>: ไม่ทอย และไม่เสียสิทธิ์ป้องกันของเทิร์นนี้</li></ul>\n  ได้เท่ากับหรือมากกว่าค่าโจมตีคือป้องกันสำเร็จ แต่ละตัวป้องกันได้ <strong>1 ครั้งต่อเทิร์น</strong> (2 ครั้งถ้ามี Extra Skill ที่ชื่อมีคำว่า Reaction, Defense หรือ Counter)</li>\n<li><strong>ดาเมจ:</strong> ถ้าโดน ผู้โจมตีกด <em>Damage Roll</em> แล้วเจ้าของเป้าหมายกด <em>Apply Damage</em> การ์ดแสดงทุกขั้น: ดาเมจดิบ → ลบ DR → คูณ Resistance → ผลสุดท้าย กด Apply ซ้ำไม่หัก Health ซ้ำ</li>\n</ol>\n<h2>ตัวอย่างตัวเลขให้อ่านตอนรอบแรก</h2>\n<p>มีนา (DEX 12) ใช้ <em>Rapier</em> ทอยโจมตีได้ 13 + 2 = <strong>15</strong> โจรเลือก Dodge ได้ 9 + 1 = 10 ซึ่งน้อยกว่า 15 จึง <strong>โดน</strong> มีนาทอยดาเมจ 1d8 + 2 ได้ 7 โจรมี DR 1 เหลือ <strong>6</strong> Health ของโจรลดจาก 10 เป็น 4</p>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li>รอบแรกให้ทุกคนได้ลองทั้งโจมตีและป้องกัน แล้วให้หัวหน้าโจรใช้ <em>Threaten</em> สอนว่าศัตรูก็มีความสามารถ</li><li>กำแพงเตี้ยบนสะพานคือ <strong>Partial Cover (+2 Reflex)</strong> ชวนผู้เล่นที่ใช้ธนูหลบไปหลังกำแพง</li><li>ถ้าผู้เล่นคนไหน Dodge ได้มากกว่าค่าโจมตีและถืออาวุธอยู่ ปุ่ม <strong>Counterattack</strong> จะขึ้น ชี้ให้ทุกคนดู</li><li>ราเวนยอมแพ้เมื่อ Health เหลือ 5 หรือน้อยกว่า เพื่อปิดฉากด้วยการเจรจาแทนการฆ่า</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000006",
+      "name": "ฉาก 5 — มีคนล้ม",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ฉาก 5 — มีคนล้ม</h1>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> คมดาบของราเวนฟาดลงเต็มแรง เพื่อนของคุณทรุดลงกับพื้นหิน ลมหายใจขาดเป็นช่วง ๆ</p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li><strong>Down</strong>: Health เหลือ 0 = ล้ม ไม่ใช่ตาย</li><li><strong>Recovery roll</strong>: ทอย 1d20 ทุกรอบที่ล้มอยู่ เทียบ DC 10</li><li>การรักษาช่วยให้ลุกขึ้นได้ทันที</li></ul>\n<h2>กติกาการล้ม (ค่าเริ่มต้น)</h2>\n<table><thead><tr><th>ผลทอย Recovery</th><th>ความคืบหน้า</th></tr></thead><tbody><tr><td>Natural 20 หรือเกิน DC 10 ขึ้นไป</td><td>2 ขั้น</td></tr><tr><td>ได้เท่ากับหรือมากกว่า DC</td><td>1 ขั้น</td></tr><tr><td>น้อยกว่า DC</td><td>ไม่คืบหน้า</td></tr></tbody></table>\n<ul><li>ครบ <strong>2 ขั้น</strong> ลุกขึ้นพร้อม Health อย่างน้อย 1</li><li>ถ้าได้รับการรักษาจน Health มากกว่า 0 จะลุกขึ้นทันที</li><li>ล้มครบ <strong>3 รอบ</strong> โดยไม่คืบหน้า ระบบจะแจ้งให้ GM ตัดสิน <strong>RnR ไม่ฆ่าตัวละครเอง</strong> ความตายเป็นการตัดสินใจของ GM เสมอ</li></ul>\n<h3>ผู้เล่นทำอะไรบน Sheet</h3><ol><li>เพื่อนที่อยู่ใกล้ใช้ <em>Bandage</em> หรือ <em>Medicine Dose</em> จาก Backpack ระบบทอยการรักษาและลดจำนวนไอเทมให้</li><li>หรือใช้ความสามารถ <em>First Response</em> (รักษา 1d4+1 และได้ Recovery 1 ขั้น)</li><li>กด <em>Apply Healing</em> บนการ์ด</li></ol>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li>ถ้าไม่มีใครล้มเองในฉาก 4 ให้ราเวนใช้ท่าสุดท้ายฟาดใส่ตัวละครที่ Health น้อยที่สุด เพื่อให้ได้สอนกฎนี้ บอกผู้เล่นก่อนว่าเป็นฉากฝึก ไม่มีใครตายแน่นอน</li><li>ชวนผู้เล่นที่ล้มทอย Recovery เองหนึ่งครั้ง ก่อนให้เพื่อนรักษา</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000007",
+      "name": "ฉาก 6 — หลังการต่อสู้",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ฉาก 6 — หลังการต่อสู้</h1>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> เสียงดาบเงียบลง ราเวนนั่งพิงเกวียน เลือดไหลจากแขน “ยาพวกนี้ไม่ได้จะเอาไปขาย” เขาพูดเสียงแผ่ว “ลูกน้องฉันครึ่งหนึ่งก็ป่วยไข้ป่าเหมือนกัน”</p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li><strong>Conditions</strong>: บาดแผลและภาวะทางจิต มีผลต่อการทอย</li><li><strong>Willpower</strong>: 8 + SAN modifier ใช้ตามความสามารถหรือที่ GM กำหนด และฟื้นตอนพัก</li><li><strong>Mental</strong>: แถบหัวใจ 18 ช่อง เริ่มที่ 9 ใช้บอกสภาพจิตใจ</li></ul>\n<h2>สิ่งที่ GM ทำ</h2>\n<ol><li>ใครถูกฟันแรง ๆ ให้ GM เปิด <em>Manage Conditions</em> แล้วใส่ <strong>Minor Wound</strong> พร้อมบอกว่า Condition มีค่า Roll Penalty ที่ GM ตั้งเองได้ (เริ่มต้น 0)</li><li>ใครเห็นเพื่อนล้มต่อหน้า ให้ลด Mental 1 ช่อง เพื่อแสดงว่าเหตุการณ์ทิ้งร่องรอย</li><li>การตัดสินใจทางศีลธรรม: คืนยาให้หมู่บ้านทั้งหมด หรือแบ่งให้คนของราเวน เรื่องนี้ไม่มีการทอย ให้ผู้เล่นคุยกัน</li></ol>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li>อธิบายสั้น ๆ ว่า Conditions ไม่ได้ลบตัวเลขเอง ผลอยู่ที่ Roll Penalty ซึ่ง GM ตั้งให้เหมาะกับโต๊ะ</li><li>ทางเลือกในฉากนี้คือเมล็ดพันธุ์ของแคมเปญ ราเวนอาจกลายเป็นพันธมิตรหรือศัตรูถาวรก็ได้</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000008",
+      "name": "ฉาก 7 — พักที่ด่าน",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ฉาก 7 — พักที่ด่าน</h1>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> กลับถึงด่านตอนดึก ผู้กองเวราต้มชาหม้อใหญ่ “พักก่อน พรุ่งนี้ค่อยเขียนรายงาน”</p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li><strong>Short Rest</strong>: ใช้ Hit Dice รักษา และ Willpower ฟื้นครึ่งหนึ่ง</li><li><strong>Long Rest</strong>: ฟื้นทุกอย่าง</li></ul>\n<table><thead><tr><th>การพัก</th><th>ผล</th></tr></thead><tbody><tr><td>Short Rest</td><td>เลือกจำนวน Hit Dice ที่จะใช้ แต่ละลูกรักษา <strong>1d6 + TGH modifier</strong> และ Willpower ฟื้น <strong>ครึ่งหนึ่งของค่าสูงสุด</strong> ตัวละครใหม่มี Hit Dice 3 ลูก</td></tr><tr><td>Long Rest</td><td>Health และ Willpower เต็ม, Hit Dice คืน และล้าง Exhaustion</td></tr></tbody></table>\n<h3>ผู้เล่นทำอะไรบน Sheet</h3><ol><li>แท็บ Main กดปุ่ม <strong>Rest</strong></li><li>เลือก Short หรือ Long แล้วใส่จำนวน Hit Dice</li></ol>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li>ให้ทุกคนลอง Short Rest หนึ่งครั้งตอนนี้ แล้วบอกว่า Long Rest จะเกิดตอนจบฉาก 8</li><li>ถ้ามีคนเบิก <em>Cooking Set</em> ไป ทุกคนที่กินอาหารจะได้ Willpower เพิ่ม 1 ตอน Long Rest</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000009",
+      "name": "ฉาก 8 — รายงานตัวและเลื่อนขั้น",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ฉาก 8 — รายงานตัวและเลื่อนขั้น</h1>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> ผู้กองเวราอ่านรายงานของพวกคุณจนจบ วางปากกาลง แล้วยิ้มเป็นครั้งแรก “ยินดีต้อนรับสู่หน่วยรับมือ” เธอยื่นเข็มกลัดให้คนละอัน</p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li><strong>XP และ Level</strong>: ต้องการ XP = Level ปัจจุบัน × 300</li><li>ทุก Level: Health สูงสุด +2 และทุก 2 Level ได้ Willpower สูงสุด +1</li><li><strong>Growth Points</strong>: เพิ่ม State Points ให้แจกเพิ่มได้</li><li><strong>Extra Skill Points</strong>: ใช้ซื้อของใน Extra Skill Shop</li></ul>\n<h2>รางวัลของเวรแรก</h2>\n<table><thead><tr><th>รางวัล</th><th>จำนวน</th><th>เหตุผล</th></tr></thead><tbody><tr><td>XP</td><td>300</td><td>พอให้ขึ้น Level 2 ทุกคน</td></tr><tr><td>Growth Points</td><td>1</td><td>ถ้าผู้เล่นเล่นตามบุคลิกตัวละครได้ดี</td></tr><tr><td>Extra Skill Points</td><td>2</td><td>รางวัลจากผู้กองเวรา</td></tr></tbody></table>\n<h3>ผู้เล่นทำอะไรบน Sheet</h3><ol><li>GM กดปุ่ม <strong>＋</strong> ข้างแถบ XP ของแต่ละคน ใส่ XP, Growth Points และ Extra Skill Points ในหน้าต่างเดียวกัน</li><li>ผู้เล่นเห็น Level ขึ้น และ Health / Willpower สูงสุดเพิ่มอัตโนมัติ</li><li>ผู้เล่นกด <strong>STATE PT</strong> เพื่อแจก Growth Point ที่ได้</li><li>ผู้เล่นเปิด <strong>Extra Skill Shop</strong> ลองใช้ตัวกรอง Attribute และ <em>Affordable only</em> แล้วซื้อ Skill ใหม่</li></ol>\n<h2>อธิบาย Extra Skill ตอนซื้อ</h2>\n<ul><li>ทุก Extra Skill ให้ <strong>+1 กับ Skill ที่ระบุ</strong> อัตโนมัติตลอดเวลา</li><li>ชื่อในวงเล็บบอกจังหวะใช้ เช่น (Action), (Bonus Action), (Reaction) และมีผลพิเศษตามที่เขียนบนการ์ด</li><li>Skill ที่ชื่อมีคำว่า <strong>Reaction</strong> ให้ป้องกันได้ <strong>2 ครั้งต่อเทิร์น</strong> อัตโนมัติ</li><li>สาย Combat บางตัวทอยโจมตีได้เอง สาย Science บางตัวรักษาได้ และสาย Physical บางตัวเพิ่ม Speed</li><li>เปลี่ยนใจได้: แท็บ Owned ในร้าน กด Remove จะได้แต้มคืน</li></ul>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li>ปิด Session 0 ด้วยการให้ผู้กองเวราบอกเบาะแสถัดไป เช่น “ไข้ป่าไม่ได้มาเอง มีคนปล่อยมันในต้นน้ำ” เพื่อเชื่อมเข้าแคมเปญหลัก</li><li>ให้ทุกคน Long Rest ก่อนจบ ตัวละครจะพร้อมเต็มที่สำหรับ Session 1</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000010",
+      "name": "ภาคเสริม — สัญญาณจากซากเหล็ก (Mecha)",
+      "type": "text",
+      "sort": 1000,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ภาคเสริม — สัญญาณจากซากเหล็ก</h1>\n<p>ใช้เฉพาะแคมเปญที่มีหุ่นยนต์ ระหว่างทางกลับจากสะพาน ผู้เล่นพบซากโรงเก็บเครื่องจักรเก่า</p>\n<blockquote class=\"rnr-readaloud\"><p><strong>อ่านให้ผู้เล่นฟัง:</strong> ใต้ผ้าใบขาด ๆ มีเครื่องจักรสูงสามเมตรนั่งคุกเข่าอยู่ ไฟสีฟ้าที่หน้าอกกะพริบช้า ๆ ข้างตัวมันมีกำไลโลหะวางอยู่ ข้อความบนกำไลเขียนว่า <em>AEGIS M-01 — awaiting pilot</em></p></blockquote>\n<h3>สิ่งที่ฉากนี้สอน</h3><ul><li>กำไลบัญชาการ: เรียกหุ่น และกลับสู่ร่าง Pilot</li><li>Mecha คือ Actor ประเภท Vehicle</li></ul>\n<h3>ผู้เล่นทำอะไรบน Sheet</h3><ol><li>GM นำเข้า Mecha จาก <em>RnR — Mecha Frames</em> (Aegis, Vanguard, Bastion หรือ Relay) แล้วตั้ง Ownership ให้ผู้เล่น</li><li>ผู้เล่นลาก <em>Mecha Command Bracelet</em> จาก <em>RnR — Equipment</em> ใส่ช่องมือในส่วน Wearable</li><li>กดปุ่ม <strong>Activate</strong> บนช่องกำไล เลือก <em>Summon / Mecha Mode</em> Token หุ่นจะปรากฏข้าง Pilot</li><li>เมื่อจบ กด Activate อีกครั้ง เลือก <em>Return to Pilot</em></li></ol>\n<h3>หมายเหตุสำหรับ GM</h3><ul><li>ต้องมี Token ของ Pilot อยู่ใน Scene ก่อนเรียกหุ่น</li><li>อ่านรายละเอียดเพิ่มใน Compendium <em>RnR — Mecha Field Manual</em></li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0story000011",
+      "name": "ภาคผนวก — ค่าสถานะ NPC",
+      "type": "text",
+      "sort": 1100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ภาคผนวก — ค่าสถานะ NPC</h1>\n<p>สร้างเป็น Actor ประเภท <strong>NPC</strong> แล้วใส่ค่าตามตาราง ลากอาวุธจาก Compendium ใส่แท็บ Actions</p>\n<table><thead><tr><th>NPC</th><th>Health</th><th>Reflex</th><th>Armor DR</th><th>Attributes เด่น</th><th>อาวุธ / ความสามารถ</th></tr></thead><tbody><tr><td>ผู้กองเวรา (พันธมิตร)</td><td>24</td><td>13</td><td>3</td><td>CHR 14, TGH 12</td><td>Longsword, Encourage</td></tr><tr><td>ทอมมี คนเฝ้าคลัง</td><td>8</td><td>10</td><td>0</td><td>RHT 10 (Persuade +1)</td><td>—</td></tr><tr><td>โจรขนของ (×3)</td><td>10</td><td>11</td><td>1</td><td>STR 10, DEX 12</td><td>Sabre (1d6, +1 โจมตี)</td></tr><tr><td>ราเวน ผมแดง (หัวหน้า)</td><td>18</td><td>12</td><td>2</td><td>STR 14, EGO 12</td><td>Longsword (1d8), Threaten</td></tr></tbody></table>\n<p>ถ้าโต๊ะมีผู้เล่น 5 คนขึ้นไป ให้เพิ่มโจรอีก 1 คน ถ้ามี 2 คนให้เหลือโจร 2 คน</p>"
+      },
+      "flags": {}
+    }
+  ]
+}

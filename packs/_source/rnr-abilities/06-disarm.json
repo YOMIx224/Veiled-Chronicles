@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Disarm is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Melee</strong></p><p>Make an attack (automated roll). On a hit you deal no damage; instead the target drops one held item, which lands within 5 ft. The target may Defend or Dodge as normal.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,20 +21,23 @@
       "page": ""
     },
     "abilityType": "active",
-    "attribute": "sanity",
-    "effect": "Disarm: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "dexterity",
+    "effect": "Make an attack (automated roll). On a hit you deal no damage; instead the target drops one held item, which lands within 5 ft. The target may Defend or Dodge as normal.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
     "actionType": "action",
-    "range": "Self",
+    "range": "Melee",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": true,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

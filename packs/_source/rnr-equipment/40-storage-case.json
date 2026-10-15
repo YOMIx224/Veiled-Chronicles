@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Storage Case is useful in exploration, travel, or problem-solving.",
+      "value": "<p>A padded hard case: fragile gear inside survives falls, water and rough handling.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,7 +20,7 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "equipType": "worn",
+    "equipType": "gear",
     "equipmentSlot": "",
     "allowedSlot": "",
     "prostheticFor": "",
@@ -34,7 +34,10 @@
     "skill": "",
     "bonus": 0,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "",
+    "skills": [],
+    "effect": "A padded hard case: fragile gear inside survives falls, water and rough handling."
   },
   "flags": {},
   "_stats": {

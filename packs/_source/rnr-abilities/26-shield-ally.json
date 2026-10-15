@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Shield Ally is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Reaction · 5 ft</strong></p><p>When an ally within 5 ft is hit, you take the hit instead. Your own Damage Reduction applies.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,21 +20,24 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "active",
-    "attribute": "rhetoric",
-    "effect": "Shield Ally: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "reaction",
+    "attribute": "toughness",
+    "effect": "When an ally within 5 ft is hit, you take the hit instead. Your own Damage Reduction applies.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
-    "range": "Self",
+    "actionType": "reaction",
+    "range": "5 ft",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

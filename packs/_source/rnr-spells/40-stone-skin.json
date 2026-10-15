@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Stone Skin is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · Touch · 10 minutes · RHT</strong></p><p>The target resists (½) physical damage: add “physical” to its Resistance while the spell lasts.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "rhetoric",
     "castingTime": "1 action",
-    "range": "Self",
-    "duration": "instantaneous",
-    "effect": "Stone Skin: resolve the described effect with the GM.",
+    "range": "Touch",
+    "duration": "10 minutes",
+    "effect": "The target resists (½) physical damage: add “physical” to its Resistance while the spell lasts.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

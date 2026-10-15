@@ -5,7 +5,7 @@
   "img": "icons/skills/social/diplomacy-handshake.webp",
   "system": {
     "description": {
-      "value": "You excel at rallying others. Once per rest, grant an ally advantage on their next roll. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE.",
+      "value": "<p><strong>Always on:</strong> +1 to Persuade and Intimidate.</p><p><strong>Once per rest:</strong> as a Bonus Action, one ally who can hear you gains advantage on their next roll.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -19,15 +19,20 @@
     "category": "communication",
     "attribute": "rhetoric",
     "cost": 1,
-    "bonus": 0,
-    "effect": "Ally gains advantage on next roll (once per rest).",
+    "bonus": 1,
+    "effect": "Always on: +1 to Persuade and Intimidate. Once per rest: as a Bonus Action, one ally who can hear you gains advantage on their next roll.",
     "source": {
       "book": "RnR Universal Collection",
       "page": ""
     },
     "abilityType": "active",
     "actionType": "action",
-    "universal": true
+    "universal": true,
+    "skills": [
+      "persuade",
+      "intimidate"
+    ],
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

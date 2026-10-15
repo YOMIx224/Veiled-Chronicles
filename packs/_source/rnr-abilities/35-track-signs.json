@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Track Signs is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Self</strong></p><p>Add +2 to Survival and Search checks to follow tracks; on a success you also learn how many creatures passed and roughly how long ago.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,8 +21,8 @@
       "page": ""
     },
     "abilityType": "active",
-    "attribute": "rhetoric",
-    "effect": "Track Signs: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "aptitude",
+    "effect": "Add +2 to Survival and Search checks to follow tracks; on a success you also learn how many creatures passed and roughly how long ago.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

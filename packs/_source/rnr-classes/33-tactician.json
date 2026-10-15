@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Tactician is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d10</p><p><strong>Class skills (automated):</strong> +1 to General Education and Perception when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Plan of Attack: before combat, if you had a minute to plan, every ally adds +1 to their first attack.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Tactician",
     "hitDie": "1d10",
     "subclass": "",
-    "features": "Core Tactician feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Plan of Attack: before combat, if you had a minute to plan, every ally adds +1 to their first attack.",
+    "universal": true,
+    "skills": [
+      "generalEducation",
+      "perception"
+    ]
   },
   "flags": {},
   "_stats": {

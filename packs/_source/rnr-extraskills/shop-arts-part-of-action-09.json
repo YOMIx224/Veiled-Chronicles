@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a part of action when this arts technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Art and Empathy checks.</p><p><strong>Part of an Action:</strong> when your Action already uses Art and Empathy, one ally who helps you gains +1 on the same check.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,18 +21,23 @@
       "page": ""
     },
     "category": "arts",
-    "attribute": "charm",
+    "attribute": "intellect",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
       "art",
-      "persuade"
+      "empathy"
     ],
-    "effect": "Use as a part of action when this arts technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Art and Empathy. Part of an Action: when your Action already uses Art and Empathy, one ally who helps you gains +1 on the same check.",
     "properties": [],
     "abilityType": "active",
     "actionType": "part of action",
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

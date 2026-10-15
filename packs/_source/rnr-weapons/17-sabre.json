@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-bronze.webp",
   "system": {
     "description": {
-      "value": "Sabre suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · one-handed · 1d6 + DEX slashing. Balanced: +1 to attack (automated).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,11 +21,11 @@
       "page": ""
     },
     "weaponType": "melee",
-    "attribute": "strength",
+    "attribute": "dexterity",
     "damageFormula": "1d6",
-    "damageType": "piercing",
+    "damageType": "slashing",
     "damageBonus": 0,
-    "attackBonus": 0,
+    "attackBonus": 1,
     "range": "",
     "reach": 5,
     "caliber": "",
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · one-handed · 1d6 + DEX slashing. Balanced: +1 to attack (automated)."
   },
   "flags": {},
   "_stats": {

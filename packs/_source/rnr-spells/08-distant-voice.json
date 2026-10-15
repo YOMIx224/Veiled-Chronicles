@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Distant Voice is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 1 mile · 1 round · SAN</strong></p><p>Send a message of up to 25 words to a creature you know; it can reply with up to 25 words.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "sanity",
     "castingTime": "1 action",
-    "range": "30 ft",
-    "duration": "instantaneous",
-    "effect": "Distant Voice: resolve the described effect with the GM.",
+    "range": "1 mile",
+    "duration": "1 round",
+    "effect": "Send a message of up to 25 words to a creature you know; it can reply with up to 25 words.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

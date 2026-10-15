@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Analyst is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d6</p><p><strong>Class skills (automated):</strong> +1 to General Education and Search when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Pattern Recognition: once per scene, ask the GM one yes/no question about a clue you have examined; the GM answers truthfully.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Analyst",
     "hitDie": "1d6",
     "subclass": "",
-    "features": "Core Analyst feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Pattern Recognition: once per scene, ask the GM one yes/no question about a clue you have examined; the GM answers truthfully.",
+    "universal": true,
+    "skills": [
+      "generalEducation",
+      "search"
+    ]
   },
   "flags": {},
   "_stats": {

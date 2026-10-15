@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Measured Strike is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Melee</strong></p><p>A slow, deliberate blow: attack at −2, and on a hit deal 1d6 + DEX + 2 damage (all automated).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,21 +20,24 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "reaction",
-    "attribute": "rhetoric",
-    "effect": "Measured Strike: gain an appropriate situational benefit when the GM agrees it applies.",
-    "damageFormula": "",
-    "damageType": "",
+    "abilityType": "active",
+    "attribute": "dexterity",
+    "effect": "A slow, deliberate blow: attack at −2, and on a hit deal 1d6 + DEX + 2 damage (all automated).",
+    "damageFormula": "1d6",
+    "damageType": "physical",
     "healingFormula": "",
-    "actionType": "reaction",
-    "range": "Self",
+    "actionType": "action",
+    "range": "Melee",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": true,
+    "attackBonus": -2,
+    "damageBonus": 2
   },
   "flags": {},
   "_stats": {

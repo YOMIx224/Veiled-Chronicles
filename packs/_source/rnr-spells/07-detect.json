@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Detect is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 30 ft · 1 minute · APT</strong></p><p>Sense magic, technology or a creature type you name within 30 ft, and its direction. Walls of stone or metal 1 ft thick block it.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "aptitude",
     "castingTime": "1 action",
-    "range": "Self",
-    "duration": "instantaneous",
-    "effect": "Detect: resolve the described effect with the GM.",
+    "range": "30 ft",
+    "duration": "1 minute",
+    "effect": "Sense magic, technology or a creature type you name within 30 ft, and its direction. Walls of stone or metal 1 ft thick block it.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

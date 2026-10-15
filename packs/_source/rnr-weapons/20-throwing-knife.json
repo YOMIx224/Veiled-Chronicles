@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-bronze.webp",
   "system": {
     "description": {
-      "value": "Throwing Knife suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · one-handed · 1d4 + DEX piercing · 20/60 ft. Light and quick: +1 to attack (automated). Can be thrown 20/60 ft; retrieve it after the fight.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,12 +21,12 @@
       "page": ""
     },
     "weaponType": "melee",
-    "attribute": "strength",
-    "damageFormula": "1d6",
+    "attribute": "dexterity",
+    "damageFormula": "1d4",
     "damageType": "piercing",
     "damageBonus": 0,
-    "attackBonus": 0,
-    "range": "",
+    "attackBonus": 1,
+    "range": "20/60 ft",
     "reach": 5,
     "caliber": "",
     "ammunition": 0,
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · one-handed · 1d4 + DEX piercing · 20/60 ft. Light and quick: +1 to attack (automated). Can be thrown 20/60 ft; retrieve it after the fight."
   },
   "flags": {},
   "_stats": {

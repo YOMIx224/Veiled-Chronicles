@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Force Pulse is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 15 ft · Instant · EGO</strong></p><p>Automated attack and 1d8 + EGO force damage; on a hit the target is pushed 10 ft.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,11 +24,11 @@
     "school": "universal",
     "attribute": "ego",
     "castingTime": "1 action",
-    "range": "30 ft",
-    "duration": "instantaneous",
-    "effect": "Force Pulse: resolve the described effect with the GM.",
-    "damageFormula": "2d6",
-    "damageType": "energy",
+    "range": "15 ft",
+    "duration": "Instant",
+    "effect": "Automated attack and 1d8 + EGO force damage; on a hit the target is pushed 10 ft.",
+    "damageFormula": "1d8",
+    "damageType": "force",
     "healingFormula": "",
     "saveAttribute": "",
     "saveDC": 0,

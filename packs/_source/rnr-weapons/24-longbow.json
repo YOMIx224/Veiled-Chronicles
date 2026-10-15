@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Longbow suitable for any campaign that uses its profile.",
+      "value": "<p>Ranged · two-handed · 1d8 + DEX piercing · 150/600 ft. Long range.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,19 +22,20 @@
     },
     "weaponType": "ranged",
     "attribute": "dexterity",
-    "damageFormula": "1d6",
-    "damageType": "slashing",
+    "damageFormula": "1d8",
+    "damageType": "piercing",
     "damageBonus": 0,
     "attackBonus": 0,
-    "range": "30/120 ft",
+    "range": "150/600 ft",
     "reach": 5,
     "caliber": "",
     "ammunition": 0,
     "ammunitionMax": 0,
     "reload": "",
-    "handsRequired": 1,
+    "handsRequired": 2,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Ranged · two-handed · 1d8 + DEX piercing · 150/600 ft. Long range."
   },
   "flags": {},
   "_stats": {

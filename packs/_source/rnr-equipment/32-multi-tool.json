@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Multi-Tool is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Counts as basic tools for Craft, Mechanical and Electronic checks, so you never take the no-tools penalty.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,7 +20,7 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "equipType": "worn",
+    "equipType": "gear",
     "equipmentSlot": "",
     "allowedSlot": "",
     "prostheticFor": "",
@@ -34,7 +34,10 @@
     "skill": "",
     "bonus": 0,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "",
+    "skills": [],
+    "effect": "Counts as basic tools for Craft, Mechanical and Electronic checks, so you never take the no-tools penalty."
   },
   "flags": {},
   "_stats": {

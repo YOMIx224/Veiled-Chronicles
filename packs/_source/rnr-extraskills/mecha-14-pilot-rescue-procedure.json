@@ -5,7 +5,7 @@
   "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
-      "value": "Use squad comms and rescue rigging to help an allied pilot who is exposed or ejecting nearby. The GM adjudicates distance, timing, and danger.",
+      "value": "<p><strong>Always on:</strong> +1 to First Aid.</p><p><strong>Reaction:</strong> when an allied pilot within 30 ft ejects or is Down, move up to 15 ft toward them; your next First Aid check on them gains +2.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,14 +23,17 @@
     "category": "communication",
     "attribute": "aptitude",
     "cost": 1,
-    "bonus": 0,
-    "skills": [],
-    "effect": "Reaction: when an allied pilot is exposed or ejects nearby, coordinate a recovery. GM adjudicates distance and danger.",
+    "bonus": 1,
+    "skills": [
+      "firstAid"
+    ],
+    "effect": "Always on: +1 to First Aid. Reaction: when an allied pilot within 30 ft ejects or is Down, move up to 15 ft toward them; your next First Aid check on them gains +2.",
     "properties": [],
     "abilityType": "reaction",
     "actionType": "reaction",
     "attackRoll": false,
-    "universal": true
+    "universal": true,
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

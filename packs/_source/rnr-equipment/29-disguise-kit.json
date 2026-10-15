@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Disguise Kit is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Ten minutes of work lets you look like someone else. Creatures that study you make a Sense of Lie check against your Art check +2.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,7 +20,7 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "equipType": "worn",
+    "equipType": "gear",
     "equipmentSlot": "",
     "allowedSlot": "",
     "prostheticFor": "",
@@ -34,7 +34,10 @@
     "skill": "",
     "bonus": 0,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "",
+    "skills": [],
+    "effect": "Ten minutes of work lets you look like someone else. Creatures that study you make a Sense of Lie check against your Art check +2."
   },
   "flags": {},
   "_stats": {

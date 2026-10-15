@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Sleep is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 60 ft · 1 minute · APT</strong></p><p>One creature makes a Sanity save against 10 + your APT modifier or falls asleep. It wakes if it takes damage or someone uses an Action to shake it awake.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "aptitude",
     "castingTime": "1 action",
-    "range": "Self",
+    "range": "60 ft",
     "duration": "1 minute",
-    "effect": "Sleep: resolve the described effect with the GM.",
+    "effect": "One creature makes a Sanity save against 10 + your APT modifier or falls asleep. It wakes if it takes damage or someone uses an Action to shake it awake.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

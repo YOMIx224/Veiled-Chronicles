@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Fire Bomb is a single-use universal resource.",
+      "value": "<p>Throw up to 30 ft (automated attack) for 2d6 fire damage; the target keeps burning for 1d4 fire at the start of its next turn unless it uses an Action to put it out.</p><p><em>Single use: using it from the Backpack reduces the quantity by 1.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,7 +21,7 @@
       "page": ""
     },
     "consumableType": "supply",
-    "effect": "Fire Bomb provides its described utility.",
+    "effect": "Throw up to 30 ft (automated attack) for 2d6 fire damage; the target keeps burning for 1d4 fire at the start of its next turn unless it uses an Action to put it out.",
     "healingFormula": "",
     "damageFormula": "2d6",
     "damageType": "fire",
@@ -33,7 +33,8 @@
       "per": "charges"
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": true
   },
   "flags": {},
   "_stats": {

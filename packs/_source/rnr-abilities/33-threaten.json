@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Threaten is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Bonus action · 30 ft</strong></p><p>Make an Intimidate check against the target's Ego save. On a success it has −2 to attacks against anyone but you until the end of its next turn.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,21 +20,24 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "reaction",
-    "attribute": "sanity",
-    "effect": "Threaten: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "active",
+    "attribute": "ego",
+    "effect": "Make an Intimidate check against the target's Ego save. On a success it has −2 to attacks against anyone but you until the end of its next turn.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "reaction",
-    "range": "Self",
+    "actionType": "bonus action",
+    "range": "30 ft",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

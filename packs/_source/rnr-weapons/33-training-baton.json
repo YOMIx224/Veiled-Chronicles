@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Training Baton suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · one-handed · 1d6 + STR bludgeoning. Non-lethal option: a creature reduced to 0 Health by it is knocked out, not dying.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,13 +20,13 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "weaponType": "ranged",
-    "attribute": "dexterity",
+    "weaponType": "melee",
+    "attribute": "strength",
     "damageFormula": "1d6",
-    "damageType": "slashing",
+    "damageType": "bludgeoning",
     "damageBonus": 0,
     "attackBonus": 0,
-    "range": "30/120 ft",
+    "range": "",
     "reach": 5,
     "caliber": "",
     "ammunition": 0,
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · one-handed · 1d6 + STR bludgeoning. Non-lethal option: a creature reduced to 0 Health by it is knocked out, not dying."
   },
   "flags": {},
   "_stats": {

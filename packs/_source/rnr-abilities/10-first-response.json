@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "First Response is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Touch</strong></p><p>Treat a creature within reach: heal 1d4+1 (automated; press Apply Healing). If the creature is Down, it also gains one step of Recovery.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,21 +20,24 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "passive",
-    "attribute": "strength",
-    "effect": "First Response: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "active",
+    "attribute": "aptitude",
+    "effect": "Treat a creature within reach: heal 1d4+1 (automated; press Apply Healing). If the creature is Down, it also gains one step of Recovery.",
     "damageFormula": "",
     "damageType": "",
-    "healingFormula": "",
+    "healingFormula": "1d4+1",
     "actionType": "action",
-    "range": "Self",
+    "range": "Touch",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

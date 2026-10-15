@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Scholar is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d10</p><p><strong>Class skills (automated):</strong> +1 to History and Occult when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Lore: once per session, declare a fact about history, a culture or the occult; the GM makes it true or gives you a clue toward it.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Scholar",
     "hitDie": "1d10",
     "subclass": "",
-    "features": "Core Scholar feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Lore: once per session, declare a fact about history, a culture or the occult; the GM makes it true or gives you a clue toward it.",
+    "universal": true,
+    "skills": [
+      "history",
+      "occult"
+    ]
   },
   "flags": {},
   "_stats": {

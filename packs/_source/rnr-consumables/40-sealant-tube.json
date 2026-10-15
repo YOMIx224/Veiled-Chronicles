@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Sealant Tube is a single-use universal resource.",
+      "value": "<p>Seal a leak or breach, or restore 1d4 Health to a Vehicle, Mecha or suit (automated).</p><p><em>Single use: using it from the Backpack reduces the quantity by 1.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,8 +21,8 @@
       "page": ""
     },
     "consumableType": "supply",
-    "effect": "Sealant Tube provides its described utility.",
-    "healingFormula": "",
+    "effect": "Seal a leak or breach, or restore 1d4 Health to a Vehicle, Mecha or suit (automated).",
+    "healingFormula": "1d4",
     "damageFormula": "",
     "damageType": "",
     "caliber": "",
@@ -33,7 +33,8 @@
       "per": "charges"
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

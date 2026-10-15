@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Elemental Bolt is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 60 ft · Instant · RHT</strong></p><p>Hurl a bolt of an element you choose when you learn the spell (set its Damage Type). Automated attack and 2d6 + RHT damage.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,11 +24,11 @@
     "school": "universal",
     "attribute": "rhetoric",
     "castingTime": "1 action",
-    "range": "Self",
-    "duration": "instantaneous",
-    "effect": "Elemental Bolt: resolve the described effect with the GM.",
+    "range": "60 ft",
+    "duration": "Instant",
+    "effect": "Hurl a bolt of an element you choose when you learn the spell (set its Damage Type). Automated attack and 2d6 + RHT damage.",
     "damageFormula": "2d6",
-    "damageType": "energy",
+    "damageType": "fire",
     "healingFormula": "",
     "saveAttribute": "",
     "saveDC": 0,

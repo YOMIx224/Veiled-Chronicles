@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Resilient Mind is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Reaction · Self</strong></p><p>Add +2 to a Sanity or Ego saving throw against fear, mind control or a psychiatric condition. Once per scene.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,13 +20,13 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "active",
-    "attribute": "aptitude",
-    "effect": "Resilient Mind: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "reaction",
+    "attribute": "sanity",
+    "effect": "Add +2 to a Sanity or Ego saving throw against fear, mind control or a psychiatric condition. Once per scene.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
+    "actionType": "reaction",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

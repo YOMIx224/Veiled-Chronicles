@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a free action when this arts technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Art and Persuade checks.</p><p><strong>Free Action (once per scene):</strong> make your next Art and Persuade check with advantage.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,18 +21,23 @@
       "page": ""
     },
     "category": "arts",
-    "attribute": "charm",
+    "attribute": "intellect",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
       "art",
       "persuade"
     ],
-    "effect": "Use as a free action when this arts technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Art and Persuade. Free Action (once per scene): make your next Art and Persuade check with advantage.",
     "properties": [],
     "abilityType": "active",
     "actionType": "free action",
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

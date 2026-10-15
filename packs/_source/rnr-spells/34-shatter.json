@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Shatter is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 60 ft · Instant · EGO</strong></p><p>A burst in a 10 ft radius: roll 2d6 + EGO thunder damage (automated) and apply it to every creature in the area. Each makes a Toughness save against 10 + your EGO modifier; apply half damage on a success.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,11 +24,11 @@
     "school": "universal",
     "attribute": "ego",
     "castingTime": "1 action",
-    "range": "Self",
-    "duration": "instantaneous",
-    "effect": "Shatter: resolve the described effect with the GM.",
+    "range": "60 ft",
+    "duration": "Instant",
+    "effect": "A burst in a 10 ft radius: roll 2d6 + EGO thunder damage (automated) and apply it to every creature in the area. Each makes a Toughness save against 10 + your EGO modifier; apply half damage on a success.",
     "damageFormula": "2d6",
-    "damageType": "energy",
+    "damageType": "thunder",
     "healingFormula": "",
     "saveAttribute": "",
     "saveDC": 0,
@@ -39,7 +39,7 @@
     },
     "properties": [],
     "universal": true,
-    "attackRoll": true
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

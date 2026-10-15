@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Parry is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Reaction · Self</strong></p><p>When you Defend with a held melee weapon, add +2 to that Defend roll.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,13 +20,13 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "passive",
+    "abilityType": "reaction",
     "attribute": "strength",
-    "effect": "Parry: gain an appropriate situational benefit when the GM agrees it applies.",
+    "effect": "When you Defend with a held melee weapon, add +2 to that Defend roll.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
+    "actionType": "reaction",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

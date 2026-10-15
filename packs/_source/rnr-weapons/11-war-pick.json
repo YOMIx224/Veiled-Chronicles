@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-bronze.webp",
   "system": {
     "description": {
-      "value": "War Pick suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · one-handed · 1d8 + STR piercing. Armour piercer: on a natural 20 the target's Armor DR does not apply.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · one-handed · 1d8 + STR piercing. Armour piercer: on a natural 20 the target's Armor DR does not apply."
   },
   "flags": {},
   "_stats": {

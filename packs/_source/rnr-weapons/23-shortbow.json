@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Shortbow suitable for any campaign that uses its profile.",
+      "value": "<p>Ranged · two-handed · 1d6 + DEX piercing · 80/320 ft. Quick to draw and fire.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -26,15 +26,16 @@
     "damageType": "piercing",
     "damageBonus": 0,
     "attackBonus": 0,
-    "range": "30/120 ft",
+    "range": "80/320 ft",
     "reach": 5,
     "caliber": "",
     "ammunition": 0,
     "ammunitionMax": 0,
     "reload": "",
-    "handsRequired": 1,
+    "handsRequired": 2,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Ranged · two-handed · 1d6 + DEX piercing · 80/320 ft. Quick to draw and fire."
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-bronze.webp",
   "system": {
     "description": {
-      "value": "Morningstar suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · one-handed · 1d8 + STR bludgeoning. Crushing: effective against shields; a shield gives the target no Armor DR against it.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,8 +22,8 @@
     },
     "weaponType": "melee",
     "attribute": "strength",
-    "damageFormula": "1d6",
-    "damageType": "slashing",
+    "damageFormula": "1d8",
+    "damageType": "bludgeoning",
     "damageBonus": 0,
     "attackBonus": 0,
     "range": "",
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · one-handed · 1d8 + STR bludgeoning. Crushing: effective against shields; a shield gives the target no Armor DR against it."
   },
   "flags": {},
   "_stats": {

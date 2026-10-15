@@ -5,7 +5,7 @@
   "img": "icons/equipment/chest/breastplate-layered-steel.webp",
   "system": {
     "description": {
-      "value": "Protective Cloak provides reliable, setting-neutral protection.",
+      "value": "<p>Accessory armour (back slot) · Armor DR +1. A weighted cloak worn on the back.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,15 +20,19 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "armorType": "medium",
-    "armorValue": 3,
+    "armorType": "accessory",
+    "armorValue": 1,
     "maxDex": 2,
     "strengthReq": 0,
     "speedBonus": 0,
     "stealthDisadv": false,
     "equipmentSlot": "back",
     "properties": [],
-    "universal": true
+    "universal": true,
+    "allowedSlot": "back",
+    "skills": [],
+    "bonus": 0,
+    "effect": "Accessory armour (back slot) · Armor DR +1. A weighted cloak worn on the back."
   },
   "flags": {},
   "_stats": {

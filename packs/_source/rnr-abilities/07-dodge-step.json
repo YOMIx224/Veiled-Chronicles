@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Dodge Step is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Bonus action · Self</strong></p><p>Move up to 10 ft. Until the start of your next turn, add +2 to your Dodge / Reflex rolls.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,13 +20,13 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "passive",
-    "attribute": "charm",
-    "effect": "Dodge Step: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "active",
+    "attribute": "dexterity",
+    "effect": "Move up to 10 ft. Until the start of your next turn, add +2 to your Dodge / Reflex rolls.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
+    "actionType": "bonus action",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

@@ -336,13 +336,20 @@ export async function removeBackgroundBonus(actor) {
  */
 export async function applyClassBonus(actor, classItem) {
   await removeClassBonus(actor);
-  const updates = {
-    "system.appliedBonuses.class": {
-      itemId: classItem.id,
-      name:   classItem.name,
-      role:   classItem.system?.role ?? "",
-      hitDie: classItem.system?.hitDie ?? "1d8",
-    },
+  // Class skills: +1 to each, exactly like a Background. Recorded so that
+  // replacing or deleting the Class takes the same points back off.
+  const skillKeys = Array.isArray(classItem.system?.skills) ? classItem.system.skills.filter(Boolean) : [];
+  const updates = {};
+  for (const key of skillKeys) {
+    const cur = Number(foundry.utils.getProperty(actor, `system.skills.${key}.value`)) || 0;
+    updates[`system.skills.${key}.value`] = cur + 1;
+  }
+  updates["system.appliedBonuses.class"] = {
+    itemId: classItem.id,
+    name:   classItem.name,
+    role:   classItem.system?.role ?? "",
+    hitDie: classItem.system?.hitDie ?? "1d8",
+    skills: skillKeys,
   };
   await actor.update(updates);
 }
@@ -350,5 +357,11 @@ export async function applyClassBonus(actor, classItem) {
 export async function removeClassBonus(actor) {
   const applied = foundry.utils.getProperty(actor, "system.appliedBonuses.class");
   if (!applied?.itemId) return;
-  await actor.update({ "system.appliedBonuses.class": null });
+  const updates = {};
+  for (const key of (applied.skills ?? [])) {
+    const cur = Number(foundry.utils.getProperty(actor, `system.skills.${key}.value`)) || 0;
+    updates[`system.skills.${key}.value`] = Math.max(0, cur - 1);
+  }
+  updates["system.appliedBonuses.class"] = null;
+  await actor.update(updates);
 }

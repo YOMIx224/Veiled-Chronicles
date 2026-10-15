@@ -5,7 +5,7 @@
   "img": "icons/magic/control/sleep-bubble-purple.webp",
   "system": {
     "description": {
-      "value": "This spell sends creatures into a magical slumber. Roll 5d8; the total is how many HP of creatures this spell can affect.",
+      "value": "<p><strong>1 action · 60 ft · 1 minute · APT</strong></p><p>One creature makes a Sanity save against 10 + your APT modifier or falls asleep. It wakes if it takes damage or someone uses an Action to shake it awake.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -18,21 +18,23 @@
     "handSlot": "",
     "spellLevel": 1,
     "school": "enchantment",
-    "attribute": "sanity",
+    "attribute": "aptitude",
     "castingTime": "1 action",
-    "range": "90 ft",
+    "range": "60 ft",
     "duration": "1 minute",
-    "damageFormula": "5d8",
-    "damageType": "none",
+    "damageFormula": "",
+    "damageType": "",
     "saveAttribute": "",
     "saveDC": "",
-    "effect": "Affects creatures by total HP pool up to 5d8.",
+    "effect": "One creature makes a Sanity save against 10 + your APT modifier or falls asleep. It wakes if it takes damage or someone uses an Action to shake it awake.",
     "properties": [],
     "source": {
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

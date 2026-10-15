@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Protective Gloves is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Worn on the hands: +1 to Craft and Mechanical checks, and you can handle hot, sharp or corrosive objects without harm.</p><p><em>Bonus applies automatically while the item is worn in its slot.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "equipType": "worn",
     "equipmentSlot": "",
-    "allowedSlot": "",
+    "allowedSlot": "hands",
     "prostheticFor": "",
     "armorValue": 0,
     "speedBonus": 0,
@@ -32,9 +32,15 @@
     "attribute": "",
     "attributeBonus": 0,
     "skill": "",
-    "bonus": 0,
+    "bonus": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "hands",
+    "skills": [
+      "craft",
+      "mechanical"
+    ],
+    "effect": "Worn on the hands: +1 to Craft and Mechanical checks, and you can handle hot, sharp or corrosive objects without harm."
   },
   "flags": {},
   "_stats": {

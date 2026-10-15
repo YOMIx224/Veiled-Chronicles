@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Hasten is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · Touch · 1 minute · APT</strong></p><p>The target gains +10 ft Speed and +1 to Reflex. When it ends, the target cannot take a Bonus Action on its next turn.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "aptitude",
     "castingTime": "1 action",
-    "range": "30 ft",
+    "range": "Touch",
     "duration": "1 minute",
-    "effect": "Hasten: resolve the described effect with the GM.",
+    "effect": "The target gains +10 ft Speed and +1 to Reflex. When it ends, the target cannot take a Bonus Action on its next turn.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

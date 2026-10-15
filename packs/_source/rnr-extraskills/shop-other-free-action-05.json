@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a free action when this other technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Bet and Consider checks.</p><p><strong>Free Action (once per scene):</strong> make your next Bet and Consider check with advantage.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,18 +21,23 @@
       "page": ""
     },
     "category": "other",
-    "attribute": "ego",
+    "attribute": "rhetoric",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
-      "survival",
-      "generalEducation"
+      "bet",
+      "consider"
     ],
-    "effect": "Use as a free action when this other technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Bet and Consider. Free Action (once per scene): make your next Bet and Consider check with advantage.",
     "properties": [],
     "abilityType": "active",
     "actionType": "free action",
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

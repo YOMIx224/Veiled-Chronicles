@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Feather Step is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · Self · 1 minute · APT</strong></p><p>You fall gently (no falling damage) and can walk across water, snow or fragile surfaces without breaking them.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "aptitude",
     "castingTime": "1 action",
-    "range": "30 ft",
-    "duration": "instantaneous",
-    "effect": "Feather Step: resolve the described effect with the GM.",
+    "range": "Self",
+    "duration": "1 minute",
+    "effect": "You fall gently (no falling damage) and can walk across water, snow or fragile surfaces without breaking them.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

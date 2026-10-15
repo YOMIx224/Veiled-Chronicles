@@ -5,7 +5,7 @@
   "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
-      "value": "Vent coolant or reroute power. Under the optional Heat rule in the Journal, reduce Heat by 1; track this manually.",
+      "value": "<p><strong>Always on:</strong> +1 to Electronic.</p><p><strong>Free Action:</strong> under the optional Heat rule, reduce Heat by 1 once per round.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,14 +23,17 @@
     "category": "science",
     "attribute": "intellect",
     "cost": 1,
-    "bonus": 0,
-    "skills": [],
-    "effect": "Free Action: vent heat or mark one cooling step under the optional Heat rule. Track Heat manually.",
+    "bonus": 1,
+    "skills": [
+      "electronic"
+    ],
+    "effect": "Always on: +1 to Electronic. Free Action: under the optional Heat rule, reduce Heat by 1 once per round.",
     "properties": [],
     "abilityType": "active",
     "actionType": "free action",
     "attackRoll": false,
-    "universal": true
+    "universal": true,
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Quick Recovery is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Bonus action · Self</strong></p><p>Catch your breath: regain 1d6 Health (automated; press Apply Healing). Once per rest.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,12 +21,12 @@
       "page": ""
     },
     "abilityType": "active",
-    "attribute": "dexterity",
-    "effect": "Quick Recovery: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "toughness",
+    "effect": "Catch your breath: regain 1d6 Health (automated; press Apply Healing). Once per rest.",
     "damageFormula": "",
     "damageType": "",
-    "healingFormula": "",
-    "actionType": "action",
+    "healingFormula": "1d6",
+    "actionType": "bonus action",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Improvised Tool is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Reaction · Self</strong></p><p>Once per scene, when you lack the right tools, make a Craft, Mechanical or Electronic check anyway with +2 instead of a penalty.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,8 +21,8 @@
       "page": ""
     },
     "abilityType": "reaction",
-    "attribute": "intellect",
-    "effect": "Improvised Tool: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "aptitude",
+    "effect": "Once per scene, when you lack the right tools, make a Craft, Mechanical or Electronic check anyway with +2 instead of a penalty.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

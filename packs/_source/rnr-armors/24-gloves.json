@@ -5,7 +5,7 @@
   "img": "icons/equipment/chest/breastplate-layered-steel.webp",
   "system": {
     "description": {
-      "value": "Gloves provides reliable, setting-neutral protection.",
+      "value": "<p>Accessory armour (hands slot). Reinforced gloves: +1 to Brawl and Craft checks. The bonus applies automatically while worn.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,15 +20,22 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "armorType": "medium",
-    "armorValue": 2,
+    "armorType": "accessory",
+    "armorValue": 0,
     "maxDex": 2,
     "strengthReq": 0,
     "speedBonus": 0,
     "stealthDisadv": false,
     "equipmentSlot": "hands",
     "properties": [],
-    "universal": true
+    "universal": true,
+    "allowedSlot": "hands",
+    "skills": [
+      "brawl",
+      "craft"
+    ],
+    "bonus": 1,
+    "effect": "Accessory armour (hands slot). Reinforced gloves: +1 to Brawl and Craft checks. The bonus applies automatically while worn."
   },
   "flags": {},
   "_stats": {

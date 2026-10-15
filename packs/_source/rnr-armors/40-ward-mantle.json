@@ -5,7 +5,7 @@
   "img": "icons/equipment/chest/breastplate-layered-steel.webp",
   "system": {
     "description": {
-      "value": "Ward Mantle provides reliable, setting-neutral protection.",
+      "value": "<p>Accessory armour (back slot) · Armor DR +1. A warded mantle. Once per long rest, as a Reaction, halve the damage of one hit from a spell or energy weapon.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,15 +20,19 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "armorType": "heavy",
-    "armorValue": 4,
+    "armorType": "accessory",
+    "armorValue": 1,
     "maxDex": 1,
     "strengthReq": 12,
     "speedBonus": 0,
     "stealthDisadv": true,
     "equipmentSlot": "back",
     "properties": [],
-    "universal": true
+    "universal": true,
+    "allowedSlot": "back",
+    "skills": [],
+    "bonus": 0,
+    "effect": "Accessory armour (back slot) · Armor DR +1. A warded mantle. Once per long rest, as a Reaction, halve the damage of one hit from a spell or energy weapon."
   },
   "flags": {},
   "_stats": {

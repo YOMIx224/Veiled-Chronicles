@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Purify is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 10 ft · Instant · APT</strong></p><p>Make food and water for up to 10 people safe to eat and drink.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "aptitude",
     "castingTime": "1 action",
-    "range": "30 ft",
-    "duration": "instantaneous",
-    "effect": "Purify: resolve the described effect with the GM.",
+    "range": "10 ft",
+    "duration": "Instant",
+    "effect": "Make food and water for up to 10 people safe to eat and drink.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

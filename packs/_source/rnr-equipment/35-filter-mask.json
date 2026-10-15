@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Filter Mask is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Worn on the face: immune to inhaled poisons, smoke and gas while worn. Perception checks that rely on smell are impossible.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "equipType": "worn",
     "equipmentSlot": "",
-    "allowedSlot": "",
+    "allowedSlot": "head",
     "prostheticFor": "",
     "armorValue": 0,
     "speedBonus": 0,
@@ -34,7 +34,10 @@
     "skill": "",
     "bonus": 0,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "head",
+    "skills": [],
+    "effect": "Worn on the face: immune to inhaled poisons, smoke and gas while worn. Perception checks that rely on smell are impossible."
   },
   "flags": {},
   "_stats": {

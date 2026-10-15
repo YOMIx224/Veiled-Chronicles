@@ -5,7 +5,7 @@
   "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
-      "value": "Use a prepared patch, sealant, or bypass while taking another Action. Make a Mechanical check to stabilize one damaged system. It does not restore HP unless the GM grants it.",
+      "value": "<p><strong>Always on:</strong> +1 to Mechanical.</p><p><strong>Part of an Action (automated):</strong> patch a Vehicle or Mecha within reach for 1d6 Health; press Apply Healing on the Chat Card. Once per scene per vehicle.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,14 +23,17 @@
     "category": "science",
     "attribute": "intellect",
     "cost": 2,
-    "bonus": 0,
-    "skills": [],
-    "effect": "Part of an Action: make a Mechanical check to stabilize one damaged system; this does not restore HP unless the GM grants it.",
+    "bonus": 1,
+    "skills": [
+      "mechanical"
+    ],
+    "effect": "Always on: +1 to Mechanical. Part of an Action (automated): patch a Vehicle or Mecha within reach for 1d6 Health; press Apply Healing on the Chat Card. Once per scene per vehicle.",
     "properties": [],
     "abilityType": "active",
     "actionType": "part of action",
     "attackRoll": false,
-    "universal": true
+    "universal": true,
+    "healingFormula": "1d6"
   },
   "flags": {},
   "_stats": {

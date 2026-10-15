@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Flash Capsule is a single-use universal resource.",
+      "value": "<p>Throw up to 30 ft: each creature within 10 ft makes a Reflex check (DC 12) or is blinded until the end of its next turn.</p><p><em>Single use: using it from the Backpack reduces the quantity by 1.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,7 +21,7 @@
       "page": ""
     },
     "consumableType": "supply",
-    "effect": "Flash Capsule provides its described utility.",
+    "effect": "Throw up to 30 ft: each creature within 10 ft makes a Reflex check (DC 12) or is blinded until the end of its next turn.",
     "healingFormula": "",
     "damageFormula": "",
     "damageType": "",
@@ -33,7 +33,8 @@
       "per": "charges"
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

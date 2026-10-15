@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Javelin suitable for any campaign that uses its profile.",
+      "value": "<p>Ranged · one-handed · 1d6 + STR piercing · 30/120 ft. Thrown spear; uses STR.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,9 +21,9 @@
       "page": ""
     },
     "weaponType": "ranged",
-    "attribute": "dexterity",
-    "damageFormula": "1d8",
-    "damageType": "slashing",
+    "attribute": "strength",
+    "damageFormula": "1d6",
+    "damageType": "piercing",
     "damageBonus": 0,
     "attackBonus": 0,
     "range": "30/120 ft",
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Ranged · one-handed · 1d6 + STR piercing · 30/120 ft. Thrown spear; uses STR."
   },
   "flags": {},
   "_stats": {

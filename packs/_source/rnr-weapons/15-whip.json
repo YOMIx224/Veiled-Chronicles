@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-bronze.webp",
   "system": {
     "description": {
-      "value": "Whip suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · one-handed · 1d4 + DEX slashing. Reach 10 ft. On a hit you may pull the target 5 ft toward you instead of dealing damage.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,8 +21,8 @@
       "page": ""
     },
     "weaponType": "melee",
-    "attribute": "strength",
-    "damageFormula": "1d6",
+    "attribute": "dexterity",
+    "damageFormula": "1d4",
     "damageType": "slashing",
     "damageBonus": 0,
     "attackBonus": 0,
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · one-handed · 1d4 + DEX slashing. Reach 10 ft. On a hit you may pull the target 5 ft toward you instead of dealing damage."
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Quiet Step is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · Self · 10 minutes · SAN</strong></p><p>Your footsteps make no sound: +2 to Stealth and Hide & Sneak checks.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -25,8 +25,8 @@
     "attribute": "sanity",
     "castingTime": "1 action",
     "range": "Self",
-    "duration": "instantaneous",
-    "effect": "Quiet Step: resolve the described effect with the GM.",
+    "duration": "10 minutes",
+    "effect": "Your footsteps make no sound: +2 to Stealth and Hide & Sneak checks.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

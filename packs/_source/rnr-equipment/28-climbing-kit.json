@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Climbing Kit is useful in exploration, travel, or problem-solving.",
+      "value": "<p>A harness worn at the hip (Left Leg slot) with rope, pitons and hooks: +2 to Climb checks; you cannot fall more than 10 ft while anchored.</p><p><em>Bonus applies automatically while the item is worn in its slot.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "equipType": "worn",
     "equipmentSlot": "",
-    "allowedSlot": "",
+    "allowedSlot": "leftLeg",
     "prostheticFor": "",
     "armorValue": 0,
     "speedBonus": 0,
@@ -32,9 +32,14 @@
     "attribute": "",
     "attributeBonus": 0,
     "skill": "",
-    "bonus": 0,
+    "bonus": 2,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "leftLeg",
+    "skills": [
+      "climb"
+    ],
+    "effect": "A harness worn at the hip (Left Leg slot) with rope, pitons and hooks: +2 to Climb checks; you cannot fall more than 10 ft while anchored."
   },
   "flags": {},
   "_stats": {

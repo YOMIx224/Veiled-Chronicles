@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Resourceful is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Self</strong></p><p>Once per session, pull out a mundane item the party could plausibly have packed (price 10 or less). It is real and stays.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,8 +21,8 @@
       "page": ""
     },
     "abilityType": "active",
-    "attribute": "sanity",
-    "effect": "Resourceful: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "aptitude",
+    "effect": "Once per session, pull out a mundane item the party could plausibly have packed (price 10 or less). It is real and stays.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

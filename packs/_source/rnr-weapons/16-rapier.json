@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-bronze.webp",
   "system": {
     "description": {
-      "value": "Rapier suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · one-handed · 1d8 + DEX piercing. Finesse: uses DEX for attack and damage.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,9 +21,9 @@
       "page": ""
     },
     "weaponType": "melee",
-    "attribute": "strength",
+    "attribute": "dexterity",
     "damageFormula": "1d8",
-    "damageType": "bludgeoning",
+    "damageType": "piercing",
     "damageBonus": 0,
     "attackBonus": 0,
     "range": "",
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · one-handed · 1d8 + DEX piercing. Finesse: uses DEX for attack and damage."
   },
   "flags": {},
   "_stats": {

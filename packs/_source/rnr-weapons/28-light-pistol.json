@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Light Pistol suitable for any campaign that uses its profile.",
+      "value": "<p>Ranged · one-handed · 1d8 + DEX piercing · 50/150 ft. Easily concealed: +2 to Hide & Sneak checks to hide it.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -26,7 +26,7 @@
     "damageType": "piercing",
     "damageBonus": 0,
     "attackBonus": 0,
-    "range": "60/180 ft",
+    "range": "50/150 ft",
     "reach": 5,
     "caliber": "universal",
     "ammunition": 6,
@@ -34,7 +34,8 @@
     "reload": "1 action",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Ranged · one-handed · 1d8 + DEX piercing · 50/150 ft. Easily concealed: +2 to Hide & Sneak checks to hide it."
   },
   "flags": {},
   "_stats": {

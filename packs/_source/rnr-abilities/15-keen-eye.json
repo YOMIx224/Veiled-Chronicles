@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Keen Eye is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Self</strong></p><p>For 1 minute, add +2 to Perception and Search checks, and you notice hidden doors, traps and tells the GM would otherwise only reveal on a check.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "abilityType": "active",
     "attribute": "sanity",
-    "effect": "Keen Eye: gain an appropriate situational benefit when the GM agrees it applies.",
+    "effect": "For 1 minute, add +2 to Perception and Search checks, and you notice hidden doors, traps and tells the GM would otherwise only reveal on a check.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

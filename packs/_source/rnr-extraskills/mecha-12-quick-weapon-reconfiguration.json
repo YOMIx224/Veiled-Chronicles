@@ -5,7 +5,7 @@
   "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
-      "value": "Re-route a weapon’s feed or select a preconfigured firing mode as part of a Bonus Action. The GM defines compatible modes; track any changed statistics manually.",
+      "value": "<p><strong>Always on:</strong> +1 to Mechanical.</p><p><strong>Part of a Bonus Action:</strong> switch a Mecha weapon between two modes the GM approves (for example burst / precise: −1 attack +2 damage, or +1 attack −2 damage).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,14 +23,17 @@
     "category": "combat",
     "attribute": "intellect",
     "cost": 1,
-    "bonus": 0,
-    "skills": [],
-    "effect": "Part of a Bonus Action: switch a compatible weapon mode or preset. Any changed statistics are chosen by the GM and tracked manually.",
+    "bonus": 1,
+    "skills": [
+      "mechanical"
+    ],
+    "effect": "Always on: +1 to Mechanical. Part of a Bonus Action: switch a Mecha weapon between two modes the GM approves (for example burst / precise: −1 attack +2 damage, or +1 attack −2 damage).",
     "properties": [],
     "abilityType": "active",
     "actionType": "part of bonus action",
     "attackRoll": false,
-    "universal": true
+    "universal": true,
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

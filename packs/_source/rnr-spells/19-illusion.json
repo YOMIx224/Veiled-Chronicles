@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Illusion is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 60 ft · 1 minute · EGO</strong></p><p>Create an image or sound no larger than a 10 ft cube. A creature that studies it makes a Consider check against 10 + your EGO modifier to see through it.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "ego",
     "castingTime": "1 action",
-    "range": "Self",
-    "duration": "instantaneous",
-    "effect": "Illusion: resolve the described effect with the GM.",
+    "range": "60 ft",
+    "duration": "1 minute",
+    "effect": "Create an image or sound no larger than a 10 ft cube. A creature that studies it makes a Consider check against 10 + your EGO modifier to see through it.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Inspiring Word is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Bonus action · 30 ft</strong></p><p>An ally who can hear you regains 1d4 Health (automated; press Apply Healing). Once per ally per rest.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,20 +21,23 @@
       "page": ""
     },
     "abilityType": "active",
-    "attribute": "aptitude",
-    "effect": "Inspiring Word: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "rhetoric",
+    "effect": "An ally who can hear you regains 1d4 Health (automated; press Apply Healing). Once per ally per rest.",
     "damageFormula": "",
     "damageType": "",
-    "healingFormula": "",
-    "actionType": "action",
-    "range": "Self",
+    "healingFormula": "1d4",
+    "actionType": "bonus action",
+    "range": "30 ft",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

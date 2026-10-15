@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Second Effort is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Reaction · Self</strong></p><p>Once per long rest, reroll a failed check, attack or defense and keep the better result.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,8 +21,8 @@
       "page": ""
     },
     "abilityType": "reaction",
-    "attribute": "charm",
-    "effect": "Second Effort: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "ego",
+    "effect": "Once per long rest, reroll a failed check, attack or defense and keep the better result.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

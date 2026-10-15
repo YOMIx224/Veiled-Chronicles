@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Medicine Dose is a single-use universal resource.",
+      "value": "<p>Regain 1d6+1 Health (automated) and end one minor Injury such as Bruising or Minor Wound (GM's call).</p><p><em>Single use: using it from the Backpack reduces the quantity by 1.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,8 +21,8 @@
       "page": ""
     },
     "consumableType": "supply",
-    "effect": "Medicine Dose provides its described utility.",
-    "healingFormula": "",
+    "effect": "Regain 1d6+1 Health (automated) and end one minor Injury such as Bruising or Minor Wound (GM's call).",
+    "healingFormula": "1d6+1",
     "damageFormula": "",
     "damageType": "",
     "caliber": "",
@@ -33,7 +33,8 @@
       "per": "charges"
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

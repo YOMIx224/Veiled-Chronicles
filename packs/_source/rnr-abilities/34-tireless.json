@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Tireless is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Passive · Self</strong></p><p>Passive. Ignore your first level of exhaustion, and a Long Rest only needs 4 hours for you.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,12 +21,12 @@
       "page": ""
     },
     "abilityType": "passive",
-    "attribute": "charm",
-    "effect": "Tireless: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "toughness",
+    "effect": "Passive. Ignore your first level of exhaustion, and a Long Rest only needs 4 hours for you.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
+    "actionType": "passive",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

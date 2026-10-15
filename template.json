@@ -586,16 +586,20 @@
       "properties": []
     },
     "extraskills": {
-          "templates": [
-            "itemBase"
-          ],
-          "category": "other",
-          "abilityType": "active",
-          "cost": 1,
+      "templates": [
+        "itemBase"
+      ],
+      "category": "other",
+      "abilityType": "active",
+      "cost": 1,
       "skills": [],
       "healthBonus": 0,
       "effect": "",
-      "properties": []
+      "properties": [],
+      "bonus": 0,
+      "attribute": "",
+      "attributeBonus": 0,
+      "speedBonus": 0
     },
     "class": {
       "templates": [
@@ -604,7 +608,8 @@
       "role": "",
       "features": "",
       "hitDie": "1d8",
-      "subclass": ""
+      "subclass": "",
+      "skills": []
     },
     "subclass": {
       "templates": [
@@ -642,10 +647,10 @@
       "attribute": "intellect"
     },
     "ability": {
-          "templates": [
-            "itemBase"
-          ],
-          "abilityType": "active",
+      "templates": [
+        "itemBase"
+      ],
+      "abilityType": "active",
       "value": 0,
       "effect": "",
       "damageFormula": "",

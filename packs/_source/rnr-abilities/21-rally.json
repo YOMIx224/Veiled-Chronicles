@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Rally is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · 30 ft</strong></p><p>One ally regains 1d6 Health (automated). If the ally is Down, they also gain one step of Recovery. Once per scene.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,21 +20,24 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "reaction",
-    "attribute": "toughness",
-    "effect": "Rally: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "active",
+    "attribute": "charm",
+    "effect": "One ally regains 1d6 Health (automated). If the ally is Down, they also gain one step of Recovery. Once per scene.",
     "damageFormula": "",
     "damageType": "",
-    "healingFormula": "",
-    "actionType": "reaction",
-    "range": "Self",
+    "healingFormula": "1d6",
+    "actionType": "action",
+    "range": "30 ft",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Forceful Push is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Melee</strong></p><p>Make an attack (automated). On a hit deal 1d4 + STR bludgeoning damage and push the target 10 ft away from you.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,20 +21,23 @@
       "page": ""
     },
     "abilityType": "active",
-    "attribute": "dexterity",
-    "effect": "Forceful Push: gain an appropriate situational benefit when the GM agrees it applies.",
-    "damageFormula": "",
-    "damageType": "",
+    "attribute": "strength",
+    "effect": "Make an attack (automated). On a hit deal 1d4 + STR bludgeoning damage and push the target 10 ft away from you.",
+    "damageFormula": "1d4",
+    "damageType": "bludgeoning",
     "healingFormula": "",
     "actionType": "action",
-    "range": "Self",
+    "range": "Melee",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": true,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

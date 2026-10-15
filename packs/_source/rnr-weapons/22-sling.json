@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Sling suitable for any campaign that uses its profile.",
+      "value": "<p>Ranged · one-handed · 1d4 + DEX bludgeoning · 30/120 ft. Cheap and quiet.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "weaponType": "ranged",
     "attribute": "dexterity",
-    "damageFormula": "1d6",
+    "damageFormula": "1d4",
     "damageType": "bludgeoning",
     "damageBonus": 0,
     "attackBonus": 0,
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Ranged · one-handed · 1d4 + DEX bludgeoning · 30/120 ft. Cheap and quiet."
   },
   "flags": {},
   "_stats": {

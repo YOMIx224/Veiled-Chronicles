@@ -1,0 +1,36 @@
+{
+  "_id": "rnrsession0hands",
+  "name": "Session 0 — เอกสารแจกผู้เล่น (Player Quick Reference)",
+  "img": "icons/sundries/scrolls/scroll-bound-blue-brown.webp",
+  "folder": null,
+  "ownership": {
+    "default": 2
+  },
+  "flags": {
+    "RnR": {
+      "sessionZero": "handout"
+    }
+  },
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.3",
+    "coreVersion": "14"
+  },
+  "pages": [
+    {
+      "_id": "rnrs0hands000000",
+      "name": "สรุปกติกา RnR",
+      "type": "text",
+      "sort": 0,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>RnR — สรุปกติกาสำหรับผู้เล่น</h1>\n<h2>ทอยอย่างไร</h2>\n<p><strong>1d20 + Modifier ≥ DC → สำเร็จ</strong> · Advantage ทอย 2 เลือกลูกดีกว่า · Disadvantage ทอย 2 เลือกลูกแย่กว่า (Shift+Click ปุ่มทอย)</p>\n<p>Modifier = (ค่า Attribute − 8) ÷ 2 ปัดลง · 8 = +0 · 10 = +1 · 12 = +2 · 14 = +3 · 20 = +6</p>\n<h2>สร้างตัวละคร</h2>\n<p>Attribute เริ่ม 8 · State Points 30 (สูงสุด 20) · Origin +1 Attribute · Class +1 ใน 2 Skill · Background +1 ใน 2 Skill · Extra Skill Points 6 · Disabled Organ ให้ State Points +2 ต่ออวัยวะ</p>\n<h2>ตัวเลขสำคัญ</h2>\n<p>Health 10 + TGH mod · Willpower 8 + SAN mod · Initiative 1d20 + DEX mod · Speed 30 ft · Passive 10 + mod</p>\n<h2>ต่อสู้</h2>\n<ol><li>เลือกเป้า (T) แล้ว Attack Roll</li><li>เป้าหมายเลือก <strong>Defend</strong> (อาวุธในมือ) / <strong>Dodge</strong> (DEX + Reflex) / <strong>Take the Hit</strong> · ได้ ≥ ค่าโจมตีคือรอด · Natural 20 รอดแน่นอน · Natural 1 พลาดแน่นอน</li><li>Dodge ได้มากกว่าค่าโจมตีและถืออาวุธ → Counterattack</li><li>ดาเมจ − Armor DR → × Immunity 0 / Vulnerability 2 / Resistance ½</li><li>Critical (ลูกเต๋าออก 20): ลูกเต๋าดาเมจเป็นสองเท่า</li></ol>\n<p>ป้องกันได้ 1 ครั้งต่อเทิร์น (2 ครั้งถ้ามี Extra Skill ชื่อ Reaction, Defense หรือ Counter) · Cover +2 / +4 / บังทั้งหมด</p>\n<h2>ล้มและพัก</h2>\n<p>Health 0 = Down ไม่ตาย · ทอย 1d20 vs DC 10: ผ่าน 1 ขั้น · Natural 20 หรือเกิน 10 = 2 ขั้น · ครบ 2 ขั้นลุกขึ้น · รักษาจน Health มากกว่า 0 ลุกทันที</p>\n<p>Short Rest: Hit Die ละ 1d6 + TGH mod, Willpower ฟื้นครึ่งหนึ่ง · Long Rest: ฟื้นเต็ม</p>\n<h2>เลื่อนขั้น</h2>\n<p>XP ที่ต้องใช้ = Level × 300 · ทุก Level Health +2 · ทุก 2 Level Willpower +1 · Growth Point = State Point +1</p>\n<h2>บน Sheet</h2>\n<p><strong>Main</strong>: Skills, ทอย, Rest · <strong>Backpack</strong>: ของ, มือ, Wearable Equipment · <strong>Features</strong>: ความสามารถ, Extra Skill Shop · <strong>Biography</strong>: ประวัติ, State Points, Body Condition</p>"
+      },
+      "flags": {}
+    }
+  ]
+}

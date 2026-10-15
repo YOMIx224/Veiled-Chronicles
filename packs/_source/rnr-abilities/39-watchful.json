@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Watchful is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Passive · Self</strong></p><p>Passive. +1 to Perception rolls you make on watch, and you wake instantly at the first sign of danger.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,13 +20,13 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "active",
-    "attribute": "toughness",
-    "effect": "Watchful: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "passive",
+    "attribute": "sanity",
+    "effect": "Passive. +1 to Perception rolls you make on watch, and you wake instantly at the first sign of danger.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
+    "actionType": "passive",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Water Tablet is a single-use universal resource.",
+      "value": "<p>Make 1 litre of water safe to drink.</p><p><em>Single use: using it from the Backpack reduces the quantity by 1.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,7 +21,7 @@
       "page": ""
     },
     "consumableType": "supply",
-    "effect": "Water Tablet provides its described utility.",
+    "effect": "Make 1 litre of water safe to drink.",
     "healingFormula": "",
     "damageFormula": "",
     "damageType": "",
@@ -33,7 +33,8 @@
       "per": "charges"
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

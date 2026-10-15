@@ -5,7 +5,7 @@
   "img": "icons/weapons/swords/sword-guard-bronze.webp",
   "system": {
     "description": {
-      "value": "Halberd suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · two-handed · 1d10 + STR slashing. Reach 10 ft. Can hook a mounted rider: on a hit, an Athlete check (DC 12) or they fall.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,8 +22,8 @@
     },
     "weaponType": "melee",
     "attribute": "strength",
-    "damageFormula": "1d6",
-    "damageType": "piercing",
+    "damageFormula": "1d10",
+    "damageType": "slashing",
     "damageBonus": 0,
     "attackBonus": 0,
     "range": "",
@@ -34,7 +34,8 @@
     "reload": "",
     "handsRequired": 2,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · two-handed · 1d10 + STR slashing. Reach 10 ft. Can hook a mounted rider: on a hit, an Athlete check (DC 12) or they fall."
   },
   "flags": {},
   "_stats": {

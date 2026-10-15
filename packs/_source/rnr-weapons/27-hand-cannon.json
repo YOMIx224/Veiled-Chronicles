@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Hand Cannon suitable for any campaign that uses its profile.",
+      "value": "<p>Ranged · one-handed · 2d6 + DEX piercing · 40/120 ft. Kicks hard: −1 to attack (automated).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,11 +22,11 @@
     },
     "weaponType": "ranged",
     "attribute": "dexterity",
-    "damageFormula": "1d8",
+    "damageFormula": "2d6",
     "damageType": "piercing",
     "damageBonus": 0,
-    "attackBonus": 0,
-    "range": "60/180 ft",
+    "attackBonus": -1,
+    "range": "40/120 ft",
     "reach": 5,
     "caliber": "universal",
     "ammunition": 6,
@@ -34,7 +34,8 @@
     "reload": "1 action",
     "handsRequired": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Ranged · one-handed · 2d6 + DEX piercing · 40/120 ft. Kicks hard: −1 to attack (automated)."
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
   "system": {
     "description": {
-      "value": "Years of physical training give you an iron constitution. +3 max HP permanently. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE.",
+      "value": "<p><strong>Always on:</strong> +1 to Athlete.</p><p>When you take this skill, the GM raises your maximum Health by 3 on the sheet (Health max field).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -19,16 +19,20 @@
     "category": "physical",
     "attribute": "toughness",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "healthBonus": 3,
-    "effect": "+3 max HP permanently.",
+    "effect": "Always on: +1 to Athlete. When you take this skill, the GM raises your maximum Health by 3 on the sheet (Health max field).",
     "source": {
       "book": "RnR Universal Collection",
       "page": ""
     },
     "abilityType": "active",
     "actionType": "action",
-    "universal": true
+    "universal": true,
+    "skills": [
+      "athlete"
+    ],
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

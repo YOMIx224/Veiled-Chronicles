@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Survey Kit is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Measure, map and mark a site. With an hour of work, +2 to Survival or Search checks to find routes, weak points or hidden spaces there.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,7 +20,7 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "equipType": "worn",
+    "equipType": "gear",
     "equipmentSlot": "",
     "allowedSlot": "",
     "prostheticFor": "",
@@ -34,7 +34,10 @@
     "skill": "",
     "bonus": 0,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "",
+    "skills": [],
+    "effect": "Measure, map and mark a site. With an hour of work, +2 to Survival or Search checks to find routes, weak points or hidden spaces there."
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Steady Aim is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Bonus action · Self</strong></p><p>If you have not moved this turn, add +2 to your next ranged attack this turn. You cannot move after using it.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,13 +20,13 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "passive",
-    "attribute": "strength",
-    "effect": "Steady Aim: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "active",
+    "attribute": "dexterity",
+    "effect": "If you have not moved this turn, add +2 to your next ranged attack this turn. You cannot move after using it.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
-    "actionType": "action",
+    "actionType": "bonus action",
     "range": "Self",
     "uses": {
       "value": 0,
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

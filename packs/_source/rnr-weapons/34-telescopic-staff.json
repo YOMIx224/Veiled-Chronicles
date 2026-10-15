@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "Telescopic Staff suitable for any campaign that uses its profile.",
+      "value": "<p>Melee · two-handed · 1d6 + STR bludgeoning. Reach 10 ft when extended.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,21 +20,22 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "weaponType": "ranged",
-    "attribute": "dexterity",
+    "weaponType": "melee",
+    "attribute": "strength",
     "damageFormula": "1d6",
     "damageType": "bludgeoning",
     "damageBonus": 0,
     "attackBonus": 0,
-    "range": "30/120 ft",
+    "range": "",
     "reach": 5,
     "caliber": "",
     "ammunition": 0,
     "ammunitionMax": 0,
     "reload": "",
-    "handsRequired": 1,
+    "handsRequired": 2,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "effect": "Melee · two-handed · 1d6 + STR bludgeoning. Reach 10 ft when extended."
   },
   "flags": {},
   "_stats": {

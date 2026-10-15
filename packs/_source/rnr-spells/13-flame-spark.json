@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Flame Spark is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 60 ft · Instant · SAN</strong></p><p>Automated attack and 1d8 + SAN fire damage. Flammable objects hit catch fire.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,11 +24,11 @@
     "school": "universal",
     "attribute": "sanity",
     "castingTime": "1 action",
-    "range": "Self",
-    "duration": "1 minute",
-    "effect": "Flame Spark: resolve the described effect with the GM.",
-    "damageFormula": "2d6",
-    "damageType": "energy",
+    "range": "60 ft",
+    "duration": "Instant",
+    "effect": "Automated attack and 1d8 + SAN fire damage. Flammable objects hit catch fire.",
+    "damageFormula": "1d8",
+    "damageType": "fire",
     "healingFormula": "",
     "saveAttribute": "",
     "saveDC": 0,

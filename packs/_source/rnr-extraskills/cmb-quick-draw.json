@@ -5,7 +5,7 @@
   "img": "icons/weapons/guns/gun-pistol-flintlock-metal.webp",
   "system": {
     "description": {
-      "value": "You can draw or stow a weapon as a free action (not a bonus action) once per turn. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE. This Extra Skill is setting-neutral and may be reskinned as training, a perk, implant, technique, gadget, or power. Mode: ACTIVE.",
+      "value": "<p><strong>Always on:</strong> +1 to Reflex.</p><p>Once per turn, draw or stow a weapon as a Free Action instead of a Bonus Action.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -19,15 +19,19 @@
     "category": "combat",
     "attribute": "dexterity",
     "cost": 1,
-    "bonus": 0,
-    "effect": "Draw/stow weapon as free action once per turn.",
+    "bonus": 1,
+    "effect": "Always on: +1 to Reflex. Once per turn, draw or stow a weapon as a Free Action instead of a Bonus Action.",
     "source": {
       "book": "RnR Universal Collection",
       "page": ""
     },
     "abilityType": "active",
     "actionType": "action",
-    "universal": true
+    "universal": true,
+    "skills": [
+      "reflex"
+    ],
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

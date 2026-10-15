@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Scout is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d6</p><p><strong>Class skills (automated):</strong> +1 to Perception and Stealth when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Point: you and allies within 30 ft add +1 to Initiative rolls.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Scout",
     "hitDie": "1d6",
     "subclass": "",
-    "features": "Core Scout feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Point: you and allies within 30 ft add +1 to Initiative rolls.",
+    "universal": true,
+    "skills": [
+      "perception",
+      "stealth"
+    ]
   },
   "flags": {},
   "_stats": {

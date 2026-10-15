@@ -5,7 +5,7 @@
   "img": "icons/skills/social/theft-pickpocket-bribery-brown.webp",
   "system": {
     "description": {
-      "value": "A cunning operative. Rogues use stealth, deception, and precision to overcome challenges.",
+      "value": "<p><strong>Hit Die:</strong> 1d8</p><p><strong>Class skills (automated):</strong> +1 to Stealth and Larceny when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Sneak Attack: once per turn, +1d6 damage when the target has not acted yet or an ally is adjacent to it.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -19,12 +19,16 @@
     "role": "Striker / Scout",
     "hitDie": "1d8",
     "subclass": "",
-    "features": "Sneak Attack, Cunning Action, Evasion, Reliable Talent",
+    "features": "Sneak Attack: once per turn, +1d6 damage when the target has not acted yet or an ally is adjacent to it.",
     "source": {
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "universal": true
+    "universal": true,
+    "skills": [
+      "stealth",
+      "larceny"
+    ]
   },
   "flags": {},
   "_stats": {

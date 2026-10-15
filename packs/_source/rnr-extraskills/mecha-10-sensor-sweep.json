@@ -5,7 +5,7 @@
   "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
-      "value": "Sweep a zone with the frame’s sensors. The GM sets any Perception/Search check and decides which heat signatures, movement, or electronic emissions are detectable.",
+      "value": "<p><strong>Always on:</strong> +1 to Perception.</p><p><strong>Action:</strong> scan a 60 ft zone; the GM reveals heat, movement and emissions there, including hidden creatures that fail a Stealth check against your Perception.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,14 +23,17 @@
     "category": "science",
     "attribute": "aptitude",
     "cost": 1,
-    "bonus": 0,
-    "skills": [],
-    "effect": "Action: scan a zone for heat signatures, movement, or electronic emissions; GM sets the check and what the scan can reveal.",
+    "bonus": 1,
+    "skills": [
+      "perception"
+    ],
+    "effect": "Always on: +1 to Perception. Action: scan a 60 ft zone; the GM reveals heat, movement and emissions there, including hidden creatures that fail a Stealth check against your Perception.",
     "properties": [],
     "abilityType": "active",
     "actionType": "action",
     "attackRoll": false,
-    "universal": true
+    "universal": true,
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Cleanse is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · Touch · Instant · SAN</strong></p><p>End one poison, disease or toxin effect on a creature you touch, or one Injury condition of the GM's choice that came from it.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,11 +22,11 @@
     },
     "spellLevel": 0,
     "school": "universal",
-    "attribute": "rhetoric",
+    "attribute": "sanity",
     "castingTime": "1 action",
-    "range": "30 ft",
-    "duration": "1 minute",
-    "effect": "Cleanse: resolve the described effect with the GM.",
+    "range": "Touch",
+    "duration": "Instant",
+    "effect": "End one poison, disease or toxin effect on a creature you touch, or one Injury condition of the GM's choice that came from it.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Utility Belt is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Worn at the hip (Right Leg slot): +1 to Mechanical and Electronic checks. Draw one small tool or item as a Free Action once per turn.</p><p><em>Bonus applies automatically while the item is worn in its slot.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "equipType": "worn",
     "equipmentSlot": "",
-    "allowedSlot": "",
+    "allowedSlot": "rightLeg",
     "prostheticFor": "",
     "armorValue": 0,
     "speedBonus": 0,
@@ -32,9 +32,15 @@
     "attribute": "",
     "attributeBonus": 0,
     "skill": "",
-    "bonus": 0,
+    "bonus": 1,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "rightLeg",
+    "skills": [
+      "mechanical",
+      "electronic"
+    ],
+    "effect": "Worn at the hip (Right Leg slot): +1 to Mechanical and Electronic checks. Draw one small tool or item as a Free Action once per turn."
   },
   "flags": {},
   "_stats": {

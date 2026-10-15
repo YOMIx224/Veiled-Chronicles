@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Commander is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d6</p><p><strong>Class skills (automated):</strong> +1 to Persuade and Intimidate when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Orders: once per round, as a Bonus Action, an ally who can hear you may move 10 ft or make a Defense with +1.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Commander",
     "hitDie": "1d6",
     "subclass": "",
-    "features": "Core Commander feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Orders: once per round, as a Bonus Action, an ally who can hear you may move 10 ft or make a Defense with +1.",
+    "universal": true,
+    "skills": [
+      "persuade",
+      "intimidate"
+    ]
   },
   "flags": {},
   "_stats": {

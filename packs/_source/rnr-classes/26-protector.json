@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Protector is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d8</p><p><strong>Class skills (automated):</strong> +1 to Brawl and Reflex when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Intercept: once per round, when an ally within 5 ft is hit, reduce the damage by 1d6 + TGH modifier.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Protector",
     "hitDie": "1d8",
     "subclass": "",
-    "features": "Core Protector feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Intercept: once per round, when an ally within 5 ft is hit, reduce the damage by 1d6 + TGH modifier.",
+    "universal": true,
+    "skills": [
+      "brawl",
+      "reflex"
+    ]
   },
   "flags": {},
   "_stats": {

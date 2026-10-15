@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Lockbox is useful in exploration, travel, or problem-solving.",
+      "value": "<p>A small locked case. Opening it without the key is a Larceny check (DC 15) or 10 minutes of tools and noise.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,7 +20,7 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "equipType": "worn",
+    "equipType": "gear",
     "equipmentSlot": "",
     "allowedSlot": "",
     "prostheticFor": "",
@@ -34,7 +34,10 @@
     "skill": "",
     "bonus": 0,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "",
+    "skills": [],
+    "effect": "A small locked case. Opening it without the key is a Larceny check (DC 15) or 10 minutes of tools and noise."
   },
   "flags": {},
   "_stats": {

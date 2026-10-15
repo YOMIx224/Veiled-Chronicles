@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Withdraw is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Self</strong></p><p>Move up to your Speed; enemies you leave cannot use a Reaction to attack you this turn.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,9 +20,9 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "passive",
-    "attribute": "intellect",
-    "effect": "Withdraw: gain an appropriate situational benefit when the GM agrees it applies.",
+    "abilityType": "active",
+    "attribute": "dexterity",
+    "effect": "Move up to your Speed; enemies you leave cannot use a Reaction to attack you this turn.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

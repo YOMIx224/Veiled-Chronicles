@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a bonus action when this physical training technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Climb and Survival checks.</p><p><strong>Bonus Action (once per scene):</strong> your next Climb and Survival check before the end of your turn gains a further +1.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,16 +23,21 @@
     "category": "physical",
     "attribute": "strength",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
-      "athlete",
-      "climb"
+      "climb",
+      "survival"
     ],
-    "effect": "Use as a bonus action when this physical training technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Climb and Survival. Bonus Action (once per scene): your next Climb and Survival check before the end of your turn gains a further +1.",
     "properties": [],
     "abilityType": "active",
     "actionType": "bonus action",
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

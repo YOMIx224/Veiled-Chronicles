@@ -5,7 +5,7 @@
   "img": "icons/consumables/potions/potion-flask-corked-blue.webp",
   "system": {
     "description": {
-      "value": "Signal Flare is a single-use universal resource.",
+      "value": "<p>Fire into the sky: visible for about 1 mile for 1 minute. Fired at a creature it is an improvised attack for 1d4 fire damage.</p><p><em>Single use: using it from the Backpack reduces the quantity by 1.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,10 +21,10 @@
       "page": ""
     },
     "consumableType": "supply",
-    "effect": "Signal Flare provides its described utility.",
+    "effect": "Fire into the sky: visible for about 1 mile for 1 minute. Fired at a creature it is an improvised attack for 1d4 fire damage.",
     "healingFormula": "",
-    "damageFormula": "",
-    "damageType": "",
+    "damageFormula": "1d4",
+    "damageType": "fire",
     "caliber": "",
     "isAmmunition": false,
     "uses": {
@@ -33,7 +33,8 @@
       "per": "charges"
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": true
   },
   "flags": {},
   "_stats": {

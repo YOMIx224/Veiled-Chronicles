@@ -5,7 +5,7 @@
   "img": "icons/containers/bags/pack-simple-leather.webp",
   "system": {
     "description": {
-      "value": "Emergency Beacon is useful in exploration, travel, or problem-solving.",
+      "value": "<p>Worn as a pendant. Activate it as an Action: allies and rescuers within 10 miles know your location for 24 hours.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,7 +22,7 @@
     },
     "equipType": "worn",
     "equipmentSlot": "",
-    "allowedSlot": "",
+    "allowedSlot": "neck",
     "prostheticFor": "",
     "armorValue": 0,
     "speedBonus": 0,
@@ -34,7 +34,10 @@
     "skill": "",
     "bonus": 0,
     "properties": [],
-    "universal": true
+    "universal": true,
+    "slot": "neck",
+    "skills": [],
+    "effect": "Worn as a pendant. Activate it as an Action: allies and rescuers within 10 miles know your location for 24 hours."
   },
   "flags": {},
   "_stats": {

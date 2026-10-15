@@ -1,0 +1,171 @@
+{
+  "_id": "rnrsession0guide",
+  "name": "Session 0 — คู่มือ GM: อธิบายผู้เล่นทีละขั้น",
+  "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "RnR": {
+      "sessionZero": "guide"
+    }
+  },
+  "_stats": {
+    "systemId": "rnr",
+    "systemVersion": "0.4.3",
+    "coreVersion": "14"
+  },
+  "pages": [
+    {
+      "_id": "rnrs0guide000000",
+      "name": "00 — แผนเวลา Session 0",
+      "type": "text",
+      "sort": 0,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>แผนเวลา Session 0</h1>\n<p>คู่มือนี้คือ <strong>บทพูดและลำดับการอธิบาย</strong> สำหรับ GM ใช้คู่กับเรื่องเล่า <em>เวรแรกที่ประตูฮาร์โรว์</em> ข้อความในกล่อง “พูดกับผู้เล่น” คือสิ่งที่พูดได้เลย</p>\n<table><thead><tr><th>ช่วง</th><th>เวลา</th><th>ทำอะไร</th><th>หน้าที่ใช้</th></tr></thead><tbody><tr><td>1</td><td>15 นาที</td><td>คุยเรื่องโต๊ะ: แนวเรื่อง, ขอบเขต, Safety tools</td><td>01</td></tr><tr><td>2</td><td>10 นาที</td><td>RnR คืออะไร และทอยอย่างไร</td><td>02</td></tr><tr><td>3</td><td>45–60 นาที</td><td>สร้างตัวละคร (ฉาก 0)</td><td>03</td></tr><tr><td>4</td><td>40 นาที</td><td>ฉาก 1–3: ทอยตรวจ, สังคม, อุปกรณ์</td><td>02, 06</td></tr><tr><td>5</td><td>60 นาที</td><td>ฉาก 4–5: การต่อสู้และการล้ม</td><td>04, 05</td></tr><tr><td>6</td><td>30 นาที</td><td>ฉาก 6–8: Conditions, พัก, เลื่อนขั้น</td><td>05, 07</td></tr><tr><td>7</td><td>10 นาที</td><td>สรุปและเช็กลิสต์</td><td>08, 09</td></tr></tbody></table>\n<h2>เตรียมก่อนวันเล่น</h2>\n<ul><li>อ่านหน้านี้และเรื่องเล่าหนึ่งรอบ</li><li>สร้าง NPC 4 ตัวตามภาคผนวกของเรื่องเล่า</li><li>ตั้งค่า Game Settings ของ RnR (ดูหน้า 01)</li><li>ทดสอบเปิด Character Sheet ใหม่หนึ่งใบ และลองซื้อของใน Extra Skill Shop</li><li>(ทางเลือก) เปิด Console (F12) แล้วพิมพ์ <code>await game.RnR.smokeTest()</code> เพื่อตรวจว่าระบบพร้อม</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0guide000001",
+      "name": "01 — คุยเรื่องโต๊ะและตั้งค่าแคมเปญ",
+      "type": "text",
+      "sort": 100,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>คุยเรื่องโต๊ะและตั้งค่าแคมเปญ</h1>\n<div class=\"rnr-say\"><p><strong>พูดกับผู้เล่น:</strong> “ก่อนสร้างตัวละคร มาตกลงกันก่อนว่าเราจะเล่นเรื่องแบบไหน อะไรที่ไม่อยากเจอในเกม และถ้าเกมไปทางที่ใครไม่สบายใจ เราจะหยุดกันยังไง”</p></div>\n<h2>เรื่องที่ต้องตกลง</h2>\n<ol><li><strong>แนวเรื่อง</strong>: Fantasy, Modern, Future, Space, Martial Arts, Superhero, Mecha หรือผสม แนวที่เลือกเปลี่ยนสีและธีมของ Sheet ทุกใบผ่าน <em>Campaign Setting Profile</em></li><li><strong>โทนเรื่อง</strong>: ผจญภัยเบา ๆ, ดราม่า, สยองขวัญ หรือการเมือง</li><li><strong>ขอบเขตเนื้อหา</strong> (Lines &amp; Veils): Line คือสิ่งที่จะไม่มีในเกมเลย Veil คือมีได้แต่ไม่บรรยายละเอียด</li><li><strong>Safety tool</strong>: แนะนำ X-Card ใครแตะการ์ดหรือพิมพ์ X ในแชท ฉากนั้นจะถูกข้ามโดยไม่ต้องอธิบายเหตุผล</li><li><strong>ความตาย</strong>: บอกผู้เล่นว่า RnR ไม่ฆ่าตัวละครอัตโนมัติ ตกลงกันว่าโต๊ะนี้ตัวละครตายได้เมื่อไหร่</li></ol>\n<h2>Game Settings ของ RnR</h2>\n<table><thead><tr><th>Setting</th><th>ค่าเริ่มต้น</th><th>ความหมาย</th><th>คำแนะนำ</th></tr></thead><tbody><tr><td>Campaign Setting Profile</td><td>Universal</td><td>ธีมของ Sheet และคำแนะนำตามแนวเรื่อง</td><td>เลือกตามแนวที่ตกลง</td></tr><tr><td>Attribute Baseline</td><td>8</td><td>ค่า Attribute ที่ได้ modifier +0</td><td>ไม่ควรเปลี่ยนหลังเริ่มแคมเปญ</td></tr><tr><td>Long Range Modifier</td><td>0</td><td>โบนัสหรือโทษเมื่อยิงไกล</td><td>−2 ถ้าอยากให้ระยะมีผล</td></tr><tr><td>Partial / Substantial / Total Cover</td><td>2 / 4 / 6</td><td>Reflex ที่ได้จากที่กำบัง</td><td>ค่าเริ่มต้นเหมาะแล้ว</td></tr><tr><td>Recovery DC</td><td>10</td><td>DC ของการทอยฟื้นตอนล้ม</td><td>12 ถ้าอยากให้โหดขึ้น</td></tr><tr><td>Recovery Steps Needed</td><td>2</td><td>จำนวนขั้นที่ต้องได้เพื่อลุก</td><td></td></tr><tr><td>Escalation Rounds</td><td>3</td><td>ล้มกี่รอบแล้วระบบแจ้ง GM</td><td></td></tr><tr><td>Health on Recovery</td><td>1</td><td>Health ขั้นต่ำเมื่อลุกขึ้น</td><td></td></tr></tbody></table>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0guide000002",
+      "name": "02 — RnR คืออะไร และทอยอย่างไร",
+      "type": "text",
+      "sort": 200,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>RnR คืออะไร และทอยอย่างไร</h1>\n<div class=\"rnr-say\"><p><strong>พูดกับผู้เล่น:</strong> “RnR ใช้ลูกเต๋า 20 หน้าเป็นหลัก ทุกครั้งที่ตัวละครพยายามทำอะไรที่อาจพลาด ให้ทอย d20 บวก modifier ถ้าได้เท่ากับหรือมากกว่าตัวเลขที่ผมตั้งไว้ คือสำเร็จ ส่วนที่เหลือระบบคำนวณให้”</p></div>\n<h2>สูตรเดียวที่ต้องจำ</h2>\n<p style=\"font-size:1.2em;text-align:center\"><strong>1d20 + Modifier ≥ DC → สำเร็จ</strong></p>\n<table><thead><tr><th>ความยาก</th><th>DC</th><th>ตัวอย่าง</th></tr></thead><tbody><tr><td>ง่าย</td><td>8</td><td>ปีนรั้วไม้เตี้ย ๆ</td></tr><tr><td>ปกติ</td><td>10</td><td>ตามรอยเท้าบนดินโคลน</td></tr><tr><td>ยาก</td><td>13</td><td>งัดกุญแจดี ๆ</td></tr><tr><td>ยากมาก</td><td>16</td><td>โน้มน้าวศัตรูให้วางอาวุธ</td></tr><tr><td>แทบเป็นไปไม่ได้</td><td>20</td><td>กระโดดข้ามหุบเหว</td></tr></tbody></table>\n<h2>Modifier มาจากไหน</h2>\n<ul><li><strong>Attribute check</strong>: modifier ของ Attribute</li><li><strong>Skill check</strong>: modifier ของ Attribute ที่ผูกกับ Skill + ค่า Skill + โบนัสจาก Extra Skill และอุปกรณ์ที่สวมอยู่</li><li><strong>Condition</strong>: Roll Penalty ของทุกภาวะที่เป็นอยู่</li></ul>\n<h2>Advantage และ Disadvantage</h2>\n<div class=\"rnr-say\"><p><strong>พูดกับผู้เล่น:</strong> “ถ้าสถานการณ์เป็นใจ เช่นมีเครื่องมือดีหรือมีเวลา จะได้ Advantage ทอยสองลูกเอาลูกที่ดีกว่า ถ้าสถานการณ์แย่ เช่นมืดหรือรีบ ได้ Disadvantage เอาลูกที่แย่กว่า Shift+Click ปุ่มทอยเพื่อเลือกโหมด”</p></div>\n<h2>Passive</h2>\n<p>Passive = 10 + modifier แสดงใต้ Attribute แต่ละตัว GM ใช้เมื่อตัวละครไม่ได้ตั้งใจทำ เช่น Passive Perception เพื่อดูว่าสังเกตเห็นกับดักไหม โดยไม่ต้องบอกผู้เล่นว่ามีกับดัก</p>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0guide000003",
+      "name": "03 — ตัวละครและตัวเลขบน Sheet",
+      "type": "text",
+      "sort": 300,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>ตัวละครและตัวเลขบน Sheet</h1>\n<h2>Attributes 9 ตัว</h2>\n<table><thead><tr><th>ย่อ</th><th>ชื่อ</th><th>ใช้กับ</th></tr></thead><tbody><tr><td>STR</td><td>Strength</td><td>โจมตีระยะประชิด ยกของหนัก</td></tr><tr><td>DEX</td><td>Dexterity</td><td>ยิง, Initiative, Reflex</td></tr><tr><td>TGH</td><td>Toughness</td><td>Health, การฟื้นตอนพัก</td></tr><tr><td>INT</td><td>Intellect</td><td>ความรู้, เวทมนตร์บางชนิด</td></tr><tr><td>APT</td><td>Aptitude</td><td>ความถนัดเชิงปฏิบัติ, ช่าง</td></tr><tr><td>SAN</td><td>Sanity</td><td>Willpower, ใจนิ่ง</td></tr><tr><td>CHR</td><td>Charm</td><td>เสน่ห์, การข่มขู่</td></tr><tr><td>RHT</td><td>Rhetoric</td><td>วาทศิลป์, การโน้มน้าว</td></tr><tr><td>EGO</td><td>Ego</td><td>ความเชื่อมั่นในตัวเอง</td></tr></tbody></table>\n<h2>ตาราง Modifier (Baseline 8)</h2>\n<table><thead><tr><th>ค่า</th><th>6–7</th><th>8–9</th><th>10–11</th><th>12–13</th><th>14–15</th><th>16–17</th><th>18–19</th><th>20</th></tr></thead><tbody><tr><td>Modifier</td><td>−1</td><td>+0</td><td>+1</td><td>+2</td><td>+3</td><td>+4</td><td>+5</td><td>+6</td></tr></tbody></table>\n<div class=\"rnr-say\"><p><strong>พูดกับผู้เล่น:</strong> “ทุก Attribute เริ่มที่ 8 คุณมี 30 แต้มไว้เพิ่ม เพิ่มเป็นเลขคู่จะคุ้มที่สุด เพราะเลขคี่ไม่เพิ่ม modifier สูงสุดได้ 20 ถ้ายอมให้มีอวัยวะที่ใช้ไม่ได้ จะได้แต้มเพิ่มอวัยวะละ 2”</p></div>\n<h2>ค่าที่ระบบคำนวณให้</h2>\n<table><thead><tr><th>ค่า</th><th>สูตร</th></tr></thead><tbody><tr><td>Health สูงสุด</td><td>10 + TGH modifier (+2 ทุก Level)</td></tr><tr><td>Willpower สูงสุด</td><td>8 + SAN modifier (+1 ทุก 2 Level)</td></tr><tr><td>Initiative</td><td>1d20 + DEX modifier</td></tr><tr><td>Speed</td><td>30 ft + โบนัสจากอุปกรณ์และ Extra Skill (−15 ft ต่อเท้าหรือขาที่ใช้ไม่ได้)</td></tr><tr><td>Armor DR</td><td>Armor DR ของตัวละคร + Armor Value ของเกราะทุกชิ้นที่สวม</td></tr><tr><td>Mental</td><td>หัวใจ 18 ช่อง เริ่มที่ 9</td></tr></tbody></table>\n<h2>Origin, Class, Background</h2>\n<table><thead><tr><th></th><th>ได้อะไร</th><th>อัตโนมัติไหม</th></tr></thead><tbody><tr><td>Origin</td><td>+1 Attribute หนึ่งตัว (ไม่นับเป็น State Points)</td><td>ใช่ เมื่อลากใส่ Sheet</td></tr><tr><td>Class</td><td>+1 Class Skill สองตัว + Class Feature + Hit Die</td><td>Skill ใช่ / Feature ใช้ตามคำอธิบาย</td></tr><tr><td>Background</td><td>+1 Skill สองตัว + ความสามารถเชิงเรื่องราว</td><td>Skill ใช่</td></tr></tbody></table>\n<p>เปลี่ยน Origin, Class หรือ Background ได้ ลากอันใหม่ใส่ ระบบถอดโบนัสเก่าออกและใส่โบนัสใหม่ให้</p>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0guide000004",
+      "name": "04 — การต่อสู้",
+      "type": "text",
+      "sort": 400,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>การต่อสู้</h1>\n<div class=\"rnr-say\"><p><strong>พูดกับผู้เล่น:</strong> “การต่อสู้ใน RnR ฝ่ายที่โดนโจมตีได้เลือกเสมอว่าจะรับมือยังไง จะปัดด้วยอาวุธ จะหลบ หรือจะยอมรับ ทุกการโจมตีจึงเป็นการแข่งทอยระหว่างสองฝ่าย”</p></div>\n<h2>ลำดับในหนึ่งการโจมตี</h2>\n<ol><li><strong>เลือกเป้า</strong> (Target) บน Token</li><li><strong>Attack Roll</strong> = 1d20 + Attribute modifier + โบนัสอาวุธ + โบนัสจากเกราะและเอฟเฟกต์ Natural 20 คือ Critical</li><li><strong>เป้าหมายเลือก</strong>: Defend (ใช้อาวุธที่ถือ) / Dodge (DEX + Reflex) / Take the Hit\n  <ul><li>ได้ ≥ ค่าโจมตีคือป้องกันสำเร็จ</li><li>Natural 20 สำเร็จแน่นอน, Natural 1 พลาดแน่นอน</li><li>Dodge ได้ <strong>มากกว่า</strong> ค่าโจมตี และถืออาวุธอยู่ จะได้ปุ่ม <strong>Counterattack</strong></li><li>ป้องกันได้ 1 ครั้งต่อเทิร์น (2 ครั้งถ้ามี Extra Skill ชื่อ Reaction / Defense / Counter) สิทธิ์นี้คืนตอนเริ่มเทิร์นของตัวเอง</li></ul></li>\n<li><strong>Damage Roll</strong> = ลูกเต๋าอาวุธ + Attribute modifier + โบนัส ถ้า Critical จำนวนลูกเต๋าเป็นสองเท่า (2d6 กลายเป็น 4d6) โบนัสคงที่ไม่คูณ</li>\n<li><strong>Apply Damage</strong>: ดาเมจ − Armor DR (ไม่ต่ำกว่า 0) แล้ว × ตัวคูณ (Immunity ×0, Vulnerability ×2, Resistance ×½)</li></ol>\n<h2>ตัวอย่างเต็ม</h2>\n<p>นักรบโจมตีด้วย <em>Greatsword</em> (2d6) STR 14 (+3): ทอย 12 + 3 = <strong>15</strong> ศัตรูเลือก Defend ได้ 11 จึงโดน ทอยดาเมจ 2d6 + 3 = 10 ศัตรูมี DR 2 เหลือ 8 และศัตรู Resistance ต่อ slashing จึงเหลือ <strong>4</strong></p>\n<h2>ระยะและที่กำบัง</h2>\n<ul><li>ไม่เห็นเป้า (ไม่มี Line of Sight) หรือเกินระยะ: โจมตีไม่ได้ GM อนุญาตเป็นพิเศษได้</li><li>Partial Cover +2 · Substantial +4 · Total Cover โจมตีไม่ได้</li></ul>\n<h2>Action ในหนึ่งเทิร์น</h2>\n<p>Action 1 ครั้ง, Bonus Action 1 ครั้ง, เคลื่อนที่ตาม Speed และ Reaction เมื่อมีจังหวะ ความสามารถทุกอย่างระบุจังหวะไว้ที่บรรทัดแรกของการ์ด ความสามารถแบบ Active ต้องกดเตรียม (Ready) ในแท็บ Features ก่อน และเตรียมได้พร้อมกันสูงสุด 8 อย่าง</p>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0guide000005",
+      "name": "05 — บาดเจ็บ ล้ม ฟื้น และพัก",
+      "type": "text",
+      "sort": 500,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>บาดเจ็บ ล้ม ฟื้น และพัก</h1>\n<div class=\"rnr-say\"><p><strong>พูดกับผู้เล่น:</strong> “Health เหลือ 0 ไม่ได้แปลว่าตาย แปลว่าล้มลง คุณยังทอยฟื้นได้ทุกรอบ และเพื่อนช่วยรักษาได้ ระบบจะไม่ฆ่าใครเอง ถ้าจะมีใครตาย เราจะคุยกันก่อน”</p></div>\n<h2>Down และ Recovery</h2>\n<ul><li>ทอย 1d20 ทุกรอบ เทียบ DC 10: ได้ถึง DC = 1 ขั้น, Natural 20 หรือเกิน DC ตั้งแต่ 10 ขึ้นไป = 2 ขั้น</li><li>ครบ 2 ขั้น ลุกขึ้นพร้อม Health 1</li><li>ได้รับการรักษาจน Health มากกว่า 0 ลุกขึ้นทันที</li><li>ล้มครบ 3 รอบโดยไม่คืบหน้า ระบบแจ้ง GM</li></ul>\n<h2>การรักษา</h2>\n<ul><li>ไอเทมรักษา เช่น <em>Bandage</em> 1d4, <em>Medicine Dose</em> 1d6+1, <em>Healing Potion</em> 2d4+2 ใช้จาก Backpack แล้วจำนวนลดลงอัตโนมัติ</li><li>ความสามารถและเวทรักษา เช่น <em>First Response</em>, <em>Healing Touch</em>, <em>Restore</em> กดใช้แล้ว Apply Healing บนการ์ด</li><li>Health ไม่เกินค่าสูงสุด</li></ul>\n<h2>Conditions</h2>\n<p>Injuries (เช่น Minor Wound, Broken Bone, Bleeding) และ Psychiatric Disorders (เช่น Panic Disorder, PTSD) GM ใส่ผ่านปุ่ม <em>Manage Conditions</em> แต่ละภาวะมี Roll Penalty ที่ GM ตั้งได้ และลบออกจากทุกการทอย</p>\n<h2>การพัก</h2>\n<table><thead><tr><th></th><th>Short Rest</th><th>Long Rest</th></tr></thead><tbody><tr><td>Health</td><td>ใช้ Hit Dice ลูกละ 1d6 + TGH modifier</td><td>เต็ม</td></tr><tr><td>Willpower</td><td>ฟื้นครึ่งหนึ่งของค่าสูงสุด</td><td>เต็ม</td></tr><tr><td>Hit Dice</td><td>ใช้ไป</td><td>คืน</td></tr><tr><td>อื่น ๆ</td><td>—</td><td>ล้าง Exhaustion</td></tr></tbody></table>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0guide000006",
+      "name": "06 — อุปกรณ์ ร่างกาย และอวัยวะ",
+      "type": "text",
+      "sort": 600,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>อุปกรณ์ ร่างกาย และอวัยวะ</h1>\n<h2>สามที่อยู่ของไอเทม</h2>\n<table><thead><tr><th>ที่อยู่</th><th>ใช้ทำอะไร</th><th>ทำอย่างไร</th></tr></thead><tbody><tr><td>Backpack</td><td>ของที่พกไว้เฉย ๆ</td><td>ลากจาก Compendium ใส่ Sheet</td></tr><tr><td>มือ (L / R)</td><td>อาวุธ เครื่องมือ ของที่ใช้ทันที อาวุธต้องอยู่ในมือถึงจะโจมตีและ Defend ได้</td><td>ลากใส่ช่องมือ หรือกด L / R</td></tr><tr><td>Wearable Equipment</td><td>เกราะและของสวมใส่ 12 ช่อง</td><td>ลากใส่ช่องข้างรูปร่างกาย</td></tr></tbody></table>\n<h2>ช่องสวมใส่ 12 ช่อง</h2>\n<p>แถวบน: Head, Neck, Torso, Back · ข้างรูปร่างกาย: แขน, มือ, ขา, เท้า ทั้งซ้ายและขวา</p>\n<ul><li>เกราะลำตัว (Leather, Chain, Plate) ใส่ที่ Torso และให้ DR หลัก</li><li>เกราะเสริม (Helm, Arm Guards, Gloves, Boot Guards…) ใส่ที่ช่องของตัวเอง ให้ DR +1 หรือโบนัส Skill</li><li>Shield ใส่ที่มือ</li><li>ชิ้นที่สวมอยู่เป็นสีทองบนรูป ช่องที่ใช้ไม่ได้เป็นสีแดง</li><li>โบนัส Skill ของอุปกรณ์ทำงานเฉพาะตอนสวมอยู่</li></ul>\n<h2>Disabled Organs</h2>\n<div class=\"rnr-say\"><p><strong>พูดกับผู้เล่น:</strong> “กฎนี้เป็นทางเลือก ตัวละครที่เคยบาดเจ็บหรือเกิดมาแตกต่าง เลือกอวัยวะที่ใช้ไม่ได้ แลกกับ State Points อวัยวะละ 2 แต้ม คลิกบนรูปร่างกายในแท็บ Biography ได้เลย”</p></div>\n<table><thead><tr><th>กลุ่ม</th><th>อวัยวะ</th><th>ผลที่ระบบคำนวณ</th></tr></thead><tbody><tr><td>Limbs</td><td>มือ, เท้า, แขน, ขา (ซ้าย / ขวา)</td><td>ถือหรือใส่ของในช่องนั้นไม่ได้ · แขนพาให้มือใช้ไม่ได้ · ขาพาให้เท้าใช้ไม่ได้ · เท้าหรือขาข้างละ −15 ft Speed</td></tr><tr><td>Senses</td><td>ตา, หู, เสียง, กลิ่น</td><td>เชิงเรื่องราว GM ให้โทษในการทอยที่เกี่ยวข้อง</td></tr><tr><td>Internal</td><td>หัวใจ, ปอด, ตับ, ไต, กระเพาะ, กระดูกสันหลัง</td><td>เชิงเรื่องราว GM ตัดสิน</td></tr></tbody></table>\n<p><strong>Prosthetic</strong>: Equipment ที่ตั้ง <em>Prosthetic For</em> ไว้ เมื่อสวมแล้วอวัยวะนั้นกลับมาใช้ได้ บนรูปจะเป็นสีฟ้า</p>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0guide000007",
+      "name": "07 — Extra Skills และการเลื่อนขั้น",
+      "type": "text",
+      "sort": 700,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>Extra Skills และการเลื่อนขั้น</h1>\n<h2>Extra Skill Shop</h2>\n<ul><li>ตัวละครใหม่มี <strong>6 Extra Skill Points</strong> GM ให้เพิ่มได้ผ่านปุ่ม ＋ ข้างแถบ XP</li><li>มีมากกว่า 600 รายการ แบ่ง 8 หมวด: Academic, Arts, Combat, Communication, Investigation, Other, Physical, Science</li><li>ตัวกรอง: ค้นหา, หมวด, Attribute, <em>Affordable only</em> และแสดงทีละ 60 รายการ</li></ul>\n<h2>Extra Skill ทำอะไรได้</h2>\n<table><thead><tr><th>ส่วน</th><th>ผล</th><th>อัตโนมัติ</th></tr></thead><tbody><tr><td>Always on</td><td>+1 กับ Skill ที่ระบุ</td><td>ใช่</td></tr><tr><td>(Reaction) / (Part of Reaction)</td><td>ป้องกันได้ 2 ครั้งต่อเทิร์น</td><td>ใช่</td></tr><tr><td>Combat (Action / Bonus Action)</td><td>ทอยโจมตีและดาเมจ 1d6 / 1d4 + Attribute</td><td>ใช่ กดใช้จาก Sheet</td></tr><tr><td>Science (Action / Bonus Action)</td><td>รักษา 1d6+1 / 1d4</td><td>ใช่</td></tr><tr><td>Physical (Free Action)</td><td>Speed +5 ft</td><td>ใช่</td></tr><tr><td>จังหวะพิเศษอื่น</td><td>เช่น +2 กับการทอยครั้งถัดไปหนึ่งครั้งต่อฉาก</td><td>ผู้เล่นแจ้ง GM</td></tr></tbody></table>\n<h2>การเลื่อนขั้น</h2>\n<table><thead><tr><th>Level</th><th>XP ที่ต้องใช้เพื่อขึ้น Level ถัดไป</th><th>XP สะสม</th></tr></thead><tbody><tr><td>1 → 2</td><td>300</td><td>300</td></tr><tr><td>2 → 3</td><td>600</td><td>900</td></tr><tr><td>3 → 4</td><td>900</td><td>1,800</td></tr><tr><td>4 → 5</td><td>1,200</td><td>3,000</td></tr></tbody></table>\n<ul><li>ทุก Level: Health สูงสุด +2 · ทุก 2 Level: Willpower สูงสุด +1</li><li><strong>Growth Point</strong> 1 แต้ม = State Point เพิ่ม 1 แต้ม แจกผ่านปุ่ม STATE PT</li><li>GM ให้รางวัลทั้งหมดผ่านปุ่ม ＋ ข้างแถบ XP: XP, Growth Points และ Extra Skill Points</li></ul>\n<h2>แนวทางให้รางวัล</h2>\n<p>XP 100–300 ต่อ Session · Growth Point 1 เมื่อถึงจุดเปลี่ยนสำคัญของเรื่อง · Extra Skill Points 1–2 เมื่อตัวละครฝึกหรือได้เรียนรู้สิ่งใหม่ในเรื่อง</p>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0guide000008",
+      "name": "08 — คำถามที่พบบ่อย",
+      "type": "text",
+      "sort": 800,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>คำถามที่ผู้เล่นมักถาม</h1>\n<dl>\n<dt>ทำไมกดโจมตีแล้วไม่ทอย</dt><dd>คลิกชื่ออาวุธจะแสดงการ์ดก่อน ให้กด <em>Attack Roll</em> บนการ์ด หรือ Shift+Click ชื่ออาวุธเพื่อเลือกโหมดแล้วทอยทันที ถ้าเป็นอาวุธยิงที่กระสุนหมด ระบบจะเปิด Reload ให้แทน</dd>\n<dt>ทำไม Defend ไม่ขึ้น มีแต่ Dodge</dt><dd>Defend ต้องมีอาวุธอยู่ในมือที่ใช้งานได้</dd>\n<dt>ป้องกันไม่ได้แล้ว ขึ้นว่า Defense has already been used</dt><dd>ใช้สิทธิ์ป้องกันของเทิร์นนี้ไปแล้ว สิทธิ์คืนตอนเริ่มเทิร์นของตัวเอง ยังเลือก Take the Hit ได้</dd>\n<dt>ใส่หมวกไม่ได้</dt><dd>ช่องนั้นอาจมีของอยู่แล้ว หรืออวัยวะนั้นถูกตั้งว่าใช้ไม่ได้ (ช่องลายแดง)</dd>\n<dt>State Points ไม่พอ</dt><dd>ตรวจว่ามีแต้มเหลือไหมที่ “State Points X / Y” ในแท็บ Biography โบนัสจาก Origin ไม่นับเป็นแต้มที่ใช้</dd>\n<dt>ซื้อ Extra Skill ผิด</dt><dd>เปิดร้าน แท็บ Owned กด Remove จะได้แต้มคืน</dd>\n<dt>ตัวละครตายไหมถ้า Health เป็น 0</dt><dd>ไม่ตาย จะล้ม (Down) แล้วทอยฟื้น GM เป็นคนตัดสินเรื่องความตาย</dd>\n</dl>\n<h2>ข้อผิดพลาดที่ GM มักเจอ</h2>\n<ul><li>ลืมเลือกเป้าก่อนโจมตี การ์ดป้องกันจะไม่ขึ้น</li><li>กด Apply Damage ที่การ์ดเก่า ระบบกันการหักซ้ำไว้แล้ว ไม่ต้องกังวล</li><li>NPC ไม่มีอาวุธในแท็บ Actions จึงเลือก Defend ไม่ได้</li></ul>"
+      },
+      "flags": {}
+    },
+    {
+      "_id": "rnrs0guide000009",
+      "name": "09 — เช็กลิสต์ท้าย Session 0",
+      "type": "text",
+      "sort": 900,
+      "title": {
+        "show": true,
+        "level": 1
+      },
+      "text": {
+        "format": 1,
+        "content": "\n<h1>เช็กลิสต์ท้าย Session 0</h1>\n<ul>\n<li>☐ ทุกคนมีตัวละครพร้อม Origin, Class, Background และใช้ State Points ครบ</li>\n<li>☐ ทุกคนถืออาวุธในมือ และสวมเกราะอย่างน้อยหนึ่งชิ้น</li>\n<li>☐ ทุกคนซื้อ Extra Skill อย่างน้อย 1 อย่าง</li>\n<li>☐ ทุกคนได้ทอย Skill, โจมตี และป้องกันอย่างน้อยหนึ่งครั้ง</li>\n<li>☐ มีคนได้ลอง Down และฟื้น หรือได้ดูเพื่อนทำ</li>\n<li>☐ ทุกคนขึ้น Level 2 และ Long Rest แล้ว</li>\n<li>☐ ตกลงขอบเขตเนื้อหาและ Safety tool แล้ว</li>\n<li>☐ ตกลงวันเวลาเล่น Session 1 แล้ว</li>\n<li>☐ แจก <em>เอกสารแจกผู้เล่น</em> ให้ทุกคน</li>\n</ul>"
+      },
+      "flags": {}
+    }
+  ]
+}

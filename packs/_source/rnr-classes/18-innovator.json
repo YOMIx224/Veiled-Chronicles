@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Innovator is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d8</p><p><strong>Class skills (automated):</strong> +1 to Electronic and Mechanical when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Prototype: once per session, describe a gadget; it works once for a +2 bonus on one roll or one narrative effect the GM approves.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Innovator",
     "hitDie": "1d8",
     "subclass": "",
-    "features": "Core Innovator feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Prototype: once per session, describe a gadget; it works once for a +2 bonus on one roll or one narrative effect the GM approves.",
+    "universal": true,
+    "skills": [
+      "electronic",
+      "mechanical"
+    ]
   },
   "flags": {},
   "_stats": {

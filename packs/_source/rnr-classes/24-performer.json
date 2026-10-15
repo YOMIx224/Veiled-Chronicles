@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Performer is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d6</p><p><strong>Class skills (automated):</strong> +1 to Art and Persuade when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Captivate: a crowd that watches you for a minute is distracted; allies gain +2 Stealth and Larceny during that time.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Performer",
     "hitDie": "1d6",
     "subclass": "",
-    "features": "Core Performer feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Captivate: a crowd that watches you for a minute is distracted; allies gain +2 Stealth and Larceny during that time.",
+    "universal": true,
+    "skills": [
+      "art",
+      "persuade"
+    ]
   },
   "flags": {},
   "_stats": {

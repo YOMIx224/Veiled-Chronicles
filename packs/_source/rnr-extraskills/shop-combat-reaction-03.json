@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a reaction when this combat technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Shooting Weapons and Throwing checks.</p><p><strong>Reaction:</strong> owning any Extra Skill with “Reaction” in its name gives you a <strong>second Defense each turn</strong> (automated). Once per scene, add +2 to a Shooting Weapons and Throwing check made outside your turn.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,18 +21,23 @@
       "page": ""
     },
     "category": "combat",
-    "attribute": "strength",
+    "attribute": "dexterity",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
-      "brawl",
-      "weapons"
+      "shootingWeapons",
+      "throwing"
     ],
-    "effect": "Use as a reaction when this combat technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Shooting Weapons and Throwing. Reaction: owning any Extra Skill with “Reaction” in its name gives you a second Defense each turn (automated). Once per scene, add +2 to a Shooting Weapons and Throwing check made outside your turn.",
     "properties": [],
     "abilityType": "reaction",
     "actionType": "reaction",
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

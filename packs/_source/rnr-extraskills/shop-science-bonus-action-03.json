@@ -5,7 +5,7 @@
   "img": "icons/skills/trades/academics-study-reading-book.webp",
   "system": {
     "description": {
-      "value": "Use as a bonus action when this science & medicine technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+      "value": "<p><strong>Always on (automated):</strong> +1 to Electronic and Mechanical checks.</p><p><strong>Bonus Action (once per scene):</strong> your next Electronic and Mechanical check before the end of your turn gains a further +1.</p><p><strong>Field repair (automated):</strong> use the item on a Vehicle, Mecha, construct or device within reach to restore 1d4 Health; press Apply Healing on the Chat Card. It does not heal living creatures.</p><p><em>Reskin freely as training, a perk, an implant, a technique, a gadget or a power.</em></p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,16 +23,21 @@
     "category": "science",
     "attribute": "intellect",
     "cost": 1,
-    "bonus": 0,
+    "bonus": 1,
     "skills": [
       "electronic",
       "mechanical"
     ],
-    "effect": "Use as a bonus action when this science & medicine technique fits the scene. Gain a +1 situational bonus to one related check; the GM determines the relevant skill and resolves the benefit.",
+    "effect": "+1 Electronic and Mechanical. Bonus Action (once per scene): your next Electronic and Mechanical check before the end of your turn gains a further +1. Field repair (automated): use the item on a Vehicle, Mecha, construct or device within reach to restore 1d4 Health; press Apply Healing on the Chat Card. It does not heal living creatures.",
     "properties": [],
     "abilityType": "active",
     "actionType": "bonus action",
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "damageFormula": "",
+    "damageType": "",
+    "healingFormula": "1d4",
+    "speedBonus": 0
   },
   "flags": {},
   "_stats": {

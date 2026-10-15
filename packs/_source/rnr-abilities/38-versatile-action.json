@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Versatile Action is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · Self</strong></p><p>Once per scene, make any skill check as if you had +1 in it, even a skill you have never trained.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -21,8 +21,8 @@
       "page": ""
     },
     "abilityType": "active",
-    "attribute": "dexterity",
-    "effect": "Versatile Action: gain an appropriate situational benefit when the GM agrees it applies.",
+    "attribute": "aptitude",
+    "effect": "Once per scene, make any skill check as if you had +1 in it, even a skill you have never trained.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -34,7 +34,10 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Guard is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · 5 ft</strong></p><p>Choose an adjacent ally. Until the start of your next turn, attacks against that ally target you instead, and you may Defend or Dodge against them.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -22,19 +22,22 @@
     },
     "abilityType": "active",
     "attribute": "toughness",
-    "effect": "Guard: gain an appropriate situational benefit when the GM agrees it applies.",
+    "effect": "Choose an adjacent ally. Until the start of your next turn, attacks against that ally target you instead, and you may Defend or Dodge against them.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
     "actionType": "action",
-    "range": "Self",
+    "range": "5 ft",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

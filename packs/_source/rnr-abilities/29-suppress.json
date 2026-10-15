@@ -5,7 +5,7 @@
   "img": "icons/skills/melee/shield-block-bash-blue.webp",
   "system": {
     "description": {
-      "value": "Suppress is a setting-neutral technique; resolve its narrative effect with the GM.",
+      "value": "<p><strong>Action · 60 ft</strong></p><p>Lay down covering fire (automated attack and 1d4 + DEX damage). On a hit the target has −2 on its attacks until the start of your next turn.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,21 +20,24 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "abilityType": "reaction",
+    "abilityType": "active",
     "attribute": "dexterity",
-    "effect": "Suppress: gain an appropriate situational benefit when the GM agrees it applies.",
-    "damageFormula": "",
-    "damageType": "",
+    "effect": "Lay down covering fire (automated attack and 1d4 + DEX damage). On a hit the target has −2 on its attacks until the start of your next turn.",
+    "damageFormula": "1d4",
+    "damageType": "piercing",
     "healingFormula": "",
-    "actionType": "reaction",
-    "range": "Self",
+    "actionType": "action",
+    "range": "60 ft",
     "uses": {
       "value": 0,
       "max": 0,
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": true,
+    "attackBonus": 0,
+    "damageBonus": 0
   },
   "flags": {},
   "_stats": {

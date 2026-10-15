@@ -1,5 +1,5 @@
 // =============================================================
-//  Role & Roll  —  RnR.js  (v0.4.2)
+//  Role & Roll  —  RnR.js  (v0.4.3)
 // =============================================================
 
 // ── Module imports ────────────────────────────────────────────
@@ -377,6 +377,28 @@ function originAttributeBonus(actor, key) {
 function statePointsSpent(actor) {
   return ATTR_LIST.reduce((total, [key]) =>
     total + Math.max(0, (Number(gp(actor, `system.attributes.${key}.value`)) || 8) - 8 - originAttributeBonus(actor, key)), 0);
+}
+
+/**
+ * Skill bonus from owned Extra Skills and worn armour/equipment for one skill.
+ * Mirrors the totals buildData shows on the sheet: an item names its skills in
+ * `skills` (list) or `skill`, otherwise its bonus covers every skill of its
+ * `attribute`. Equipment only counts while worn (it has an equipment slot).
+ */
+function itemSkillBonus(actor, key, attr) {
+  let total = 0;
+  for (const item of actor.items?.contents ?? []) {
+    const worn = ["armor", "equipment"].includes(item.type) && item.system?.equipmentSlot;
+    if (item.type !== "extraskills" && !worn) continue;
+    const bonus = Number(item.system?.bonus) || 0;
+    if (!bonus) continue;
+    const list = Array.isArray(item.system?.skills) ? item.system.skills.map(v => String(v).trim()).filter(Boolean) : [];
+    const single = String(item.system?.skill || "").trim();
+    const attribute = String(item.system?.attribute || "").trim();
+    const applies = list.length ? list.includes(key) : single ? single === key : attribute === attr;
+    if (applies) total += bonus;
+  }
+  return total;
 }
 
 function canHoldItem(item) {
@@ -2233,14 +2255,20 @@ function experienceAwardDialog(actor) {
   const view = progressionView(actor);
 
   return waitRnRDialog({
-    window: { title: `Award Experience — ${actor.name}` },
+    window: { title: `Award — ${actor.name}` },
     content: `<div class="rnr-xp-dialog">
       <p class="rnr-roll-mode-hint">
         Level <strong>${view.level}</strong> · ${view.experience} / ${view.experienceNext} XP
         (${view.experienceProgress}%)
       </p>
-      <label>Amount
+      <label>Experience (XP)
         <input type="number" name="amount" value="100" step="1" />
+      </label>
+      <label>Growth Points <small>(each adds 1 State Point to the pool)</small>
+        <input type="number" name="growth" value="0" step="1" min="0" />
+      </label>
+      <label>Extra Skill Points <small>(spent in the Extra Skill Shop)</small>
+        <input type="number" name="extraSkill" value="0" step="1" />
       </label>
       <p class="rnr-help-text">
         ${view.experienceNext - view.experience} more XP reaches level ${view.level + 1}.
@@ -2257,11 +2285,23 @@ function experienceAwardDialog(actor) {
         default: true,
         callback: async (_event, button) => {
           const root = button.form;
-          const amount = Math.trunc(Number(root.querySelector("input[name=amount]")?.value));
-          if (!Number.isFinite(amount) || amount === 0) {
-            ui.notifications.warn("Enter a non-zero amount of experience.");
+          const amount = Math.trunc(Number(root.querySelector("input[name=amount]")?.value)) || 0;
+          const growth = Math.max(0, Math.trunc(Number(root.querySelector("input[name=growth]")?.value)) || 0);
+          const extraSkill = Math.trunc(Number(root.querySelector("input[name=extraSkill]")?.value)) || 0;
+          if (!amount && !growth && !extraSkill) {
+            ui.notifications.warn("Enter a non-zero amount of XP, Growth Points or Extra Skill Points.");
             return;
           }
+          if (growth) {
+            await addGrowthPoints(actor, growth);
+            ui.notifications.info(`${actor.name} gained ${growth} Growth Point(s).`);
+          }
+          if (extraSkill) {
+            const current = Number(gp(actor, "system.identity.extraSkillPoints")) || 0;
+            await actor.update({ "system.identity.extraSkillPoints": Math.max(0, current + extraSkill) });
+            ui.notifications.info(`${actor.name}: ${extraSkill > 0 ? "+" : ""}${extraSkill} Extra Skill Point(s).`);
+          }
+          if (!amount) return;
           const result = await addExperience(actor, amount);
           if (!result) return;
           if (result.levelsGained > 0) {
@@ -2774,10 +2814,13 @@ function buildData(data) {
       equippedDamageBonus += Number(item.system?.damageBonus) || 0;
       // skill bonuses from equipment (e.g. gloves of stealth)
       const eSkillKey = String(item.system?.skill     || "").trim();
+      const eSkillKeys = Array.isArray(item.system?.skills) ? item.system.skills.map(k => String(k).trim()).filter(Boolean) : [];
       const eAttrKey  = String(item.system?.attribute || "").trim();
       const eBonus    = Number(item.system?.bonus)    || 0;
       if (eBonus !== 0) {
-        if (eSkillKey) {
+        if (eSkillKeys.length) {
+          for (const key of eSkillKeys) extraSkillBonuses[key] = (extraSkillBonuses[key] || 0) + eBonus;
+        } else if (eSkillKey) {
           extraSkillBonuses[eSkillKey] = (extraSkillBonuses[eSkillKey] || 0) + eBonus;
         } else if (eAttrKey) {
           for (const g of SKILL_GROUPS)
@@ -2966,6 +3009,7 @@ class RnRItemSheet extends RnRHandlebarsItemSheet {
     data.isMedium     = data.item.system.armorType === "medium";
     data.isHeavy      = data.item.system.armorType === "heavy";
     data.isShield     = data.item.system.armorType === "shield";
+    data.isAccessory  = data.item.system.armorType === "accessory";
     data.isMelee      = data.item.system.weaponType === "melee";
     data.isRanged     = data.item.system.weaponType === "ranged";
     data.attributeOptions = ATTR_LIST.map(([k,,l]) => ({ key:k, label:l, selected: data.item.system.attribute === k }));
@@ -3227,18 +3271,8 @@ function bindCommonListeners(sheet, html) {
     // skill-specific bonus stored on actor
     const skillBonus = Number(gp(actor, `system.skills.${key}.value`)) || 0;
 
-    // extraSkills item bonuses that apply to this skill or its attribute
-    let extraBonus = 0;
-    const actorItems = actor.items?.contents ?? [];
-    for (const item of actorItems) {
-      if (item.type !== "extraskills") continue;
-      const b  = Number(item.system?.bonus) || 0;
-      if (b === 0) continue;
-      const sk = String(item.system?.skill     || "").trim();
-      const sks = Array.isArray(item.system?.skills) ? item.system.skills.map(v => String(v).trim()) : [];
-      const at = String(item.system?.attribute || "").trim();
-      if (sks.length ? sks.includes(key) : (sk === key || at === attr)) extraBonus += b;
-    }
+    // Extra Skills and worn equipment, the same bonuses the sheet shows.
+    const extraBonus = itemSkillBonus(actor, key, attr);
 
     const mod = attrMod(aVal) + skillBonus + extraBonus;
     rollDialog(actor, label, mod, ATTR_LABELS[attr] || attr);

@@ -39,6 +39,8 @@ export const LEGACY_BODY_SLOT_OPTIONS = [
   ["feet", "Either Foot (legacy)"],
   ["ring", "Either Hand (legacy ring)"],
   ["waist", "Torso (legacy waist)"],
+  ["arms", "Either Arm"],
+  ["legs", "Either Leg"],
 ];
 
 const SLOT_KEYS = new Set(BODY_EQUIPMENT_SLOTS.map(([key]) => key));
@@ -47,6 +49,8 @@ const LEGACY_SLOT_ALIASES = {
   feet: ["rightFoot", "leftFoot"],
   ring: ["rightHand", "leftHand"],
   waist: ["torso"],
+  arms: ["rightArm", "leftArm"],
+  legs: ["rightLeg", "leftLeg"],
 };
 
 export function bodySlotCandidates(value) {
@@ -69,7 +73,11 @@ export function allowedBodySlots(item) {
   if (!item) return [];
   const system = item.system ?? {};
   if (item.type === "armor") {
-    return system.armorType === "shield" ? ["rightHand", "leftHand"] : ["torso"];
+    if (system.armorType === "shield") return ["rightHand", "leftHand"];
+    // Accessory pieces (helm, gloves, boots…) name their own slot; body armour
+    // is worn on the torso.
+    const pieceSlots = bodySlotCandidates(system.allowedSlot);
+    return pieceSlots.length ? pieceSlots : ["torso"];
   }
   if (item.type !== "equipment") return [];
   const requested = String(system.allowedSlot || system.slot || system.equipmentSlot || "").trim();

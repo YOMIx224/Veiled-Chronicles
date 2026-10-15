@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Mend is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · Touch · Instant · SAN</strong></p><p>Repair one broken object, or restore 1d6 Health to a construct, Vehicle or Mecha (automated).</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,12 +24,12 @@
     "school": "universal",
     "attribute": "sanity",
     "castingTime": "1 action",
-    "range": "30 ft",
-    "duration": "instantaneous",
-    "effect": "Mend: resolve the described effect with the GM.",
+    "range": "Touch",
+    "duration": "Instant",
+    "effect": "Repair one broken object, or restore 1d6 Health to a construct, Vehicle or Mecha (automated).",
     "damageFormula": "",
     "damageType": "",
-    "healingFormula": "",
+    "healingFormula": "1d6",
     "saveAttribute": "",
     "saveDC": 0,
     "uses": {
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {

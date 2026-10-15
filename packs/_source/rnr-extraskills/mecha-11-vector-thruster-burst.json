@@ -5,7 +5,7 @@
   "img": "icons/commodities/tech/blueprint.webp",
   "system": {
     "description": {
-      "value": "Fire lateral thrusters when an attack targets you. Use the normal Reflex defense; on a successful defense, the GM may also allow movement up to 10 ft if the space is clear.",
+      "value": "<p><strong>Always on:</strong> +1 to Reflex.</p><p><strong>Reaction:</strong> when you Dodge successfully, also move up to 10 ft without provoking.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,14 +23,17 @@
     "category": "physical",
     "attribute": "dexterity",
     "cost": 2,
-    "bonus": 0,
-    "skills": [],
-    "effect": "Reaction: when targeted by an attack, attempt a Reflex defense; on success, move up to 10 ft if the GM agrees the space is clear. Resolve manually.",
+    "bonus": 1,
+    "skills": [
+      "reflex"
+    ],
+    "effect": "Always on: +1 to Reflex. Reaction: when you Dodge successfully, also move up to 10 ft without provoking.",
     "properties": [],
     "abilityType": "reaction",
     "actionType": "reaction",
     "attackRoll": false,
-    "universal": true
+    "universal": true,
+    "healingFormula": ""
   },
   "flags": {},
   "_stats": {

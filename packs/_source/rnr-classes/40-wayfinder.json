@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Wayfinder is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d6</p><p><strong>Class skills (automated):</strong> +1 to Survival and Perception when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> True North: you always know north and can retrace any route you travelled within a month.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Wayfinder",
     "hitDie": "1d6",
     "subclass": "",
-    "features": "Core Wayfinder feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "True North: you always know north and can retrace any route you travelled within a month.",
+    "universal": true,
+    "skills": [
+      "survival",
+      "perception"
+    ]
   },
   "flags": {},
   "_stats": {

@@ -5,7 +5,7 @@
   "img": "icons/sundries/documents/document-sealed-signatures-red.webp",
   "system": {
     "description": {
-      "value": "Traveler is a setting-neutral character role.",
+      "value": "<p><strong>Hit Die:</strong> 1d6</p><p><strong>Class skills (automated):</strong> +1 to Survival and History when this Class is added to a character; removed again if the Class is removed.</p><p><strong>Class feature:</strong> Well Travelled: you know a contact or useful custom in most settlements you visit.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -23,8 +23,12 @@
     "role": "Traveler",
     "hitDie": "1d6",
     "subclass": "",
-    "features": "Core Traveler feature; choose campaign-appropriate specialization.",
-    "universal": true
+    "features": "Well Travelled: you know a contact or useful custom in most settlements you visit.",
+    "universal": true,
+    "skills": [
+      "survival",
+      "history"
+    ]
   },
   "flags": {},
   "_stats": {

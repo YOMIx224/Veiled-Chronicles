@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Earth Grip is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · 30 ft · 1 round · EGO</strong></p><p>Make an attack (automated). On a hit the target is held in place: its Speed is 0 until the end of its next turn.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -25,8 +25,8 @@
     "attribute": "ego",
     "castingTime": "1 action",
     "range": "30 ft",
-    "duration": "1 minute",
-    "effect": "Earth Grip: resolve the described effect with the GM.",
+    "duration": "1 round",
+    "effect": "Make an attack (automated). On a hit the target is held in place: its Speed is 0 until the end of its next turn.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": true
   },
   "flags": {},
   "_stats": {

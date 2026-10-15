@@ -5,7 +5,7 @@
   "img": "icons/equipment/chest/breastplate-layered-steel.webp",
   "system": {
     "description": {
-      "value": "Padded Hood provides reliable, setting-neutral protection.",
+      "value": "<p>Accessory armour (head slot) · Armor DR +1. Soft head protection that does not muffle hearing.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -20,15 +20,19 @@
       "book": "RnR Universal Collection",
       "page": ""
     },
-    "armorType": "medium",
-    "armorValue": 3,
+    "armorType": "accessory",
+    "armorValue": 1,
     "maxDex": 2,
     "strengthReq": 0,
     "speedBonus": 0,
     "stealthDisadv": false,
     "equipmentSlot": "head",
     "properties": [],
-    "universal": true
+    "universal": true,
+    "allowedSlot": "head",
+    "skills": [],
+    "bonus": 0,
+    "effect": "Accessory armour (head slot) · Armor DR +1. Soft head protection that does not muffle hearing."
   },
   "flags": {},
   "_stats": {

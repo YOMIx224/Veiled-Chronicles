@@ -5,7 +5,7 @@
   "img": "icons/magic/light/orb-shadow-blue.webp",
   "system": {
     "description": {
-      "value": "Leap is a flexible supernatural, psychic, or technological effect.",
+      "value": "<p><strong>1 action · Touch · 1 minute · INT</strong></p><p>The target's jump distance triples.</p>",
       "chat": ""
     },
     "quantity": 1,
@@ -24,9 +24,9 @@
     "school": "universal",
     "attribute": "intellect",
     "castingTime": "1 action",
-    "range": "30 ft",
+    "range": "Touch",
     "duration": "1 minute",
-    "effect": "Leap: resolve the described effect with the GM.",
+    "effect": "The target's jump distance triples.",
     "damageFormula": "",
     "damageType": "",
     "healingFormula": "",
@@ -38,7 +38,8 @@
       "per": ""
     },
     "properties": [],
-    "universal": true
+    "universal": true,
+    "attackRoll": false
   },
   "flags": {},
   "_stats": {
