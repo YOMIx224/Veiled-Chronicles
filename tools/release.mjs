@@ -24,7 +24,7 @@ const zipFolder = manifest.id;
 
 /** Shipped from the source tree. Generated LevelDB packs are added separately. */
 const INCLUDE = ["system.json", "template.json", "README.txt", "RULES.md", "lang", "scripts", "styles", "templates", "docs",
-  "packs/_source", "packs/build-packs.mjs", "packs/generate-universal-content.mjs", "packs/normalize-universal-content.mjs",
+  "packs/_source", "packs/build-packs.mjs", "packs/pack-folders.mjs", "packs/generate-universal-content.mjs", "packs/normalize-universal-content.mjs",
   "packs/package.json", "packs/package-lock.json", "tools", "tests"];
 const LEVELDB_SKIP = new Set(["LOCK", "LOG", "LOG.old"]);
 

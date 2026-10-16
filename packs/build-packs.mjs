@@ -7,6 +7,7 @@ import { ClassicLevel } from "classic-level";
 import { readdirSync, readFileSync, mkdirSync } from "fs";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
+import { planFolders } from "./pack-folders.mjs";
 
 const __dir  = dirname(fileURLToPath(import.meta.url));
 const srcDir = join(__dir, "_source");
@@ -86,9 +87,28 @@ for (const pack of packFolders) {
   const batch = db.batch();
   const seenIds = new Set();
   const problems = [];
+  const sources = [];
   for (const file of files) {
     try {
-      const doc = JSON.parse(readFileSync(join(inDir, file), "utf8"));
+      sources.push({ file, doc: JSON.parse(readFileSync(join(inDir, file), "utf8")) });
+    } catch (e) {
+      problems.push(`${file}: ${e.message}`);
+    }
+  }
+
+  // Compendium folders are generated from pack-folders.mjs. Any folder ID left
+  // in a source file is replaced, so no document points at a missing folder.
+  const documentName = manifestPacks.find(p => p.name === pack)?.type;
+  const { folders, folderFor } = planFolders(pack, documentName, sources.map(s => s.doc));
+  for (const folder of folders) {
+    if (seenIds.has(folder._id)) { problems.push(`folder "${folder.name}": duplicate _id ${folder._id}`); continue; }
+    seenIds.add(folder._id);
+    batch.put(`!folders!${folder._id}`, JSON.stringify(stampStats(folder)));
+  }
+
+  for (const { file, doc: source } of sources) {
+    try {
+      const doc = { ...source, folder: folderFor(source) };
       if (!doc._id) { problems.push(`${file}: missing _id`); continue; }
       if (!/^[a-zA-Z0-9]{16}$/.test(doc._id)) { problems.push(`${file}: _id "${doc._id}" must be a 16-character alphanumeric ID`); continue; }
       if (seenIds.has(doc._id)) { problems.push(`${file}: duplicate _id ${doc._id}`); continue; }
@@ -132,18 +152,24 @@ for (const pack of packFolders) {
 
   // Read the pack back: every source document must be present as a top-level
   // record, otherwise Foundry would show an incomplete compendium.
-  let written = 0;
-  for await (const key of db.keys()) if (/^![a-z]+![A-Za-z0-9]{16}$/.test(key)) written++;
+  let written = 0, writtenFolders = 0;
+  for await (const key of db.keys()) {
+    if (/^!folders![A-Za-z0-9]{16}$/.test(key)) writtenFolders++;
+    else if (/^![a-z]+![A-Za-z0-9]{16}$/.test(key)) written++;
+  }
   await db.close();
   if (!problems.length && written !== count) {
     problems.push(`read-back found ${written} document(s), expected ${count}`);
+  }
+  if (!problems.length && writtenFolders !== folders.length) {
+    problems.push(`read-back found ${writtenFolders} folder(s), expected ${folders.length}`);
   }
 
   if (problems.length) {
     for (const p of problems) console.error(`  ✗ ${p}`);
     throw new Error(`${pack}: ${problems.length} source file(s) rejected — pack is incomplete`);
   }
-  console.log(`  ✓ ${pack.padEnd(24)} ${count} document(s)`);
+  console.log(`  ✓ ${pack.padEnd(24)} ${count} document(s)${folders.length ? `, ${folders.length} folder(s)` : ""}`);
 }
 
 console.log("\n✅ All packs built. Restart/reload Foundry to see changes.\n");

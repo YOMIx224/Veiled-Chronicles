@@ -8,7 +8,7 @@
       "name": "YOMIx224"
     }
   ],
-  "version": "0.4.3",
+  "version": "0.4.4",
   "license": "UNLICENSED",
   "url": "",
   "manifest": "",
@@ -168,6 +168,67 @@
       "path": "packs/rnr-mecha-frames",
       "type": "Actor",
       "system": "rnr"
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Role&Roll",
+      "sorting": "m",
+      "color": "#7a1f2b",
+      "packs": [],
+      "folders": [
+        {
+          "name": "Rules & Guides",
+          "sorting": "m",
+          "color": "#2f4f6f",
+          "packs": [
+            "rnr-user-guide",
+            "rnr-session-zero",
+            "rnr-setting-guides"
+          ]
+        },
+        {
+          "name": "Character Creation",
+          "sorting": "m",
+          "color": "#3f6f3a",
+          "packs": [
+            "rnr-races",
+            "rnr-classes",
+            "rnr-backgrounds",
+            "rnr-extraskills"
+          ]
+        },
+        {
+          "name": "Abilities & Spells",
+          "sorting": "m",
+          "color": "#5a3f7a",
+          "packs": [
+            "rnr-abilities",
+            "rnr-spells"
+          ]
+        },
+        {
+          "name": "Gear",
+          "sorting": "m",
+          "color": "#7a5a2a",
+          "packs": [
+            "rnr-weapons",
+            "rnr-armors",
+            "rnr-equipment",
+            "rnr-consumables"
+          ]
+        },
+        {
+          "name": "Mecha",
+          "sorting": "m",
+          "color": "#3a5f6f",
+          "packs": [
+            "rnr-mecha-frames",
+            "rnr-mecha-journal",
+            "rnr-mecha-macros"
+          ]
+        }
+      ]
     }
   ],
   "languages": [

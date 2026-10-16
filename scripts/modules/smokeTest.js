@@ -69,7 +69,9 @@ export async function runSmokeTest() {
       const first = await pack.getDocument(index.contents[0]._id);
       if (!first) throw new Error("first entry could not be loaded");
       if (["Actor", "Item"].includes(pack.documentName)) await renderSheet(first);
-      return `${index.size} entries`;
+      const orphaned = index.filter(entry => entry.folder && !pack.folders.get(entry.folder));
+      if (orphaned.length) throw new Error(`${orphaned.length} entries point at a missing folder`);
+      return `${index.size} entries, ${pack.folders.size} folders`;
     });
   }
 

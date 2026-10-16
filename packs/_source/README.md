@@ -66,3 +66,15 @@ Set `RNR_OUTPUT_DIR` only when generated packs must be written outside `packs/`.
 
 - `category`: `communication`, `physical`, `investigation`, `science`, `combat`, `arts`, or `other`.
 - `cost`: Number of Extra Skill Points required.
+
+## Folders
+
+Do not put folder IDs in source files. `packs/pack-folders.mjs` files every
+document into a compendium folder when the packs are built (for example
+Weapons → Melee / Ranged, Extra Skills → by category), so a new item lands in
+the right folder automatically. To add or rename a folder, edit the `folders`
+list and `rule` for that pack there.
+
+The grouping of the compendiums themselves in the Compendium sidebar
+(Role&Roll → Rules & Guides, Character Creation, Abilities & Spells, Gear,
+Mecha) is declared in `packFolders` in `system.json`.
