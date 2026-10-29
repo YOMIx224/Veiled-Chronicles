@@ -219,6 +219,15 @@
       "Hint": "Create a hotbar macro. Drag it into BG3 HUD or Monk's Hotbar if you use them.",
       "Created": "Macro \"{name}\" is on your hotbar."
     },
+    "Build": {
+      "Export": "Export build (JSON)",
+      "Import": "Import build",
+      "ImportHint": "Paste an exported build. It is validated against this character before it is saved.",
+      "BadJson": "That isn't valid JSON.",
+      "Imported": "Build imported.",
+      "Reset": "Reset build",
+      "ResetConfirm": "Remove every Ascendant Forge choice from {name}? Momentum and uses are kept."
+    },
     "React": {
       "Prompt": "{name} may react to {trigger}:"
     },

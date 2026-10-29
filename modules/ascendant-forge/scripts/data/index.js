@@ -7,10 +7,18 @@ import { TECHNIQUES, MODIFIERS } from "./techniques.js";
 import { EVOLUTIONS, WEAPON_PATHS } from "./progression.js";
 import { WEAVES } from "./magic.js";
 import { SYNERGIES } from "./synergies.js";
+import {
+  NODES_EXP, TECHNIQUES_EXP, MODIFIERS_EXP, EVOLUTIONS_EXP, WEAPON_PATHS_EXP, WEAVES_EXP, SYNERGIES_EXP
+} from "./expansion.js";
 
 export const DEFAULT_CONTENT = Object.freeze({
-  node: NODES, technique: TECHNIQUES, modifier: MODIFIERS, evolution: EVOLUTIONS,
-  weaponPath: WEAPON_PATHS, weave: WEAVES, synergy: SYNERGIES
+  node: [...NODES, ...NODES_EXP],
+  technique: [...TECHNIQUES, ...TECHNIQUES_EXP],
+  modifier: [...MODIFIERS, ...MODIFIERS_EXP],
+  evolution: [...EVOLUTIONS, ...EVOLUTIONS_EXP],
+  weaponPath: [...WEAPON_PATHS, ...WEAPON_PATHS_EXP],
+  weave: [...WEAVES, ...WEAVES_EXP],
+  synergy: [...SYNERGIES, ...SYNERGIES_EXP]
 });
 
 /**

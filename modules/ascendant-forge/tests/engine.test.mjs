@@ -239,3 +239,43 @@ test("use-time conditions read weapon, spell and technique context", () => {
   assert.equal(evaluate({ usingTechnique: "riposte-line" }, { use: { technique: "riposte-line" } }).ok, true);
   assert.equal(evaluate({ spellLevel: { min: 1 } }, { spell: { level: 0 } }).ok, false);
 });
+
+test("content coverage: every class has at least two evolution paths", () => {
+  const classes = ["barbarian", "bard", "cleric", "druid", "fighter", "monk", "paladin", "ranger", "rogue", "sorcerer", "warlock", "wizard"];
+  for ( const cls of classes ) {
+    assert.ok(registry.all("evolution").filter(e => e.class === cls).length >= 2, `${cls} needs 2+ paths`);
+  }
+});
+
+test("content coverage: every grant-only technique is granted somewhere", () => {
+  const granted = new Set();
+  const scan = effects => (effects ?? []).filter(e => e.kind === "grantTechnique").forEach(e => granted.add(e.id));
+  registry.all("node").forEach(n => scan(n.effects));
+  registry.all("evolution").forEach(e => e.tiers.forEach(t => scan(t.effects)));
+  registry.all("weaponPath").forEach(w => w.ranks.forEach(r => scan(r.effects)));
+  for ( const t of registry.all("technique").filter(t => t.grantOnly) ) assert.ok(granted.has(t.id), `${t.id} is never granted`);
+});
+
+test("content coverage: every modifier fits at least one technique", async () => {
+  const { modifierCompatible } = await import("../scripts/engine/build.js");
+  for ( const m of registry.all("modifier") ) {
+    assert.ok(registry.all("technique").some(t => modifierCompatible(m, t).ok), `${m.id} fits nothing`);
+  }
+});
+
+test("constellation layout: nodes stay inside the canvas and don't overlap", () => {
+  const nodes = registry.all("node");
+  for ( const n of nodes ) {
+    assert.ok(n.position.x >= 0 && n.position.x <= 1100 && n.position.y >= 0 && n.position.y <= 720, `${n.id} off canvas`);
+  }
+  for ( let i = 0; i < nodes.length; i++ ) for ( let j = i + 1; j < nodes.length; j++ ) {
+    const a = nodes[i].position, b = nodes[j].position;
+    assert.ok(Math.hypot(a.x - b.x, a.y - b.y) >= 55, `${nodes[i].id} overlaps ${nodes[j].id}`);
+  }
+});
+
+test("each region offers its own keystone and specialization route", () => {
+  const keystones = registry.all("node").filter(n => n.category === "keystone");
+  assert.ok(keystones.length >= 6);
+  for ( const k of keystones ) for ( const c of k.conflicts ) assert.equal(registry.get("node", c)?.category, "keystone");
+});

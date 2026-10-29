@@ -119,7 +119,7 @@ export const NODES = [
     name: t("Reckless Apex", "จุดสูงสุดบ้าบิ่น"),
     description: t("Weapon damage +half proficiency bonus. Weapon attack rolls take −1.",
       "ความเสียหายอาวุธ +ครึ่งหนึ่งของโบนัสความชำนาญ แต่การโจมตีด้วยอาวุธ −1"),
-    position: { x: 260, y: 20 }, links: [], conflicts: ["unyielding-oath"],
+    position: { x: 260, y: 20 }, links: [], conflicts: ["unyielding-oath", "martyrs-vow"],
     prerequisites: null, eligibility: null, compatibility: null,
     effects: [
       { kind: "damageBonus", value: "halfpb", when: { weapon: true } },
@@ -167,7 +167,7 @@ export const NODES = [
     position: { x: 960, y: 220 }, links: ["overflowing-vessel"], conflicts: [],
     prerequisites: null, eligibility: { spellcaster: true }, compatibility: null,
     effects: [{ kind: "stat", key: "spellDC", value: 1 }],
-    rules: { minLevel: 4 }
+    rules: { minLevel: 4, exclusiveGroup: "spell-specialization" }
   },
   {
     id: "overflowing-vessel", category: "keystone", cost: 2, respec: "rest",
@@ -222,7 +222,7 @@ export const NODES = [
     position: { x: 380, y: 660 }, links: ["shared-burden"], conflicts: [],
     prerequisites: null, eligibility: null, compatibility: null,
     effects: [{ kind: "grantTechnique", id: "interpose" }],
-    rules: {}
+    rules: { exclusiveGroup: "support-specialization" }
   },
   {
     id: "shared-burden", category: "keystone", cost: 2, respec: "rest",

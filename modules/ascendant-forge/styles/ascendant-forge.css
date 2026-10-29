@@ -96,3 +96,5 @@
 .af-tidy-tech { display: flex; gap: 0.5rem; align-items: center; justify-content: space-between; border: 1px solid rgba(128, 128, 128, 0.3); border-radius: 6px; padding: 0.4rem 0.6rem; }
 .af-tidy-tech button { flex: 0 0 auto; width: auto; }
 .af-tidy .af-chip { display: inline-block; padding: 0 0.45rem; border-radius: 999px; background: rgba(128, 128, 128, 0.18); font-size: 0.82em; }
+.af-build-tools { margin-left: auto; display: flex; gap: 0.25rem; }
+.af-mini-btn { flex: 0 0 auto; width: 2rem; height: 2rem; padding: 0; }

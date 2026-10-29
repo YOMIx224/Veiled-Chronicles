@@ -206,6 +206,13 @@ S = {
     "Macro.Button": ("Macro", "มาโคร"),
     "Macro.Hint": ("Create a hotbar macro. Drag it into BG3 HUD or Monk's Hotbar if you use them.", "สร้างมาโครบนฮอตบาร์ ลากไปใส่ BG3 HUD หรือ Monk's Hotbar ได้"),
     "Macro.Created": ("Macro \"{name}\" is on your hotbar.", "มาโคร \"{name}\" อยู่บนฮอตบาร์แล้ว"),
+    "Build.Export": ("Export build (JSON)", "ส่งออกบิลด์ (JSON)"),
+    "Build.Import": ("Import build", "นำเข้าบิลด์"),
+    "Build.ImportHint": ("Paste an exported build. It is validated against this character before it is saved.", "วางบิลด์ที่ส่งออกไว้ ระบบจะตรวจกับตัวละครนี้ก่อนบันทึก"),
+    "Build.BadJson": ("That isn't valid JSON.", "ข้อความนี้ไม่ใช่ JSON ที่ถูกต้อง"),
+    "Build.Imported": ("Build imported.", "นำเข้าบิลด์แล้ว"),
+    "Build.Reset": ("Reset build", "รีเซ็ตบิลด์"),
+    "Build.ResetConfirm": ("Remove every Ascendant Forge choice from {name}? Momentum and uses are kept.", "ลบตัวเลือกทั้งหมดของ Ascendant Forge จาก {name} หรือไม่? โมเมนตัมและจำนวนครั้งยังอยู่"),
     "React.Prompt": ("{name} may react to {trigger}:", "{name} สามารถตอบโต้ต่อ{trigger}:"),
 
     "Use.Button": ("Use", "ใช้"),

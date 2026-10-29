@@ -13,6 +13,11 @@
     <div class="af-stat"><span>{{localize "AF.TechniqueSlots"}}</span><b>{{slotsUsed}} / {{budgets.techniqueSlots}}</b></div>
     {{#if respecWindow}}<div class="af-flag af-ok"><i class="fa-solid fa-bed"></i> {{localize "AF.RespecOpen"}}</div>{{/if}}
     {{#if inCombat}}<div class="af-flag af-warn"><i class="fa-solid fa-swords"></i> {{localize "AF.InCombat"}}</div>{{/if}}
+    <div class="af-build-tools">
+      <button type="button" class="af-mini-btn" data-action="exportBuild" data-tooltip="AF.Build.Export"><i class="fa-solid fa-file-export"></i></button>
+      <button type="button" class="af-mini-btn" data-action="importBuild" data-tooltip="AF.Build.Import"><i class="fa-solid fa-file-import"></i></button>
+      <button type="button" class="af-mini-btn" data-action="resetBuild" data-tooltip="AF.Build.Reset"><i class="fa-solid fa-rotate-left"></i></button>
+    </div>
   </header>
 
   <nav class="af-tabs">

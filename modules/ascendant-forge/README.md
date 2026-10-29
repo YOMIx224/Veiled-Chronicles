@@ -14,7 +14,23 @@ Characters build up an identity across six linked systems. Each system is data-d
 | **Advanced Magic (Weaves)** | One weave armed per spell, with exact eligibility and cost | `scripts/data/magic.js` |
 | **Build Synergies** | Curated combinations across two or more systems | `scripts/data/synergies.js` |
 
-Open the window from the ★ button in a character sheet's header, or with `AscendantForge.open(actor)`.
+Default content (`scripts/data/*.js`, `scripts/data/expansion.js`):
+
+| Content | Count |
+|---|---|
+| Constellation nodes | 36, with 4 roots, 7 keystones in 2 conflicting pairs, and 4 bridges |
+| Techniques | 28, including weapon, reaction, support and area techniques and 3 that modify native features (Second Wind, Innate Sorcery, Channel Divinity) |
+| Modifiers | 19 |
+| Class Evolution paths | 26, at least 2 for each of the 12 classes |
+| Weapon paths | 9 |
+| Weaves | 16, at least one per category |
+| Synergies | 12 |
+
+Open the window from the ★ button in a character sheet's header, from the Ascendant Forge tab in Tidy 5e, or with `AscendantForge.open(actor)`. In the window you can also:
+- export a build to JSON;
+- import a build, which is validated against the character before it is saved;
+- reset the build (after a long rest, or GM);
+- create a hotbar macro for any equipped technique, which you can drag into BG3 HUD or Monk's Hotbar.
 
 ## Resolution order and limits
 

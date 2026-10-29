@@ -58,6 +58,9 @@ export class ForgeApp extends HandlebarsApplicationMixin(ApplicationV2) {
       removeModifier: ForgeApp.#onRemoveModifier,
       use: ForgeApp.#onUse,
       macro: ForgeApp.#onMacro,
+      exportBuild: ForgeApp.#onExport,
+      importBuild: ForgeApp.#onImport,
+      resetBuild: ForgeApp.#onReset,
       momentum: ForgeApp.#onMomentum
     }
   };
@@ -286,6 +289,55 @@ export class ForgeApp extends HandlebarsApplicationMixin(ApplicationV2) {
 
   static async #onUse(event, target) {
     await useTechnique(this.actor, target.dataset.id);
+    this.render();
+  }
+
+  /** Whole-build changes follow the strictest respec rule: out of combat, after a long rest (or GM). */
+  #canRebuild() {
+    if ( game.user.isGM ) return true;
+    if ( combatKeys(this.actor).inCombat ) { notify("warn", "AF.Error.inCombat"); return false; }
+    const build = getBuild(this.actor);
+    const empty = !build.nodes.length && !build.loadout.length && !build.weaponPaths.length && !build.weaves.length
+      && !Object.keys(build.evolutions).length;
+    if ( empty || getRuntime(this.actor).respecWindow ) return true;
+    notify("warn", "AF.Error.respecRest");
+    return false;
+  }
+
+  static #onExport() {
+    const data = { module: MODULE_ID, version: 1, actor: this.actor.name, build: getBuild(this.actor) };
+    const name = `ascendant-forge-${this.actor.name.slugify({ strict: true }) || "build"}.json`;
+    foundry.utils.saveDataToFile(JSON.stringify(data, null, 2), "application/json", name);
+  }
+
+  static async #onImport() {
+    if ( !this.#canRebuild() ) return;
+    const text = await foundry.applications.api.DialogV2.prompt({
+      window: { title: game.i18n.localize("AF.Build.Import") },
+      content: `<p>${game.i18n.localize("AF.Build.ImportHint")}</p><textarea name="json" rows="12" style="width:100%;font-family:monospace"></textarea>`,
+      ok: { callback: (event, button) => button.form.elements.json.value },
+      rejectClose: false
+    });
+    if ( !text ) return;
+    let parsed;
+    try { parsed = JSON.parse(text); }
+    catch { return notify("error", "AF.Build.BadJson"); }
+    const build = parsed?.build ?? parsed;
+    const result = await saveBuild(this.actor, build);
+    if ( !result.ok ) return notify("error", "AF.Error.Refused", { reason: result.errors.slice(0, 3).map(errorText).join("; ") });
+    notify("info", "AF.Build.Imported");
+    this.render();
+  }
+
+  static async #onReset() {
+    if ( !this.#canRebuild() ) return;
+    const ok = await foundry.applications.api.DialogV2.confirm({
+      window: { title: game.i18n.localize("AF.Build.Reset") },
+      content: `<p>${game.i18n.format("AF.Build.ResetConfirm", { name: foundry.utils.escapeHTML(this.actor.name) })}</p>`,
+      rejectClose: false
+    });
+    if ( !ok ) return;
+    await saveBuild(this.actor, {});
     this.render();
   }
 
