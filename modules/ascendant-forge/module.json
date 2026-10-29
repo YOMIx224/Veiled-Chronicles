@@ -1,0 +1,27 @@
+{
+  "id": "ascendant-forge",
+  "title": "Ascendant Forge",
+  "description": "Deep, modular build-crafting for D&D 5e (2024): a node-based Ascendant Constellation, Ability Techniques with Modifiers, Class Evolution paths, Weapon Mastery expansion, spell Weaves and a curated Synergy registry — all validated and resolved through native dnd5e workflows. English and Thai.",
+  "version": "0.1.0",
+  "authors": [{ "name": "YOMIx224" }],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": { "minimum": "5.0.0", "verified": "6.0.3" }
+      }
+    ]
+  },
+  "esmodules": ["scripts/main.js"],
+  "styles": ["styles/ascendant-forge.css"],
+  "languages": [
+    { "lang": "en", "name": "English", "path": "lang/en.json" },
+    { "lang": "th", "name": "ภาษาไทย", "path": "lang/th.json" }
+  ],
+  "socket": true
+}

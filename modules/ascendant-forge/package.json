@@ -1,0 +1,9 @@
+{
+  "name": "ascendant-forge",
+  "private": true,
+  "type": "module",
+  "description": "Engine tests for the Ascendant Forge Foundry VTT module. Not required at runtime.",
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}

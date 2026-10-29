@@ -1,0 +1,221 @@
+<div class="af-root">
+  <header class="af-summary">
+    <div class="af-stat"><span>{{localize "AF.Points"}}</span><b>{{points.spent}} / {{points.max}}</b></div>
+    <div class="af-stat"><span>{{localize "AF.Keystones"}}</span><b>{{keystones}} / {{budgets.keystones}}</b></div>
+    <div class="af-stat af-momentum-stat">
+      <span>{{localize "AF.Momentum"}}</span>
+      <b>{{momentum.value}} / {{momentum.max}}</b>
+      {{#if isGM}}
+      <button type="button" class="af-mini" data-action="momentum" data-delta="-1" aria-label="-1">−</button>
+      <button type="button" class="af-mini" data-action="momentum" data-delta="1" aria-label="+1">+</button>
+      {{/if}}
+    </div>
+    <div class="af-stat"><span>{{localize "AF.TechniqueSlots"}}</span><b>{{slotsUsed}} / {{budgets.techniqueSlots}}</b></div>
+    {{#if respecWindow}}<div class="af-flag af-ok"><i class="fa-solid fa-bed"></i> {{localize "AF.RespecOpen"}}</div>{{/if}}
+    {{#if inCombat}}<div class="af-flag af-warn"><i class="fa-solid fa-swords"></i> {{localize "AF.InCombat"}}</div>{{/if}}
+  </header>
+
+  <nav class="af-tabs">
+    {{#each tabs}}
+    <button type="button" class="af-tab {{#if active}}active{{/if}}" data-action="tab" data-tab="{{id}}">
+      {{label}}{{#if badge}} <span class="af-badge">{{badge}}</span>{{/if}}
+    </button>
+    {{/each}}
+  </nav>
+
+  <section class="af-panel">
+    {{#if (eq tab "constellation")}}
+    <div class="af-graph-wrap">
+      <svg class="af-graph" viewBox="0 0 1100 720" role="img" aria-label="{{localize 'AF.Tab.constellation'}}">
+        {{#each edges}}
+        <line x1="{{x1}}" y1="{{y1}}" x2="{{x2}}" y2="{{y2}}" class="af-edge {{#if lit}}lit{{/if}}"/>
+        {{/each}}
+        {{#each nodes}}
+        <g class="af-node {{state}} cat-{{category}}" data-action="node" data-node="{{id}}" transform="translate({{x}} {{y}})" tabindex="0">
+          <title>{{tooltip}}</title>
+          {{#if diamond}}
+          <polygon points="{{points}}" class="af-shape"/>
+          {{else}}
+          <circle r="{{r}}" class="af-shape"/>
+          {{/if}}
+          <text y="{{r}}" dy="16" class="af-label">{{name}}</text>
+        </g>
+        {{/each}}
+      </svg>
+      <ul class="af-legend">
+        <li><span class="dot owned"></span>{{localize "AF.Legend.owned"}}</li>
+        <li><span class="dot available"></span>{{localize "AF.Legend.available"}}</li>
+        <li><span class="dot locked"></span>{{localize "AF.Legend.locked"}}</li>
+        <li>{{localize "AF.Legend.hint"}}</li>
+      </ul>
+      {{#if passives.length}}
+      <div class="af-passives">
+        {{#each passives}}<span class="af-chip">{{label}} +{{value}}</span>{{/each}}
+      </div>
+      {{/if}}
+    </div>
+    {{/if}}
+
+    {{#if (eq tab "evolution")}}
+    {{#unless evolutions.length}}<p class="af-empty">{{localize "AF.Empty.evolution"}}</p>{{/unless}}
+    {{#each evolutions}}
+    <h3>{{label}} <small>({{levels}})</small></h3>
+    <div class="af-cards">
+      {{#each paths}}
+      <article class="af-cardbox {{#if chosen}}chosen{{/if}} {{#if locked}}locked{{/if}}">
+        <header><b>{{name}}</b> <span class="af-chip">{{theme}}</span></header>
+        <p>{{description}}</p>
+        <ol class="af-tiers">
+          {{#each tiers}}
+          <li class="{{#if reached}}reached{{/if}}"><b>{{classLevel}}</b> {{name}} — {{description}}</li>
+          {{/each}}
+        </ol>
+        <details><summary>{{localize "AF.Interactions"}}</summary>
+          <ul>{{#each interactions}}<li><code>{{feature}}</code>: {{rule}}</li>{{/each}}</ul>
+          <p>{{subclasses}}</p>
+          <p class="af-muted">{{localize "AF.Balance"}}: {{balance}}</p>
+        </details>
+        {{#if ../canChange}}
+        <button type="button" data-action="evolution" data-cls="{{../cls}}" data-path="{{id}}" {{#if locked}}disabled{{/if}}>
+          {{#if chosen}}{{localize "AF.Remove"}}{{else}}{{localize "AF.Choose"}}{{/if}}
+        </button>
+        {{/if}}
+      </article>
+      {{/each}}
+    </div>
+    {{/each}}
+    {{/if}}
+
+    {{#if (eq tab "weapons")}}
+    <p class="af-muted">{{localize "AF.WeaponHint"}} ({{budgets.weaponPaths}})</p>
+    <div class="af-cards">
+      {{#each weaponPaths}}
+      <article class="af-cardbox {{#if owned}}chosen{{/if}} {{#if locked}}locked{{/if}}">
+        <header><b>{{name}}</b></header>
+        <p>{{description}}</p>
+        <ol class="af-tiers">
+          {{#each ranks}}<li class="{{#if reached}}reached{{/if}}"><b>{{level}}</b> {{effects}}</li>{{/each}}
+        </ol>
+        {{#if locked}}<p class="af-muted">{{why}}</p>{{/if}}
+        <button type="button" data-action="weaponPath" data-id="{{id}}" {{#if locked}}{{#unless owned}}disabled{{/unless}}{{/if}}>
+          {{#if owned}}{{localize "AF.Remove"}}{{else}}{{localize "AF.Learn"}}{{/if}}
+        </button>
+      </article>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if (eq tab "magic")}}
+    {{#unless spellcaster}}<p class="af-empty">{{localize "AF.Empty.magic"}}</p>{{/unless}}
+    <p class="af-muted">{{localize "AF.WeaveHint"}} ({{budgets.weaves}})</p>
+    <div class="af-cards">
+      {{#each weaves}}
+      <article class="af-cardbox {{#if owned}}chosen{{/if}} {{#if locked}}locked{{/if}} {{#if armed}}armed{{/if}}">
+        <header><b>{{name}}</b> <span class="af-chip">{{category}}</span></header>
+        <p>{{description}}</p>
+        <p class="af-muted">{{localize "AF.Cost"}}: {{cost}}</p>
+        <p class="af-muted">{{localize "AF.Preserves"}}: {{preserves}}</p>
+        {{#if metamagic}}<p class="af-warn-text">{{metamagic}}</p>{{/if}}
+        <div class="af-row">
+          <button type="button" data-action="weave" data-id="{{id}}" {{#if locked}}{{#unless owned}}disabled{{/unless}}{{/if}}>
+            {{#if owned}}{{localize "AF.Remove"}}{{else}}{{localize "AF.Learn"}}{{/if}}
+          </button>
+          {{#if owned}}
+          <button type="button" data-action="arm" data-id="{{id}}">{{#if armed}}{{localize "AF.Disarm"}}{{else}}{{localize "AF.Arm"}}{{/if}}</button>
+          {{/if}}
+        </div>
+      </article>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if (eq tab "techniques")}}
+    <h3>{{localize "AF.Loadout"}} <small>({{slotsUsed}}/{{budgets.techniqueSlots}} · {{localize "AF.ModifierSlots"}} {{budgets.modifierSlots}})</small></h3>
+    {{#unless loadout.length}}<p class="af-empty">{{localize "AF.Empty.loadout"}}</p>{{/unless}}
+    <div class="af-loadout">
+      {{#each loadout}}
+      <article class="af-cardbox {{#if errors.length}}invalid{{/if}}">
+        <header>
+          <b>{{name}}</b> <span class="af-chip">{{action}}</span> <span class="af-chip">{{theme}}</span>
+          {{#if trigger}}<span class="af-chip">{{localize "AF.TriggerLabel"}}: {{trigger}}</span>{{/if}}
+        </header>
+        <p>{{description}}</p>
+        <p class="af-muted">{{localize "AF.Momentum"}}: {{momentum}}{{#if uses}} · {{localize "AF.Uses"}}: {{uses}}{{/if}} · {{localize "AF.ModifierSlots"}}: {{slots}}</p>
+        {{#if mastery}}<p class="af-muted"><i class="fa-solid fa-swords"></i> {{mastery}}</p>{{/if}}
+        <ul class="af-mods">
+          {{#each modifiers}}
+          <li title="{{description}} — {{interaction}}">{{name}}
+            <button type="button" class="af-mini" data-action="removeModifier" data-index="{{../index}}" data-id="{{id}}" aria-label="{{localize 'AF.Remove'}}">×</button>
+          </li>
+          {{/each}}
+        </ul>
+        {{#if canAdd}}
+        <select data-add-modifier="{{index}}" aria-label="{{localize 'AF.AddModifier'}}">
+          <option value="">{{localize "AF.AddModifier"}}</option>
+          {{#each compatible}}<option value="{{id}}">{{name}}</option>{{/each}}
+        </select>
+        {{/if}}
+        {{#each errors}}<p class="af-error-text">{{this}}</p>{{/each}}
+        <div class="af-row">
+          <button type="button" data-action="use" data-id="{{id}}"><i class="fa-solid fa-bolt"></i> {{localize "AF.Use.Button"}}</button>
+          <button type="button" data-action="macro" data-id="{{id}}" data-tooltip="AF.Macro.Hint"><i class="fa-solid fa-code"></i> {{localize "AF.Macro.Button"}}</button>
+          <button type="button" data-action="unequip" data-index="{{index}}">{{localize "AF.Unequip"}}</button>
+        </div>
+      </article>
+      {{/each}}
+    </div>
+    <h3>{{localize "AF.Known"}}</h3>
+    <table class="af-table">
+      <tbody>
+      {{#each known}}
+      <tr>
+        <td><b>{{name}}</b><br><small>{{description}}</small></td>
+        <td>{{action}}</td>
+        <td>{{cost}}</td>
+        <td>{{#unless equipped}}<button type="button" data-action="equip" data-id="{{id}}">{{localize "AF.Equip"}}</button>{{/unless}}</td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+    {{/if}}
+
+    {{#if (eq tab "synergies")}}
+    <div class="af-cards">
+      {{#each synergies}}
+      <article class="af-cardbox {{#if active}}chosen{{/if}}">
+        <header><b>{{name}}</b> {{#if active}}<span class="af-chip af-ok">{{localize "AF.Active"}}</span>{{/if}}</header>
+        <p>{{description}}</p>
+        <p><i class="fa-solid fa-chess-knight"></i> {{tactic}}</p>
+        <p class="af-muted">{{localize "AF.Cost"}}: {{cost}} · {{oncePer}} · {{localize "AF.Priority"}} {{priority}}</p>
+        <ul class="af-reqs">
+          {{#each requires}}<li class="{{#if met}}met{{/if}}"><i class="fa-solid {{#if met}}fa-check{{else}}fa-xmark{{/if}}"></i> {{type}}: {{label}}</li>{{/each}}
+        </ul>
+      </article>
+      {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if (eq tab "validation")}}
+    {{#if errors.length}}
+    <h3 class="af-error-text">{{localize "AF.Errors"}}</h3>
+    <ul>{{#each errors}}<li>{{this}}</li>{{/each}}</ul>
+    {{else}}
+    <p class="af-ok-text"><i class="fa-solid fa-check"></i> {{localize "AF.Valid"}}</p>
+    {{/if}}
+    {{#if warnings.length}}
+    <h3>{{localize "AF.Warnings"}}</h3>
+    <ul>{{#each warnings}}<li>{{this}}</li>{{/each}}</ul>
+    {{/if}}
+    <h3>{{localize "AF.Rules.Title"}}</h3>
+    <ol class="af-rules">
+      <li>{{localize "AF.Rules.Order"}}</li>
+      <li>{{localize "AF.Rules.Attack"}}</li>
+      <li>{{localize "AF.Rules.Damage"}}</li>
+      <li>{{localize "AF.Rules.Secondary"}}</li>
+      <li>{{localize "AF.Rules.Momentum"}}</li>
+      <li>{{localize "AF.Rules.Triggers"}}</li>
+      <li>{{localize "AF.Rules.Magic"}}</li>
+    </ol>
+    {{/if}}
+  </section>
+</div>
